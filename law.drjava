@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="false" build="build/" main="Main" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="src/law/Dialogue.java" package="law" timestamp="19-Sep-2018 10:50:21">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/Renderer.java" package="law" timestamp="19-Sep-2018 09:21:00">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/Main.java" package="law" timestamp="19-Sep-2018 09:31:57">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/DrawableText.java" package="law" timestamp="19-Sep-2018 09:35:54">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/Drawable.java" package="law" timestamp="18-Sep-2018 22:16:53">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/Camera.java" package="law" timestamp="18-Sep-2018 21:37:06">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/StoryManager.java" package="law" timestamp="19-Sep-2018 10:15:19">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+      <file name="src/law/Case0.java" package="law" timestamp="19-Sep-2018 10:30:22">
+        <select from="1272" to="1272"/>
+        <scroll column="889" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

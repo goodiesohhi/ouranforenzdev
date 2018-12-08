@@ -1,0 +1,21 @@
+package law;
+
+import java.awt.Color;
+import java.io.FileNotFoundException;
+
+class Case0 extends StoryManager  {
+	
+
+	Case0()  {
+	super();
+	
+	Main.dialogue.insert("Hello. Welcome to the the extremely early prototype of Ouron Forenz!", "Ouran Forenz");
+	
+	//Main.renderer.textQueue[0] = new DrawableText("Hello. Welcome to the the extremely early prototype of Ouron Forenz!",Color.WHITE,0,true,0,0);
+	}
+
+	void update () {
+		
+	}
+    
+}
