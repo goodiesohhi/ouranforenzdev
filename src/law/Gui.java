@@ -11,18 +11,21 @@ import javax.imageio.ImageIO;
 class Gui  {
 int evidenceOffset=0;
 int profileOffset=0;
-int menu = 0;	
+int menu = -1;	
 int button = 4;
 boolean show=true;	
 int inMenu;
 int markerLocation=0;
-BufferedImage[] guiElements = new BufferedImage[40];
+int x=250;
+int y=250;
+
 BufferedImage empty = ImageIO.read( Main.class.getResource("/resources/empty.png"));
 BufferedImage marker = ImageIO.read( Main.class.getResource("/resources/marker.png"));
 BufferedImage scroller = ImageIO.read( Main.class.getResource("/resources/scroller.png"));
 BufferedImage backing = ImageIO.read( Main.class.getResource("/resources/backing.png"));
 Drawable[] queue = new Drawable[40];
 DrawableText[] textQueue = new DrawableText[50];
+BufferedImage[] guiElements = new BufferedImage[40];
 
 
 	Gui() throws IOException {
@@ -48,11 +51,13 @@ DrawableText[] textQueue = new DrawableText[50];
 	void update() throws IOException {
 	
 		if (show) {
-			 System.out.println("menu:"+menu);
+			 queue[6]=null;
 			
-			 queue[6]= new Drawable(guiElements[9],(1028-200)/2,768-100,1,0,0);
+			if (!Main.currentCase.inDialogue||Main.currentCase.inExamine) {
+		
 			
-			  if(button==4)   queue[6]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0);
+			
+		
 			if (menu==3 && !Main.currentCase.inCourt) {
 				textQueue[0] = null;
 				
@@ -94,13 +99,13 @@ DrawableText[] textQueue = new DrawableText[50];
 						   if(Main.keyInt==KeyEvent.VK_Z) {
 							   
 							  Main.currentCase.currentLocation.paths.get(markerLocation).enter();	
-							   menu=0;
+							   menu=-1;
 							   queue = new Drawable[40];
 								  textQueue = new DrawableText[50];
 						   }
 						   else  if(Main.keyInt==KeyEvent.VK_X) {
 							 
-							   menu=0;
+							   menu=-1;
 							 queue = new Drawable[40];
 							  textQueue = new DrawableText[50];
 			   				   
@@ -111,7 +116,7 @@ DrawableText[] textQueue = new DrawableText[50];
 			if (menu==2) {
 				 queue[35]= new Drawable(scroller,800,100+evidenceOffset*30*(Main.currentCase.evidence.size()+3/3)-15,1,0,0);
 				queue[0]= new Drawable(guiElements[0],10,10,1,0,0);
-				queue[31]= new Drawable(markerLocation,200-5,125	-5,1,0,0);
+				queue[31]= new Drawable(marker,200-5,125	-5,1,0,0);
 				queue[1]= new Drawable(backing,200-5-50,125	-35,1,0,0);
 				for (int i=0;i<3;i++) {
 					
@@ -161,7 +166,7 @@ DrawableText[] textQueue = new DrawableText[50];
 						   }
 						   else  if(Main.keyInt==KeyEvent.VK_X) {
 							 
-							   menu=0;
+							   menu=-1;
 							 queue = new Drawable[40];
 							  textQueue = new DrawableText[50];
 			   				   
@@ -169,7 +174,107 @@ DrawableText[] textQueue = new DrawableText[50];
 					   }
 				  
 			}
-			else if(menu==0) {
+		/*	else if (menu==4) {
+				textQueue = new DrawableText[50];
+				 guiElements = new BufferedImage[40];
+			} */
+
+			else if (menu == 1) {
+				
+				if (!Main.currentCase.inCourt) {
+				Question[] shown = new Question[20];
+				StoryManager story = Main.currentCase;
+				int i=0;
+				if (!story.inDialogue) {
+				for (Question q: story.currentLocation.questions ) {
+					if (q.unlocked) {
+					shown[i]=q;
+					if (q.asked) textQueue[20+i] = new DrawableText(q.question,Color.GRAY,25.0f,true,0,0,false);
+					else  textQueue[20+i] = new DrawableText(q.question,Color.WHITE,25.0f,true,0,0,false);
+					textQueue[20+i].x=300;
+					textQueue[20+i].y=500+i*50;
+					i++;
+					}
+				}
+				}
+				
+				  if(Main.currentKey!=null) {
+					 
+					
+					   if(Main.keyInt==40) {
+						if (markerLocation<story.currentLocation.getVisible()-1)markerLocation++;
+					   } else if  (Main.keyInt==38) {
+						if (markerLocation>0) markerLocation--;   
+					   }
+					   else 
+						   if(Main.keyInt==90) {
+								 queue = new Drawable[40];
+								  textQueue = new DrawableText[50];
+							   Main.currentCase.currentLocation.talk(shown[markerLocation].id);
+							   
+						}
+						   else  if(Main.keyInt==KeyEvent.VK_X) {
+								 
+							   menu=-1;
+							 queue = new Drawable[40];
+							  textQueue = new DrawableText[50];
+			   				   
+		   }
+							   
+						   }
+				  if (!story.inDialogue) {
+				queue[31]= new Drawable(marker,200-5,500+this.markerLocation*50,1,0,0);
+				  } else {
+				
+				  }
+			}
+			}
+			else if (menu == 0) {
+				if (!Main.currentCase.inCourt) {
+		
+				queue[10] = new Drawable (marker, x-55, y-55, 1, 0, 0) ;
+				//queue[11] = new Drawable (marker, x-55, y-55, 1, 0, 0) ;
+				
+				
+				
+				if(Main.pressingKey!=null) {
+				  
+					if (button==4&&Main.keyInt!=90) button=0;
+							  if  (Main.pressingKey.getKeyCode()==37) {
+								x-=5;
+							   } else
+					   if(Main.pressingKey.getKeyCode()==39) {
+					x+=5;
+					   } else
+					   if(Main.pressingKey.getKeyCode()==38) {
+						y-=5;
+					   } else 
+						   
+					   if (Main.pressingKey.getKeyCode()==40) {
+						   y+=5;
+					   } 
+						  
+				}
+				
+				 if(Main.keyInt==90) {
+					   
+					   Main.currentCase.currentLocation.interact(x, y);
+				}
+				 
+				   else  if(Main.keyInt==KeyEvent.VK_X) {
+						 
+					   menu=-1;
+					 queue = new Drawable[40];
+					  textQueue = new DrawableText[50];
+	   				   
+   }
+							   
+						  
+				  
+				}
+			}
+	
+			else if(menu==-1) {
 			
 			if (Main.currentCase.inCourt) {
 				textQueue[1] =  new DrawableText("Press",Color.WHITE,35.0f,true,0,0,false);
@@ -202,31 +307,31 @@ DrawableText[] textQueue = new DrawableText[50];
 				
 				
 			}
+			
 		
 			
 			  if(Main.currentKey!=null) {
-				
+				  markerLocation=0;
+				if (button==4&&Main.keyInt!=90) button=0;
 						  if  (Main.keyInt==37) {
 							   if(button==0)button=1;
 							   else
-							   if(button==4)button=2;
-							   else
+							
 							   if(button==1)button=0;
 							   else
-							   if(button==3)button=4;
-							   else
+							   
 							   if(button==2)button=3;
+							   else if (button ==3) button=2;
 						   } else
 				   if(Main.keyInt==39) {
 					   if(button==0)button=1;
 					   else
-					   if(button==2)button=4;
-					   else
+					
 					   if(button==1)button=0;
 					   else
-					   if(button==3)button=2;
-					   else
-						if(button==4)button=3;
+					   
+					   if(button==2)button=3;
+					   else if (button ==3) button=2;
 				   } else
 				   if(Main.keyInt==38||Main.keyInt==40) {
 					   if(button==0)button=2;
@@ -238,16 +343,19 @@ DrawableText[] textQueue = new DrawableText[50];
 					   if(button==3)button=1;
 				   } else 
 					   if(Main.keyInt==90) {
-						   if (button==3||button==2) {
+						   if (button==3||button==2||button==1) {
 						   menu=button;
 						   }
 						   if (button==0) {
 							
-		
+		if (Main.currentCase.inCourt) {
 							   Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].press();
-							 
+		} else {
+			
+			menu=button;
+		}
 						
-						   }
+						   }}
 						   
 					   }
 				   }
@@ -267,6 +375,17 @@ DrawableText[] textQueue = new DrawableText[50];
 			
 			
 			
+		} else {
+			for (int i=0;i<6;i++) {
+				 queue[i]=null;
+				
+			}
+			for (int i=1;i<5;i++) {
+				 textQueue[i]=null;
+				
+			}
+			 button=4;
+			 queue[6]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0);
 		}
 		}
 	}

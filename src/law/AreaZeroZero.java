@@ -13,15 +13,16 @@ public class AreaZeroZero extends Location {
 	
 	void enter () throws IOException {
 		super.enter();
-		Main.renderer.insert("nekoArson",112);
-		
-		Main.currentCase.inCourt=false;
-		Main.currentCase.somewhere=true;
-		Main.renderer.queue[0]= new Drawable(graphic,0,0,1,0,0);
+		//Main.renderer.insert("nekoArson",112);
+		 this.addEvent(new ClickEvent("badge", 200, 200, 100, 100, this.clickEvents,0));
+		 
 		 if (!flags[0]){
 			
-			 story.show(112,280,0);
+		
 			 story.insertD("This is a place", "Hello");
+				
+			 story.insertD("This is a place", "Hello");
+			 flags[0] = true;
 			
 			
 			 
@@ -42,6 +43,17 @@ public class AreaZeroZero extends Location {
 
 	@Override
 	void events(int i) {
+		
+		if (i==0) {
+			story.insertD("Your Badge was added to the Court Record", "");
+			story.insertR( "Ouran's Attorney's Badge","badge","My badge", false,0);
+		}
+		
+	}
+
+	@Override
+	void talk(int i) {
+		//What the hell are you?
 		
 		
 	}

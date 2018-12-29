@@ -17,12 +17,11 @@ public class Character {
 	int height;
 	Drawable drawn;
 	boolean show;
-	Character(String n,int x, int y, int w, int h) throws IOException {
+	Character(String n,int x, int y) throws IOException {
 		
 		 this.x=x;
 		 this.y=y;
-		 height=h;
-		 width=w;
+	
 		 name=n;
 		
 	}
@@ -39,6 +38,15 @@ public class Character {
 		
 	}
 	
+	void clear () {
+		animation=null;
+		drawn=null;
+	}
+	
+	void update () {
+		if (this.animation!=null)this.animation.update();
+	}
+	
 }
 
 class Animation {
@@ -53,10 +61,15 @@ class Animation {
 	Animation(String p, int f, Character chara) throws IOException {
 		parent=chara;
 		sprites = new ArrayList<BufferedImage>();
-		for (int i=0;i<f;i++)
+		/*for (int i=0;i<f;i++)
 		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/"+path+"_"+f+".png")));
 	
+	}*/
+		
+		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/nekocchiWitness_0.png"))); 
+		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/nekocchiWitness_1.png")));
 	}
+			
 	
 	BufferedImage draw() {
 		return  sprites.get(currentFrame);
@@ -64,15 +77,18 @@ class Animation {
 	
 void update() {
 	if (playing) {
-		if (time>=0)time++;
-		if (time>=0) frames= (int)time/1000;
 		
-		if (frames>sprites.size()-1) {
+		System.out.println("PLAYING"+time);
+		if (time>=0)time++;
+		if (time>=0) currentFrame= (int)time/10;
+		
+		if (currentFrame>sprites.size()-1) {
 			if (loop) {
-				frames=0;
+				currentFrame=0;
 				time=0;
 			} else {
 				time= -1;
+				currentFrame=currentFrame-1;
 				
 			}
 		}

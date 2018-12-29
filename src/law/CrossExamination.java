@@ -1,4 +1,7 @@
 package law;
+
+import java.io.IOException;
+
 class CrossExamination {
 	Statements[] statements = new Statements[20];
 	boolean procced;
@@ -17,28 +20,29 @@ class CrossExamination {
 		
 	}
 	
-	void add(String i, String speaker, String[] p, String[] s, int x,int y) {
-		statements[sCount]= new Statements(i, speaker, p, s, x, y,sCount);
+	void add(String i, String speaker, String[] p, String[] s, int x,int y,String anim, int f) {
+		Character c =  Main.currentCase.getCharacter(speaker);
+		statements[sCount]= new Statements(i, c, p, s, x, y,sCount,anim,f);
 		sCount++;
 	}
 	boolean metConditions () {
-		System.out.println("marker");
+	
 		
 		int conditionsLength=0;
 		for (int i=0; i<conditions.length;i++) {
 			if (conditions[i]!=null) conditionsLength++;
 		}
-		System.out.println("length: " + conditionsLength);
+		
 		for (int i=0; i<conditionsLength;i++) {
-			System.out.println("not met");
+			
 			if(!flags[conditions[i].slot]) return false;
 		}
 		
-		System.out.println("met");
+		
 		return false;
 		
 	}
-	void update() {
+	void update() throws IOException {
 	
 
 		if(!procced) { 

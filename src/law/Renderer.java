@@ -24,21 +24,12 @@ public class Renderer {
 	public Renderer() {
 		
 		queue = new Drawable[95];
-		 for (int i=0; i< queue.length;i++) {
-			 
-			 queue[i]=  null;
-		 }
+		
 		 
 			textQueue = new DrawableText[30];
-			 for (int i=0; i< textQueue.length;i++) {
-				 
-				 textQueue[i]= null;
-			 }
+		
 			 pressQueue = new DrawableText[30];
-				 for (int i=0; i<pressQueue.length;i++) {
-					 
-					 pressQueue[i]= null;
-				 }
+				
 		
 		
 	}
@@ -58,11 +49,23 @@ public class Renderer {
 	 }
 	 
 for (Character c:Main.currentCase.characters) {
-		 
-		 if(c.drawn!=null)g.drawImage(c.drawn.imagez,c.drawn.x+camera.x,c.drawn.y+camera.y,null);
+	
+		 if(c.drawn!=null) {
+			 g.drawImage(c.drawn.imagez,c.drawn.x+camera.x,c.drawn.y+camera.y,null);
+			
+		 }
 		
 	 }
+if (Main.currentCase.currentLocation!=null) {
+for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
 	
+		 if(c.image!=null) {
+			 g.drawImage(c.image, c.x+camera.x,c.y+camera.y,null);
+			
+		 }
+		
+	 }
+}
 	
 	 
 	 g.setColor(Color.BLUE);
@@ -155,6 +158,18 @@ public void update() {
 		 if(queue[i]!=null)queue[i].update();
 		 
 	 }
+	
+}
+
+public void reset() {
+	
+	queue = new Drawable[95];
+	
+	 
+		textQueue = new DrawableText[30];
+	
+		 pressQueue = new DrawableText[30];
+			
 	
 }
 	

@@ -7,24 +7,25 @@ public class NekochiiBedroom extends Location {
 		StoryManager story = Main.currentCase;
 		
 		public NekochiiBedroom() {
-			 super("Jesus Palace",201);
+			 super("Jesus Palace",202);
 			 block=true;
 		}
 		
 		void enter () throws IOException {
 			super.enter();
-			Main.renderer.insert("nekoArson",112);
+			//Main.renderer.insert("nekoArson",112);
 			
-			Main.currentCase.inCourt=false;
-			Main.currentCase.somewhere=true;
-			Main.renderer.queue[0]= new Drawable(graphic,0,0,1,0,0);
 			 if (!flags[0]){
+					
+				 story.insertD("This is a place", "Hello");
+				story.playAni("Nekocchi","nekocchiWitness",2,true);
 				
-				 story.show(112,280,0);
 				 story.insertD("Hey! Ouran","Nekocchi");
 				 story.insertD("Welcome to my crypt","Nekocchi");
 				 story.insertD("I hope you like it here","Nekocchi");
 				 flags[0] = true;
+				 this.addQuestion(new Question(0, "What are you?", true));
+				 this.addQuestion(new Question(1, "But why?", false));
 				 
 				 
 				 
@@ -32,18 +33,60 @@ public class NekochiiBedroom extends Location {
 				 
 				 
 				 
-				 
+			 } else {
+				 story.playAni("Nekocchi","nekocchiWitness",2,true);
 			 }
+			 
+			 
 		}
 		
 		@Override
 		void update() {
 			super.update();
+		
 		}
 
 		@Override
 		void events(int i) {
 			
+			
+		}
+
+		@Override
+		void talk(int i) {
+			//what the hell are you
+			
+			this.getQuestionId(i).asked=true;
+			if (i==0) {
+				story.insertD("What am I?", "Nekocchi"); 
+				story.insertD("I am.....", "Nekocchi"); 
+				story.insertD("A KUO-TOA!", "Nekocchi");
+				this.unlockQuestion(1);
+			}
+			
+			//but why?u
+			if (i==1) {
+				story.insertD("I'm going to vore....", "Nekocchi"); 
+				story.insertD("YOUR HORSE LEGS!", "Nekocchi"); 
+				story.insertD("UwUwUwUwUwUWWUWUSUSHDBJSKJHDNJSDKNSDJ", "Nekocchi");
+				
+				 this.addQuestion(new Question(99, "Lets head to court", true));
+			}
+			if (i==99) {
+				Main.currentCase.flags[25]=true;
+				story.insertD("Off to court!", "Nekocchi");
+				   story.toCourt();
+			}
+		}
+
+		private Question getQuestionId(int id) {
+
+
+			for (Question q: questions) {
+				if (q.id==id) return q;
+			}
+			
+			return null;
 			
 		}
 	}

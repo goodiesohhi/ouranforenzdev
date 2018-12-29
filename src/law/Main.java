@@ -42,6 +42,8 @@ public class Main extends JFrame{
 	static Renderer renderer= new Renderer();
 	private static boolean start;
 	public static Dialogue pressDialogue = new Dialogue(1);
+	public static boolean entered;
+	public static KeyEvent pressingKey;
 	public Main() {
 		KeyListener listener = new KeyListen();
 		MouseListener mouseListener = new MouseListen();
@@ -248,13 +250,14 @@ public class Main extends JFrame{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		Main.pressingKey= e;
 		
-		System.out.println("keyPressed="+e.getKeyCode());
 	}
 
 	@Override
 	public void keyReleased(KeyEvent e) {
 		Main.currentKey= e;
+		Main.pressingKey= null;
 		System.out.println("keyReleased="+e.getKeyCode());
 	}
 }

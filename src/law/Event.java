@@ -52,20 +52,41 @@ class Event {
 		i=i2;
 	}
 
+	public Event(String string, String string2, String string22, int i2, boolean b) {
+		command = string;
+		d=string2;
+		x=string22;
+		i=i2;
+		u=b;
+	}
+
 	//&&Main.currentCase.objected==false
 	void execute() throws IOException {
 		 
-		if( !Main.currentCase.inExamine && !Main.currentCase.inDialogue && !Main.currentCase.objected) {
+		if( !Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine) {
+			Main.currentCase.working=true;
 			if (command=="court") {
 				
 				Main.currentCase.currentLocation=null;
 				Main.inCourt=true;
 				Main.currentCase.inCourt=true;
 				Main.currentCase.oneProc=false;
+				Main.gui.menu=-1;
+				 Main.gui.queue = new Drawable[40];
+				  Main.gui.textQueue = new DrawableText[50];
+				  Main.currentCase.clearSprites();
 				Main.currentCase.insertV(0,0);
 				
+				
 			 
-			} else	 
+			} 
+			
+			else if (command=="playAni") {
+				Main.currentCase.getCharacter(d).play(x, i, u);
+			
+			}
+			
+			else	 
 	if (command=="ce") {
 	
 		Main.currentCase.currentExamine=Main.cExamine[z];
@@ -110,8 +131,9 @@ else if (command=="r") {
 	}
 	
 	
-	  Main.currentCase.queueIndex++;
+			Main.currentCase.eventQueue.remove(0);
 		
+	  Main.currentCase.working=false;
 	}
 	}
 }

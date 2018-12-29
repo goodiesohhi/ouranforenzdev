@@ -14,12 +14,12 @@ public class ClickEvent {
 	int y;
 	int width;
 	int height;
-	ClickEvent(String path,int x, int y, int w, int h,ArrayList<ClickEvent> ce) throws IOException {
+	ClickEvent(String path,int x, int y, int w, int h,ArrayList<ClickEvent> ce,int id) throws IOException {
 		 image= ImageIO.read( Main.class.getResource("/resources/ce/"+path+".png"));
 		 this.x=x;
 		 this.y=y;
 		 height=h;
 		 width=w;
-		 id =  ce.indexOf(this);
+		 this.id =  id;
 	}
 }
