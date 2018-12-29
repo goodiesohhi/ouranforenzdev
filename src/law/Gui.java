@@ -26,6 +26,7 @@ BufferedImage backing = ImageIO.read( Main.class.getResource("/resources/backing
 Drawable[] queue = new Drawable[40];
 DrawableText[] textQueue = new DrawableText[50];
 BufferedImage[] guiElements = new BufferedImage[40];
+boolean inAction;
 
 
 	Gui() throws IOException {
@@ -53,7 +54,7 @@ BufferedImage[] guiElements = new BufferedImage[40];
 		if (show) {
 			 queue[6]=null;
 			
-			if (!Main.currentCase.inDialogue||Main.currentCase.inExamine) {
+			if (!Main.currentCase.inDialogue||(Main.currentCase.inExamine)) {
 		
 			
 			
@@ -309,7 +310,75 @@ BufferedImage[] guiElements = new BufferedImage[40];
 			}
 			
 		
-			
+			if (Main.currentCase.inExamine) {
+				
+				if (inAction) { 
+					
+					for (int i=0;i<6;i++) {
+						 queue[i]=null;
+						
+					}
+					
+					button=4;
+					queue[10]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0);
+					
+				} else {
+				 if (button==4) queue[10]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0);
+				 else queue[10] = new Drawable(guiElements[9],(1028-200)/2,768-100,1,0,0);
+				  if(Main.currentKey!=null) {
+					
+					
+							  if  (Main.keyInt==37) {
+								   if(button==0)button=1;
+								   else
+								
+								   if(button==1)button=0;
+								   else
+								   
+								   if(button==2)button = 3;
+								   else if (button ==4) button=2;
+								   else if (button == 3) button=4;
+							   } else
+					   if(Main.keyInt==39) {
+						   if(button==0)button=1;
+						   else
+						
+						   if(button==1)button=0;
+						   else
+						   
+						   if(button==2)button=3;
+						   else if (button ==3) button=4;
+						   else if (button ==4) button=2;
+					   } else
+					   if(Main.keyInt==38||Main.keyInt==40) {
+						   if(button==0)button=2;
+						   else
+						   if(button==2)button=0;
+						   else
+						   if(button==1)button=3;
+						   else
+						   if(button==3)button=1;
+					   } else 
+						   if(Main.keyInt==90) {
+							   if (button==3||button==2||button==1) {
+							   menu=button;
+							   }
+							   if (button==0) {
+								
+			if (Main.currentCase.inCourt) {
+				inAction=true;
+								   Main.currentCase.currentExamine.statements.get(Main.currentCase.currentExamine.currentStatement).press();
+			} else {
+				
+				menu=button;
+			}
+							
+							   }}
+				  }
+						   }
+				
+				
+			} else {
 			  if(Main.currentKey!=null) {
 				  markerLocation=0;
 				if (button==4&&Main.keyInt!=90) button=0;
@@ -349,7 +418,10 @@ BufferedImage[] guiElements = new BufferedImage[40];
 						   if (button==0) {
 							
 		if (Main.currentCase.inCourt) {
-							   Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].press();
+			button=4;
+			Main.currentKey=null;
+			 Main.dialogue.reset();
+							   Main.currentCase.currentExamine.statements.get(Main.currentCase.currentExamine.currentStatement).press();
 		} else {
 			
 			menu=button;
@@ -357,7 +429,7 @@ BufferedImage[] guiElements = new BufferedImage[40];
 						
 						   }}
 						   
-					   }
+					   }}
 				   }
 			
 				queue[2]= new Drawable(guiElements[1],0,0,1,0,0);

@@ -1,20 +1,22 @@
 package law;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 class CrossExamination {
-	Statements[] statements = new Statements[20];
+	ArrayList<Statements> statements = new ArrayList<Statements>();
 	boolean procced;
-	int sCount;
+	
 	boolean[] flags= new boolean[30];
 	Conditions[] conditions = new Conditions[30];
 	boolean complete=false;
-	
+static 	boolean sentinel;
+	static boolean statementSentinel;
 	
 	
 	int currentStatement;
 	CrossExamination() {
-		sCount=0;
+		
 		currentStatement=0;
 		procced=false;
 		
@@ -22,8 +24,8 @@ class CrossExamination {
 	
 	void add(String i, String speaker, String[] p, String[] s, int x,int y,String anim, int f) {
 		Character c =  Main.currentCase.getCharacter(speaker);
-		statements[sCount]= new Statements(i, c, p, s, x, y,sCount,anim,f);
-		sCount++;
+		statements.add(new Statements(i, c, p, s, x, y,0,anim,f));
+	
 	}
 	boolean metConditions () {
 	
@@ -44,31 +46,42 @@ class CrossExamination {
 	}
 	void update() throws IOException {
 	
-
+System.out.println(statements.toString());
+System.out.println(statements.get(currentStatement).c);
 		if(!procced) { 
-			if (!Main.currentCase.pressed)statements[currentStatement].proc();
+			if (!Main.currentCase.pressed) statements.get(currentStatement).proc();
 			
-			else Main.pressDialogue.insert( Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].presses[ Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].c], Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].speakers[ Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].c]);
+			else Main.pressDialogue.insert(statements.get(currentStatement).presses[ statements.get(currentStatement).c],statements.get(currentStatement).speakers[ statements.get(currentStatement).c]);
 			
 		procced=true;
 		}
 		
 		if (Main.currentCase.pressed) {
-			System.out.println( Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].c);
-			if(!Main.currentCase.inDialogue) {
+			
+			if(!Main.currentCase.inDialogue&&procced) {
 				
 					
 				procced=false;
-				if( Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].c< Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].presses.length-1) {
-		     	 Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].c++;
-		     	System.out.println("hello");
+				
+				if (!sentinel) {
+					sentinel=true;
+				if(statements.get(currentStatement).c< statements.get(currentStatement).presses.length-1) {
+					statements.get(currentStatement).c++;
+		     
 				} else {
-					
+					if(currentStatement<statements.size()-1) {
+						
+						 currentStatement++;
+					} else {
+						
+						currentStatement=0;
+					}
 					 Main.currentCase.pressed=false;
-						System.out.println("byebye");
+					
 				}
 				
 			}
+				}
 		} else {
 		if(!Main.currentCase.inDialogue) {
 			if(metConditions()) {
@@ -79,12 +92,16 @@ class CrossExamination {
 			} else {
 				
 			procced=false;
-			if(currentStatement<sCount-1) {
+			
+			if (!statementSentinel) {
+				statementSentinel=true;
+			if(currentStatement<statements.size()-1) {
 				
 				 currentStatement++;
 			} else {
 				
 				currentStatement=0;
+			}
 			}
 			}
 		}

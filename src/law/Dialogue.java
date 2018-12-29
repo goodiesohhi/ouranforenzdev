@@ -20,7 +20,9 @@ class Dialogue {
  }
  
  void play() {
-	
+	if (Main.currentCase.inExamine&&!Main.currentCase.pressed) {
+		Main.gui.inAction=false;
+	}
 
    if(text!=null) {
 	   Main.currentCase.inDialogue=true;
@@ -48,6 +50,8 @@ class Dialogue {
 		 	      
 		    if(Main.currentKey!=null&&Main.gui.button==4) {
 		    if(Main.keyInt==90) {
+		    	CrossExamination.statementSentinel=false;
+		    	
 		     
 		     	
 		      if(Main.renderer.textQueue[10].frame<=Main.renderer.textQueue[10].current.length()-1) {
@@ -83,7 +87,7 @@ class Dialogue {
 	   //}
 		
  if(text!=null) { 
-	 System.out.println(Main.currentCase.currentExamine.statements[Main.currentCase.currentExamine.currentStatement].c+ " statement c");
+	
 	  if (proc) {
 	  Main.renderer.pressQueue[10] = null;
   Main.renderer.pressQueue[10] = new DrawableText(text,Color.WHITE,0,true,0,0,false);
@@ -98,7 +102,8 @@ class Dialogue {
 	   
 	   System.out.println("yee");
     
-    	
+	   CrossExamination.sentinel=false;
+	  
      if(Main.renderer.pressQueue[10].frame<=Main.renderer.pressQueue[10].current.length()-1) {
     	 System.out.println("EFF ME");
     		if (Main.renderer.pressQueue[10].time%2==0&&Main.renderer.pressQueue[10].typewrite) {

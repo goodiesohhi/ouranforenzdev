@@ -45,8 +45,12 @@ class Case0 extends StoryManager  {
 		 startCExamine(0);
 		 
 		 Main.cExamine[Main.examineSlot].add("Hello", "Nekocchi",  new String[] {"hello 1","hello 2","hello 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, 0,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
 		 Main.cExamine[Main.examineSlot].add("Present Item 50. Not rn not implemented", "Nekocchi",  new String[] {"hello jijs1","hello ksoks2","hello 3kdokd"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
+		 Main.cExamine[Main.examineSlot].add("test1", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
+		 Main.cExamine[Main.examineSlot].add("test2", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
+		 Main.cExamine[Main.examineSlot].add("test3", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
+		 Main.cExamine[Main.examineSlot].add("test4", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
 		 
 		 stopCExamine();
 		 
@@ -130,8 +134,7 @@ class Case0 extends StoryManager  {
 	
 
 
-		    
-		    
+		
 		 
 		 locales[0] = new AreaZeroZero();
 		 locales[1] = new NekochiiBedroom();

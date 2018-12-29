@@ -41,8 +41,9 @@ class Statements {
 		Main.currentCase.currentExamine.conditions[slot] = new Conditions(behaviour, manifest, slot);
 	
 		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, false);
+	
+		Main.dialogue.insert(initial+" # "+Main.cExamine[Main.currentExamine].currentStatement,speaker);
 		
-		Main.dialogue.insert(initial,speaker);
 	
 	}
 	
@@ -50,9 +51,9 @@ class Statements {
 		
 	}
 	void press() {
-		System.out.println("PRESSED!");
+		
 		Main.currentCase.pressed=true;
-		System.out.println(presses.length);
+		
 		
 		
 			

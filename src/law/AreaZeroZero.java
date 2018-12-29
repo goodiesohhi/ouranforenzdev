@@ -23,7 +23,8 @@ public class AreaZeroZero extends Location {
 				
 			 story.insertD("This is a place", "Hello");
 			 flags[0] = true;
-			
+			 Main.currentCase.flags[25]=true;
+			  story.toCourt();
 			
 			 
 			 
