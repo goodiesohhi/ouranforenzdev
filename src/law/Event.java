@@ -74,8 +74,7 @@ class Event {
 
 	//&&Main.currentCase.objected==false
 	void execute() throws IOException {
-		if (Main.currentCase.presented)System.out.println("attempt to execute presentQueue"); else 
-			System.out.println("attempt to execute eventQueue");
+
 		if( (!Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine)||(!Main.currentCase.working&& !Main.currentCase.inDialogue&& Main.currentCase.inExamine&&Main.currentCase.presented)) {
 			
 			if (Main.currentCase.presented)System.out.println(this.command+" command in PresenQueue has been executed"); else 

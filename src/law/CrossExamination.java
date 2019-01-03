@@ -6,7 +6,7 @@ import java.util.ArrayList;
 class CrossExamination {
 	ArrayList<Statements> statements = new ArrayList<Statements>();
 	boolean procced;
-	
+	boolean started=false;
 	boolean[] flags= new boolean[30];
 	ArrayList<Conditions> conditions = new ArrayList<Conditions>();
 	boolean complete=false;
@@ -31,7 +31,7 @@ static 	boolean sentinel;
 	
 		
 		for (Conditions c: conditions ) {
-			System.out.println("codition: " +c.type+ " "+c.data+ " "+ c.passed );
+			System.out.println("codition: " +c.type+ " "+c.presentable+ " "+ c.passed );
 			if(!c.passed) return false;
 		}
 		
@@ -40,7 +40,19 @@ static 	boolean sentinel;
 		
 	}
 	void update() throws IOException {
-	
+		
+		if (!started) {
+			started=true;
+			
+			for (Statements s: this.statements) {
+			if (s.behaviour!=0 )Main.currentCase.currentExamine.conditions.add(new Conditions(s.behaviour, s.objectName)); 
+			}
+		}
+		System.out.println("conditions");
+		for (Conditions c: conditions ) {
+			System.out.println("codition: " +c.type+ " "+c.presentable+ " "+ c.passed );
+			
+		}
 //System.out.println(statements.toString());
 //System.out.println(statements.get(currentStatement).c);
 
@@ -81,7 +93,7 @@ static 	boolean sentinel;
 				}
 		} else {
 		if(!Main.currentCase.inDialogue) {
-			if(metConditions()) {
+			if(metConditions()) {	
 				
 				complete=true;
 				Main.currentCase.currentExamine=null;
@@ -126,12 +138,7 @@ class Conditions {
 	int slot;
 	String presentable;
 	boolean passed;
-	Conditions(int s, int t, int d) {
-		type =t;
-		data=d;
-		passed=false;
-		slot=s;
-	}
+
 	public Conditions(int behaviour, String presentThis) {
 		type =behaviour;
 		presentable=presentThis;

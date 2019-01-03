@@ -51,7 +51,7 @@ class Statements {
 	
 	void proc() throws IOException {
 		
-		Main.currentCase.currentExamine.conditions.add(new Conditions(behaviour, presentThis));
+		
 	
 		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, false);
 	
