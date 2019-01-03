@@ -87,14 +87,17 @@ Main.renderer.queue[0]= new Drawable(graphic,0,0,1,0,0);
 	}
 	
 	void interact (int x,int y) {
-		System.out.println("attempted interaction");
-		System.out.println (x+", "+y);
+		//System.out.println("attempted interaction");
+		//System.out.println (x+", "+y);
 		for (ClickEvent ce: clickEvents) {
-			System.out.println(ce.x+":"+ce.y);
+			//System.out.println(ce.x+":"+ce.y);
 			if ( (x>ce.x)&&(x<ce.x+ce.width)&&(y>ce.y)&&(y<ce.y+ce.height) ) {
-				this.clickedEvents.add(ce.id);
+				
+				if (!ce.unlocked) {this.clickedEvents.add(ce.id);
+				ce.unlocked=true;
 				this.events(ce.id);
-			}
+				}
+				}
 		}
 	}
 	

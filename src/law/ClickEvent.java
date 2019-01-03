@@ -14,6 +14,7 @@ public class ClickEvent {
 	int y;
 	int width;
 	int height;
+	boolean unlocked;
 	ClickEvent(String path,int x, int y, int w, int h,ArrayList<ClickEvent> ce,int id) throws IOException {
 		 image= ImageIO.read( Main.class.getResource("/resources/ce/"+path+".png"));
 		 this.x=x;
@@ -21,5 +22,6 @@ public class ClickEvent {
 		 height=h;
 		 width=w;
 		 this.id =  id;
+		 unlocked=false;
 	}
 }

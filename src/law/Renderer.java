@@ -59,7 +59,7 @@ for (Character c:Main.currentCase.characters) {
 if (Main.currentCase.currentLocation!=null) {
 for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
 	
-		 if(c.image!=null) {
+		 if(c.image!=null&&!c.unlocked) {
 			 g.drawImage(c.image, c.x+camera.x,c.y+camera.y,null);
 			
 		 }
@@ -77,7 +77,7 @@ for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
      for (int i=0; i< textQueue.length;i++) {
  
     	 if(textQueue[i]!=null) { 
-    		// System.out.println(textQueue[i].drawText());
+    		// //System.out.println(textQueue[i].drawText());
     		 
 		 g.setColor(textQueue[i].color);
 		 g.setFont(g.getFont().deriveFont(textQueue[i].size));
@@ -91,7 +91,7 @@ for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
 		 for (int i=0; i< pressQueue.length;i++) {
 			 
 	    	 if(pressQueue[i]!=null) { 
-	    		// System.out.println(textQueue[i].drawText());
+	    		// //System.out.println(textQueue[i].drawText());
 	    		 
 			 g.setColor(pressQueue[i].color);
 			 g.setFont(g.getFont().deriveFont(pressQueue[i].size));

@@ -21,7 +21,7 @@ class Case0 extends StoryManager  {
 
  void update () throws IOException {
 	   
-	    System.out.println ("flags[25]: " + flags[25]);
+	    //System.out.println ("flags[25]: " + flags[25]);
 	 if (flags[25]==true&&!oneProc){
 		 oneProc=true;
 		
@@ -29,39 +29,27 @@ class Case0 extends StoryManager  {
 		 inCourt=true;
 
 
-		 insertD("Hello. Welcome to the the extremely early prototype of Ouron Forenz!", "Ouran Forenz");
-		 
-
-		 insertD("This is a test for text display","oTHER");
-		 
-			 
-		   
-		   
-		  
-		   
-		 insertD("Continue testing","someone else");
-		 insertD("I'm retarded!","Nekocchi");
 	
 		 startCExamine(0);
 		 
-		 Main.cExamine[Main.examineSlot].add("Hello", "Nekocchi",  new String[] {"hello 1","hello 2","hello 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("Present Item 50. Not rn not implemented", "Nekocchi",  new String[] {"hello jijs1","hello ksoks2","hello 3kdokd"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("test1", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("test2", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("test3", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
-		 Main.cExamine[Main.examineSlot].add("test4", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, 0,null,0);
+		 Main.cExamine[Main.examineSlot].add("Hello", "Nekocchi",  new String[] {"hello 1","hello 2","hello 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, null , null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Present Badge", "Nekocchi",  new String[] {"hello jijs1","hello ksoks2","hello 3kdokd"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 2, "Ouran's Attorney's Badge",null,0);
+		 Main.cExamine[Main.examineSlot].add("test1", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("test2", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("test3", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("test4", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
 		 
 		 stopCExamine();
 		 
 		 
 		 
-		 runExamine(0);
+	
 
 		   
 		   
 
-		    
+		/*    
 		    insertD("Yeah B! I'm REAAAAAALL retarded!","Nekocchi?");
 		 
 		 insertD("I'm a dog.","Det. Pat Bluthund");
@@ -70,58 +58,65 @@ class Case0 extends StoryManager  {
 		 
 		 
 
-			   insertV(0,0);
-			  
+			   insertV(0,null);
+			
 			   
 			   
 
-		  
+		  */
 		    
 		    insertD("Court is in session for the murder of common human decency!","Judge Judge");
 		    insertD("Is the defense ready?","Judge Judge");
 		 
 		   
 		   
-				   insertV(1,0);
+				   insertV(1,null);
 
 		    
 		    insertD("Yes, your honor!","Ouran Forenz");
 		  
 		  
-				   insertV(0,0);
+				   insertV(0,null);
 				  
 			 
 			   insertD("Is the prosecution ready?","Judge Judge");
 			  
 
 		 
-		    insertV(2,0);
+		    insertV(2,null);
 			
 		   
 		    insertD("Yes, your honor.","Prosecutor");
 		    
 
-		    insertV(0,0);
+		    insertV(0,null);
 		    insertD("Who is the accused?" ,"Judge Judge");
 		    
-		    insertV(3,113);
+		    insertV(3,"Det. Pat. Bluthund");
+		    playAni("Det. Pat. Bluthund","bluthundWitness",0,true);
+
 		    insertD("I smell a cat....","Det. Pat. Bluthund");
-		    insertV(3,112);
+		    insertV(3,"Nekocchi");
+		    playAni("Nekocchi","nekocchiWitness",0,true);
+			  
 		    insertD("MEEEEE, Ur HonoR!","???");
 		    insertD("And who are you?","Judge Judge");
 		    insertD("My name is Nekocchi","???");
 		    insertD("NYA?","Nekocchi");
-		    insertV(0,0);
+		    
+		    runExamine(0);
+		    
+		    insertV(0,null);
 		    insertD("My verdict is guilty.","Judge Judge");
 		    insertD("And that was the end","God");
 		    insertO(0);
-		    insertV(2,0);
+		    insertV(2,null);
 		    insertD("???","Prosecutor");
-		    insertV(0,0);
+		    insertV(0,null);
 		    insertD("???","Judge Judge");
-		    insertV(1,0);
+		    insertV(1,null);
 		    insertD("The defense insists on a proper trial before a verdict an be determined","Ouran Forenz");
-		    insertV(0,0);
+		    insertV(0,null);
 		    insertD("Objection Overruled","Judge Judge");
 		    insertD("And that was the actual end","God");
 		    
@@ -140,8 +135,8 @@ class Case0 extends StoryManager  {
 		 locales[1] = new NekochiiBedroom();
 		
 		 locales[0].linkPath(locales[1]);
-  
-		 
+   //flags[25]=true;
+		// this.toCourt();
 		 enterArea(0);
 		
 		 

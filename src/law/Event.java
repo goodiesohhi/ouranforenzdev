@@ -1,6 +1,7 @@
 package law;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 class Event {
 	
@@ -60,10 +61,25 @@ class Event {
 		u=b;
 	}
 
+	public Event(String string) {
+		command = string;
+	}
+
+	public Event(String string, int y2, String n2) {
+		command=string;
+		z=y2;
+		x=n2;
+		
+	}
+
 	//&&Main.currentCase.objected==false
 	void execute() throws IOException {
-		 
-		if( !Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine) {
+		if (Main.currentCase.presented)System.out.println("attempt to execute presentQueue"); else 
+			System.out.println("attempt to execute eventQueue");
+		if( (!Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine)||(!Main.currentCase.working&& !Main.currentCase.inDialogue&& Main.currentCase.inExamine&&Main.currentCase.presented)) {
+			
+			if (Main.currentCase.presented)System.out.println(this.command+" command in PresenQueue has been executed"); else 
+				System.out.println(this.command+" command in eventQueue has been executed");
 			Main.currentCase.working=true;
 			if (command=="court") {
 				
@@ -75,15 +91,22 @@ class Event {
 				 Main.gui.queue = new Drawable[40];
 				  Main.gui.textQueue = new DrawableText[50];
 				  Main.currentCase.clearSprites();
-				Main.currentCase.insertV(0,0);
+				Main.currentCase.insertV(0,null);
 				
 				
 			 
-			} 
+			} else if (command=="cls") {
+				 Main.currentCase.clearSprites();
+			}
 			
 			else if (command=="playAni") {
+				Main.currentCase.clearSprites();
 				Main.currentCase.getCharacter(d).play(x, i, u);
 			
+			} else if (command=="switchBack") {
+				Main.currentCase.presentQueue= new ArrayList<Event>();
+			 Main.currentCase.presented=false;
+				
 			}
 			
 			else	 
@@ -91,7 +114,7 @@ class Event {
 	
 		Main.currentCase.currentExamine=Main.cExamine[z];
 		Main.currentCase.inExamine=true;
-		System.out.println("Yes");
+		//System.out.println("Yes");
 	 
 	}	 else
 	if (command=="d") {
@@ -102,7 +125,7 @@ class Event {
 	if (command=="v") {
 		
 		
-		   Main.currentCase.court.switchview(z,n);
+		   Main.currentCase.court.switchview(z,x);
 		
 	} else if (command=="e") {
 		 Main.currentCase.locales[z].enter();
@@ -114,8 +137,11 @@ else if (command=="s") {
 }
 else if (command=="r") {
 	if(u) {
+		
 	Main.currentCase.profiles.add(new RecordEntry(d,x, u,y,i));
 	} else {
+		
+		if (Main.currentCase.findItem(d)==null)
 		Main.currentCase.evidence.add(new RecordEntry(d,x, u,y,i));
 	}
 }
@@ -131,7 +157,9 @@ else if (command=="r") {
 	}
 	
 	
-			Main.currentCase.eventQueue.remove(0);
+			if (Main.currentCase.presented) Main.currentCase.presentQueue.remove(0);
+				else
+				Main.currentCase.eventQueue.remove(0);
 		
 	  Main.currentCase.working=false;
 	}

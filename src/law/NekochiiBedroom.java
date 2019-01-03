@@ -18,7 +18,7 @@ public class NekochiiBedroom extends Location {
 			 if (!flags[0]){
 					
 				 story.insertD("This is a place", "Hello");
-				story.playAni("Nekocchi","nekocchiWitness",2,true);
+				story.playAni("Nekocchi","nekocchiWitness",1,true);
 				
 				 story.insertD("Hey! Ouran","Nekocchi");
 				 story.insertD("Welcome to my crypt","Nekocchi");
@@ -34,7 +34,7 @@ public class NekochiiBedroom extends Location {
 				 
 				 
 			 } else {
-				 story.playAni("Nekocchi","nekocchiWitness",2,true);
+				 story.playAni("Nekocchi","nekocchiWitness",1,true);
 			 }
 			 
 			 
@@ -69,8 +69,10 @@ public class NekochiiBedroom extends Location {
 				story.insertD("I'm going to vore....", "Nekocchi"); 
 				story.insertD("YOUR HORSE LEGS!", "Nekocchi"); 
 				story.insertD("UwUwUwUwUwUWWUWUSUSHDBJSKJHDNJSDKNSDJ", "Nekocchi");
+				if(story.findItem("Ouran's Attorney's Badge")!=null)  this.addQuestion(new Question(99, "Lets head to court", true));
+				else story.insertD("You need your badge to goto court. Duh. Nya.", "Nekocchi"); 
 				
-				 this.addQuestion(new Question(99, "Lets head to court", true));
+				 
 			}
 			if (i==99) {
 				Main.currentCase.flags[25]=true;

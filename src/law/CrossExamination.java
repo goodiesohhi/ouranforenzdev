@@ -8,7 +8,7 @@ class CrossExamination {
 	boolean procced;
 	
 	boolean[] flags= new boolean[30];
-	Conditions[] conditions = new Conditions[30];
+	ArrayList<Conditions> conditions = new ArrayList<Conditions>();
 	boolean complete=false;
 static 	boolean sentinel;
 	static boolean statementSentinel;
@@ -22,32 +22,29 @@ static 	boolean sentinel;
 		
 	}
 	
-	void add(String i, String speaker, String[] p, String[] s, int x,int y,String anim, int f) {
+	void add(String i, String speaker, String[] p, String[] s, int x,String o,String anim, int f) {
 		Character c =  Main.currentCase.getCharacter(speaker);
-		statements.add(new Statements(i, c, p, s, x, y,0,anim,f));
+		statements.add(new Statements(i, c, p, s, x,o,anim,f));
 	
 	}
 	boolean metConditions () {
 	
 		
-		int conditionsLength=0;
-		for (int i=0; i<conditions.length;i++) {
-			if (conditions[i]!=null) conditionsLength++;
-		}
-		
-		for (int i=0; i<conditionsLength;i++) {
-			
-			if(!flags[conditions[i].slot]) return false;
+		for (Conditions c: conditions ) {
+			System.out.println("codition: " +c.type+ " "+c.data+ " "+ c.passed );
+			if(!c.passed) return false;
 		}
 		
 		
-		return false;
+		return true;
 		
 	}
 	void update() throws IOException {
 	
-System.out.println(statements.toString());
-System.out.println(statements.get(currentStatement).c);
+//System.out.println(statements.toString());
+//System.out.println(statements.get(currentStatement).c);
+
+		if (!Main.currentCase.presented) {
 		if(!procced) { 
 			if (!Main.currentCase.pressed) statements.get(currentStatement).proc();
 			
@@ -106,6 +103,16 @@ System.out.println(statements.get(currentStatement).c);
 			}
 		}
 		}
+		}
+	}
+
+	public void passCondition(int i) {
+		for (Conditions c: conditions ) {
+			if (!c.passed && c.type==i) {
+				c.passed=true;
+				break;
+			}
+		}
 		
 	}
 	
@@ -117,9 +124,17 @@ class Conditions {
 	int type;
 	int data;
 	int slot;
+	String presentable;
+	boolean passed;
 	Conditions(int s, int t, int d) {
 		type =t;
 		data=d;
+		passed=false;
 		slot=s;
+	}
+	public Conditions(int behaviour, String presentThis) {
+		type =behaviour;
+		presentable=presentThis;
+		passed=false;
 	}
 }

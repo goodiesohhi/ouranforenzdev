@@ -17,7 +17,7 @@ public class Court {
 	}
 	
 	
-	void switchview (int x,	int y) throws IOException {
+	void switchview (int x,	String y) throws IOException {
 Main.renderer.clear();
 	if(x==0) {
 		Main.renderer.queue[0]= new Drawable(10,0,0,1,0,0);
@@ -37,7 +37,7 @@ Main.renderer.clear();
 	}	
 	if(x==3) {
 		Main.renderer.queue[0]= new Drawable(13,0,0,1,0,0);
-		Main.renderer.queue[1]= new Drawable(y, 150,188,1,0,1);
+		if (Main.currentCase.getCharacter(y)==null) Main.currentCase.characters.add(new Character(y, 100, 135));
 	}	
 	}
 	

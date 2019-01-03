@@ -61,14 +61,23 @@ class Animation {
 	Animation(String p, int f, Character chara) throws IOException {
 		parent=chara;
 		sprites = new ArrayList<BufferedImage>();
-		/*for (int i=0;i<f;i++)
-		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/"+path+"_"+f+".png")));
+		frames=f;
+		System.out.println(f);
+		if (f>1) {
+		for (int i=0;i<f;i++) {
+			//System.out.println("/resources/anim/"+p+"_"+i+".png");
+		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/"+p+"_"+i+".png")));
+		}
+		} else {
+			//System.out.println("/resources/anim/"+p+".png");
+			sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/"+p+".png")));
+		}
 	
-	}*/
-		
-		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/nekocchiWitness_0.png"))); 
-		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/nekocchiWitness_1.png")));
 	}
+		
+		 //sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/nekocchiWitness_0.png"))); 
+		// sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/nekocchiWitness_1.png")));
+	
 			
 	
 	BufferedImage draw() {
@@ -78,7 +87,7 @@ class Animation {
 void update() {
 	if (playing) {
 		
-		System.out.println("PLAYING"+time);
+		//System.out.println("PLAYING"+time);
 		if (time>=0)time++;
 		if (time>=0) currentFrame= (int)time/10;
 		

@@ -12,6 +12,7 @@ import java.util.Arrays;
 
 
 class StoryManager {
+	boolean presented;
 	ArrayList<Character> characters = new ArrayList<Character>();
 	Location currentLocation;
     boolean invest;
@@ -28,7 +29,8 @@ class StoryManager {
  boolean textBox=true;
  boolean start =true;
  boolean block = true;
- ArrayList<Event>eventQueue = new ArrayList<Event>(); ;
+ ArrayList<Event>eventQueue = new ArrayList<Event>(); 
+ ArrayList<Event>presentQueue = new ArrayList<Event>(); 
  boolean working;
  int queueIndex = 0;
  int queueSize = 0;
@@ -50,6 +52,7 @@ boolean  inCourt=true;
  
  boolean inDialogue = false;
 public boolean pressed = false;
+public Character currentChar;
  public Character getCharacter(String x) {
 	 
 	 int len=characters.size();
@@ -63,18 +66,27 @@ public boolean pressed = false;
  public StoryManager() throws IOException  {
 
 	 court= new Court();
+	 currentChar=court.defense;
 	 somewhere=false;
-  
+    
   
   
  }
  
   void update() throws IOException {
-System.out.println(eventQueue.toString());
+//System.out.println(eventQueue.toString());
 	  try {
 			if (!eventQueue.isEmpty()) {
+				if (!presented) {
 			 eventQueue.get(0).execute();
-			 
+				}
+			 }
+			if (!presentQueue.isEmpty()) {
+				
+				if (presented) {
+					
+			 presentQueue.get(0).execute();
+				}
 			 }
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -101,19 +113,19 @@ System.out.println(eventQueue.toString());
   }
   void runExamine(int z) {
 	  
-	  Main.currentCase.eventQueue.add(new Event("ce",z)) ;  
+	  Main.currentCase.addEvent(new Event("ce",z)) ;  
 		queueSize++;
   }
   void insertD(String x,String y) {
 	 
-	  Main.currentCase.eventQueue.add(new Event("d", x,y))  ;  
+	  Main.currentCase.addEvent(new Event("d", x,y))  ;  
 	queueSize++;
 	
 	 }
   
   void toCourt() {
 		 
-	  Main.currentCase.eventQueue.add(new Event("court",0,0));  
+	  Main.currentCase.addEvent(new Event("court",0,0));  
 	queueSize++;
 	
 	 }
@@ -138,33 +150,37 @@ System.out.println(eventQueue.toString());
 	  
   }
 
-  void insertV(int y,int n) {
-	  Main.currentCase.eventQueue.add( new Event("v", y,n)) ;  
+  void insertV(int y,String n) {
+	  Main.currentCase.addEvent( new Event("v", y,n)) ;  
 		queueSize++;
 		
 		 }
   
   void enterArea(int y) {
-	  Main.currentCase.eventQueue.add(new Event("e",y));  
+	  Main.currentCase.addEvent(new Event("e",y));  
 		queueSize++;
 		
 		 }
-  
+  void cls() {
+	  Main.currentCase.addEvent(new Event("cls"));  
+		queueSize++;
+		
+		 }
   void show(int z,int x,int y) {
-	  Main.currentCase.eventQueue.add( new Event("s",z,x,y));  
+	  Main.currentCase.addEvent( new Event("s",z,x,y));  
 		queueSize++;
 		
 		 }  
  
   
   void insertO(int y) {
-	  Main.currentCase.eventQueue.add(new Event("o", y)) ;  
+	  Main.currentCase.addEvent(new Event("o", y)) ;  
 		queueSize++;
 		
 		 }
 
   void insertR(String n,String x,String z, Boolean u,int i) {
-	  Main.currentCase.eventQueue.add( new Event("r",n,x,z,u,i))  ;  
+	  Main.currentCase.addEvent( new Event("r",n,x,z,u,i))  ;  
 		queueSize++;
 		
 		 }
@@ -176,14 +192,21 @@ public void clearSprites() {
 	for (Character c:characters) {
 		c.clear();
 	}
-	System.out.println("SOVIET NAZIS!!!!!");
-	Main.renderer.queue=new Drawable[95];
+	//System.out.println("SOVIET NAZIS!!!!!");
+	
 }
 public void playAni(String string, String string2, int i, boolean b) {
-	 Main.currentCase.eventQueue.add( new Event("playAni", string,string2,i,b))  ;  
+	 Main.currentCase.addEvent( new Event("playAni", string,string2,i,b))  ;  
 	queueSize++;
 	
 	 }
+public void addEvent(Event event) {
+	if (presented) {
+	Main.currentCase.presentQueue.add(event);
+	} else {
+		Main.currentCase.eventQueue.add(event);
+	}
+}
 public void checkInteract() {
 
 	
@@ -195,6 +218,10 @@ public RecordEntry findItem(String name) {
 		
 	}
 	return null;
+}
+public void switchBackToEventQueue() {
+	Main.currentCase.addEvent(new Event("switchBack"));
+	
 }
 
 	

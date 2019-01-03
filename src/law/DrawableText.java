@@ -64,20 +64,20 @@ class DrawableText extends Drawable {
 			loop++;
 		}
 		
-		System.out.println("time " + time);
+		//System.out.println("time " + time);
 
-		System.out.println("tw " + typewrite);
+		//System.out.println("tw " + typewrite);
 		if (time%1==0&&typewrite) {
 			  if (!start) {
 			    	start=true;
 			    	frame=0;
 			    }
-			System.out.println(this.frame + " / "+(current.length()-1));
+			//System.out.println(this.frame + " / "+(current.length()-1));
 
 			if(this.frame<current.length()) {
-				System.out.println(frame+" frames");
+				//System.out.println(frame+" frames");
 				this.frame++;
-				System.out.println(current.substring(0, frame));
+				//System.out.println(current.substring(0, frame));
 			}
 		}
 		
@@ -99,7 +99,7 @@ class DrawableText extends Drawable {
 		} else {
 			if (frame>current.length())  frame=current.length()-1;
 			
-			System.out.println(frame);
+			//System.out.println(frame);
 		return  current.substring(0, frame);
 		}
 		

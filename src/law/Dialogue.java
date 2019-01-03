@@ -39,6 +39,7 @@ class Dialogue {
    if (t==0) {
 		
 	   if(text!=null) { 
+		  
 		   if (proc) {
 		 	  Main.renderer.textQueue[10] = null;
 		   Main.renderer.textQueue[10] = new DrawableText(text,Color.WHITE,0,true,0,0,false);
@@ -83,7 +84,7 @@ class Dialogue {
 
 	   
 	 //  for (int i=0; i<Main.renderer.pressQueue.length;i++) {
-		// if (Main.renderer.pressQueue[i]!=null)  System.out.println(Main.renderer.pressQueue[i].text);  
+		// if (Main.renderer.pressQueue[i]!=null)  //System.out.println(Main.renderer.pressQueue[i].text);  
 	   //}
 		
  if(text!=null) { 
@@ -100,14 +101,14 @@ class Dialogue {
    if(Main.currentKey!=null&&Main.gui.button==4) {
    if(Main.keyInt==90) {
 	   
-	   System.out.println("yee");
+	   //System.out.println("yee");
     
 	   CrossExamination.sentinel=false;
 	  
      if(Main.renderer.pressQueue[10].frame<=Main.renderer.pressQueue[10].current.length()-1) {
-    	 System.out.println("EFF ME");
+    	 //System.out.println("EFF ME");
     		if (Main.renderer.pressQueue[10].time%2==0&&Main.renderer.pressQueue[10].typewrite) {
-    			 System.out.println("EFF ME 2");
+    			 //System.out.println("EFF ME 2");
     			if(Main.renderer.pressQueue[10].frame<Main.renderer.pressQueue[10].current.length()) {
     				if (Main.renderer.pressQueue[10].frame<Main.renderer.pressQueue[10].current.length())
     					
@@ -139,7 +140,7 @@ class Dialogue {
  
  }
  void reset() {
-   
+	 proc =true;
   text = null;
   speaker = null;
   if (t==0) {
@@ -148,7 +149,7 @@ class Dialogue {
      Main.renderer.textQueue[9] = null;
   } else {
 	  
-	  System.out.println("HEY!!!!SSS");
+	  //System.out.println("HEY!!!!SSS");
 	  Main.currentCase.inDialogue=false;
 	    Main.renderer.pressQueue[10] =null;
 	     Main.renderer.pressQueue[9] = null;

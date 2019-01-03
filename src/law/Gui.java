@@ -54,7 +54,7 @@ boolean inAction;
 		if (show) {
 			 queue[6]=null;
 			
-			if (!Main.currentCase.inDialogue||(Main.currentCase.inExamine)) {
+			if (!Main.currentCase.inDialogue||(Main.currentCase.inExamine&&!Main.currentCase.presented)) {
 		
 			
 			
@@ -174,7 +174,78 @@ boolean inAction;
 		   }
 					   }
 				  
+			} else
+				  
+			if (menu==1&&Main.currentCase.inCourt) {
+				 queue[35]= new Drawable(scroller,800,100+evidenceOffset*30*(Main.currentCase.evidence.size()+3/3)-15,1,0,0);
+				queue[0]= new Drawable(guiElements[0],10,10,1,0,0);
+				queue[31]= new Drawable(marker,200-5,125	-5,1,0,0);
+				queue[1]= new Drawable(backing,200-5-50,125	-35,1,0,0);
+				for (int i=0;i<3;i++) {
+					
+					if (!Main.currentCase.evidence.isEmpty()) {
+					if(i<Main.currentCase.evidence.size()) {
+						
+						if (i+evidenceOffset<Main.currentCase.evidence.size())guiElements[20+i]=Main.currentCase.evidence.get(i+evidenceOffset).image; 
+						else guiElements[20+i]=empty;
+						queue[20+i]= new Drawable(guiElements[20+i],200,125+i*120,1,0,0);
+					}
+					else {
+						queue[20+i] =   new Drawable(empty,200,125+i*120,1,0,0);
+					}
+					}
+					
+				}
+				
+				if (evidenceOffset<Main.currentCase.evidence.size()) 
+				
+				textQueue[10] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).name,Color.WHITE,35.0f,true,0,0,false);
+				else
+					textQueue[10] =  new DrawableText("EMPTY",Color.WHITE,35.0f,true,0,0,false);
+				textQueue[10].x=325;
+				textQueue[10].y=200;
+				
+				if (evidenceOffset<Main.currentCase.evidence.size()) 
+					
+					textQueue[11] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).desc,Color.WHITE,15.0f,true,0,0,false);
+					else
+						textQueue[11] =  new DrawableText("EMPTY",Color.WHITE,15.0f,true,0,0,false);
+					textQueue[11].x=325;
+					textQueue[11].y=250;
+
+//System.out.println(evidenceOffset);
+			      
+			       
+				  if(Main.currentKey!=null) {
+				
+					   if(Main.keyInt==38) {
+						   if (evidenceOffset!=0)
+					evidenceOffset--;
+					   } else if (Main.keyInt==40) {
+						   if (evidenceOffset!=Main.currentCase.evidence.size()+5) evidenceOffset++;
+					   }else
+						   if(Main.keyInt==90) {
+							   if (evidenceOffset<Main.currentCase.evidence.size())
+							if (  Main.currentCase.evidence.get(evidenceOffset)!=null)  {
+								System.out.println("phase1");
+								Main.currentCase.currentExamine.statements.get(Main.currentCase.currentExamine.currentStatement).present(Main.currentCase.evidence.get(evidenceOffset));
+								 queue = new Drawable[40];
+								  textQueue = new DrawableText[50];
+								this.menu=-1;
+							}
+							   				   
+						   }
+						   else  if(Main.keyInt==KeyEvent.VK_X) {
+							 
+							   menu=-1;
+							 queue = new Drawable[40];
+							  textQueue = new DrawableText[50];
+			   				   
+		   }
+					   }
+				  
 			}
+
 		/*	else if (menu==4) {
 				textQueue = new DrawableText[50];
 				 guiElements = new BufferedImage[40];
@@ -360,9 +431,21 @@ boolean inAction;
 						   if(button==3)button=1;
 					   } else 
 						   if(Main.keyInt==90) {
-							   if (button==3||button==2||button==1) {
+							   if (button==3||button==2) {
 							   menu=button;
-							   }
+							   } else if (button ==1) {
+								   System.out.println("yolo");
+								   if (!Main.currentCase.inCourt) {
+									 
+									  if (Main.currentCase.currentLocation.questions.isEmpty()) {
+										  Main.currentCase.insertD("Umm.. Talk to who?", Main.currentCase.currentChar.name);
+									  } else {
+										  menu=1;
+									  }
+								   }else {
+									   menu=1;
+								   }
+							   } else
 							   if (button==0) {
 								
 			if (Main.currentCase.inCourt) {
@@ -412,9 +495,21 @@ boolean inAction;
 					   if(button==3)button=1;
 				   } else 
 					   if(Main.keyInt==90) {
-						   if (button==3||button==2||button==1) {
-						   menu=button;
-						   }
+						   if (button==3||button==2) {
+							   menu=button;
+							   } else if (button ==1) {
+								   System.out.println("yolo");
+								   if (!Main.currentCase.inCourt) {
+									 
+									  if (Main.currentCase.currentLocation.questions.isEmpty()) {
+										  Main.currentCase.insertD("Umm.. Talk to who?", Main.currentCase.currentChar.name);
+									  } else {
+										  menu=1;
+									  }
+								   }else {
+									   menu=1;
+								   }
+							   } else
 						   if (button==0) {
 							
 		if (Main.currentCase.inCourt) {

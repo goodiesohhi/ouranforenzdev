@@ -28,7 +28,7 @@ class StoryManager {
 	 void update() {
 		if(start) {
 			
-			System.out.println("no case loaded");
+			//System.out.println("no case loaded");
 		}
 		
 		

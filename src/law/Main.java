@@ -187,7 +187,7 @@ public class Main extends JFrame{
     		
     		currentCase.update();
     		gui.update();
-    		//System.out.println(currentCase.eventQueue.length);
+    		////System.out.println(currentCase.eventQueue.length);
     		
     		
     	}
@@ -226,7 +226,7 @@ public class Main extends JFrame{
 	void initPanel() {
 		   backBuffer = new BufferedImage(1024, 768,   BufferedImage.TYPE_INT_RGB); 
 		      
-        System.out.println("running.");
+        //System.out.println("running.");
         
         setSize(windowWidth, windowHeight); 
         setResizable(false); 
@@ -258,7 +258,7 @@ public class Main extends JFrame{
 	public void keyReleased(KeyEvent e) {
 		Main.currentKey= e;
 		Main.pressingKey= null;
-		System.out.println("keyReleased="+e.getKeyCode());
+		//System.out.println("keyReleased="+e.getKeyCode());
 	}
 }
 
