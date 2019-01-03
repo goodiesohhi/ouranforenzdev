@@ -22,6 +22,8 @@ int y=250;
 BufferedImage empty = ImageIO.read( Main.class.getResource("/resources/empty.png"));
 BufferedImage marker = ImageIO.read( Main.class.getResource("/resources/marker.png"));
 BufferedImage scroller = ImageIO.read( Main.class.getResource("/resources/scroller.png"));
+BufferedImage mag = ImageIO.read( Main.class.getResource("/resources/mag.png"));
+BufferedImage highlight = ImageIO.read( Main.class.getResource("/resources/highlight.png"));
 BufferedImage backing = ImageIO.read( Main.class.getResource("/resources/backing.png"));
 Drawable[] queue = new Drawable[40];
 DrawableText[] textQueue = new DrawableText[50];
@@ -295,7 +297,7 @@ boolean inAction;
 							   
 						   }
 				  if (!story.inDialogue) {
-				queue[31]= new Drawable(marker,200-5,500+this.markerLocation*50,1,0,0);
+				queue[31]= new Drawable(highlight,200+75,400+this.markerLocation*50,1,0,0);
 				  } else {
 				
 				  }
@@ -304,7 +306,7 @@ boolean inAction;
 			else if (menu == 0) {
 				if (!Main.currentCase.inCourt) {
 		
-				queue[10] = new Drawable (marker, x-55, y-55, 1, 0, 0) ;
+				queue[10] = new Drawable (mag, x-55, y-55, 1, 0, 0) ;
 				//queue[11] = new Drawable (marker, x-55, y-55, 1, 0, 0) ;
 				
 				

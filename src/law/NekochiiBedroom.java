@@ -76,6 +76,8 @@ public class NekochiiBedroom extends Location {
 			}
 			if (i==99) {
 				Main.currentCase.flags[25]=true;
+				story.insertD("Let's upgrade your badge", "Nekocchi");
+				story.insertR( "Ouran's Attorney's Badge","badge","My badge (Upgraded)", false,0);
 				story.insertD("Off to court!", "Nekocchi");
 				   story.toCourt();
 			}

@@ -139,9 +139,17 @@ else if (command=="r") {
 		
 	Main.currentCase.profiles.add(new RecordEntry(d,x, u,y,i));
 	} else {
-		
-		if (Main.currentCase.findItem(d)==null)
+		RecordEntry r = Main.currentCase.findItem(d);
+		if (r==null) { 
 		Main.currentCase.evidence.add(new RecordEntry(d,x, u,y,i));
+		}
+		else  {
+			int index = Main.currentCase.evidence.indexOf(r);
+			Main.currentCase.evidence.remove(r);
+			r = new RecordEntry(d,x, u,y,i);
+			Main.currentCase.evidence.add(index, r);
+			System.out.println("r is: "+r);
+		}
 	}
 }
 	
