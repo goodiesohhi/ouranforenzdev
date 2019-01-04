@@ -56,6 +56,16 @@ for (Character c:Main.currentCase.characters) {
 		 }
 		
 	 }
+
+
+for (Character c: Main.currentCase.court.characters) {
+
+	 if(c.drawn!=null) {
+		 g.drawImage(c.drawn.imagez,c.drawn.x+camera.x,c.drawn.y+camera.y,null);
+		
+	 }
+	
+}
 if (Main.currentCase.currentLocation!=null) {
 for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
 	

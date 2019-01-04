@@ -153,13 +153,24 @@ else if (command=="r") {
 			System.out.println("r is: "+r);
 		}
 	}
+} else if (command=="ro") {
+		
+	Main.currentCase.court.defObject= new Character("Defense Objection",-200,135);
+	Main.currentCase.court.prosObject=new Character("Prosecution Objection",0,200);
+	Main.currentCase.motionTrack=null;
+	Main.currentCase.court.characters = new ArrayList<Character>();
+	Main.currentCase.court.characters.add(	Main.currentCase.court.defObject);
+	
+	Main.currentCase.court.characters.add(	Main.currentCase.court.prosObject);
+	System.out.println("clear object");
+	
 }
 	
 	else if (command=="o") {
 		if( z==0) { 
 			
 			Main.currentCase.motionTrack = 	Main.currentCase.court.defObject;
-	Main.currentCase.motionTrack.moveBy(400, 0,5);
+	Main.currentCase.motionTrack.moveBy(400, 0,20);
 	Main.currentCase.motionTrack.play("objection", 0, false);
 
 		}

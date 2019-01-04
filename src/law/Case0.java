@@ -115,6 +115,7 @@ class Case0 extends StoryManager  {
 		    insertV(0,null);
 		    insertD("???","Judge Judge");
 		    insertV(1,null);
+		    removeO();
 		    insertD("The defense insists on a proper trial before a verdict an be determined","Ouran Forenz");
 		    insertV(0,null);
 		    insertD("Objection Overruled","Judge Judge");
