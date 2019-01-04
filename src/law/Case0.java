@@ -93,11 +93,11 @@ class Case0 extends StoryManager  {
 		    insertD("Who is the accused?" ,"Judge Judge");
 		    
 		    insertV(3,"Det. Pat. Bluthund");
-		    playAni("Det. Pat. Bluthund","bluthundWitness",0,true);
+		    playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 
 		    insertD("I smell a cat....","Det. Pat. Bluthund");
 		    insertV(3,"Nekocchi");
-		    playAni("Nekocchi","nekocchiWitness",0,true);
+		    playAni("Nekocchi","nekocchiWitness",0,false);
 			  
 		    insertD("MEEEEE, Ur HonoR!","???");
 		    insertD("And who are you?","Judge Judge");

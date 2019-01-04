@@ -14,14 +14,23 @@ public class Character {
 	int x;
 	int y;
 	int width;
+	int dx;
+	int dy;
+	int originX;
+	int originY;
+	
 	int height;
 	Drawable drawn;
 	boolean show;
+	private int speed;
 	Character(String n,int x, int y) throws IOException {
 		
 		 this.x=x;
 		 this.y=y;
-	
+		 this.dx=this.x;
+		 this.dy=this.y;
+	     originY=this.y;
+	     originX=this.x;
 		 name=n;
 		
 	}
@@ -29,6 +38,29 @@ public class Character {
 	void setVisible(boolean b) {
 		show=b;
 		
+	}
+	
+	void moveTo (int x, int y) {
+		this.dx=x;
+		this.dy=y;
+		
+	}
+	
+	void moveBy (int x, int y, int i) {
+		this.dx+=x;
+		this.dy+=y;
+		this.speed=i;
+		
+	}
+	
+	void resetPos() {
+		this.x=this.originX;
+		this.y=this.originY;
+	}
+	
+	void resetMove() {
+		this.dx=this.originX;
+		this.dy=this.originY;
 	}
 	
 	void play(String path, int f, boolean loop) throws IOException {
@@ -45,6 +77,12 @@ public class Character {
 	
 	void update () {
 		if (this.animation!=null)this.animation.update();
+		if(this.dx>x) x+=speed;
+	    if(this.dx<x)x-=speed;
+	    if (this.dy>y)y+=speed;
+	    if(this.dy<y)y-=speed;
+	    
+	
 	}
 	
 }
@@ -56,6 +94,7 @@ class Animation {
 	Character parent;
 	boolean playing;
 	boolean loop;
+	boolean resetOnce;
 	ArrayList<BufferedImage> sprites;
 	String path;
 	Animation(String p, int f, Character chara) throws IOException {
@@ -87,6 +126,14 @@ class Animation {
 void update() {
 	if (playing) {
 		
+		if (!resetOnce) {
+			if (frames==0||frames==1) {
+			resetOnce=true;
+			if (this.parent!=Main.currentCase.motionTrack)Main.currentCase.working=false;
+			
+			}
+		}
+		
 		//System.out.println("PLAYING"+time);
 		if (time>=0)time++;
 		if (time>=0) currentFrame= (int)time/10;
@@ -98,6 +145,11 @@ void update() {
 			} else {
 				time= -1;
 				currentFrame=currentFrame-1;
+				if (!resetOnce) {
+					resetOnce=true;
+					System.out.println("NO1");
+					Main.currentCase.working=false;
+				}
 				
 			}
 		}

@@ -9,6 +9,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 class Gui  {
+static boolean inChat;
 int evidenceOffset=0;
 int profileOffset=0;
 int menu = -1;	
@@ -259,18 +260,24 @@ boolean inAction;
 				Question[] shown = new Question[20];
 				StoryManager story = Main.currentCase;
 				int i=0;
-				if (!story.inDialogue) {
+				
 				for (Question q: story.currentLocation.questions ) {
 					if (q.unlocked) {
 					shown[i]=q;
+					
+					if (!Gui.inChat) {
 					if (q.asked) textQueue[20+i] = new DrawableText(q.question,Color.GRAY,25.0f,true,0,0,false);
 					else  textQueue[20+i] = new DrawableText(q.question,Color.WHITE,25.0f,true,0,0,false);
 					textQueue[20+i].x=300;
 					textQueue[20+i].y=500+i*50;
+					
+					} else {
+						 textQueue[20+i] = null;
+					}
 					i++;
 					}
 				}
-				}
+				
 				
 				  if(Main.currentKey!=null) {
 					 
@@ -284,22 +291,24 @@ boolean inAction;
 						   if(Main.keyInt==90) {
 								 queue = new Drawable[40];
 								  textQueue = new DrawableText[50];
+								  Gui.inChat=true;
 							   Main.currentCase.currentLocation.talk(shown[markerLocation].id);
 							   
 						}
 						   else  if(Main.keyInt==KeyEvent.VK_X) {
 								 
+							   queue = new Drawable[40];
+								  textQueue = new DrawableText[50];
 							   menu=-1;
-							 queue = new Drawable[40];
-							  textQueue = new DrawableText[50];
+								
 			   				   
 		   }
 							   
 						   }
-				  if (!story.inDialogue) {
+				  if (!Gui.inChat) {
 				queue[31]= new Drawable(highlight,200+75,400+this.markerLocation*50,1,0,0);
 				  } else {
-				
+				queue[31]=null;
 				  }
 			}
 			}
@@ -336,10 +345,10 @@ boolean inAction;
 				}
 				 
 				   else  if(Main.keyInt==KeyEvent.VK_X) {
-						 
+					   queue = new Drawable[40];
+						  textQueue = new DrawableText[50];
 					   menu=-1;
-					 queue = new Drawable[40];
-					  textQueue = new DrawableText[50];
+						
 	   				   
    }
 							   

@@ -166,7 +166,7 @@ public class Main extends JFrame{
     	if (count>=1) {
     		  if(Main.currentKey!=null) {
     			   if(Main.currentKey.getKeyCode()==90) {
-    		renderer.camera.speed=50;
+    		renderer.camera.speed=50; 
     		renderer.camera.pan(1100,0);
     			   }
     		  }

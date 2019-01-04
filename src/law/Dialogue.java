@@ -143,6 +143,7 @@ class Dialogue {
 	 proc =true;
   text = null;
   speaker = null;
+  
   if (t==0) {
   Main.currentCase.inDialogue=false;
     Main.renderer.textQueue[10] =null;

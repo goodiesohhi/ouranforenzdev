@@ -1,6 +1,7 @@
 package law;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Court {
 	Character defense;
@@ -9,13 +10,22 @@ public class Court {
 	Character witness;
 	Character defCounsel;
 	Character prosCounsel;
+	Character defObject;
+	Character prosObject;
+	ArrayList <Character>characters = new ArrayList<Character>();
 	public Court() throws IOException {
 		
-		defense=new Character("Ouran Forenz", 0, 0);
 		
+		defObject = new Character("Defense Objection",-200,135);
+	defense=new Character("Ouran Forenz", 100, 135);
+		prosObject = new Character("Prosecution Objection",0,200);
+		
+		characters.add(defObject);
+		characters.add(defense);
+		characters.add(prosObject);
 		
 	}
-	
+
 	
 	void switchview (int x,	String y) throws IOException {
 Main.renderer.clear();
@@ -45,6 +55,19 @@ Main.renderer.clear();
 		Main.inCourt = true;
 	} 
 	
+	void update () {
+		if(Main.currentCase.inCourt) {
+			
+			if (defense!=null)defense.update();
+			if (prosecution!=null) prosecution.update();
+			if (this.judge!=null )judge.update();
+			if (this.witness!=null )		witness.update();
+			if (defCounsel!=null )defCounsel.update();
+			if (prosCounsel!=null )	prosCounsel.update();
+			if (defObject!=null )	defObject.update();
+			if (prosObject!=null )	prosObject.update();
+		}
+	}
 	
 	
 }

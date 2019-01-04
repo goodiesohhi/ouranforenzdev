@@ -35,6 +35,7 @@ class StoryManager {
  int queueIndex = 0;
  int queueSize = 0;
  int witness = 0;
+ Character motionTrack;
  CrossExamination currentExamine;
  //ints to track progression and regulate flow of events
  int benchmark =0;
@@ -75,6 +76,20 @@ public Character currentChar;
  
   void update() throws IOException {
 //System.out.println(eventQueue.toString());
+	  court.update();
+	  if (Main.currentCase.eventQueue.size()>=1) {
+			if (!Main.currentCase.eventQueue.get(0).command.equals("d")) Gui.inChat =false;
+		} else {
+			Gui.inChat =false;
+		}
+	  
+	  if (motionTrack!=null&&Main.currentCase.working) {
+		  System.out.println(motionTrack.x+"/"+motionTrack.dx);
+		  if(Math.abs((double)(motionTrack.dx-motionTrack.x))<10&&Math.abs((double)(motionTrack.dy-motionTrack.y))<10) {
+			  Main.currentCase.working=false;
+			 motionTrack.resetPos();
+		  }
+	  }
 	  try {
 			if (!eventQueue.isEmpty()) {
 				if (!presented) {

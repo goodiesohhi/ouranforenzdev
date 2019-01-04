@@ -74,6 +74,8 @@ class Event {
 
 	//&&Main.currentCase.objected==false
 	void execute() throws IOException {
+		
+		
 
 		if( (!Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine)||(!Main.currentCase.working&& !Main.currentCase.inDialogue&& Main.currentCase.inExamine&&Main.currentCase.presented)) {
 			
@@ -155,8 +157,14 @@ else if (command=="r") {
 	
 	else if (command=="o") {
 		if( z==0) { 
-			Main.renderer.queue[19]= new Drawable(19, 0,0,1,10000,19);
-	
+			
+			Main.currentCase.motionTrack = 	Main.currentCase.court.defObject;
+	Main.currentCase.motionTrack.moveBy(400, 0,5);
+	Main.currentCase.motionTrack.play("objection", 0, false);
+
+		}
+		else if (z==1) {
+			
 		}
 	
 		
@@ -168,7 +176,12 @@ else if (command=="r") {
 				else
 				Main.currentCase.eventQueue.remove(0);
 		
-	  Main.currentCase.working=false;
+	  if((!command.equals("playAni"))||(command.equals("playAni")&&!u))Main.currentCase.working=false;
+	  if(command.equals("o")) {
+		  System.out.println("O COMMAND");
+		  Main.currentCase.working=true;
+		  System.out.println(Main.currentCase.working);
+	  }
 	}
 	}
 }
