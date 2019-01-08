@@ -95,4 +95,9 @@ public class DetentionThree extends Location {
 		return null;
 		
 	}
+	@Override
+	protected void present(RecordEntry recordEntry)
+	{
+		
+	}
 }

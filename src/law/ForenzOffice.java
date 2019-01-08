@@ -95,4 +95,9 @@ public class ForenzOffice extends Location {
 		return null;
 		
 	}
+	@Override
+	protected void present(RecordEntry recordEntry)
+	{
+		
+	}
 }
