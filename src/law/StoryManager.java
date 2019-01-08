@@ -21,7 +21,7 @@ class StoryManager {
 	ArrayList<RecordEntry>evidence = new ArrayList<RecordEntry>();
 	 Location[] locales = new Location[40]; 
 	boolean somewhere;
-	boolean[] flags = new boolean[100];
+	boolean[] flags = new boolean[500];
 	boolean inExamine = false;
 	boolean objected=false;
 	Court court;

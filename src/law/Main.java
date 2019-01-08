@@ -16,6 +16,7 @@ import java.awt.image.BufferedImage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 public class Main extends JFrame{
 	static int count;
 	static int gameState = 0;
@@ -241,6 +242,11 @@ public class Main extends JFrame{
                         insets.top + windowHeight + insets.bottom); 
         
     }
+	public static int randInt(int i, int j) {
+		Random random = new Random();
+		
+		return  random.nextInt(j + 1 - i) +i;
+	}
 }
 
  class KeyListen implements KeyListener {

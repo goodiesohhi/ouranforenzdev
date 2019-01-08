@@ -57,4 +57,10 @@ public class AreaZeroZero extends Location {
 		
 		
 	}
+
+	@Override
+	protected void present(RecordEntry recordEntry) {
+		// TODO Auto-generated method stub
+		
+	}
 }
