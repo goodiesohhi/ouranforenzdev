@@ -31,7 +31,7 @@ static 	boolean sentinel;
 	
 		
 		for (Conditions c: conditions ) {
-			System.out.println("codition: " +c.type+ " "+c.presentable+ " "+ c.passed );
+		
 			if(!c.passed) return false;
 		}
 		
@@ -48,11 +48,7 @@ static 	boolean sentinel;
 			if (s.behaviour!=0 )Main.currentCase.currentExamine.conditions.add(new Conditions(s.behaviour, s.objectName)); 
 			}
 		}
-		System.out.println("conditions");
-		for (Conditions c: conditions ) {
-			System.out.println("codition: " +c.type+ " "+c.presentable+ " "+ c.passed );
-			
-		}
+	
 //System.out.println(statements.toString());
 //System.out.println(statements.get(currentStatement).c);
 

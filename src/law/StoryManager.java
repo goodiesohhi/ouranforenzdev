@@ -21,7 +21,7 @@ class StoryManager {
 	ArrayList<RecordEntry>evidence = new ArrayList<RecordEntry>();
 	 Location[] locales = new Location[40]; 
 	boolean somewhere;
-	boolean[] flags = new boolean[100];
+	boolean[] flags = new boolean[500];
 	boolean inExamine = false;
 	boolean objected=false;
 	Court court;
@@ -87,7 +87,7 @@ public Character currentChar;
 		  System.out.println(motionTrack.x+"/"+motionTrack.dx);
 		  if(Math.abs((double)(motionTrack.dx-motionTrack.x))<10&&Math.abs((double)(motionTrack.dy-motionTrack.y))<10) {
 			  Main.currentCase.working=false;
-			 motionTrack.resetPos();
+			
 		  }
 	  }
 	  try {
@@ -236,6 +236,10 @@ public RecordEntry findItem(String name) {
 }
 public void switchBackToEventQueue() {
 	Main.currentCase.addEvent(new Event("switchBack"));
+	
+}
+public void removeO() {
+	 Main.currentCase.addEvent(new Event("ro")) ;  
 	
 }
 

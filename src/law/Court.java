@@ -21,7 +21,7 @@ public class Court {
 		prosObject = new Character("Prosecution Objection",0,200);
 		
 		characters.add(defObject);
-		characters.add(defense);
+		
 		characters.add(prosObject);
 		
 	}

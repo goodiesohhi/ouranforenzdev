@@ -87,7 +87,12 @@ class Statements {
 		if (this.objectName.equals(name)) 
 		{ 
 			if (name.equals("Ouran's Attorney's Badge")) {
+			story.insertO(0);
+			story.insertD("RANDOM OBJECTION!", "Ouran Forenz");
+			story.removeO();
+			
 			story.insertV(0, null);
+			
 			story.insertD("Badge has been presented", "Judgebot 3000");
 			story.insertD("This condition has been fulfilled", "Judgebot 3000");
 			story.switchBackToEventQueue();

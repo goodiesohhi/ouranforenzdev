@@ -18,7 +18,7 @@ public abstract class Location {
 		paths = new ArrayList<Location>();
 		graphic=g;
 		name=n;
-		flags = new boolean[50];
+		flags = new boolean[500];
 	}
 	
 	void linkPath(Location l) {
@@ -110,6 +110,8 @@ Main.renderer.queue[0]= new Drawable(graphic,0,0,1,0,0);
 		for (Question q: questions) if (q.unlocked==true) i++;
 		return i;
 	}
+
+	protected abstract void present(RecordEntry recordEntry);
 	
 }
 
