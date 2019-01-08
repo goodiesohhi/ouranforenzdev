@@ -47,6 +47,16 @@ public class Renderer {
 		 if(queue[i]!=null)g.drawImage(queue[i].draw(),queue[i].x+camera.x,queue[i].y+camera.y,null);
 		
 	 }
+	 if (Main.currentCase.currentLocation!=null) {
+		 for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
+		 	
+		 		 if(c.image!=null&&!c.unlocked) {
+		 			 g.drawImage(c.image, c.x+camera.x,c.y+camera.y,null);
+		 			
+		 		 }
+		 		
+		 	 }
+		 }
 	 
 for (Character c:Main.currentCase.characters) {
 	
@@ -66,16 +76,7 @@ for (Character c: Main.currentCase.court.characters) {
 	 }
 	
 }
-if (Main.currentCase.currentLocation!=null) {
-for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) {
-	
-		 if(c.image!=null&&!c.unlocked) {
-			 g.drawImage(c.image, c.x+camera.x,c.y+camera.y,null);
-			
-		 }
-		
-	 }
-}
+
 	
 	 
 	 g.setColor(Color.BLUE);
