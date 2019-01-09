@@ -40,10 +40,13 @@ class Case3 extends StoryManager  {
             characters.add(new Character("Nekocchi", 280, 0));
             characters.add(new Character ("Det. Pat. Bluthund", 150, 0));
             characters.add(new Character("Keto Saiba", 200, 0));
+            characters.add(new Character("Susan Ord", 250, 0));
       		 locales[0] = new DetentionThree();
        		 locales[1] = new ForenzOffice();
-       		
+       		 locales[2] = new SaibaEntrance();
+       		 locales[3] = new SaibaApartment();
        		 locales[0].linkPath(locales[1]);
+       		 locales[3].linkPath(locales[0]);
           //flags[25]=true;
        		// this.toCourt();
        		 enterArea(1);

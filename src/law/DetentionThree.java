@@ -11,7 +11,7 @@ public class DetentionThree extends Location {
 	void enter () throws IOException {
 		super.enter();
 		this.addEvent((new ClickEvent("wall", 0, 0, 1024, 768, this.clickEvents, 0)));
-		 if (!flags[0]){
+		 if (!flags[1]){
 			
 		
 			 story.insertD("Detention Centre", "");
@@ -30,7 +30,7 @@ public class DetentionThree extends Location {
 			 story.insertD("Sure, why not? I trust your card-playing companion.", "Keto");
 			 story.insertD("Did you hear that, Ouran-chan?", "Nekocchi");
 			 
-			 flags[0] = true;
+			 flags[1] = true;
 			 
 		 }
 		 story.playAni("Keto Saiba", "ketoWitness", 1, false);
@@ -71,7 +71,8 @@ public class DetentionThree extends Location {
 		}
 		if (i == 2)
 		{
-			story.insertD("It’s the company that my father built from the ground up to become one of the greatest card game companies in the world!", "Keto");
+			story.insertD("It’s the company that my father built from the ground up.", "Keto");
+			story.insertD("Now, it's the top card game company in the world.", "Keto");
 			story.insertD("I took over a few years ago. We did have a problem with the media a while back, though...", "Keto");
 			story.insertD("Here, take a copy of this article.", "Keto");
 			story.insertR("Saiba Corp. Article", "article", "UNETHICAL BUSINESS PRACTICES REVEALED", false, 1);
@@ -98,6 +99,33 @@ public class DetentionThree extends Location {
 	@Override
 	protected void present(RecordEntry recordEntry)
 	{
-		
+		if(recordEntry.name.equals("Ouran's Attorney's Badge"))
+		{
+			story.insertD("Thank you for taking my case, Mr. Forenz!", "Keto");
+		}
+		else if (recordEntry.name.equals("Saiba Corp. Article"))
+		{
+			story.insertD("So what are these “unethical business practices?”", "Ouran");
+			story.insertD("Some have been complaining about the conditions of the workers in our factories.", "Keto");
+			story.insertD("Trading card games have a small margin, you know!", "Keto");
+			story.insertD("I hear Ms. Ord was going to be working on solving that...", "Keto");
+			story.insertD("You should go see her at our offices.", "Keto");
+			story.insertD("Maybe I will...", "Ouran");
+			story.locales[0].linkPath(story.locales[2]);
+		}
+		else if (recordEntry.name.equals("White-Eyes Blue Dragon"))
+		{
+			story.insertD("It’s the lynchpin card in my deck.", "Keto");
+			story.insertD("Its power level is greater than that of any other plain card in the game.", "Keto");
+			story.insertD("I have strategies that can stop any attempts to destroy it.", "Keto");
+			story.insertD("It’s the main reason why I’m the champion.", "Keto");
+			story.insertD("He’s sugoi amazing, desu!", "Nekocchi");
+			story.insertD("(If he owns all the copies of the best card, then what’s the point of even holding competitions?)", "Ouran");
+			story.insertD("(He’s just going to pay out the money to himself!)", "Ouran");
+		}
+		else
+		{
+			story.insertD("I don’t think I’m aware of anything about that. Sorry...", "Keto");
+		}
 	}
 }
