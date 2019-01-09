@@ -54,6 +54,9 @@ boolean  inCourt=true;
  boolean inDialogue = false;
 public boolean pressed = false;
 public Character currentChar;
+public CrossExamination currentExamineQueue;
+public boolean beginExamine;
+private int timer1=0;
  public Character getCharacter(String x) {
 	 
 	 int len=characters.size();
@@ -77,6 +80,21 @@ public Character currentChar;
   void update() throws IOException {
 //System.out.println(eventQueue.toString());
 	  court.update();
+	  System.out.println(beginExamine+"/"+working+"/"+timer1);
+	  if (this.beginExamine&&Main.currentCase.working) {
+		  timer1++;
+		  
+		  if (timer1>100) {
+			  Main.currentCase.currentExamine=Main.currentCase.currentExamineQueue;
+				Main.currentCase.inExamine=true;
+				Main.currentCase.beginExamine=false;
+				timer1=0;
+				Main.currentCase.currentExamineQueue=null;
+				this.working=false;
+				Main.gui.menu=-1;
+			  
+		  }
+	  }
 	  if (Main.currentCase.eventQueue.size()>=1) {
 			if (!Main.currentCase.eventQueue.get(0).command.equals("d")) Gui.inChat =false;
 		} else {
@@ -87,6 +105,7 @@ public Character currentChar;
 		  System.out.println(motionTrack.x+"/"+motionTrack.dx);
 		  if(Math.abs((double)(motionTrack.dx-motionTrack.x))<10&&Math.abs((double)(motionTrack.dy-motionTrack.y))<10) {
 			  Main.currentCase.working=false;
+				Main.gui.menu=-1;
 			
 		  }
 	  }
@@ -131,6 +150,12 @@ public Character currentChar;
 	  Main.currentCase.addEvent(new Event("ce",z)) ;  
 		queueSize++;
   }
+  
+  void runFirstExamine(int z) {
+	  
+	  Main.currentCase.addEvent(new Event("firstCE",z)) ;  
+		queueSize++;
+  }
   void insertD(String x,String y) {
 	 
 	  Main.currentCase.addEvent(new Event("d", x,y))  ;  
@@ -155,6 +180,8 @@ public Character currentChar;
 	  }
 	  
   }
+  
+
   
  void stopCExamine() {
 	  

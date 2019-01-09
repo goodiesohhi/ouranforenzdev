@@ -77,7 +77,7 @@ class Event {
 		
 		
 
-		if( (!Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine)||(!Main.currentCase.working&& !Main.currentCase.inDialogue&& Main.currentCase.inExamine&&Main.currentCase.presented)) {
+		if( (!Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine&& !Main.currentCase.beginExamine)||(!Main.currentCase.working&& !Main.currentCase.inDialogue&& Main.currentCase.inExamine&&Main.currentCase.presented)) {
 			
 			if (Main.currentCase.presented)System.out.println(this.command+" command in PresenQueue has been executed"); else 
 				System.out.println(this.command+" command in eventQueue has been executed");
@@ -111,13 +111,24 @@ class Event {
 			}
 			
 			else	 
-	if (command=="ce") {
+	if (command=="firstCE") {
 	
-		Main.currentCase.currentExamine=Main.cExamine[z];
-		Main.currentCase.inExamine=true;
+		Main.currentCase.currentExamineQueue=Main.cExamine[z];
+		Main.currentCase.beginExamine=true;
+		Main.currentCase.working=true;
+		Main.gui.menu=69;
 		//System.out.println("Yes");
 	 
-	}	 else
+	}	else	 
+		if (command=="ce") {
+			
+			Main.currentCase.currentExamine=Main.cExamine[z];
+			Main.currentCase.inExamine=true;
+	
+			//System.out.println("Yes");
+		 
+		}	
+		else
 	if (command=="d") {
 		Main.dialogue.insert(x, y);
 		
@@ -168,7 +179,7 @@ else if (command=="r") {
 	
 	else if (command=="o") {
 		if( z==0) { 
-			
+			Main.gui.menu=69;
 			Main.currentCase.motionTrack = 	Main.currentCase.court.defObject;
 	Main.currentCase.motionTrack.moveBy(400, 0,20);
 	Main.currentCase.motionTrack.play("objection", 0, false);
@@ -187,7 +198,7 @@ else if (command=="r") {
 				else
 				Main.currentCase.eventQueue.remove(0);
 		
-	  if((!command.equals("playAni"))||(command.equals("playAni")&&!u))Main.currentCase.working=false;
+	  if((!command.equals("playAni")&&!command.equals("ce"))||(command.equals("playAni")&&!u))Main.currentCase.working=false;
 	  if(command.equals("o")) {
 		  System.out.println("O COMMAND");
 		  Main.currentCase.working=true;

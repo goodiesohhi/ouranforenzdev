@@ -51,7 +51,11 @@ boolean inAction;
         
         
 	}
-	
+	void cls() {
+	 markerLocation=0;
+		 queue = new Drawable[40];
+		 textQueue = new DrawableText[50];
+	}
 	void update() throws IOException {
 	
 		if (show) {
@@ -90,7 +94,7 @@ boolean inAction;
 					
 				
 			
-			      
+			      System.out.println(markerLocation+" / "+Main.currentCase.currentLocation.paths.size());
 			       
 				  if(Main.currentKey!=null) {
 				
@@ -98,7 +102,8 @@ boolean inAction;
 						   if (markerLocation>=1)
 					markerLocation--;
 					   } else if (Main.keyInt==40) {
-						   if (markerLocation<Main.currentCase.currentLocation.paths.size()) evidenceOffset++;
+						   System.out.println("HELLO");
+						   if (markerLocation<Main.currentCase.currentLocation.paths.size()) markerLocation++;
 					   }else
 						   if(Main.keyInt==KeyEvent.VK_Z) {
 							   
@@ -265,7 +270,9 @@ boolean inAction;
 				textQueue = new DrawableText[50];
 				 guiElements = new BufferedImage[40];
 			} */
-
+			else if (menu==69) {
+				cls();
+			}
 			else if (menu == 1) {
 				
 				if (!Main.currentCase.inCourt) {
@@ -542,6 +549,7 @@ boolean inAction;
 						   if(Main.keyInt==90) {
 							   if (button==3||button==2) {
 							   menu=button;
+							   cls();
 							   } else if (button ==1) {
 								   System.out.println("yolo");
 								   if (!Main.currentCase.inCourt) {
@@ -550,9 +558,11 @@ boolean inAction;
 										  Main.currentCase.insertD("Umm.. Talk to who?", Main.currentCase.currentChar.name);
 									  } else {
 										  menu=1;
+										  cls();
 									  }
 								   }else {
 									   menu=1;
+									   cls();
 								   }
 							   } else
 							   if (button==0) {
@@ -563,6 +573,7 @@ boolean inAction;
 			} else {
 				
 				menu=button;
+				cls();
 			}
 							
 							   }}
@@ -606,6 +617,7 @@ boolean inAction;
 					   if(Main.keyInt==90) {
 						   if (button==3||button==2) {
 							   menu=button;
+							   cls();
 							   } else if (button ==1) {
 								   System.out.println("yolo");
 								   if (!Main.currentCase.inCourt) {
@@ -614,8 +626,10 @@ boolean inAction;
 										  Main.currentCase.insertD("Umm.. Talk to who?", Main.currentCase.currentChar.name);
 									  } else {
 										  menu=1;
+										  cls();
 									  }
 								   }else {
+									   cls();
 									   menu=1;
 								   }
 							   } else
@@ -629,6 +643,7 @@ boolean inAction;
 		} else {
 			
 			menu=button;
+			cls();
 		}
 						
 						   }}
