@@ -58,6 +58,8 @@ public CrossExamination currentExamineQueue;
 public boolean beginExamine;
 private int timer1=0;
 public boolean dataText;
+
+
  public Character getCharacter(String x) {
 	 
 	 int len=characters.size();
@@ -160,6 +162,13 @@ public boolean dataText;
   void insertD(String x,String y) {
 	 
 	  Main.currentCase.addEvent(new Event("d", x,y))  ;  
+	queueSize++;
+	
+	 }
+  
+  void insertData(String x) {
+		 
+	  Main.currentCase.addEvent(new Event("data", x,""))  ;  
 	queueSize++;
 	
 	 }

@@ -132,7 +132,14 @@ class Event {
 	if (command=="d") {
 		Main.dialogue.insert(x, y);
 		
-	}	else 
+	}	
+	
+	else
+	if (command=="data") {
+		Main.dialogue.insert(x, y,true);
+		
+	}	
+	else 
 		
 	if (command=="v") {
 		

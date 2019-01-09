@@ -15,18 +15,19 @@ public class Renderer {
 	Drawable[] queue;
 	DrawableText[] textQueue;
 	DrawableText[] pressQueue;
-	
+	BufferedImage dataField = null;
 	BufferedImage[] index = new BufferedImage[300] ;
 	
 	Color textBoxColor=new Color(0.1f,0.1f,0.1f,.85f );
 	
 	Camera camera = new Camera();
-	public Renderer() {
+	public Renderer() throws IOException {
 		
 		queue = new Drawable[95];
 		
 		 
 			textQueue = new DrawableText[30];
+			dataField = ImageIO.read( Main.class.getResource("/resources/dataField.png"));
 		
 			 pressQueue = new DrawableText[30];
 				
@@ -80,9 +81,15 @@ for (Character c: Main.currentCase.court.characters) {
 	
 	 
 	 g.setColor(Color.BLUE);
-	 if(Main.currentCase.textBox) g.fillRect(50, 500, 200, 49);
+	 if(Main.currentCase.textBox&&!Main.currentCase.dataText) g.fillRect(50, 500, 200, 49);
 	 g.setColor(textBoxColor);
-	 if(Main.currentCase.textBox) g.fillRect(50, 550, 850, 100);
+	 if(Main.currentCase.textBox) {
+		 if(Main.currentCase.dataText) {
+			 g.drawImage(dataField,50,525,null);
+		 } else {
+			 g.fillRect(50, 550, 850, 100);
+		 }
+	 }
 	 
 	 if (!	Main.currentCase.pressed) {
      for (int i=0; i< textQueue.length;i++) {

@@ -19,9 +19,9 @@ public class AreaZeroZero extends Location {
 		 if (!flags[0]){
 			
 		
-			 story.insertD("This is a place", "Hello");
+			 story.insertData("This is a place");
 				
-			 story.insertD("This is a place", "Hello");
+			 story.insertData("This is a place");
 			 flags[0] = true;
 			 
 			

@@ -40,7 +40,7 @@ public class Main extends JFrame{
 	    
 	   static BufferedImage backBuffer; 
 	    static Insets insets; 
-	static Renderer renderer= new Renderer();
+	static Renderer renderer;
 	private static boolean start;
 	public static Dialogue pressDialogue = new Dialogue(1);
 	public static boolean entered;
@@ -53,6 +53,7 @@ public class Main extends JFrame{
 		setFocusable(true);
 	}
     public static void main(String[] args) throws IOException {
+    	renderer = new Renderer();
     	renderer.insert("defbench", 0);
     	renderer.insert("ouranobject", 1);
     	renderer.insert("title", 2);
@@ -178,7 +179,7 @@ public class Main extends JFrame{
     		renderer.clear();
     		renderer.camera.reset();
     		currentCase= null;
-    		currentCase = new Case3();
+    		currentCase = new Case0();
     		switchState(2);
     		
     	}
