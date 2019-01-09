@@ -10,10 +10,10 @@ public class ForenzOffice extends Location {
 	@Override
 	void enter() throws IOException {
 		super.enter();
-		this.addEvent((new ClickEvent("maggotTank", 300, 100, 300, 100, this.clickEvents, 0)));
-		this.addEvent((new ClickEvent("workTable", 250, 300, 400, 350, this.clickEvents, 1)));
-		this.addEvent((new ClickEvent("chemicalPlant", 900, 100, 50, 50, this.clickEvents, 2)));
-		this.addEvent((new ClickEvent("filingCabinet", 850, 150, 100, 300, this.clickEvents, 3)));
+		this.addEvent((new ClickEvent(false,"maggotTank", 300, 100, 300, 100, this.clickEvents, 0)));
+		this.addEvent((new ClickEvent(false,"workTable", 250, 300, 400, 350, this.clickEvents, 1)));
+		this.addEvent((new ClickEvent(false,"chemicalPlant", 900, 100, 50, 50, this.clickEvents, 2)));
+		this.addEvent((new ClickEvent(false,"filingCabinet", 850, 150, 100, 300, this.clickEvents, 3)));
 		block = true;
 		 if (block){
 			 if (!flags[0])

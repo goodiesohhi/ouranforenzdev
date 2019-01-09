@@ -14,7 +14,7 @@ public class AreaZeroZero extends Location {
 	void enter () throws IOException {
 		super.enter();
 		//Main.renderer.insert("nekoArson",112);
-		 this.addEvent(new ClickEvent("badge", 200, 200, 100, 100, this.clickEvents,0));
+		 this.addEvent(new ClickEvent(true,"badge", 200, 200, 100, 100, this.clickEvents,0));
 		 
 		 if (!flags[0]){
 			

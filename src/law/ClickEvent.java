@@ -15,7 +15,8 @@ public class ClickEvent {
 	int width;
 	int height;
 	boolean unlocked;
-	ClickEvent(String path,int x, int y, int w, int h,ArrayList<ClickEvent> ce,int id) throws IOException {
+	boolean collectable;
+	ClickEvent(Boolean type , String path,int x, int y, int w, int h,ArrayList<ClickEvent> ce,int id) throws IOException {
 		 image= ImageIO.read( Main.class.getResource("/resources/ce/"+path+".png"));
 		 this.x=x;
 		 this.y=y;
@@ -23,5 +24,7 @@ public class ClickEvent {
 		 width=w;
 		 this.id =  id;
 		 unlocked=false;
+		 //true means its collectable and disappears
+		 collectable=type;
 	}
 }

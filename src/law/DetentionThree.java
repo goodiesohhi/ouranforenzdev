@@ -10,7 +10,7 @@ public class DetentionThree extends Location {
 	}
 	void enter () throws IOException {
 		super.enter();
-		this.addEvent((new ClickEvent("wall", 0, 0, 1024, 768, this.clickEvents, 0)));
+		this.addEvent((new ClickEvent(false,"wall", 0, 0, 1024, 768, this.clickEvents, 0)));
 		 if (!flags[0]){
 			
 		
