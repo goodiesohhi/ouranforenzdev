@@ -57,6 +57,7 @@ public Character currentChar;
 public CrossExamination currentExamineQueue;
 public boolean beginExamine;
 private int timer1=0;
+public boolean dataText;
  public Character getCharacter(String x) {
 	 
 	 int len=characters.size();

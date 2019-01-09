@@ -7,6 +7,8 @@ class Dialogue {
  String text ;
  String speaker;
  int t;
+ boolean dataField;
+ 
  boolean proc = true;
  
  public Dialogue(int type) {
@@ -16,8 +18,15 @@ class Dialogue {
  void insert(String texting, String s) {
   text = texting;
   speaker = s;
+  dataField=false;
   
  }
+ void insert(String texting, String s, boolean spec) {
+	  text = texting;
+	  speaker = s;
+	  dataField=spec;
+	  
+	 }
  
  void play() {
 	if (Main.currentCase.inExamine&&!Main.currentCase.pressed) {
@@ -27,6 +36,13 @@ class Dialogue {
    if(text!=null) {
 	   Main.currentCase.inDialogue=true;
 	   
+	   if (dataField) {
+		   Main.currentCase.dataText=true;
+	   } else {
+		   Main.currentCase.dataText=false;
+	   }
+	   
+		   
     Main.currentCase.textBox=true;
    } else {
 	   Main.currentCase.inDialogue=false;
@@ -35,6 +51,7 @@ class Dialogue {
   
    }
    
+ 
    
    if (t==0) {
 		
