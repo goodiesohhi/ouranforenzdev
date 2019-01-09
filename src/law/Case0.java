@@ -32,6 +32,7 @@ class Case0 extends StoryManager  {
 	
 		 startCExamine(0);
 		 
+		 
 		 Main.cExamine[Main.examineSlot].add("Hello", "Nekocchi",  new String[] {"hello 1","hello 2","hello 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, null , null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Present Badge", "Nekocchi",  new String[] {"hello jijs1","hello ksoks2","hello 3kdokd"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 2, "Ouran's Attorney's Badge",null,0);
@@ -40,6 +41,37 @@ class Case0 extends StoryManager  {
 		 Main.cExamine[Main.examineSlot].add("test3", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("test4", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
 		 
+		 stopCExamine();
+		 
+		 startCExamine(1);
+		 
+		 Main.cExamine[Main.examineSlot].add("Press this1", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this2", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this3", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this4", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this5", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this6", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 stopCExamine();
+		 
+		 startCExamine(2);
+		 
+		 Main.cExamine[Main.examineSlot].add("Press this7", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this8", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this9", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this10", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this11", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this12", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 stopCExamine();
+		 
+		 
+		 startCExamine(3);
+		 
+		 Main.cExamine[Main.examineSlot].add("Press this13", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this14", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this15", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this16", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this17", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Press this18", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 stopCExamine();
 		 
 		 
@@ -103,8 +135,9 @@ class Case0 extends StoryManager  {
 		    insertD("And who are you?","Judge Judge");
 		    insertD("My name is Nekocchi","???");
 		    insertD("NYA?","Nekocchi");
-		    
-		    runExamine(0);
+		    runFirstExamine(0);
+		    runExamine(1);
+		 
 		    
 		    insertV(0,null);
 		    insertD("My verdict is guilty.","Judge Judge");
@@ -118,7 +151,13 @@ class Case0 extends StoryManager  {
 		    removeO();
 		    insertD("The defense insists on a proper trial before a verdict an be determined","Ouran Forenz");
 		    insertV(0,null);
-		    insertD("Objection Overruled","Judge Judge");
+		    insertD("Okay","Judge Judge");
+		    
+		    
+		    runFirstExamine(2);
+		    runExamine(3);
+		    insertD("My verdict is still guilty.","Judge Judge");
+		    
 		    insertD("And that was the actual end","God");
 		    
 		  
@@ -134,8 +173,9 @@ class Case0 extends StoryManager  {
 		 
 		 locales[0] = new AreaZeroZero();
 		 locales[1] = new NekochiiBedroom();
-		
+		locales[2] = new DetentionThree();
 		 locales[0].linkPath(locales[1]);
+		 locales[0].linkPath(locales[2]);
    //flags[25]=true;
 		// this.toCourt();
 		 enterArea(0);
@@ -157,6 +197,7 @@ oneProc=true;
    
   
  }
+
     
 }
 
