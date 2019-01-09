@@ -30,6 +30,7 @@ public class ForenzOffice extends Location {
 				 story.insertD("Don’t scare me like that, Nekocchi.", "Ouran");
 				 story.insertD("You have to take his case, Ouran!", "Nekocchi");
 				 story.insertD("Fine, fine.", "Ouran");
+				 story.insertR("Komuba Saiba", "komubaProfile", "The victim. Younger brother of Keto.", true, 10);
 				 flags[0] = true;
 			 }
 
@@ -98,6 +99,13 @@ public class ForenzOffice extends Location {
 	@Override
 	protected void present(RecordEntry recordEntry)
 	{
-		
+		if (recordEntry.name.equals("Ouran's Attorney's Badge"))
+		{
+			story.insertD("Yes, I know that you’re an attorney, Ouran-kun.", "Nekocchi");
+		}
+		else
+		{
+			story.insertD("Why are you showing me that, Ouran? I’m just a baka little neko, desu...", "Nekocchi");
+		}
 	}
 }
