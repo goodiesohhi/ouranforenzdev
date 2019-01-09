@@ -17,10 +17,10 @@ public class SaibaEntrance extends Location {
 	void enter() throws IOException
 	{
 		super.enter();
-		this.addEvent((new ClickEvent("stairs", 300, 0, 300, 500, this.clickEvents, 0)));
-		this.addEvent((new ClickEvent("elevator", 700, 0, 300, 500, this.clickEvents, 1)));
-		this.addEvent((new ClickEvent("receptionDesk", 500, 550, 300, 50, this.clickEvents, 2)));
-		this.addEvent((new ClickEvent("tracks", 200, 600, 100, 50, this.clickEvents, 3)));
+		this.addEvent((new ClickEvent(false,"stairs", 300, 0, 300, 500, this.clickEvents, 0)));
+		this.addEvent((new ClickEvent(false,"elevator", 700, 0, 300, 500, this.clickEvents, 1)));
+		this.addEvent((new ClickEvent(false,"receptionDesk", 500, 550, 300, 50, this.clickEvents, 2)));
+		this.addEvent((new ClickEvent(false,"tracks", 200, 600, 100, 50, this.clickEvents, 3)));
 		if (!flags[2])
 		{
 			story.insertD("Saiba Corp. Entrance", "");
