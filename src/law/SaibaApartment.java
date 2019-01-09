@@ -10,9 +10,9 @@ public class SaibaApartment extends Location  {
 	void enter() throws IOException
 	{
 		super.enter();
-		this.addEvent((new ClickEvent("flowerVase", 50, 300, 60, 50, this.clickEvents, 0)));
-		this.addEvent((new ClickEvent("briefcase", 150, 600, 30, 70, this.clickEvents, 1)));
-		this.addEvent((new ClickEvent("painting", 300, 100, 100, 100, this.clickEvents, 2)));
+		this.addEvent((new ClickEvent(false,"flowerVase", 50, 300, 60, 50, this.clickEvents, 0)));
+		this.addEvent((new ClickEvent(false,"briefcase", 150, 600, 30, 70, this.clickEvents, 1)));
+		this.addEvent((new ClickEvent(false,"painting", 300, 100, 100, 100, this.clickEvents, 2)));
 		if(!flags[3])
 		{
 			story.insertD("Saiba Corp. Apartment Entrance", "");
