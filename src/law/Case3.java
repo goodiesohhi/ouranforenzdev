@@ -45,8 +45,13 @@ class Case3 extends StoryManager  {
        		 locales[1] = new ForenzOffice();
        		 locales[2] = new SaibaEntrance();
        		 locales[3] = new SaibaApartment();
+       		 locales[4] = new LivingRoom();
+       		 locales[5] = new SaibaStorage();
        		 locales[0].linkPath(locales[1]);
-       		 locales[3].linkPath(locales[0]);
+       		 locales[2].linkPath(locales[0]);
+       		 locales[2].linkPath(locales[3]);
+       		 locales[3].linkPath(locales[4]);
+       		 locales[4].linkPath(locales[5]);
           //flags[25]=true;
        		// this.toCourt();
        		 enterArea(1);

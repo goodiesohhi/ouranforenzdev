@@ -11,10 +11,10 @@ public class LivingRoom extends Location{
 	void enter() throws IOException
 	{
 		super.enter();
-		this.addEvent(new ClickEvent("body", 600, 400, 80, 60, this.clickEvents, 0));
-		this.addEvent(new ClickEvent("uniform", 700, 350, 60, 50, this.clickEvents, 1));
-		this.addEvent(new ClickEvent("tv", 50, 200, 150, 500, this.clickEvents, 2));
-		this.addEvent(new ClickEvent("coffeeTable", 200, 500, 150, 50, this.clickEvents, 3));
+		this.addEvent(new ClickEvent(false,"body", 600, 400, 80, 60, this.clickEvents, 0));
+		this.addEvent(new ClickEvent(true,"uniform", 700, 350, 60, 50, this.clickEvents, 1));
+		this.addEvent(new ClickEvent(false,"tv", 50, 200, 150, 500, this.clickEvents, 2));
+		this.addEvent(new ClickEvent(false,"coffeeTable", 200, 500, 150, 50, this.clickEvents, 3));
 		if (!flags[4])
 		{
 			story.insertD("Saiba Corp. Apartment Living Room", "");

@@ -11,9 +11,9 @@ public class SaibaStorage extends Location {
 	void enter() throws IOException
 	{
 		super.enter();
-		this.addEvent(new ClickEvent("storageWall", 0, 0, 400, 700, this.clickEvents, 0));
-		this.addEvent(new ClickEvent("dragonModel", 400, 100, 450, 500, this.clickEvents, 1));
-		this.addEvent(new ClickEvent("dragonMouth", 850, 200, 50, 35, this.clickEvents, 2));
+		this.addEvent(new ClickEvent(false,"storageWall", 0, 0, 400, 700, this.clickEvents, 0));
+		this.addEvent(new ClickEvent(false,"dragonModel", 400, 100, 450, 500, this.clickEvents, 1));
+		this.addEvent(new ClickEvent(false,"dragonMouth", 850, 200, 50, 35, this.clickEvents, 2));
 		if(!flags[5])
 		{
 			story.insertD("Saiba Corp. Storage", "");
