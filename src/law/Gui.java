@@ -103,7 +103,7 @@ boolean inAction;
 					markerLocation--;
 					   } else if (Main.keyInt==40) {
 						   System.out.println("HELLO");
-						   if (markerLocation<Main.currentCase.currentLocation.paths.size()) markerLocation++;
+						   if (markerLocation<Main.currentCase.currentLocation.paths.size()-1) markerLocation++;
 					   }else
 						   if(Main.keyInt==KeyEvent.VK_Z) {
 							   
