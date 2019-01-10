@@ -271,7 +271,10 @@ boolean inAction;
 				 guiElements = new BufferedImage[40];
 			} */
 			else if (menu==69) {
-				cls();
+				if(Main.currentCase.timer1<5)cls();
+				else if (Main.currentCase.timer1>5&&Main.currentCase.timer1<7)  {
+					Main.currentCase.court.switchview(69, null);
+				}
 			}
 			else if (menu == 1) {
 				

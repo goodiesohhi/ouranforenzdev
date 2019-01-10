@@ -56,8 +56,9 @@ public boolean pressed = false;
 public Character currentChar;
 public CrossExamination currentExamineQueue;
 public boolean beginExamine;
-private int timer1=0;
+public int timer1=0;
 public boolean dataText;
+public String currentWitness;
 
 
  public Character getCharacter(String x) {
@@ -95,6 +96,7 @@ public boolean dataText;
 				Main.currentCase.currentExamineQueue=null;
 				this.working=false;
 				Main.gui.menu=-1;
+				Main.currentCase.court.switchview(3, Main.currentCase.currentWitness);
 			  
 		  }
 	  }

@@ -205,7 +205,7 @@ else if (command=="r") {
 				else
 				Main.currentCase.eventQueue.remove(0);
 		
-	  if((!command.equals("playAni")&&!command.equals("ce"))||(command.equals("playAni")&&!u))Main.currentCase.working=false;
+	  if((!command.equals("playAni")&&!command.equals("firstCE"))||(command.equals("playAni")&&!u))Main.currentCase.working=false;
 	  if(command.equals("o")) {
 		  System.out.println("O COMMAND");
 		  Main.currentCase.working=true;

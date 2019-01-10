@@ -1,7 +1,10 @@
 package law;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
 
 public class Court {
 	Character defense;
@@ -12,9 +15,11 @@ public class Court {
 	Character prosCounsel;
 	Character defObject;
 	Character prosObject;
+	
 	ArrayList <Character>characters = new ArrayList<Character>();
+	public BufferedImage black;
 	public Court() throws IOException {
-		
+		black = ImageIO.read( Main.class.getResource("/resources/black.png"));
 		
 		defObject = new Character("Defense Objection",-200,135);
 	defense=new Character("Ouran Forenz", 100, 135);
@@ -29,6 +34,7 @@ public class Court {
 	
 	void switchview (int x,	String y) throws IOException {
 Main.renderer.clear();
+Main.currentCase.clearSprites();	
 	if(x==0) {
 		Main.renderer.queue[0]= new Drawable(10,0,0,1,0,0);
 		if (Main.currentCase.getCharacter("Judge Judge")==null) Main.currentCase.characters.add(new Character("Judge Judge", 350, 96));
@@ -47,8 +53,16 @@ Main.renderer.clear();
 	}	
 	if(x==3) {
 		Main.renderer.queue[0]= new Drawable(13,0,0,1,0,0);
-		if (Main.currentCase.getCharacter(y)==null) Main.currentCase.characters.add(new Character(y, 100, 135));
-	}	
+		if (Main.currentCase.getCharacter(y)==null) {
+			Main.currentCase.characters.add(new Character(y, 100, 135));
+		}
+		Main.currentCase.currentWitness= y;
+		
+	}
+	
+	if (x==69) {
+		Main.renderer.queue[0]= new Drawable(black,0,0,1,0,0);
+	}
 	}
 	
 	void showcourt () {
