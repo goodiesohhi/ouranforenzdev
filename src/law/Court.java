@@ -15,7 +15,7 @@ public class Court {
 	Character prosCounsel;
 	Character defObject;
 	Character prosObject;
-	
+	Character[] ceObjects;
 	ArrayList <Character>characters = new ArrayList<Character>();
 	public BufferedImage black;
 	public Court() throws IOException {
@@ -26,8 +26,10 @@ public class Court {
 		prosObject = new Character("Prosecution Objection",0,200);
 		
 		characters.add(defObject);
-		
+		ceObjects = new Character[4];
 		characters.add(prosObject);
+		ceObjects[0] = new Character("ceDef",0,0);
+		characters.add(ceObjects[0]);
 		
 	}
 

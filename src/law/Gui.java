@@ -29,6 +29,7 @@ BufferedImage backing = ImageIO.read( Main.class.getResource("/resources/backing
 Drawable[] queue = new Drawable[40];
 DrawableText[] textQueue = new DrawableText[50];
 BufferedImage[] guiElements = new BufferedImage[40];
+boolean[] sentinelValues = new boolean[40];
 boolean inAction;
 
 
@@ -274,6 +275,13 @@ boolean inAction;
 				if(Main.currentCase.timer1<5)cls();
 				else if (Main.currentCase.timer1>5&&Main.currentCase.timer1<7)  {
 					Main.currentCase.court.switchview(69, null);
+				} else if(Main.currentCase.timer1>7&&Main.currentCase.timer1<30) {
+					if (!this.sentinelValues[0]) {
+					Main.currentCase.court.ceObjects[0].play("ouranCE", 5, true);
+					this.sentinelValues[0]=true;
+					}
+					
+					Main.currentCase.court.ceObjects[0].x+=10;
 				}
 			}
 			else if (menu == 1) {

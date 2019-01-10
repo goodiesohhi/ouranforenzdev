@@ -52,6 +52,24 @@ public class Main extends JFrame{
 		addMouseListener(mouseListener);
 		setFocusable(true);
 	}
+	public static void modAlpha(BufferedImage modMe, double modAmount) {
+        //
+    for (int x = 0; x < modMe.getWidth(); x++) {          
+        for (int y = 0; y < modMe.getHeight(); y++) {
+                //
+            int argb = modMe.getRGB(x, y); //always returns TYPE_INT_ARGB
+            int alpha = (argb >> 24) & 0xff;  //isolate alpha
+
+            alpha *= modAmount; //similar distortion to tape saturation (has scrunching effect, eliminates clipping)
+            alpha &= 0xff;      //keeps alpha in 0-255 range
+
+            argb &= 0x00ffffff; //remove old alpha info
+            argb |= (alpha << 24);  //add new alpha info
+            modMe.setRGB(x, y, argb);            
+        }
+    }
+}
+	
     public static void main(String[] args) throws IOException {
     	renderer = new Renderer();
     	renderer.insert("defbench", 0);
