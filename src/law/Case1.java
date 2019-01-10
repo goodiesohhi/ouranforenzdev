@@ -9,6 +9,7 @@ public class Case1 extends StoryManager{
 	}
 	
 	void update() throws IOException{
+		characters.add(new Character ("Det. Pat. Bluthund", 150, 0));
 		inCourt=true;
 		
 		startCExamine(0);
@@ -21,6 +22,32 @@ public class Case1 extends StoryManager{
 		 Main.cExamine[Main.examineSlot].add("That’s my reasoning and I’m sticking with it.", "Det. Pat. Bluthund",  new String[] {"That’s awful stubborn of you.","I’m never wrong! When I find a suspect, it’s always them!","Always?","Well, maybe not always…","Detective, please just stick to the facts of the case…","You got it!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 0, null,null,0);
 		 
 		 stopCExamine();
+		 
+		 //insertV(4, null);
+		 //For the defendant lobby.
+		 
+		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
+		 insertD("...","Ouran Forenz");
+		 insertD("Huh?", "Ouran Forenz");
+		 insertD("Oh nyan, get up you silly baka-chan. ~owo", "Nekocchi");
+		 insertD("Calm down, I'm up jeez...", "Ouran Forenz");
+		 insertD("(I'm Ouran Forenz, a defense attorney.", "Ouran Forenz");
+		 insertD("We need to be in court soon nyan desu. ->_<-", "Nekocchi");
+		 insertD("Yeah I know. I'm coming.","Ouran Forenz");
+		 insertD("(That's Nekocchi. She’s incredibly annoying, I don’t know why I keep her around.", "Ouran Forenz");
+		 insertD("(Sometimes she annoys witnesses so much that it encourages them to talk just to make her go away.)","Ouran Forenz");
+		 insertD("Well, time to go in I suppose.","Ouran Forenz");
+		 insertD("Let’s go get a sugoi acquittal Ouran-kun!!!","Nekocchi");
+		 insertD("I hate you so much...","Ouran Forenz");
+		 insertV(0, null);
+		 insertData("---Courtroom A  May 22nd, 2:34 PM.---");
+		 insertD("Court is now in session for the trial Gilligan Tam. Is the prosecution ready?","Judge Judge");
+		 insertV(2,null);
+		 insertD("The prosecution is… r-r-ready... maybe.", "Mel Practiss");
+		 insertV(1, null);
+		 insertD("The defense is ready your honor.","Ouran Forenz");
+		 
+		 
 	}
 	}
 

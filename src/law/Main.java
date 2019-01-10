@@ -197,7 +197,7 @@ public class Main extends JFrame{
     		renderer.clear();
     		renderer.camera.reset();
     		currentCase= null;
-    		currentCase = new Case0();
+    		currentCase = new Case3();
     		switchState(2);
     		
     	}
