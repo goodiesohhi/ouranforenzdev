@@ -75,6 +75,10 @@ Bluthund: Anyway the stick was nothing special. Just something from outside on t
 ---Get Big Stick---
 Mel: Thank you Detective. Can you testify about some of your reasoning?
 Bluthund: Sure can!
+
+
+
+
 ---CROSS EXAMINATION DETECTIVE BLUTHUND: GILLIGAN’S CRIME---
 S1: The body was found in the morning.
 S2: We know Al was alive at 5:30 PM.
@@ -95,14 +99,16 @@ Bluthund: Can’t tell you that man.
 Bluthund: What I can tell you is that it was discovered when some people showed up for work the next morning.
 Ouran: so around 9 AM?
 Bluthund: Yeah around 9.
+
 S2 Press:
 Ouran: How exactly do you know that?
-Bluthund: Co-workers testified they saw him punching his card at the time.
+Bluthund: We have a record him checking in at work.
 Ouran: So his shift ended then.
-Bluthund: No it started. Al Protecc was a security guard.
+Bluthund: No it started. Al Protecc was a night guard.
 Ouran: Right I knew that…
 Ouran (thought): I should remember to check the profile section of the court record.
 Ouran (thought): That way I can remember who is involved in the case.
+
 S3 Press:
 Ouran: So my client’s shift ended at 5:30?
 Bluthund: That’s right! The same time as Al.
@@ -130,6 +136,9 @@ Ouran: No his testimony is flawed.
 Ouran: I just need to PRESENT the evidence against the incorrect statement.
 Ouran: That’s how we point out the contradiction!
 Cross Examination Complete
+
+
+
 Ouran: Detective, you said al must have died from 5:30-6:00 correct?
 Bluthund: Yeah so?
 Ouran: Well there’s where you’re wrong!
