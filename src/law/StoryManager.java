@@ -32,6 +32,7 @@ class StoryManager {
  ArrayList<Event>eventQueue = new ArrayList<Event>(); 
  ArrayList<Event>presentQueue = new ArrayList<Event>(); 
  boolean working;
+ String currentProsecutor;
  int queueIndex = 0;
  int queueSize = 0;
  int witness = 0;
@@ -251,6 +252,12 @@ public void clearSprites() {
 }
 public void playAni(String string, String string2, int i, boolean b) {
 	 Main.currentCase.addEvent( new Event("playAni", string,string2,i,b))  ;  
+	queueSize++;
+	
+	 }
+
+public void showAni(String string, String string2, int i, boolean b) {
+	 Main.currentCase.addEvent( new Event("showAni", string,string2,i,b))  ;  
 	queueSize++;
 	
 	 }

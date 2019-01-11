@@ -80,6 +80,7 @@ public class Main extends JFrame{
     	renderer.insert("defbench", 11);
     	renderer.insert("prosbench",12);
     	renderer.insert("stand",13);
+    	renderer.insert("defenseCounsel", 14);
 
     	renderer.insert("objection",19);
     	currentCase = new StoryManager();
