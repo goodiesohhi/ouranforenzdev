@@ -10,6 +10,7 @@ public class Case1 extends StoryManager{
 	
 	void update() throws IOException{
 		characters.add(new Character ("Det. Pat. Bluthund", 150, 0));
+		characters.add(new Character("Gilligan Tam",150,0));
 		if (!oneProc)
 		{
 		oneProc=true;
@@ -37,7 +38,7 @@ public class Case1 extends StoryManager{
 		 insertR("Nekocchi", "nekocchiProfile", "An annoying weeb that follows me around.",true,2);
 		 insertD("Oh nyan, get up you silly baka-chan. ~owo", "Nekocchi");
 		 insertD("Calm down, I'm up jeez...", "Ouran Forenz");
-		 insertD("(I'm Ouran Forenz, a defense attorney.", "Ouran Forenz");
+		 insertD("(I'm Ouran Forenz, a defense attorney.)", "Ouran Forenz");
 		 insertD("We need to be in court soon nyan desu. ->_<-", "Nekocchi");
 		 insertD("Yeah I know. I'm coming.","Ouran Forenz");
 		 insertD("(That's Nekocchi. She’s incredibly annoying, I don’t know why I keep her around.)", "Ouran Forenz");
@@ -104,10 +105,12 @@ public class Case1 extends StoryManager{
 		 insertR("Autopsy Report","autopsy","Cause of Death: Blunt Force Trauma, 9:45-10:30 PM",false,5);
 		 insertData("You got the Autopsy Report.");
 		 //insertV(4,null);
-		 insertD("Ouran-kun desu, if you want to peep into the sugoi court record, use the arrow keys to navigatilate to the Record button and pressity press Z.","Nekocchi");
+		 insertD("Ouran-kun desu, if you want to peep into the sugoi court record...","Nekocchi");
+		 insertD("Use the arrow keys to navigatilate to the Record button and pressity press Z.","Nekocchi");
 		 insertD("Use the arrow keys and Z for other menu options too!!! (OuO)->-","Nekocchi");
 		 insertD("I know how to be a lawyer, just let me handle this.","Ouran Forenz");
-		 insertD("Well sumimasen Ouran-kun I guess you are a professional or something…","Ouran Forenz");
+		 insertD("Besides I can't do that right now, we need to listen. Wait until Cross-Examination.","Ouran Forenz");
+		 insertD("Well sumimasen Ouran-kun I guess you are a professional or something…","Nekocchi");
 		 insertD("I am.","Ouran Forenz");
 		 //insertV(1,null);
 		 insertD("(I should check the court record frequently. All the information I could ever need is in there.)","Ouran Forenz");
@@ -117,9 +120,15 @@ public class Case1 extends StoryManager{
 		 insertD("Here’s a photo of him when he was alive.", "Det. Pat. Bluthund");
 		 insertR("Photo of Al","photoalprotecc","Al holding a coffee cup in his left hand when he was alive.",false,6);
 		 insertData("You got the Photo of Al.");
-		 insertD("A witness found the body the next morning. As you can see, this dying message implicates your client a lot.", "Det. Pat. Bluthund");
-		 insertR("Photo of Body","albodypic","Cause of Death: Blunt Force Trauma, 9:45-10:30 PM",false,5);
-		 insertData("You got the Autopsy Report.");
+		 insertD("A witness found the body the next morning. His dying message implicates your client a lot.", "Det. Pat. Bluthund");
+		 insertR("Photo of Body","albodypic","Dying message by right hand that reads 'Gill T'.",false,5);
+		 insertData("You got the Photo of the Body.");
+		 playAni("Photo of Body","albodypic",0,false);
+		 insertD("I’m a little confused. My client’s name is Gilligan Tam not 'Gill T'....","Ouran Forenz");
+		 insertD("Oh...","Ouran Forenz");
+		 insertV(3,"Gilligan Tam");
+		 playAni("Gilligan Tam","gilliganWitness",0,false);
+		 insertR("Gilligan Tam", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0);
 		 
 		}
 		super.update();
