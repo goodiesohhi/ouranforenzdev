@@ -2,14 +2,17 @@ package law;
 
 import java.io.IOException;
 
+
 public class Case1 extends StoryManager{
-	
 	Case1() throws IOException{
 		super();
 	}
 	
 	void update() throws IOException{
 		characters.add(new Character ("Det. Pat. Bluthund", 150, 0));
+		if (!oneProc)
+		{
+		oneProc=true;
 		inCourt=true;
 		
 		startCExamine(0);
@@ -23,9 +26,9 @@ public class Case1 extends StoryManager{
 		 
 		 stopCExamine();
 		 
-		 //insertV(4, null);
+		 //insertV(5, null);
 		 //For the defendant lobby.
-		 
+		 insertV(1,null);
 		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
 		 insertD("...","Ouran Forenz");
 		 insertD("Huh?", "Ouran Forenz");
@@ -34,7 +37,7 @@ public class Case1 extends StoryManager{
 		 insertD("(I'm Ouran Forenz, a defense attorney.", "Ouran Forenz");
 		 insertD("We need to be in court soon nyan desu. ->_<-", "Nekocchi");
 		 insertD("Yeah I know. I'm coming.","Ouran Forenz");
-		 insertD("(That's Nekocchi. She’s incredibly annoying, I don’t know why I keep her around.", "Ouran Forenz");
+		 insertD("(That's Nekocchi. She’s incredibly annoying, I don’t know why I keep her around.)", "Ouran Forenz");
 		 insertD("(Sometimes she annoys witnesses so much that it encourages them to talk just to make her go away.)","Ouran Forenz");
 		 insertD("Well, time to go in I suppose.","Ouran Forenz");
 		 insertD("Let’s go get a sugoi acquittal Ouran-kun!!!","Nekocchi");
@@ -46,7 +49,45 @@ public class Case1 extends StoryManager{
 		 insertD("The prosecution is… r-r-ready... maybe.", "Mel Practiss");
 		 insertV(1, null);
 		 insertD("The defense is ready your honor.","Ouran Forenz");
+		 insertV(0, null);
+		 insertD("Prosecution, call your first witness.","Judge Judge");
+		 insertV(2,null);
+		 insertD("The prosecution calls Mr. Bloodhound","Mel Practiss");
+		 insertD("... I mean, D-detective Bluthund...","Mel Practiss");
+		 //insertV(4,null);
+		 //For defense counsel
+		 insertD("Nyan? This is going super super super fast!!! ^o^","Nekocchi");
+		 insertD("Please stop...","Ouran Forenz");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertData("---Detective Patrick Bluthund---");
+		 insertV(2,null);
+		 insertD("Please state your name and profession.","Mel Practiss");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("My name is Patrick Bluthund, homicide division. I sniff out criminals and this dude is one of them!", "Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("Ummm, that’s a dog…", "Ouran Forenz");
+		 insertV(2,null);
+		 insertD("What are you talking about, this is Detective Patrick Bluthund?", "Mel Practiss");
+		 insertV(1,null);
+		 insertD("That’s a dog in a trench coat are you blind?", "Ouran Forenz");
+		 insertV(0,null);
+		 insertD("I will not have you slander the witness this way Mr. Forenz.", "Judge Judge");
+		 insertD("This is one of the best detectives in the homicide division.","Judge Judge");
+		 insertV(1,null);
+		 insertD("He even said he sniffs out criminals. That is an anthropomorphic dog.","Ouran Forenz");
+		 //insertV(4,null);
+		 insertD("Ummm Ouran-san, I think you should stop now.","Nekocchi");
+		 insertD("Your being a bigger baka than normal nyan-desu~~","Nekocchi");
+		 //insertV(1,null);
+		 insertD("Ahhh… Ok whatever. As long as he does his job.","Ouran Forenz");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("Don’t worry man, I get it a lot for some reason. I’m used to it.","Det. Pat. Bluthund");
 		 
+		}
+		super.update();
 		 
 	}
 	}
