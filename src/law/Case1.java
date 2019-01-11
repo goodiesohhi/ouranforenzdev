@@ -28,10 +28,13 @@ public class Case1 extends StoryManager{
 		 
 		 //insertV(5, null);
 		 //For the defendant lobby.
+		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0);
+		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1);
 		 insertV(1,null);
 		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
 		 insertD("...","Ouran Forenz");
 		 insertD("Huh?", "Ouran Forenz");
+		 insertR("Nekocchi", "nekocchiProfile", "An annoying weeb that follows me around.",true,2);
 		 insertD("Oh nyan, get up you silly baka-chan. ~owo", "Nekocchi");
 		 insertD("Calm down, I'm up jeez...", "Ouran Forenz");
 		 insertD("(I'm Ouran Forenz, a defense attorney.", "Ouran Forenz");
@@ -46,6 +49,7 @@ public class Case1 extends StoryManager{
 		 insertData("---Courtroom A  May 22nd, 2:34 PM.---");
 		 insertD("Court is now in session for the trial Gilligan Tam. Is the prosecution ready?","Judge Judge");
 		 insertV(2,null);
+		 insertR("Mel Practiss", "melProfile", "A nervous but decently proficient prosecutor... Maybe.",true,3);
 		 insertD("The prosecution is… r-r-ready... maybe.", "Mel Practiss");
 		 insertV(1, null);
 		 insertD("The defense is ready your honor.","Ouran Forenz");
@@ -60,6 +64,7 @@ public class Case1 extends StoryManager{
 		 insertD("Please stop...","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertR("Detective Bluthund", "bluthundProfile", "A detective who may or may not be just a dog.",true,4);
 		 insertData("---Detective Patrick Bluthund---");
 		 insertV(2,null);
 		 insertD("Please state your name and profession.","Mel Practiss");
@@ -85,6 +90,36 @@ public class Case1 extends StoryManager{
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Don’t worry man, I get it a lot for some reason. I’m used to it.","Det. Pat. Bluthund");
+		 insertD("By the way...","Det. Pat. Bluthund");
+		 insertD("I got the preliminary autopsy report right here in case you want to review it.","Det. Pat. Bluthund");
+		 insertD("His cause of death was blunt force trauma.","Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("You say preliminary, right?","Ouran Forenz");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("Yes, but it should be pretty accurate. We are just investigating finer details.","Det. Pat. Bluthund");
+		 insertD("We will be informed right away once it gets updated.","Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("Perfect. (This guy seems to know what he's doing...)","Ouran Forenz");
+		 insertR("Autopsy Report","autopsy","Cause of Death: Blunt Force Trauma, 9:45-10:30 PM",false,5);
+		 insertData("You got the Autopsy Report.");
+		 //insertV(4,null);
+		 insertD("Ouran-kun desu, if you want to peep into the sugoi court record, use the arrow keys to navigatilate to the Record button and pressity press Z.","Nekocchi");
+		 insertD("Use the arrow keys and Z for other menu options too!!! (OuO)->-","Nekocchi");
+		 insertD("I know how to be a lawyer, just let me handle this.","Ouran Forenz");
+		 insertD("Well sumimasen Ouran-kun I guess you are a professional or something…","Ouran Forenz");
+		 insertD("I am.","Ouran Forenz");
+		 //insertV(1,null);
+		 insertD("(I should check the court record frequently. All the information I could ever need is in there.)","Ouran Forenz");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("I got more for you. The victim was Al Protecc, a security guard at Fat Stacks Bank.","Det. Pat. Bluthund");
+		 insertD("Here’s a photo of him when he was alive.", "Det. Pat. Bluthund");
+		 insertR("Photo of Al","photoalprotecc","Al holding a coffee cup in his left hand when he was alive.",false,6);
+		 insertData("You got the Photo of Al.");
+		 insertD("A witness found the body the next morning. As you can see, this dying message implicates your client a lot.", "Det. Pat. Bluthund");
+		 insertR("Photo of Body","albodypic","Cause of Death: Blunt Force Trauma, 9:45-10:30 PM",false,5);
+		 insertData("You got the Autopsy Report.");
 		 
 		}
 		super.update();
