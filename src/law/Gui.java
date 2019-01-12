@@ -387,7 +387,7 @@ private boolean inProfile;
 					Main.currentCase.court.switchview(69, null);
 				} else if(Main.currentCase.timer1>7&&Main.currentCase.timer1<30) {
 					if (!this.sentinelValues[0]) {
-					Main.currentCase.court.ceObjects[0].play("ouranCE", 5, true);
+						//Main.currentCase.court.ceObjects[0].play("ouranCE", 5, true);
 					this.sentinelValues[0]=true;
 					}
 					

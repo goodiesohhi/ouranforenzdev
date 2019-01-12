@@ -27,7 +27,7 @@ public class Renderer {
 		
 		 
 			textQueue = new DrawableText[30];
-			dataField = ImageIO.read( Main.class.getResource("/resources/dataField.png"));
+			dataField = ImageIO.read( Main.class.getResource("/resources/datafield.png"));
 		
 			 pressQueue = new DrawableText[30];
 				

@@ -104,7 +104,12 @@ class Event {
 				Main.currentCase.clearSprites();
 				Main.currentCase.getCharacter(d).play(x, i, u);
 			
-			} else if (command=="switchBack") {
+			} 
+			else if (command=="showAni") {
+			
+				Main.currentCase.getCharacter(d).play(x, i, u);
+			
+			}else if (command=="switchBack") {
 				Main.currentCase.presentQueue= new ArrayList<Event>();
 			 Main.currentCase.presented=false;
 				
@@ -143,7 +148,7 @@ class Event {
 		
 	if (command=="v") {
 		
-		
+		Main.currentCase.court.oneProc=false;
 		   Main.currentCase.court.switchview(z,x);
 		
 	} else if (command=="e") {

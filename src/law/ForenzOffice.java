@@ -18,9 +18,9 @@ public class ForenzOffice extends Location {
 		 if (block){
 			 if (!flags[0])
 			 {
-				story.insertD("Forenz Office", "");
-				 story.insertD("August 10", "");
-				 story.insertD("8:00 PM", "");
+				 story.insertData("Forenz Office");
+				 story.insertData("August 10");
+				 story.insertData("8:00 PM");
 				 story.insertD("(It’s the end of a long day doing nothing.)", "Ouran");
 				 story.insertD("(I better check the news, since this is how I normally find clients anyways.)", "Ouran");
 				 story.insertD("Welcome to the News at 8!", "Newscaster");

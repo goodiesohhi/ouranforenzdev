@@ -17,7 +17,7 @@ Ouran: I hate you so much.
 ---Courtroom A  May 22nd, 2:34 PM.---
 *gavel slam*
 Judge: Court is now in session for the trial Gilligan Tam. Is the prosecution ready?
-Mel Practiss: The prosecution is… r-r-ready I suppose.
+Mel Practiss: The prosecution is… r-r-ready... maybe.
 Ouran Forenz: The Defense is ready your honor.
 Judge: Prosecution, call your first witness.
 Mel: The prosecution calls Mr. Bloodhound I MEAN
@@ -48,7 +48,7 @@ Ouran: Perfect.
 Nekocchi: Ouran-kun desu, if you want to peep into the sugoi court record, use the arrow keys to navigatilate to the Record button and pressity press Z.
 Nekocchi: Use the arrow keys and Z for other menu options too!!! (OuO)->-
 Ouran: I know how to be a lawyer just let me handle this.
-Nekocchi: Well sumimasen Ouran I guess you are a professional or something…
+Nekocchi: Well sumimasen Ouran-kun I guess you are a professional or something…
 Ouran: I am.
 Ouran (thought): I should check the court record frequently. All the information I could ever need is in there.
 Bluthund: I got more for you. The victim was Al Protecc, a security guard at Fat Stacks Bank.
@@ -69,12 +69,16 @@ Ouran (thought): This isn’t going well…
 Bluthund: The murder weapon was a stick found at the scene. It was covered in Mr. Protecc’s blood.
 Nekocchi: OwO B-blood???
 Bluthund: Yes blood. This was a murder after all.
-Nekocchi: Nani? No one told me someone got murdered desu~~ <~_~>
+Nekocchi: Nani-desu? No one told me someone got murdered desu~~ <~_~>
 Ouran: I told you multiple times. You reacted like this every time, how can you not remember?
 Bluthund: Anyway the stick was nothing special. Just something from outside on the ground.
 ---Get Big Stick---
 Mel: Thank you Detective. Can you testify about some of your reasoning?
 Bluthund: Sure can!
+
+
+
+
 ---CROSS EXAMINATION DETECTIVE BLUTHUND: GILLIGAN’S CRIME---
 S1: The body was found in the morning.
 S2: We know Al was alive at 5:30 PM.
@@ -95,14 +99,16 @@ Bluthund: Can’t tell you that man.
 Bluthund: What I can tell you is that it was discovered when some people showed up for work the next morning.
 Ouran: so around 9 AM?
 Bluthund: Yeah around 9.
+
 S2 Press:
 Ouran: How exactly do you know that?
-Bluthund: Co-workers testified they saw him punching his card at the time.
+Bluthund: We have a record him checking in at work.
 Ouran: So his shift ended then.
-Bluthund: No it started. Al Protecc was a security guard.
+Bluthund: No it started. Al Protecc was a night guard.
 Ouran: Right I knew that…
 Ouran (thought): I should remember to check the profile section of the court record.
 Ouran (thought): That way I can remember who is involved in the case.
+
 S3 Press:
 Ouran: So my client’s shift ended at 5:30?
 Bluthund: That’s right! The same time as Al.
@@ -130,7 +136,10 @@ Ouran: No his testimony is flawed.
 Ouran: I just need to PRESENT the evidence against the incorrect statement.
 Ouran: That’s how we point out the contradiction!
 Cross Examination Complete
-Ouran: Detective, you said al must have died from 5:30-6:00 correct?
+
+
+
+Ouran: Detective, you said Al must have died from 5:30-6:00 correct?
 Bluthund: Yeah so?
 Ouran: Well there’s where you’re wrong!
 Ouran: According to this autopsy report the victim died sometime between 9:45-10:30 PM.

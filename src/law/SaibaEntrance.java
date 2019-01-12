@@ -7,7 +7,6 @@ import java.io.IOException;
 public class SaibaEntrance extends Location {
 	
 	StoryManager story = Main.currentCase;
-	int progression = 0;
 	public SaibaEntrance()
 	{
 		super("Saiba Entrance", 62);
@@ -23,9 +22,9 @@ public class SaibaEntrance extends Location {
 		this.addEvent((new ClickEvent(false,"tracks", 200, 600, 100, 50, this.clickEvents, 3)));
 		if (!flags[2])
 		{
-			story.insertD("Saiba Corp. Entrance", "");
-			story.insertD("August 10", "");
-			story.insertD("9:00 PM", "");
+			story.insertData("Saiba Corp. Entrance");
+			story.insertData("August 10");
+			story.insertData("9:00 PM");
 			story.playAni("Susan Ord", "susanWitness", 1, false);
 			story.insertD("We’re finally here.", "Ouran");
 			story.insertD("Isn’t this where the murder took place, desu?", "Nekocchi");
@@ -48,11 +47,7 @@ public class SaibaEntrance extends Location {
 	void update()
 	{
 		super.update();
-		if (progression == 2)
-		{
-			story.locales[2].linkPath(story.locales[3]);
-			progression++;
-		}
+		
 	}
 	
 	@Override
@@ -75,6 +70,15 @@ public class SaibaEntrance extends Location {
 		{
 			story.insertD("Those tracks look suspicious...", "Ouran");
 			story.insertR("Tracks", "tracks", "Tracks similar to those on a motorbike.", true, 8);
+			story.insertData("Tracks added to Court Record.");
+			if (flags[28] == true)
+			{
+				story.locales[2].linkPath(story.locales[3]);
+			}
+			else
+			{
+				flags[27] = true;
+			}
 		}
 	}
 
@@ -110,8 +114,14 @@ public class SaibaEntrance extends Location {
 			story.insertD("...OK", "Susan");
 			story.insertD("Proceed up the stairs or the elevator to the Saiba family’s apartment.", "Susan");
 			story.insertD("(They have an apartment in their office? Talk about dedicated...)", "Ouran");
-			progression++;
-			
+			if (flags[27] == true)
+			{
+				story.locales[2].linkPath(story.locales[3]);
+			}
+			else
+			{
+				flags[28] = true;
+			}			
 		}
 	}
 	private Question getQuestionId(int id)
