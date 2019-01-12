@@ -16,6 +16,7 @@ public class Court {
 	Character defObject;
 	Character prosObject;
 	Character[] ceObjects;
+	boolean oneProc=false;
 	ArrayList <Character>characters = new ArrayList<Character>();
 	public BufferedImage black;
 	public Court() throws IOException {
@@ -46,11 +47,15 @@ Main.currentCase.clearSprites();
 	if(x==1) {
 		Main.renderer.queue[0]= new Drawable(11,0,0,1,0,0);
 		if (Main.currentCase.getCharacter("Ouran Forenz")==null) Main.currentCase.characters.add(new Character("Ouran Forenz", 100, 135));
-		Main.renderer.queue[1]= new Drawable(1,100,135,1,0,1);
+		if (!oneProc)
+		{
+		Main.currentCase.getCharacter("Ouran Forenz").play("ouranObject", 0, false);
+		oneProc=true;
+		}
 	}	
 	if(x==2) {
 		Main.renderer.queue[0]= new Drawable(12,0,0,1,0,0);
-		if (Main.currentCase.getCharacter("Adrasteia Rhamnousia")==null) Main.currentCase.characters.add(new Character("Adrasteia Rhamnousia", 100, 135));
+		if (Main.currentCase.getCharacter(Main.currentCase.currentProsecutor)==null) Main.currentCase.characters.add(new Character("Main.currentCase.currentProsecutor", 100, 135));
 		Main.renderer.queue[1]= new Drawable(1, 300,280+68,1,0,1);
 	}	
 	if(x==3) {
@@ -61,6 +66,15 @@ Main.currentCase.clearSprites();
 		Main.currentCase.currentWitness= y;
 		
 	}
+	if(x==4) {
+		Main.renderer.queue[0]= new Drawable(14,0,0,1,0,0);
+		if (Main.currentCase.getCharacter("Nekocchi")==null) Main.currentCase.characters.add(new Character("Nekocchi", 100, 135));
+		if (!oneProc)
+		{
+		Main.currentCase.getCharacter("Nekocchi").play("nekocchiWitness", 0, false);
+		oneProc=true;
+		}
+	}	
 	
 	if (x==69) {
 		Main.renderer.queue[0]= new Drawable(black,0,0,1,0,0);
