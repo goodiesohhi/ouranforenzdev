@@ -26,11 +26,14 @@ BufferedImage scroller = ImageIO.read( Main.class.getResource("/resources/scroll
 BufferedImage mag = ImageIO.read( Main.class.getResource("/resources/mag.png"));
 BufferedImage highlight = ImageIO.read( Main.class.getResource("/resources/highlight.png"));
 BufferedImage backing = ImageIO.read( Main.class.getResource("/resources/backing.png"));
+BufferedImage backingEvidence = ImageIO.read( Main.class.getResource("/resources/backingEvidence.png"));
+BufferedImage backingProfile = ImageIO.read( Main.class.getResource("/resources/backingProfiles.png"));
 Drawable[] queue = new Drawable[40];
 DrawableText[] textQueue = new DrawableText[50];
 BufferedImage[] guiElements = new BufferedImage[40];
 boolean[] sentinelValues = new boolean[40];
 boolean inAction;
+private boolean inProfile;
 
 
 	Gui() throws IOException {
@@ -80,14 +83,14 @@ boolean inAction;
 			}	if (menu==3&&!Main.currentCase.inCourt) {
 			
 					
-				queue[1]= new Drawable(backing,200-5-50,125	-35,1,0,0);
+				queue[1]= new Drawable(backing,200-165,120	-35,1,0,0);
 						for (int i=0; i<6; i++) {
 						if (i<Main.currentCase.currentLocation.paths.size()) {
 						Location path = Main.currentCase.currentLocation.paths.get(i);
-						if (i==markerLocation) textQueue[20+i]= new DrawableText(path.name,Color.YELLOW,32.0f,true,0,0,false);
-						else textQueue[20+i]= new DrawableText(path.name,Color.WHITE,32.0f,true,0,0,false);
+						if (i==markerLocation) textQueue[20+i]= new DrawableText(path.name,Color.GREEN,32.0f,true,0,0,false);
+						else textQueue[20+i]= new DrawableText(path.name,Color.BLACK,32.0f,true,0,0,false);
 						
-						textQueue[20+i].x=200;
+						textQueue[20+i].x=350;
 						textQueue[20+i].y=150+25*i;
 						}
 					
@@ -127,7 +130,46 @@ boolean inAction;
 				 queue[35]= new Drawable(scroller,800,100+evidenceOffset*30*(Main.currentCase.evidence.size()+3/3)-15,1,0,0);
 				queue[0]= new Drawable(guiElements[0],10,10,1,0,0);
 				queue[31]= new Drawable(marker,200-5,125	-5,1,0,0);
-				queue[1]= new Drawable(backing,200-5-50,125	-35,1,0,0);
+				
+				
+				if(inProfile) {
+					
+					queue[1]= new Drawable(backingProfile,200-165,20	-35,1,0,0);
+					
+					for (int i=0;i<3;i++) {
+						
+						if (!Main.currentCase.profiles.isEmpty()) {
+						if(i<Main.currentCase.profiles.size()) {
+							
+							if (i+evidenceOffset<Main.currentCase.profiles.size())guiElements[20+i]=Main.currentCase.profiles.get(i+evidenceOffset).image; 
+							else guiElements[20+i]=empty;
+							queue[20+i]= new Drawable(guiElements[20+i],200,125+i*120,1,0,0);
+						}
+						else {
+							queue[20+i] =   new Drawable(empty,200,125+i*120,1,0,0);
+						}
+						}
+						
+					}
+					
+					if (evidenceOffset<Main.currentCase.profiles.size()) 
+					
+					textQueue[10] =  new DrawableText(Main.currentCase.profiles.get(evidenceOffset).name,Color.BLACK,35.0f,true,0,0,false);
+					else
+						textQueue[10] =  new DrawableText("EMPTY",Color.BLACK,35.0f,true,0,0,false);
+					textQueue[10].x=350;
+					textQueue[10].y=200;
+					
+					if (evidenceOffset<Main.currentCase.profiles.size()) 
+						
+						textQueue[11] =  new DrawableText(Main.currentCase.profiles.get(evidenceOffset).desc,Color.BLACK,15.0f,true,0,0,false);
+						else
+							textQueue[11] =  new DrawableText("EMPTY",Color.BLACK,15.0f,true,0,0,false);
+						textQueue[11].x=350;
+						textQueue[11].y=250;
+					
+				} else {
+					queue[1]= new Drawable(backingEvidence,200-165,20	-35,1,0,0);
 				for (int i=0;i<3;i++) {
 					
 					if (!Main.currentCase.evidence.isEmpty()) {
@@ -146,19 +188,20 @@ boolean inAction;
 				
 				if (evidenceOffset<Main.currentCase.evidence.size()) 
 				
-				textQueue[10] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).name,Color.WHITE,35.0f,true,0,0,false);
+				textQueue[10] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).name,Color.BLACK,35.0f,true,0,0,false);
 				else
-					textQueue[10] =  new DrawableText("EMPTY",Color.WHITE,35.0f,true,0,0,false);
-				textQueue[10].x=325;
+					textQueue[10] =  new DrawableText("EMPTY",Color.BLACK,35.0f,true,0,0,false);
+				textQueue[10].x=350;
 				textQueue[10].y=200;
 				
 				if (evidenceOffset<Main.currentCase.evidence.size()) 
 					
-					textQueue[11] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).desc,Color.WHITE,15.0f,true,0,0,false);
+					textQueue[11] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).desc,Color.BLACK,15.0f,true,0,0,false);
 					else
-						textQueue[11] =  new DrawableText("EMPTY",Color.WHITE,15.0f,true,0,0,false);
-					textQueue[11].x=325;
+						textQueue[11] =  new DrawableText("EMPTY",Color.BLACK,15.0f,true,0,0,false);
+					textQueue[11].x=350;
 					textQueue[11].y=250;
+				}
 
 
 			      
@@ -191,7 +234,14 @@ boolean inAction;
 							 queue = new Drawable[40];
 							  textQueue = new DrawableText[50];
 			   				   
+		   } 	   else if (Main.keyInt==KeyEvent.VK_LEFT||Main.keyInt==KeyEvent.VK_RIGHT) {
+			   evidenceOffset=0;
+			   this.cls();
+			   if (inProfile) inProfile = false;
+			   else inProfile=true;
+			   
 		   }
+					   
 					   }
 				  
 			} else
@@ -200,7 +250,44 @@ boolean inAction;
 				 queue[35]= new Drawable(scroller,800,100+evidenceOffset*30*(Main.currentCase.evidence.size()+3/3)-15,1,0,0);
 				queue[0]= new Drawable(guiElements[0],10,10,1,0,0);
 				queue[31]= new Drawable(marker,200-5,125	-5,1,0,0);
-				queue[1]= new Drawable(backing,200-5-50,125	-35,1,0,0);
+		
+				if(inProfile) {
+					queue[1]= new Drawable(backingProfile,200-165,20	-35,1,0,0);
+					
+					for (int i=0;i<3;i++) {
+						
+						if (!Main.currentCase.profiles.isEmpty()) {
+						if(i<Main.currentCase.profiles.size()) {
+							
+							if (i+evidenceOffset<Main.currentCase.profiles.size())guiElements[20+i]=Main.currentCase.profiles.get(i+evidenceOffset).image; 
+							else guiElements[20+i]=empty;
+							queue[20+i]= new Drawable(guiElements[20+i],200,125+i*120,1,0,0);
+						}
+						else {
+							queue[20+i] =   new Drawable(empty,200,125+i*120,1,0,0);
+						}
+						}
+						
+					}
+					
+					if (evidenceOffset<Main.currentCase.profiles.size()) 
+					
+					textQueue[10] =  new DrawableText(Main.currentCase.profiles.get(evidenceOffset).name,Color.BLACK,35.0f,true,0,0,false);
+					else
+						textQueue[10] =  new DrawableText("EMPTY",Color.BLACK,35.0f,true,0,0,false);
+					textQueue[10].x=350;
+					textQueue[10].y=200;
+					
+					if (evidenceOffset<Main.currentCase.profiles.size()) 
+						
+						textQueue[11] =  new DrawableText(Main.currentCase.profiles.get(evidenceOffset).desc,Color.BLACK,15.0f,true,0,0,false);
+						else
+							textQueue[11] =  new DrawableText("EMPTY",Color.BLACK,15.0f,true,0,0,false);
+						textQueue[11].x=350;
+						textQueue[11].y=250;
+					
+				} else {
+					queue[1]= new Drawable(backingEvidence,200-165,20	-35,1,0,0);
 				for (int i=0;i<3;i++) {
 					
 					if (!Main.currentCase.evidence.isEmpty()) {
@@ -219,19 +306,21 @@ boolean inAction;
 				
 				if (evidenceOffset<Main.currentCase.evidence.size()) 
 				
-				textQueue[10] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).name,Color.WHITE,35.0f,true,0,0,false);
+				textQueue[10] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).name,Color.BLACK,35.0f,true,0,0,false);
 				else
-					textQueue[10] =  new DrawableText("EMPTY",Color.WHITE,35.0f,true,0,0,false);
-				textQueue[10].x=325;
+					textQueue[10] =  new DrawableText("EMPTY",Color.BLACK,35.0f,true,0,0,false);
+				textQueue[10].x=350;
 				textQueue[10].y=200;
 				
 				if (evidenceOffset<Main.currentCase.evidence.size()) 
 					
-					textQueue[11] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).desc,Color.WHITE,15.0f,true,0,0,false);
+					textQueue[11] =  new DrawableText(Main.currentCase.evidence.get(evidenceOffset).desc,Color.BLACK,15.0f,true,0,0,false);
 					else
-						textQueue[11] =  new DrawableText("EMPTY",Color.WHITE,15.0f,true,0,0,false);
-					textQueue[11].x=325;
+						textQueue[11] =  new DrawableText("EMPTY",Color.BLACK,15.0f,true,0,0,false);
+					textQueue[11].x=350;
 					textQueue[11].y=250;
+				}
+
 
 //System.out.println(evidenceOffset);
 			      
@@ -245,16 +334,31 @@ boolean inAction;
 						   if (evidenceOffset!=Main.currentCase.evidence.size()+5) evidenceOffset++;
 					   }else
 						   if(Main.keyInt==90) {
-							   if (evidenceOffset<Main.currentCase.evidence.size()) {
-							if (  Main.currentCase.evidence.get(evidenceOffset)!=null)  {
-								System.out.println("phase1");
-								Main.currentCase.currentExamine.statements.get(Main.currentCase.currentExamine.currentStatement).present(Main.currentCase.evidence.get(evidenceOffset));
+							   if (inProfile) {
+							   if (evidenceOffset<Main.currentCase.profiles.size()) {
+							if (  Main.currentCase.profiles.get(evidenceOffset)!=null)  {
+						
+								Main.currentCase.currentExamine.statements.get(Main.currentCase.currentExamine.currentStatement).present(Main.currentCase.profiles.get(evidenceOffset));
 								 queue = new Drawable[40];
 								  textQueue = new DrawableText[50];
 								this.menu=-1;
 							}
 							   				   
 						   }
+							   } else {
+							   if (evidenceOffset<Main.currentCase.evidence.size()) {
+									if (  Main.currentCase.evidence.get(evidenceOffset)!=null)  {
+										System.out.println("phase1");
+										Main.currentCase.currentExamine.statements.get(Main.currentCase.currentExamine.currentStatement).present(Main.currentCase.evidence.get(evidenceOffset));
+										 queue = new Drawable[40];
+										  textQueue = new DrawableText[50];
+										this.menu=-1;
+									}
+									   				   
+								   }
+							   }
+							   /////
+							   
 						   }
 						   else  if(Main.keyInt==KeyEvent.VK_X) {
 							 
@@ -262,6 +366,12 @@ boolean inAction;
 							 queue = new Drawable[40];
 							  textQueue = new DrawableText[50];
 			   				   
+		   } else if (Main.keyInt==KeyEvent.VK_LEFT||Main.keyInt==KeyEvent.VK_RIGHT) {
+			   evidenceOffset=0;
+			   this.cls();
+			   if (inProfile) inProfile = false;
+			   else inProfile=true;
+			   
 		   }
 					   }
 				  
