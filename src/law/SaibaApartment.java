@@ -16,12 +16,13 @@ public class SaibaApartment extends Location  {
 		this.addEvent((new ClickEvent(false, "bigStick", 500, 100, 128, 128, this.clickEvents, 3)));
 		if(!flags[3])
 		{
-			story.insertD("Saiba Corp. Apartment Entrance", "");
-			story.insertD("August 10", "");
-			story.insertD("9:10 PM", "");
+			story.insertData("Saiba Corp. Apartment Entrance");
+			story.insertData("August 10");
+			story.insertData("9:10 PM");
 			story.insertD("Puff, puff... You cheated by taking the elevator!", "Ouran");
 			story.insertD("It wasn’t cheating! Susan-chan told us we could, desu!", "Nekocchi");
 			story.insertR("Elevator and Stairs", "elevStairs", "Stairs next to an elevator.", false, 11);
+			story.insertData("Elevator and Stairs have been added to Court Record.");
 			story.insertD("Well, let’s get examining...", "Ouran");
 			flags[3] = true;
 		}

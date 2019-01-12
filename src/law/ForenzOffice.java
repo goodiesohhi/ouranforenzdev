@@ -18,9 +18,9 @@ public class ForenzOffice extends Location {
 		 if (block){
 			 if (!flags[0])
 			 {
-				/*story.insertD("Forenz Office", "");
-				 story.insertD("August 10", "");
-				 story.insertD("8:00 PM", "");
+				 story.insertData("Forenz Office");
+				 story.insertData("August 10");
+				 story.insertData("8:00 PM");
 				 story.insertD("(It’s the end of a long day doing nothing.)", "Ouran");
 				 story.insertD("(I better check the news, since this is how I normally find clients anyways.)", "Ouran");
 				 story.insertD("Welcome to the News at 8!", "Newscaster");
@@ -29,7 +29,7 @@ public class ForenzOffice extends Location {
 				 story.insertD("Not senpai Keto’s brother! Keto was a good opponent desu!", "Nekocchi");
 				 story.insertD("Don’t scare me like that, Nekocchi.", "Ouran");
 				 story.insertD("You have to take his case, Ouran!", "Nekocchi");
-				 story.insertD("Fine, fine.", "Ouran");*/
+				 story.insertD("Fine, fine.", "Ouran");
 				 story.insertR("Komuba Saiba", "komubaProfile", "The victim. Younger brother of Keto.", true, 10);
 				 flags[0] = true;
 			 }

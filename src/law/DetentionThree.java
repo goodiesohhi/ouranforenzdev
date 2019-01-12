@@ -16,9 +16,9 @@ public class DetentionThree extends Location {
 
 			
 		
-			 /*story.insertD("Detention Centre", "");
-			 story.insertD("August 10", "");
-			 story.insertD("8:10 PM", "");
+			 story.insertData("Detention Centre");
+			 story.insertData("August 10");
+			 story.insertData("8:10 PM");
 			 story.playAni("Det. Pat. Bluthund","bluthundWitness",1,false);
 			 story.insertD("Forenz! What are you doing here with your annoying cat?", "Det. Pat. Bluthund");
 			 story.insertD("Hey, thatâ€™s not nice, Bluthund-san!", "Nekocchi");
@@ -30,7 +30,7 @@ public class DetentionThree extends Location {
 			 story.insertD("Youâ€™re an attorney?", "Keto");
 			 story.insertD("Yes, Iâ€™m here to help you. May I defend you?", "Ouran");
 			 story.insertD("Sure, why not? I trust your card-playing companion.", "Keto");
-			 story.insertD("Did you hear that, Ouran-chan?", "Nekocchi");*/
+			 story.insertD("Did you hear that, Ouran-chan?", "Nekocchi");
 			 
 			 flags[1] = true;
 			 
@@ -78,6 +78,7 @@ public class DetentionThree extends Location {
 			story.insertD("I took over a few years ago. We did have a problem with the media a while back, though...", "Keto");
 			story.insertD("Here, take a copy of this article.", "Keto");
 			story.insertR("Saiba Corp. Article", "article", "UNETHICAL BUSINESS PRACTICES REVEALED", false, 1);
+			story.insertData("Saiba Corp. Article added to Court Record.");
 		}
 		if (i == 3)
 		{
@@ -86,6 +87,7 @@ public class DetentionThree extends Location {
 			story.insertD("You should take one if youâ€™re going to be defending me.", "Keto");
 			story.insertD("Otherwise, they might shred my collection...", "Keto");
 			story.insertR("White-Eyes Blue Dragon", "webd", "This is Ketoâ€™s favourite card in the Saiba OCG.", false, 7);
+			story.insertData("White-Eyes Blue Dragon added to Court Record.");
 		}
 	}
 	private Question getQuestionId(int id) {

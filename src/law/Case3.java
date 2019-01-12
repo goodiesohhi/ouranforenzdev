@@ -201,6 +201,7 @@ class Case3 extends StoryManager  {
 		 	insertD("No, I don’t suppose I did.", "Susan");
 		 	insertD("If you had, you would realize that there were wheels on the bottom of the dragon.", "Adrasteia");
 		 	insertR("Wheels", "wheels", "The dragon can move! Can't be seen normally.", false, 16);
+		 	insertData("Wheels have been added to Court Record.");
 		 	insertV(0, "Judge Judge");
 		 	insertD("When you take that into account, the Dragon could easily have been moved.", "Judge Judge");
 		 	insertV(1, "Ouran Forenz");
@@ -280,6 +281,9 @@ class Case3 extends StoryManager  {
 		 	insertD("We have no real witnesses, and we’re still missing at least one vital piece of evidence.", "Judge Judge");
 		 	insertD("In addition, somebody could have taken the elevator to leave the apartment.", "Judge Judge");
 		 	insertD("Therefore, we will reconvene tomorrow!", "Judge Judge");
+		 	insertV(1, "Ouran Forenz");
+		 	insertD("I am Ouran Forenz.", "Ouran");
+		 	insertD("And as long as I am a defence attorney, those falsely accused will never be convicted.", "Ouran");
 		 	insertData("To be continued...");
     	}
     	if (flags[25]==false&&!oneProc)
@@ -291,7 +295,7 @@ class Case3 extends StoryManager  {
             insertR("Nekocchi", "nekocchiProfile", "My assistant...", true, 3);
             insertR("Det. Pat. Bluthund", "bluthundProfile", "The detective. Can be a bit over-zealous.", true, 4);
             insertR("Adrasteia Rhamnousia", "adrasteiaProfile", "The prosecutor. Blind as a bat.", true, 5);
-            /*insertD("Convention Centre", "");
+            insertD("Convention Centre", "");
             insertD("August 7", "");
             insertD("2:57 PM", "");
             insertD("Ouran-san! My kawaii Fairilees must see battle!", "Nekocchi");
@@ -304,7 +308,7 @@ class Case3 extends StoryManager  {
             insertD("Awww...", "Nekocchi");
             insertD("(Nekkochi lost. I feel kind of bad for her.)", "Ouran");
             insertD("That was a good fight, Keto-chan! Your dragons were sugoi cool!", "Nekocchi");
-            insertD("Of course they are!", "Keto");*/
+            insertD("Of course they are!", "Keto");
             flags[25] = true;
       		 locales[0] = new DetentionThree();
        		 locales[1] = new ForenzOffice();
