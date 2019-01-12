@@ -48,11 +48,7 @@ public class SaibaEntrance extends Location {
 	void update()
 	{
 		super.update();
-		if (progression == 2)
-		{
-			story.locales[2].linkPath(story.locales[3]);
-			progression++;
-		}
+		
 	}
 	
 	@Override
@@ -75,6 +71,14 @@ public class SaibaEntrance extends Location {
 		{
 			story.insertD("Those tracks look suspicious...", "Ouran");
 			story.insertR("Tracks", "tracks", "Tracks similar to those on a motorbike.", true, 8);
+			if (progression == 1)
+			{
+				story.locales[2].linkPath(story.locales[3]);
+			}
+			else
+			{
+				progression++;
+			}
 		}
 	}
 
@@ -110,8 +114,14 @@ public class SaibaEntrance extends Location {
 			story.insertD("...OK", "Susan");
 			story.insertD("Proceed up the stairs or the elevator to the Saiba family’s apartment.", "Susan");
 			story.insertD("(They have an apartment in their office? Talk about dedicated...)", "Ouran");
-			progression++;
-			
+			if (progression == 1)
+			{
+				story.locales[2].linkPath(story.locales[3]);
+			}
+			else
+			{
+				progression++;
+			}			
 		}
 	}
 	private Question getQuestionId(int id)

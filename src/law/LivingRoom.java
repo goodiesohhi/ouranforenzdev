@@ -14,7 +14,7 @@ public class LivingRoom extends Location{
 		this.addEvent(new ClickEvent(false,"body", 600, 400, 80, 60, this.clickEvents, 0));
 		this.addEvent(new ClickEvent(true,"uniform", 700, 350, 60, 50, this.clickEvents, 1));
 		this.addEvent(new ClickEvent(false,"tv", 50, 200, 150, 500, this.clickEvents, 2));
-		this.addEvent(new ClickEvent(false,"coffeeTable", 200, 500, 150, 50, this.clickEvents, 3));
+		this.addEvent(new ClickEvent(false,"coffeeTable", 200, 500, 400, 100, this.clickEvents, 3));
 		if (!flags[4])
 		{
 			story.insertD("Saiba Corp. Apartment Living Room", "");
@@ -38,12 +38,6 @@ public class LivingRoom extends Location{
 	void update()
 	{
 		super.update();
-		if (progression == 2)
-		{
-			story.locales[3].linkPath(story.locales[4]);
-			progression++;
-			story.insertD("Ouran! We’ve found the dragon! Follow me!", "Det. Pat. Bluthund");
-		}
 	}
 	@Override
 	void events (int i)
@@ -57,7 +51,15 @@ public class LivingRoom extends Location{
 			story.insertD("Strange... this doesn’t look a bit burnt.", "Ouran");
 			story.insertD("Why did he take off his uniform?", "Ouran");
 			story.insertR("Uniform", "uniform", "This uniform wasn’t burned a mite.", false, 12);
-			progression++;
+			if (progression == 1)
+			{
+				story.locales[4].linkPath(story.locales[5]);
+				story.insertD("Ouran! We’ve found the dragon! Follow me!", "Det. Pat. Bluthund");
+			}
+			else
+			{
+				progression++;
+			}
 		}
 		if (i == 2)
 		{
@@ -78,7 +80,15 @@ public class LivingRoom extends Location{
 			story.insertD("It appears that Komuba was burnt.", "Det. Pat. Bluthund");
 			story.insertD("We have his autopsy report here if you want to take a look.", "Det. Pat. Bluthund");
 			story.insertR("Autopsy Report","autopsyReport", "Died due to septicaemia after severe burns", false, 13);
-			progression++;
+			if (progression == 1)
+			{
+				story.locales[4].linkPath(story.locales[5]);
+				story.insertD("Ouran! We’ve found the dragon! Follow me!", "Det. Pat. Bluthund");
+			}
+			else
+			{
+				progression++;
+			}
 		}
 		if (i == 1)
 		{

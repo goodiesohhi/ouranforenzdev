@@ -13,6 +13,7 @@ public class SaibaApartment extends Location  {
 		this.addEvent((new ClickEvent(false,"flowerVase", 50, 300, 60, 50, this.clickEvents, 0)));
 		this.addEvent((new ClickEvent(false,"briefcase", 150, 600, 30, 70, this.clickEvents, 1)));
 		this.addEvent((new ClickEvent(false,"painting", 300, 100, 100, 100, this.clickEvents, 2)));
+		this.addEvent((new ClickEvent(false, "bigStick", 500, 100, 128, 128, this.clickEvents, 3)));
 		if(!flags[3])
 		{
 			story.insertD("Saiba Corp. Apartment Entrance", "");
@@ -45,6 +46,10 @@ public class SaibaApartment extends Location  {
 		if (i == 2)
 		{
 			story.insertD("Garish. Looks kind of like my attorney’s badge.", "Ouran");
+		}
+		if (i == 3)
+		{
+			story.insertD("Weird-looking. Maybe a stick of some kind?", "Ouran");
 		}
 	}
 	@Override

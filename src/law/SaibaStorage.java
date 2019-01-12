@@ -13,7 +13,7 @@ public class SaibaStorage extends Location {
 		super.enter();
 		this.addEvent(new ClickEvent(false,"storageWall", 0, 0, 400, 700, this.clickEvents, 0));
 		this.addEvent(new ClickEvent(false,"dragonModel", 400, 100, 450, 500, this.clickEvents, 1));
-		this.addEvent(new ClickEvent(false,"dragonMouth", 850, 200, 50, 35, this.clickEvents, 2));
+		this.addEvent(new ClickEvent(false, "dragonMouth", 850, 200, 50, 35, this.clickEvents, 2));
 		if(!flags[5])
 		{
 			story.insertD("Saiba Corp. Storage", "");
@@ -55,17 +55,41 @@ public class SaibaStorage extends Location {
 			story.insertD("Looks like it could actually come to life.", "Ouran");
 			story.insertD("My Fairilees are quaking in their boots, nya!", "Nekocchi");
 			story.insertR("Dragon Model", "dragonModel", "It’s big, bulky, and heavy.", false, 14);
-			progression++;
+			if (progression == 1)
+			{
+				story.insertD("Well, we’re packing up for the night.", "Det. Pat. Bluthund");
+				story.insertD("Are you good, Ouran?", "Det. Pat. Bluthund");
+				story.insertD("Yeah, I think I’m ready.", "Ouran");
+				story.insertD("(A dragon? How am I going to deal with that?)", "Ouran");
+				story.insertD("TO BE CONTINUED", "");
+				story.toCourt();
+			}
+			else
+			{
+				progression++;
+			}
 		}
 		if (i == 2)
 		{
 			story.insertD("What’s that in the mouth?", "Ouran");
-			story.insertD("It’s a flamethrower, Mr. Forenz", "Det. Pat. Bluthund");
+			story.insertD("It’s a flamethrower, Mr. Forenz.", "Det. Pat. Bluthund");
 			story.insertD("A flamethrower?", "Ouran");
 			story.insertD("But wasn’t the victim killed by burns, desu ka?", "Nekocchi");
 			story.insertD("It seems so...", "Ouran");
 			story.insertR("Flamethrower", "flamethrower", "Used to kill Komuba, or so the prosecution claims...", false, 15);
-			progression++;
+			if (progression == 1)
+			{
+				story.insertD("Well, we’re packing up for the night.", "Det. Pat. Bluthund");
+				story.insertD("Are you good, Ouran?", "Det. Pat. Bluthund");
+				story.insertD("Yeah, I think I’m ready.", "Ouran");
+				story.insertD("(A dragon? How am I going to deal with that?)", "Ouran");
+				story.insertD("TO BE CONTINUED", "");
+				story.toCourt();
+			}
+			else
+			{
+				progression++;
+			}
 		}
 	}
 	@Override

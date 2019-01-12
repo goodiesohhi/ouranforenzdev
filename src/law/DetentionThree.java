@@ -12,11 +12,11 @@ public class DetentionThree extends Location {
 		super.enter();
 
 		this.addEvent((new ClickEvent(false,"wall", 0, 0, 1024, 768, this.clickEvents, 0)));
-		 if (!flags[0]){
+		 if (!flags[1]){
 
 			
 		
-			 story.insertD("Detention Centre", "");
+			 /*story.insertD("Detention Centre", "");
 			 story.insertD("August 10", "");
 			 story.insertD("8:10 PM", "");
 			 story.playAni("Det. Pat. Bluthund","bluthundWitness",1,false);
@@ -30,7 +30,7 @@ public class DetentionThree extends Location {
 			 story.insertD("Youâ€™re an attorney?", "Keto");
 			 story.insertD("Yes, Iâ€™m here to help you. May I defend you?", "Ouran");
 			 story.insertD("Sure, why not? I trust your card-playing companion.", "Keto");
-			 story.insertD("Did you hear that, Ouran-chan?", "Nekocchi");
+			 story.insertD("Did you hear that, Ouran-chan?", "Nekocchi");*/
 			 
 			 flags[1] = true;
 			 
@@ -122,7 +122,7 @@ public class DetentionThree extends Location {
 			story.insertD("I have strategies that can stop any attempts to destroy it.", "Keto");
 			story.insertD("Itâ€™s the main reason why Iâ€™m the champion.", "Keto");
 			story.insertD("Heâ€™s sugoi amazing, desu!", "Nekocchi");
-			story.insertD("(If he owns all the copies of the best card, then whatâ€™s the point of even holding competitions?)", "Ouran");
+			story.insertD("(If he owns all the copies of the best card, then whatâ€™s the point of even competing?)", "Ouran");
 			story.insertD("(Heâ€™s just going to pay out the money to himself!)", "Ouran");
 		}
 		else
