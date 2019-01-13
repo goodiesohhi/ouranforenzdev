@@ -122,7 +122,6 @@ public class Case1 extends StoryManager{
 		 insertR("Photo of Al","photoalprotecc","Al holding a coffee cup in his left hand when he was alive.",false,6);
 		 insertData("You got the Photo of Al.");
 		 insertD("A witness found the body the next morning. His dying message implicates your client a lot.", "Det. Pat. Bluthund");
-		 insertData("You got the Photo of the Body.");
 		 showAni("Photo of Body","albodypic",0,false);
 		 insertD("Clear as day, written right there is the name of your client.","Det. Pat. Bluthund");
 		 insertV(1,null);
@@ -130,7 +129,7 @@ public class Case1 extends StoryManager{
 		 insertD("Oh...","Ouran Forenz");
 		 insertV(3,"Gilligan Tam");
 		 playAni("Gilligan Tam","gilliganWitness",0,false);
-		 insertR("Gilligan Tam", "gilliganProfile", "A teller at Fat Stacks Bank.",true,0);
+		 insertR("Gilligan Tam", "gilliganProfile", "A teller at Fat Stacks Bank.",true,7);
 		 insertD("THATS ME!!!","Gilligan Tam");
 		 insertV(1,null);
 		 insertD("Gilligan, you shouldn’t be speaking. I’m your attorney, you need to leave it to me.","Ouran Forenz");
@@ -142,7 +141,8 @@ public class Case1 extends StoryManager{
 		 insertD("THAT’S A CONFESSION!!!","Det. Pat. Bluthund");
 		 insertV(1,null);
 		 insertD("(This isn't going well...)","Ouran Forenz");
-		 insertR("Photo of Body","albodypic","Dying message by right hand that reads 'Gill T'.",false,5);
+		 insertData("You got the Photo of the Body.");
+		 insertR("Photo of Body","albodypic","Dying message by right hand that reads 'Gill T'.",false,8);
 		 insertData("You got the Picture of the Body.");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
