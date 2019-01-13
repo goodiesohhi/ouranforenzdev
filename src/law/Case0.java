@@ -1,14 +1,14 @@
-package law;
+package law; // sets package
 
-import java.io.IOException;
+import java.io.IOException; // imports IOException
 
-class Case0 extends StoryManager  {
+class Case0 extends StoryManager  { // opens class
 	
 
- int currentArea=0;
- Case0() throws IOException  {
-    super();
-	Main.renderer.insert("nekocchiWitness",112);
+ int currentArea=0; // sets area
+ Case0() throws IOException  { // opens constructor
+    super(); // constructs story manager
+	Main.renderer.insert("nekocchiWitness",112); // inserts assets
 
 	Main.renderer.insert("bluthundWitness",113);
     
@@ -19,20 +19,20 @@ class Case0 extends StoryManager  {
  //Main.renderer.textQueue[0] = new DrawableText("Hello. Welcome to the the extremely early prototype of Ouron Forenz!",Color.WHITE,0,true,0,0);
  }
 
- void update () throws IOException {
+ void update () throws IOException { // update loop
 	   
 	    //System.out.println ("flags[25]: " + flags[25]);
-	 if (flags[25]==true&&!oneProc){
-		 oneProc=true;
+	 if (flags[25]==true&&!oneProc){ // checks if the investigation has been run and if it is the only thing running
+		 oneProc=true; // ensures that nothing else will run in update
 		
 		 
-		 inCourt=true;
+		 inCourt=true; // sets the scene to court
 
 
 	
-		 startCExamine(0);
+		 startCExamine(0); // starts first cross-examination
 		 
-		 
+		 // sets various statements of cross-examine
 		 Main.cExamine[Main.examineSlot].add("Hello", "Nekocchi",  new String[] {"hello 1","hello 2","hello 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, null , null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Present Badge", "Nekocchi",  new String[] {"hello jijs1","hello ksoks2","hello 3kdokd"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 2, "Ouran's Attorney's Badge",null,0);
@@ -41,38 +41,38 @@ class Case0 extends StoryManager  {
 		 Main.cExamine[Main.examineSlot].add("test3", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("test4", "Nekocchi",  new String[] {"0","1","2","3","4","5"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi","Nekocchi"} , 0, null,null,0);
 		 
-		 stopCExamine();
+		 stopCExamine(); // ends first cross-examination
 		 
-		 startCExamine(1);
-		 
+		 startCExamine(1); // starts second cross-examination
+		  // sets various statements of cross-examine
 		 Main.cExamine[Main.examineSlot].add("Press this1", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this2", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this3", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this4", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this5", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this6", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
-		 stopCExamine();
+		 stopCExamine(); // ends second cross-examination
 		 
-		 startCExamine(2);
-		 
+		 startCExamine(2); // starts third cross-examination
+		  // sets various statements of cross-examine
 		 Main.cExamine[Main.examineSlot].add("Press this7", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this8", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this9", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this10", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this11", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this12", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
-		 stopCExamine();
+		 stopCExamine(); // ends third cross-examination
 		 
 		 
-		 startCExamine(3);
-		 
+		 startCExamine(3); // starts fourth cross-examination
+		 // sets various statements of cross-examine
 		 Main.cExamine[Main.examineSlot].add("Press this13", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this14", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this15", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this16", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this17", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this18", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
-		 stopCExamine();
+		 stopCExamine(); // ends fourth cross-examination
 		 
 		 
 		 
@@ -96,11 +96,10 @@ class Case0 extends StoryManager  {
 			   
 
 		  */
-		    
+		    // inserts lines of dialogue and various changes of view
 		    insertD("Court is in session for the murder of common human decency!","Judge Judge");
 		    insertD("Is the defense ready?","Judge Judge");
 		 
-		   
 		   
 				   insertV(1,null);
 
@@ -125,18 +124,18 @@ class Case0 extends StoryManager  {
 		    insertD("Who is the accused?" ,"Judge Judge");
 		    
 		    insertV(3,"Det. Pat. Bluthund");
-		    playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		    playAni("Det. Pat. Bluthund","bluthundWitness",0,false); // plays animation for Bluthund
 
 		    insertD("I smell a cat....","Det. Pat. Bluthund");
 		    insertV(3,"Nekocchi");
-		    playAni("Nekocchi","nekocchiWitness",0,false);
+		    playAni("Nekocchi","nekocchiWitness",0,false); // plays animation for Nekocchi
 			  
 		    insertD("MEEEEE, Ur HonoR!","???");
 		    insertD("And who are you?","Judge Judge");
 		    insertD("My name is Nekocchi","???");
 		    insertD("NYA?","Nekocchi");
-		    runFirstExamine(0);
-		    runExamine(1);
+		    runFirstExamine(0); // runs start of cross-examination
+		    runExamine(1); // runs cross-examination
 		 
 		    
 		    insertV(0,null);
@@ -154,8 +153,8 @@ class Case0 extends StoryManager  {
 		    insertD("Okay","Judge Judge");
 		    
 		    
-		    runFirstExamine(2);
-		    runExamine(3);
+		    runFirstExamine(2); // runs start of cross-examination
+		    runExamine(3); // runs cross-examination
 		    insertD("My verdict is still guilty.","Judge Judge");
 		    
 		    insertD("And that was the actual end","God");
@@ -163,36 +162,36 @@ class Case0 extends StoryManager  {
 		  
 	 }
 
-	 if (flags[0]==false&&!oneProc){
-		 characters.add(new Character("Nekocchi", 280, 0));
+	 if (flags[0]==false&&!oneProc){ // checks if investigation has already happened and if this is the only segment being updated
+		 characters.add(new Character("Nekocchi", 280, 0)); // adds character to game
 
 	
 
 
 		
 		 
-		 locales[0] = new AreaZeroZero();
+		 locales[0] = new AreaZeroZero(); // adds locations
 		 locales[1] = new NekochiiBedroom();
 		locales[2] = new DetentionThree();
-		 locales[0].linkPath(locales[1]);
+		 locales[0].linkPath(locales[1]); // links locations
 		 locales[0].linkPath(locales[2]);
    //flags[25]=true;
 		// this.toCourt();
-		 enterArea(0);
+		 enterArea(0); // enters starting area
 		
 		 
-		flags[0]=true;
+		flags[0]=true; // sets flag to true
 
-    block=false;
+    block=false; // removes block
    
-oneProc=true;
+oneProc=true; // sets variable to true to stop repetition each click
   
  }
 	 
 	
   
 	 
-	super.update();
+	super.update(); // updates StoryManager
 	 
    
   
