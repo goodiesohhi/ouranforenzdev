@@ -97,7 +97,18 @@ class Statements {
 			story.insertD("This condition has been fulfilled", "Judgebot 3000");
 			story.switchBackToEventQueue();
 			
-		} else if (name.equals("example")) {
+		} else if (name.equals("Autopsy Report")) {
+			
+			
+			story.insertO(0);
+			story.insertD("RANDOM OBJECTION!", "Ouran Forenz");
+			story.removeO();
+			
+			story.insertV(0, null);
+			
+			story.insertD("My Little Pony", "Judgebot 3000");
+			
+			story.switchBackToEventQueue();
 			
 		}  } 
 		else {

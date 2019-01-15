@@ -155,7 +155,6 @@ class Case0 extends StoryManager  {
 		    
 		    
 		    runFirstExamine(2);
-		    runExamine(3);
 		    insertD("My verdict is still guilty.","Judge Judge");
 		    
 		    insertD("And that was the actual end","God");
