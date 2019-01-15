@@ -85,7 +85,6 @@ public String currentWitness;
   void update() throws IOException {
 //System.out.println(eventQueue.toString());
 	  court.update();
-	  System.out.println(beginExamine+"/"+working+"/"+timer1);
 	  if (this.beginExamine&&Main.currentCase.working) {
 		  timer1++;
 		  

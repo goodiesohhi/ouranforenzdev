@@ -80,7 +80,7 @@ public class Main extends JFrame{
     	renderer.insert("defbench", 11);
     	renderer.insert("prosbench",12);
     	renderer.insert("stand",13);
-    	renderer.insert("defenseCounsel", 14);
+    	renderer.insert("defcounsel", 14);
 
     	renderer.insert("objection",19);
     	currentCase = new StoryManager();
@@ -198,7 +198,7 @@ public class Main extends JFrame{
     		renderer.clear();
     		renderer.camera.reset();
     		currentCase= null;
-    		currentCase = new Case1();
+    		currentCase = new Case3();
     		switchState(2);
     		
     	}
