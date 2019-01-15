@@ -99,7 +99,7 @@ class Statements { // opens class
 			
 		} else if (name.equals("Autopsy Report")) {
 			
-			
+			//Tests of statements. Test to check on cross end bug.
 			story.insertO(0);
 			story.insertD("RANDOM OBJECTION!", "Ouran Forenz");
 			story.removeO();
@@ -107,7 +107,7 @@ class Statements { // opens class
 			story.insertV(0, null);
 			
 			story.insertD("My Little Pony", "Judgebot 3000");
-			
+			story.insertV(1, null);
 			story.switchBackToEventQueue();
 
 			
