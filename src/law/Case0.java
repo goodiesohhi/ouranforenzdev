@@ -151,10 +151,9 @@ class Case0 extends StoryManager  { // opens class
 		    insertD("The defense insists on a proper trial before a verdict an be determined","Ouran Forenz");
 		    insertV(0,null);
 		    insertD("Okay","Judge Judge");
-		    
-		    
 		    runFirstExamine(2); // runs start of cross-examination
 		    runExamine(3); // runs cross-examination
+
 		    insertD("My verdict is still guilty.","Judge Judge");
 		    
 		    insertD("And that was the actual end","God");

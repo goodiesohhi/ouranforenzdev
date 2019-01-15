@@ -97,7 +97,19 @@ class Statements { // opens class
 			story.insertD("This condition has been fulfilled", "Judgebot 3000");
 			story.switchBackToEventQueue(); // switches to event queue
 			
-		} else if (name.equals("example")) { // if evidence is example
+		} else if (name.equals("Autopsy Report")) {
+			
+			//Tests of statements. Test to check on cross end bug.
+			story.insertO(0);
+			story.insertD("RANDOM OBJECTION!", "Ouran Forenz");
+			story.removeO();
+			
+			story.insertV(0, null);
+			
+			story.insertD("My Little Pony", "Judgebot 3000");
+			story.insertV(1, null);
+			story.switchBackToEventQueue();
+
 			
 		}  } 
 		else { // if evidence is not correct

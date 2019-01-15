@@ -29,6 +29,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 stopCExamine(); // ends first cross-examination
 		 
+		 
 		 //insertV(5, null);
 		 //For the defendant lobby.
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
@@ -160,6 +161,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Anyway the stick was nothing special. Just something from outside on the ground.","Det. Pat. Bluthund");
+		 insertR("Big Stick","bigStick","Just a big stick. Murder weapon.",false,9);
 		 insertData("You got the Big Stick.");
 		 insertV(2,null);
 		 insertD("Thank you Detective. Can you testify about some of your reasoning?","Mel Practiss");
@@ -167,8 +169,63 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Sure can!","Det. Pat. Bluthund");
 		 runFirstExamine(0); // runs beginning of cross-examination
+		 insertD("(Aha... Now I've got him...)","Ouran Forenz");
 		 insertD("Detective, you said Al must have died from 5:30-6:00 correct?","Ouran Forenz");
-		 
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("Yeah, so?", "Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("Well there’s where you’re wrong!", "Ouran Forenz");
+		 insertD("According to this autopsy report the victim died sometime between 9:45-10:30 PM.","Ouran Forenz");
+		 insertV(4,null);
+		 insertD("Hontou?!?! Great job Ouran desu~~","Nekocchi");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("AHAHAHAHAHAHAHA","Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("What's so funny?","Ouran Forenz");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("Well I was just testing you Mr. Forenz.","Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("(Really? Just a test? Sure…)","Ouran Forenz");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("You don’t think I know that?","Det. Pat. Bluthund");
+		 insertV(2,null);
+		 insertD("Well this is news to me!?!","Mel Practiss");
+		 insertD("Detective please don’t lie on the stand…","Mel Practiss");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("No problem. Besides we have evidence showing him entering the bank at 9:50 PM.","Det. Pat. Bluthund");
+		 insertV(1,null);
+		 insertD("Hmmm...?","Ouran Forenz");
+		 insertD("WHAT!!?!??!?","Ouran Forenz");
+		 insertV(4,null);
+		 insertD("Nani?! OwO","Nekocchi");
+		 insertV(2,null);
+		 insertD("Y-yes now I remember…","Mel Practiss");
+		 insertD("Security Cameras caught him entering the back of the bank at 9:50 PM.","Mel Practiss");
+		 insertV(3,"Det. Pat. Bluthund");
+		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+		 insertD("Yes. They also caught him leaving at 10:00 PM.","Det. Pat. Bluthund");
+		 insertD("Al Protecc was shown on the cameras at 5:30 when he started his shift.","Det. Pat. Bluthund");
+		 insertD("The cameras don’t show anyone else.","Det. Pat. Bluthund");
+		 insertV(4,null);
+		 insertD("Itai","Nekocchi");
+		 insertV(1,null);
+		 insertD("Oh no desu...","Ouran Forenz");
+		 insertD("Wait... ignore that.","Ouran Forenz");
+		 insertD("(Nekocchi's a bad influence on me...","Ouran Forenz");
+		 insertV(4,null);
+		 insertD("Well this isn't good at all nyan.","Nekocchi");
+		 insertR("Security Footage","securityFootage","Shows only Gilligan and Al entering the back of the bank.",false,10);
+		 insertV(2,null);
+		 insertD("Well now Judge, between the dying message and this footage, I believe we are ready for a verdict…","Mel Practiss");
+		 insertV(0,null);
+		 insertD("Hmmm, I suppose you’re right…","Judge Judge");
+		 insertV(1,null);
+		 insertD("Wait, Detective. Why don’t you testify about the dying message.","Ouran Forenz");
 		 
 		}
 		super.update(); // updates super
