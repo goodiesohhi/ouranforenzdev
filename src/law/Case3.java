@@ -8,7 +8,9 @@ class Case3 extends StoryManager  { // opens main class
     
     Case3() throws IOException // opens constructor
     {
-        super(); // calls constructor of Location
+    	
+        super(3); // calls constructor of Location
+        this.currentProsecutor="Adrasteia Rhamnousia";
     }
     void update() throws IOException // runs update loop
     {
@@ -75,7 +77,7 @@ class Case3 extends StoryManager  { // opens main class
     		insertD("She seems intense, nya~~", "Nekocchi");
     		insertV(0, "Judge Judge");
     		insertD("Very well... is the defence team ready?", "Judge Judge");
-    		insertV(1, "Ouran Forenz");
+    		insertV(1, null);
     		insertD("We are as prepared as we can get, your honour.", "Ouran");
     		insertV(0, "Judge Judge");
     		insertD("As it should be... proceed with your opening statements.", "Judge Judge");
@@ -85,15 +87,15 @@ class Case3 extends StoryManager  { // opens main class
     		insertD("The prosecution will show that Keto wilfully killed his brother.", "Adrasteia");
     		insertD("We will also show that he had motive to commit this crime.", "Adrasteia");
     		insertD("What is the defendant's plea?", "Adrasteia");
-    		insertV(1, "Ouran Forenz");
+    		insertV(1, null);
     		insertD("We plead not guilty.", "Ouran");
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("As you plea, so your fate is sealed.", "Adrasteia");
-    		insertV(1, "Ouran Forenz");
+    		insertV(1, null);
     		insertD("(She’s sticking to her formalities, I see...)", "Ouran");
     		insertV(0, "Judge Judge");
     		insertD("Defence, please give your opening statement.", "Judge Judge");
-    		insertV(1, "Ouran Forenz");
+    		insertV(1, null);
     		insertD("Keto Saiba did not murder his younger brother and business associate.", "Ouran");
     		insertD("There is no evidence to prove that he did commit the crime.", "Ouran");
     		insertD("There is nothing pinning him at the scene.", "Ouran");
@@ -103,32 +105,23 @@ class Case3 extends StoryManager  { // opens main class
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("Your Honour, we call the Detective Patrick Bluthund to the stand.", "Adrasteia");
    		 	insertV(3, "Det. Pat. Bluthund");
-   		 	runFirstExamine(0); // tarts first cross-examination
-   		 	insertV(0, "Judge Judge");
-   		 	insertD("That makes sense.", "Judge Judge");
-   		 	insertD("Defence, begin your cross-examination.", "Judge Judge");
-   		 	insertV(1, "Ouran Forenz");
-   		 	insertD("There’s something that doesn’t make sense about this...", "Ouran");
-   		 	insertD("I’m going to figure it out!", "Ouran");
-   		 	insertD("It sounds pretty solid to me, Ouran-kun!", "Nekocchi");
-   		 	insertV(3, "Det. Pat. Bluthund");
-   		 	runExamine(0); // runs first cross-examination
-   		 	insertV(1, "Ouran Forenz");
+   		 	runFirstExamine(0); // starts first cross-examination
+   		 	insertV(1, null);
    		 	insertD("You said it was in the same apartment?", "Ouran");
    		 	insertV(3, "Det. Pat. Bluthund");
    		 	insertD("Yes.", "Det. Pat. Bluthund");
-   		 	insertV(1, "Ouran Forenz");
+   		 	insertV(1, null);
    		 	insertD("But have you considered: how the dragon left the storage room?", "Ouran");
    		 	insertD("It’s obviously big and heavy!", "Ouran");
    		 	insertV(2, "Adrasteia Rhamnousia");
    		 	insertD("Now, now, there’s an easy explanation for that. The dragon has wheels!", "Adrasteia");
    		 	insertV(3, "Det. Pat. Bluthund");
    		 	insertD("Oh, yeah, the wheels! There are wheels on the bottom of the dragon.", "Det. Pat. Bluthund");
-   		 	insertV(1, "Ouran Forenz");
+   		 	insertV(1, null);
    		 	insertD("(I see Wheely has been found.)", "Ouran");
    		 	insertV(0, "Judge Judge");
    		 	insertD("Do you have any further objections with this testimony?", "Judge Judge");
-   		 	insertV(1, "Ouran Forenz");
+   		 	insertV(1, null);
    		 	insertD("No... no, I don’t think so.", "Ouran");
    		 	insertV(0, "Judge Judge");
    		 	insertD("Alright then. Will the prosecution call its next witness?", "Judge Judge");
@@ -138,7 +131,7 @@ class Case3 extends StoryManager  { // opens main class
    		 	insertD("Please state your name, age, and occupation to the court.", "Judge Judge");
    		 	insertV(3, "Susan Ord");
    		 	insertD("My name is Susan Ord, I’m 32 years of age, and I’m an executive at Saiba Corp.", "Susan");
-   		 	insertV(1, "Ouran Forenz");
+   		 	insertV(1, null);
    		 	insertD("Executive’s kind of vague, isn’t it?", "Ouran");
    		 	insertV(2, "Adrasteia Rhamnousia");
    		 	insertD("Objection! If that’s her job title, that’s what she should state.", "Adrasteia");
@@ -152,27 +145,18 @@ class Case3 extends StoryManager  { // opens main class
    		 	insertD("Now, may you please describe what you were doing when the murder took place?", "Adrasteia");
 		 	insertV(3, "Susan Ord");
 		 	runFirstExamine(1); // starts second cross-examination
-		 	insertV(2, "Adrasteia Rhamnousia");
-		 	insertD("Crystal-clear.", "Adrasteia");
-		 	insertD("There’s no way that anybody else could have been in that apartment.", "Adrasteia");
-		 	insertD("Therefore, nobody else could have killed Komuba", "Adrasteia");
-		 	insertV(1, "Ouran Forenz");
-		 	insertD("I smell fish, nya!", "Nekocchi");
-		 	insertD("Something seems fishy to me, too.", "Ouran");
-		 	insertV(3, "Susan Ord");
-		 	runExamine(1); // runs second cross-examination
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("Susan, you say that nobody passed you on the stairs.", "Ouran");
 		 	insertV(3, "Susan Ord");
 		 	insertD("Yes, that is what I said.", "Susan");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("I had the pleasure of visiting the Saiba Corp. offices yesterday evening.", "Ouran");
 		 	insertD("I noticed something about your building.", "Ouran");
 		 	insertD("Specifically: you have an elevator!", "Ouran");
 		 	insertD("Nani?", "Nekocchi");
 		 	insertV(3, "Susan Ord");
 		 	insertD("Ghk!", "Susan");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("Could somebody have been going down the elevator at that time?", "Ouran");
 		 	insertV(3, "Susan Ord");
 		 	insertD("I suppose... it is a possibility.", "Susan");
@@ -187,18 +171,10 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("Does the witness wish to add anything else to her testimony?", "Judge Judge");
 		 	insertV(3, "Susan Ord");
 		 	insertD("Yes, I suppose I do wish to add to my testimony.", "Susan");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("(This should be interesting...)", "Ouran");
 		 	runFirstExamine(2); // starts third cross-examination
-		 	insertV(2, "Adrasteia Rhamnousia");
-		 	insertD("This is not helping to bring Keto to justice.", "Adrasteia");
-		 	insertV(3, "Susan Ord");
-		 	insertD("That isn’t what I want!", "Susan");
-		 	insertV(0, "Judge Judge");
-		 	insertD("Mr. Forenz, you may start your cross-examination.", "Judge Judge");
-		 	insertV(3, "Susan Ord");
-		 	runExamine(2);  // runs third cross-examination
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("The storage place was a couple minutes walk from the crime scene.", "Ouran");
 		 	insertD("I suppose I fail to see how he could have moved it.", "Ouran");
 		 	insertV(2, "Adrasteia Rhamnousia");
@@ -211,7 +187,7 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertData("Wheels have been added to Court Record.");
 		 	insertV(0, "Judge Judge");
 		 	insertD("When you take that into account, the Dragon could easily have been moved.", "Judge Judge");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("(Our case isn’t looking too good right now.)", "Ouran Forenz");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Adrasteia, I believe you said that you would prove a motive?", "Judge Judge");
@@ -222,34 +198,27 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("I guess, if you want me to...", "Susan");
 		 	runFirstExamine(3); // sets up fourth cross-examination
 		 	insertV(0, "Judge Judge");
-		 	insertD("Hmm! This motive may bear influence on the murder.", "Judge Judge");
-		 	insertV(1, "Ouran Forenz");
-		 	insertD("We’ll see about that.", "Ouran");
-		 	insertV(2, "Adrasteia Rhamnousia");
-		 	insertD("Such ableist language... tsk, tsk.", "Adrasteia");
-		 	runExamine(3); // runs fourth cross-examination
-		 	insertV(0, "Judge Judge");
 		 	insertD("Any further cross-examination, Mr. Forenz?", "Judge Judge");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("Hmm... no thank you, your Honour.", "Ouran");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Well, this seems very clear to me.", "Judge Judge");
 		 	insertD("I'm willing to end this trial right here.", "Judge Judge");
 		 	insertD("Unless, of course, you have any other ideas?", "Judge Judge");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("Do I have any other ideas?", "Ouran");
 		 	insertV(0, "Judge Judge");
 		 	runExamine(4); // creates list of statements
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("She even has a motive!", "Ouran");
 		 	insertV(3, "Susan Ord");
 		 	insertD("I do?", "Susan");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("You obviously loved Keto running the company.", "Ouran");
 		 	insertD("Enough to kill to protect him, perhaps?", "Ouran");
 		 	insertV(3, "Susan Ord");
 		 	insertD("Urk!", "Susan");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("Do you have an alibi?", "Ouran");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Stop pestering the witness, Mr. Forenz!", "Judge Judge");
@@ -260,20 +229,11 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("Alright, I think I’m ready.", "Susan");
 		 	insertD("Alright, I think I’m ready.", "Susan Ord");
 		 	runFirstExamine(5); // sets up fifth cross-examination
-		 	insertV(2, "Adrasteia Rhamnousia");
-		 	insertD("See? She has a solid alibi.", "Adrasteia");
-		 	insertD("There are no other possible murderers than your client.", "Adrasteia");
-		 	insertV(1, "Ouran Forenz");
-		 	insertD("We’ll see about that.", "Ouran");
-		 	insertV(2, "Adrasteia Rhamnousia");
-		 	insertD("Stop saying that!", "Adrasteia");
-		 	insertV(3, "Susan Ord");
-		 	runExamine(5); // runs fifth cross-examination
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("So, you have an alibi...", "Ouran");
 		 	insertV(3, "Susan Ord");
 		 	insertD("Yes, I do.", "Susan");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("Well, who else besides my client could have committed the murder?", "Ouran");
 		 	insertV(2, "Adrasteia Rhamnousia");
 		 	insertD("Objection!", "Adrasteia");
@@ -288,7 +248,7 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("We have no real witnesses, and we’re still missing at least one vital piece of evidence.", "Judge Judge");
 		 	insertD("In addition, somebody could have taken the elevator to leave the apartment.", "Judge Judge");
 		 	insertD("Therefore, we will reconvene tomorrow!", "Judge Judge");
-		 	insertV(1, "Ouran Forenz");
+		 	insertV(1, null);
 		 	insertD("I am Ouran Forenz.", "Ouran");
 		 	insertD("And as long as I am a defence attorney, those falsely accused will never be convicted.", "Ouran");
 		 	insertData("To be continued...");

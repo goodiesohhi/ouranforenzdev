@@ -1,7 +1,7 @@
-package law;
-class ProgressionBlock {
-	DrawableText[] textQueue;
-	public ProgressionBlock () {
+package law; // selects package
+class ProgressionBlock { // opens class
+	DrawableText[] textQueue; // creates queue
+	public ProgressionBlock () { // runs constructor
 		
 	}
 }

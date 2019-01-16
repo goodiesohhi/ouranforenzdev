@@ -1,48 +1,48 @@
-package law;
+package law; // chooses package
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.awt.image.BufferedImage; // imports image
+import java.io.File; // imports files
+import java.io.FileInputStream; // imports input of files
+import java.io.FileNotFoundException; // imports exception for not finding files
+import java.io.IOException; // imports IOException
+import java.io.InputStream; // imports stream of input
+import java.util.ArrayList; // imports array lists
+import java.util.Arrays; // imports arrays
 
 
 
-class StoryManager {
-	boolean presented;
-	ArrayList<Character> characters = new ArrayList<Character>();
-	Location currentLocation;
-    boolean invest;
-	ArrayList<RecordEntry> profiles = new ArrayList<RecordEntry>();
-	int examined=0;
-	ArrayList<RecordEntry>evidence = new ArrayList<RecordEntry>();
-	 Location[] locales = new Location[40]; 
-	boolean somewhere;
-	boolean[] flags = new boolean[500];
-	boolean inExamine = false;
-	boolean objected=false;
-	Court court;
- ClassLoader classLoader = getClass().getClassLoader();
- boolean textBox=true;
- boolean start =true;
- boolean block = true;
- ArrayList<Event>eventQueue = new ArrayList<Event>(); 
- ArrayList<Event>presentQueue = new ArrayList<Event>(); 
- boolean working;
- String currentProsecutor;
- int queueIndex = 0;
- int queueSize = 0;
- int witness = 0;
- Character motionTrack;
- CrossExamination currentExamine;
- //ints to track progression and regulate flow of events
+class StoryManager { // opens class
+	boolean presented; // holds if something has been presented
+	ArrayList<Character> characters = new ArrayList<Character>(); // holds list of characters
+	Location currentLocation; // holds the current location
+    boolean invest; // holds whether the game is in investigation
+	ArrayList<RecordEntry> profiles = new ArrayList<RecordEntry>(); // holds array list of profiles
+	int examined=0; // holds what is examined
+	ArrayList<RecordEntry>evidence = new ArrayList<RecordEntry>(); // holds array list of evidence
+	 Location[] locales = new Location[40];  // holds array of locations
+	boolean somewhere; // holds whether the case is in a location
+	boolean[] flags = new boolean[500]; // holds array of flags
+	boolean inExamine = false; // holds whether the game is in an examination
+	boolean objected=false; // holds whether something has been objected
+	Court court; // holds current court
+ ClassLoader classLoader = getClass().getClassLoader(); // holds class loader
+ boolean textBox=true; // holds whether a text box should be drawn
+ boolean start =true; // holds whether the case has started
+ boolean block = true; // holds whether a block should run
+ ArrayList<Event>eventQueue = new ArrayList<Event>();  // holds queue of events
+ ArrayList<Event>presentQueue = new ArrayList<Event>();  // holds queue of what should be presented
+ boolean working; // holds whether the case is working
+ String currentProsecutor; // holds the current prosecutor
+ int queueIndex = 0; // holds the index in the queue
+ int queueSize = 0; // holds the size of the queue
+ int witness = 0; // holds the current witness
+ Character motionTrack; // moves the camera
+ CrossExamination currentExamine; // holds the current cross-examination
+ //ints to track progression and regulate flow of events 
  int benchmark =0;
  int progress = 0;
- boolean oneProc;
-boolean  inCourt=true;
+ boolean oneProc; // ensures that only one block runs
+boolean  inCourt=true; // holds whether the case is in court
  
  //mode novel = 0 invest = 1 court =2 
  int mode = 0;
@@ -52,240 +52,241 @@ boolean  inCourt=true;
  // court has 0=talk 1= testimony 2= crossexamine 3= special events 4=flavour shots
  int phase = 0;
  
- boolean inDialogue = false;
-public boolean pressed = false;
-public Character currentChar;
-public CrossExamination currentExamineQueue;
-public boolean beginExamine;
-public int timer1=0;
-public boolean dataText;
-public String currentWitness;
+ boolean inDialogue = false; // holds whether the case is in a dialogue
+public boolean pressed = false; // holds whether a statement has been pressed
+public Character currentChar; // holds the current character
+public CrossExamination currentExamineQueue; // holds the current cross-examination
+public boolean beginExamine; // holds whether an examination has begun
+public int timer1=0; // holds the timer
+public boolean dataText; // holds whether the text is a data field
+public String currentWitness; // holds the witness
+public int caseID;
 
 
- public Character getCharacter(String x) {
+ public Character getCharacter(String x) { // finds character
 	 
-	 int len=characters.size();
+	 int len=characters.size(); // runs through characters
 	 for(int i=0; i<len; i++) {
-	     if (characters.get(i).name.equals(x)) {
-	        return characters.get(i);
+	     if (characters.get(i).name.equals(x)) { // checks if character's name is the string
+	        return characters.get(i); // returns the character
 	     }
 	 }
-	 return null;
+	 return null; // returns nothing
  }
- public StoryManager() throws IOException  {
-
+ public StoryManager(int id) throws IOException  { // construtctor
+	 // fills variables
 	 court= new Court();
 	 currentChar=court.defense;
 	 somewhere=false;
+	 caseID=id;
     
   
   
  }
  
-  void update() throws IOException {
+  void update() throws IOException { // updates sotry manager
 //System.out.println(eventQueue.toString());
-	  court.update();
-	  System.out.println(beginExamine+"/"+working+"/"+timer1);
-	  if (this.beginExamine&&Main.currentCase.working) {
-		  timer1++;
+	  court.update(); // updates court
+	  if (this.beginExamine&&Main.currentCase.working) { // if the case is working and has begun an examination
+		  timer1++; // increase timer
 		  
-		  if (timer1>100) {
-			  Main.currentCase.currentExamine=Main.currentCase.currentExamineQueue;
-				Main.currentCase.inExamine=true;
-				Main.currentCase.beginExamine=false;
-				timer1=0;
-				Main.currentCase.currentExamineQueue=null;
-				this.working=false;
-				Main.gui.menu=-1;
-				Main.currentCase.court.switchview(3, Main.currentCase.currentWitness);
+		  if (timer1>100) { // if the timer is over 100
+			  Main.currentCase.currentExamine=Main.currentCase.currentExamineQueue; // play the examination
+				Main.currentCase.inExamine=true; // set the case to in an examination
+				Main.currentCase.beginExamine=false; // set the case to not beginning an examination
+				timer1=0; // resets timer
+				Main.currentCase.currentExamineQueue=null; // resets examine queue
+				this.working=false; // sets case to not working
+				Main.gui.menu=-1; // sets menu to base
+				Main.currentCase.court.switchview(3, Main.currentCase.currentWitness); // switches view of court to witness
 			  
 		  }
 	  }
-	  if (Main.currentCase.eventQueue.size()>=1) {
-			if (!Main.currentCase.eventQueue.get(0).command.equals("d")) Gui.inChat =false;
+	  if (Main.currentCase.eventQueue.size()>=1) { // if there are items in the event queue
+			if (!Main.currentCase.eventQueue.get(0).command.equals("d")) Gui.inChat =false; // if the command is not d, set the case to not be in chat
 		} else {
-			Gui.inChat =false;
+			Gui.inChat =false; // if there are no items, set case to not be in chat
 		}
 	  
-	  if (motionTrack!=null&&Main.currentCase.working) {
-		  System.out.println(motionTrack.x+"/"+motionTrack.dx);
-		  if(Math.abs((double)(motionTrack.dx-motionTrack.x))<10&&Math.abs((double)(motionTrack.dy-motionTrack.y))<10) {
-			  Main.currentCase.working=false;
-				Main.gui.menu=-1;
+	  if (motionTrack!=null&&Main.currentCase.working) { // if the motion track exists and the case is working
+		  System.out.println(motionTrack.x+"/"+motionTrack.dx); // say the position of the track and where it's moving
+		  if(Math.abs((double)(motionTrack.dx-motionTrack.x))<10&&Math.abs((double)(motionTrack.dy-motionTrack.y))<10) { // if the difference between the current position and the destination is less than 10 in both x and y
+			  Main.currentCase.working=false; // sets case to not working
+				Main.gui.menu=-1; // return to base menu
 			
 		  }
 	  }
-	  try {
-			if (!eventQueue.isEmpty()) {
-				if (!presented) {
-			 eventQueue.get(0).execute();
+	  try { // runs through queue
+			if (!eventQueue.isEmpty()) { // if there are items in the queue
+				if (!presented) { // if nothing is presented
+			 eventQueue.get(0).execute(); // execute event
 				}
 			 }
-			if (!presentQueue.isEmpty()) {
+			if (!presentQueue.isEmpty()) { // if there are items in the present queue
 				
-				if (presented) {
+				if (presented) { // if something is presented
 					
-			 presentQueue.get(0).execute();
+			 presentQueue.get(0).execute(); // execute a present
 				}
 			 }
-		} catch (Exception e) {
+		} catch (Exception e) { // runs exception
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		 
-	  for (Character c: characters) {
-		  c.update();
+	  for (Character c: characters) { // runs through characters
+		  c.update(); // updates characters
 	  }
 	  
-	  if(currentExamine!=null) {
+	  if(currentExamine!=null) { // if the examination exists
 	
-		  currentExamine.update();
+		  currentExamine.update(); // update the examination
 	  }
  
   
  
   
   }
-  void progress() {
+  void progress() { // progresses case
 	  
-	  benchmark=progress;
-	  progress++;
+	  benchmark=progress; // sets benchmark
+	  progress++; // increases progress
   }
-  void runExamine(int z) {
+  void runExamine(int z) { // runs examination
 	  
-	  Main.currentCase.addEvent(new Event("ce",z)) ;  
-		queueSize++;
+	  Main.currentCase.addEvent(new Event("ce",z)); // creates new examination event   
+		queueSize++; // increases queue
   }
   
-  void runFirstExamine(int z) {
+  void runFirstExamine(int z) { // runs first examination
 	  
-	  Main.currentCase.addEvent(new Event("firstCE",z)) ;  
-		queueSize++;
+	  Main.currentCase.addEvent(new Event("firstCE",z)) ; // creates new first examination event  
+		queueSize++; // increases queue
   }
-  void insertD(String x,String y) {
+  void insertD(String x,String y) { // inserts dialogue
 	 
-	  Main.currentCase.addEvent(new Event("d", x,y))  ;  
-	queueSize++;
+	  Main.currentCase.addEvent(new Event("d", x,y))  ; // creates dialogue event  
+	queueSize++; // increases queue
 	
 	 }
   
-  void insertData(String x) {
+  void insertData(String x) { // inserts data field
 		 
-	  Main.currentCase.addEvent(new Event("data", x,""))  ;  
-	queueSize++;
+	  Main.currentCase.addEvent(new Event("data", x,""))  ; // adds data field  
+	queueSize++; // increases queue
 	
 	 }
   
-  void toCourt() {
+  void toCourt() { // moves to court
 		 
-	  Main.currentCase.addEvent(new Event("court",0,0));  
-	queueSize++;
+	  Main.currentCase.addEvent(new Event("court",0,0));  // adds event to go to court
+	queueSize++; // increases queue
 	
 	 }
   
-  void startCExamine(int i) {
+  void startCExamine(int i) { // starts cross-examination
 	  
-	  if(!Main.examineBlock && i == examined ) {
-	  Main.cExamine[Main.examineSlot] = new CrossExamination();
+	  if(!Main.examineBlock && i == examined ) { // if there is no examine block and the examination has an id equal to the next id
+	  Main.cExamine[Main.examineSlot] = new CrossExamination(); // set a new cross examination
 	  
-	  Main.examineBlock=true;
-	  examined++;
+	  Main.examineBlock=true; // set the examine block to true
+	  examined++; // increase the number of cross-examination
 	  }
 	  
   }
   
 
   
- void stopCExamine() {
+ void stopCExamine() { // stops cross-examination
 	  
-	 Main.examineSlot++;
+	 Main.examineSlot++; // increases examine slot to next examination
 	  
-	  Main.examineBlock=false;
+	  Main.examineBlock=false; // sets examine block to false
 	 
 	  
   }
 
-  void insertV(int y,String n) {
-	  Main.currentCase.addEvent( new Event("v", y,n)) ;  
-		queueSize++;
+  void insertV(int y,String n) { // changes view
+	  Main.currentCase.addEvent( new Event("v", y,n)) ; // inserts view event  
+		queueSize++; // increases size of queue
 		
 		 }
   
-  void enterArea(int y) {
-	  Main.currentCase.addEvent(new Event("e",y));  
-		queueSize++;
+  void enterArea(int y) { // enters area
+	  Main.currentCase.addEvent(new Event("e",y)); // inserts enter event  
+		queueSize++; // increases queue
 		
 		 }
-  void cls() {
-	  Main.currentCase.addEvent(new Event("cls"));  
-		queueSize++;
+  void cls() { // clears screen
+	  Main.currentCase.addEvent(new Event("cls"));   // adds event to clear screen
+		queueSize++; // increases size of queue
 		
 		 }
-  void show(int z,int x,int y) {
-	  Main.currentCase.addEvent( new Event("s",z,x,y));  
-		queueSize++;
+  void show(int z,int x,int y) { // shows object
+	  Main.currentCase.addEvent( new Event("s",z,x,y)); // adds show event  
+		queueSize++; // increases queue
 		
 		 }  
  
   
-  void insertO(int y) {
-	  Main.currentCase.addEvent(new Event("o", y)) ;  
-		queueSize++;
+  void insertO(int y) { // inserts an objection
+	  Main.currentCase.addEvent(new Event("o", y)) ; // adds objection event  
+		queueSize++; // increases queue
 		
 		 }
 
-  void insertR(String n,String x,String z, Boolean u,int i) {
-	  Main.currentCase.addEvent( new Event("r",n,x,z,u,i))  ;  
-		queueSize++;
+  void insertR(String n,String x,String z, Boolean u,int i) { // insert item into record
+	  Main.currentCase.addEvent( new Event("r",n,x,z,u,i))  ;   // adds record event
+		queueSize++; // increases queue
 		
 		 }
   
-  void setW(int y) {
-	  Main.currentCase.witness=y;
+  void setW(int y) { // sets witness
+	  Main.currentCase.witness=y; // sets witness
 		 }
-public void clearSprites() {
-	for (Character c:characters) {
-		c.clear();
+public void clearSprites() { // clears sprites
+	for (Character c:characters) { // runs through characters
+		c.clear(); // clears characters
 	}
 	//System.out.println("SOVIET NAZIS!!!!!");
 	
 }
-public void playAni(String string, String string2, int i, boolean b) {
-	 Main.currentCase.addEvent( new Event("playAni", string,string2,i,b))  ;  
-	queueSize++;
+public void playAni(String string, String string2, int i, boolean b) { // plays animation
+	 Main.currentCase.addEvent( new Event("playAni", string,string2,i,b))  ;   // adds animation event
+	queueSize++; // increases size of queue
 	
 	 }
 
-public void showAni(String string, String string2, int i, boolean b) {
-	 Main.currentCase.addEvent( new Event("showAni", string,string2,i,b))  ;  
-	queueSize++;
+public void showAni(String string, String string2, int i, boolean b) { // shows animation
+	 Main.currentCase.addEvent( new Event("showAni", string,string2,i,b))  ;   // adds animation event
+	queueSize++; // increases size of queue
 	
 	 }
-public void addEvent(Event event) {
-	if (presented) {
-	Main.currentCase.presentQueue.add(event);
+public void addEvent(Event event) { // adds event
+	if (presented) { // if the case is presenting something
+	Main.currentCase.presentQueue.add(event); // add event to present queue
 	} else {
-		Main.currentCase.eventQueue.add(event);
+		Main.currentCase.eventQueue.add(event); // if there is nothing being presented, add event to event queue
 	}
 }
-public void checkInteract() {
+public void checkInteract() { // checks interaction with object
 
 	
 }
-public RecordEntry findItem(String name) {
-	for (RecordEntry r: this.evidence) {
+public RecordEntry findItem(String name) { // finds record entry
+	for (RecordEntry r: this.evidence) { // runs through record entry
 		
-		if(r.name.equals(name)) return r;
+		if(r.name.equals(name)) return r; // returns an entry with the correct name
 		
 	}
-	return null;
+	return null; // returns nothing if no entry matches name
 }
-public void switchBackToEventQueue() {
-	Main.currentCase.addEvent(new Event("switchBack"));
+public void switchBackToEventQueue() { // switches to event queue
+	Main.currentCase.addEvent(new Event("switchBack")); // adds switch event to queue
 	
 }
-public void removeO() {
-	 Main.currentCase.addEvent(new Event("ro")) ;  
+public void removeO() { // removes objection
+	 Main.currentCase.addEvent(new Event("ro")) ; // adds remove event to queue  
 	
 }
 

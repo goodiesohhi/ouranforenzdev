@@ -7,11 +7,11 @@ class Case0 extends StoryManager  { // opens class
 
  int currentArea=0; // sets area
  Case0() throws IOException  { // opens constructor
-    super(); // constructs story manager
+    super(0); // constructs story manager
 	Main.renderer.insert("nekocchiWitness",112); // inserts assets
 
 	Main.renderer.insert("bluthundWitness",113);
-    
+    this.currentProsecutor="Adrasteia Rhamnousia";
 	Main.renderer.insert("detention",201);
 	Main.renderer.insert("area00",202);
     Main.renderer.insert("cory", 110);
@@ -151,10 +151,9 @@ class Case0 extends StoryManager  { // opens class
 		    insertD("The defense insists on a proper trial before a verdict an be determined","Ouran Forenz");
 		    insertV(0,null);
 		    insertD("Okay","Judge Judge");
-		    
-		    
 		    runFirstExamine(2); // runs start of cross-examination
 		    runExamine(3); // runs cross-examination
+
 		    insertD("My verdict is still guilty.","Judge Judge");
 		    
 		    insertD("And that was the actual end","God");
