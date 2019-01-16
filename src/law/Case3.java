@@ -9,7 +9,7 @@ class Case3 extends StoryManager  { // opens main class
     Case3() throws IOException // opens constructor
     {
     	
-        super(3); // calls constructor of Location
+        super(3,"NAME UR CASE"); // calls constructor of Location
         this.currentProsecutor="Adrasteia Rhamnousia";
     }
     void update() throws IOException // runs update loop

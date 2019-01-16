@@ -7,7 +7,7 @@ class Case0 extends StoryManager  { // opens class
 
  int currentArea=0; // sets area
  Case0() throws IOException  { // opens constructor
-    super(0); // constructs story manager
+    super(0,"The Perfect Turnabout"); // constructs story manager
 	Main.renderer.insert("nekocchiWitness",112); // inserts assets
 
 	Main.renderer.insert("bluthundWitness",113);

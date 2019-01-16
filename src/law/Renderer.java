@@ -47,6 +47,7 @@ public class Renderer { // opens class
 		 if(queue[i]!=null)g.drawImage(queue[i].draw(),queue[i].x+camera.x,queue[i].y+camera.y,null); // draws image
 		
 	 }
+	 if (Main.currentCase!=null) {
 	 if (Main.currentCase.currentLocation!=null) { // if the location exists
 		 for (ClickEvent c: Main.currentCase.currentLocation.clickEvents) { // runs through click events
 		 	
@@ -74,8 +75,9 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 		 g.drawImage(c.drawn.imagez,c.drawn.x+camera.x,c.drawn.y+camera.y,null); // draws the character
 		
 	 }
-	
 }
+	
+
 
 	
 	 
@@ -89,7 +91,8 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 			 g.fillRect(50, 550, 850, 100); // draw a text box
 		 }
 	 }
-	 
+	 }
+	 if (Main.currentCase!=null) {
 	 if (!	Main.currentCase.pressed) { // if the case is not pressed
      for (int i=0; i< textQueue.length;i++) { // runs through text queue
  
@@ -103,6 +106,7 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 		
     	 }
 	 }
+	 
 	 } else { // if the case is pressed
 		 
 		 for (int i=0; i< pressQueue.length;i++) { // runs through presses
@@ -118,7 +122,24 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 		 }
 		 
 	 }
-     
+	 } else if (Main.gameState==3&&Main.menu.entered) {
+		 System.out.println("HELLO"+Main.gameState);
+	     for (int i=0; i< textQueue.length;i++) { // runs through text queue
+	    	 
+	    	 if(textQueue[i]!=null) {  // if the text exists
+	    		// //System.out.println(textQueue[i].drawText());
+	    		 System.out.println(i);
+		    	 System.out.println(textQueue[i].text);
+			 g.setColor(textQueue[i].color); // sets colour to text colour
+			 g.setFont(g.getFont().deriveFont(textQueue[i].size)); // sets font to text font
+		
+			 if(textQueue[i].drawText()!=null) g.drawString(textQueue[i].text, textQueue[i].x, textQueue[i].y); // if the text exists, draw the text
+			
+	    	 }
+		 }
+		 
+	 }
+     if (Main.currentCase!=null) {
      if (Main.gui.show) { // if the gui is being shown
 		 for (int i=0; i< Main.gui.queue.length;i++) { // runs through gui queue
 			
@@ -143,16 +164,19 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 		
     	 }
 	 }
-     
+	 }
+	 }
      
 	 
 	 //g.drawImage(Main.backBuffer, Main.insets.left, Main.insets.top, Main.game); 
- }
+ 
  public void clear() { // clears renderer
 		queue = new Drawable[95]; // resets queue
  }
 
 public void update() { // updates renderer
+	
+	if (Main.currentCase!=null) {
 	camera.update(); // updates camera
 	
 	if (Main.currentCase.pressed)  // if the case is pressed
@@ -175,6 +199,7 @@ public void update() { // updates renderer
 		 if(queue[i]!=null)queue[i].update(); // if the image exists, update the image
 		 
 	 }
+	}
 	
 }
 

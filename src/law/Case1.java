@@ -5,7 +5,7 @@ import java.io.IOException; // imports IOException
 
 public class Case1 extends StoryManager{ // opens class for first case
 	Case1() throws IOException{ // constructor for first case
-		super(1); // invokes super
+		super(1,"NAME UR CASE"); // invokes super
 		this.currentProsecutor="Mel Practiss"; // sets current prosecutor
 	}
 	

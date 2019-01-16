@@ -13,7 +13,11 @@ import java.awt.Dimension; // imports dimensions of game
 import java.awt.Graphics; // imports graphics for game
 import java.awt.Insets; // imports using insets for graphics
 import java.awt.image.BufferedImage; // imports using images
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileNotFoundException; // imports exception if files don't exist
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException; // imports exception for input and output
 import java.util.ArrayList; // imports usage of array lists
 import java.util.Random; // imports randomness
@@ -27,6 +31,8 @@ public class Main extends JFrame{ // opens main class
 	static int examineSlot=0; // holds which slot is currently selected to be examined
 	static int currentExamine=0; // holds the current cross-examination
 	static Gui gui; // holds the gui
+	static Menu menu;
+	static ArrayList<StoryManager> caseList = new ArrayList<StoryManager>(); 
 	static StoryManager currentCase; // holds the current case
 	static int keyInt; // holds the key which is being pressed as integer
 	static int modTimer=0; // holds the timer
@@ -45,12 +51,17 @@ public class Main extends JFrame{ // opens main class
 	public static Dialogue pressDialogue = new Dialogue(1); // holds all dialogue for pressing
 	public static boolean entered; // holds whether a location has been entered
 	public static KeyEvent pressingKey; // holds whether a key is being pressed
-	public Main() { // opens constructor
+	public Main() throws IOException { // opens constructor
+		 menu = new Menu();
 		KeyListener listener = new KeyListen(); // creates new key listener
 		MouseListener mouseListener = new MouseListen(); // creates new mouse listener
 		addKeyListener(listener); // adds new key listener
 		addMouseListener(mouseListener); // adds new mouse listener
 		setFocusable(true); // allows game to focus on finding keys or mouse movements
+		caseList.add(new Case0());
+		caseList.add(new Case1());
+		caseList.add(new Case3());
+		caseList.add(new Case69());
 	}
 	public static void modAlpha(BufferedImage modMe, double modAmount) { // moderates colours
         //
@@ -84,7 +95,7 @@ public class Main extends JFrame{ // opens main class
     	renderer.insert("defendantLobby", 15);
 
     	renderer.insert("objection",19);
-    	currentCase = new StoryManager(0); // sets the current case
+    	currentCase = new StoryManager(0,"No Case"); // sets the current case
     	  game = new Main();  // sets the game
          game.run();  // runs the game
          System.exit(0); // exits the console
@@ -95,7 +106,57 @@ public class Main extends JFrame{ // opens main class
         
     }
     
-    public void run() throws IOException { // runs the game
+    public void saveGame () throws IOException {
+    	  BufferedWriter outputWriter = null;
+		  outputWriter = new BufferedWriter(new FileWriter("save.osd"));
+		  
+	    outputWriter.write("case: "+Main.currentCase.caseID);
+	   
+	   
+	    outputWriter.newLine();
+    		
+    		  for (int i = 0; i < Main.currentCase.flags.length; i++) {
+    		   
+    		    outputWriter.write(Main.currentCase.flags[i]+"");
+    		   
+    		   
+    		    outputWriter.newLine();
+    		  }
+    		  outputWriter.flush();  
+    		  outputWriter.close();  
+    		
+    	
+    }
+    public void loadGame () throws IOException {
+    	String line =null;
+    	  FileReader fileReader = 
+                  new FileReader("save.osd");
+
+              // Always wrap FileReader in BufferedReader.
+              BufferedReader bufferedReader = 
+                  new BufferedReader(fileReader);
+
+              while((line = bufferedReader.readLine()) != null) {
+            	  int i = line.indexOf(' ');
+            	  String word = line.substring(0, i);
+            	  String rest = line.substring(i);
+            	  
+            	  if (word.equals("case:")) {
+            		  currentCase = findCase (Integer.valueOf(rest));
+            	  }
+            	  
+              }   
+              
+              bufferedReader.close(); 
+    }
+    private StoryManager findCase(Integer valueOf) {
+		for (StoryManager c : caseList) {
+			if (c.caseID==valueOf) return c;
+			
+		}
+		return null;
+	}
+	public void run() throws IOException { // runs the game
         initPanel();  // creates new panel
         
         
@@ -129,9 +190,9 @@ public class Main extends JFrame{ // opens main class
                 }
                 
                 if (deltaU >= 1) { // if the change in updates is greater than 1
+                	
                 	getInput(); // find inputs
-                    update(); // update game
-               
+                	  update(); // update game
                     ticks++; // increase number of ticks
                     deltaU--; // decrease change in updates
                 }
@@ -141,8 +202,11 @@ public class Main extends JFrame{ // opens main class
                 if (deltaF >= 1) { // if change in frames is greater than 1
                     Main.renderer.update(); // update renderer
                     Main.currentKey=null; // sets key to not being used
-             		 keyInt=0; // sets key integer back to 0
+             		
+             		
+             		
                     this.draw(); // draws game
+                    keyInt=0; // sets key integer back to 0
                     frames++; // increases number of frames
                     deltaF--; // decreases change in number of frames
                 }
@@ -161,7 +225,7 @@ public class Main extends JFrame{ // opens main class
 
 
     protected static void update() throws IOException { // updates game
-
+	
     	if(gameState==0) { // if the state is 0
     	while(!start) { // if the game has not started
     	 count= 0;	 // set the count to 0
@@ -199,8 +263,8 @@ public class Main extends JFrame{ // opens main class
     		renderer.clear(); // clear the renderer
     		renderer.camera.reset(); // reset the camera
     		currentCase= null; // removes current case
-    		currentCase = new Case0(); // sets current case to case needed
-    		switchState(2); // switches state to case
+    	
+    		switchState(3); // switches state to case
     		
     	}
     	} 
@@ -210,6 +274,14 @@ public class Main extends JFrame{ // opens main class
     		currentCase.update(); // update case
     		gui.update(); // update gui
     		////System.out.println(currentCase.eventQueue.length);
+    		
+    		
+    	}
+    	
+    	else if(gameState==3) { // if the game state is in game
+    	
+    		Main.currentCase=null;
+    		menu.update();
     		
     		
     	}
