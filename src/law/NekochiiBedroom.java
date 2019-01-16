@@ -99,6 +99,7 @@ public class NekochiiBedroom extends Location { // opens class
 
 		@Override
 		protected void present(RecordEntry recordEntry) { // presents item
+			System.out.println(recordEntry.name);
 			if(recordEntry.name.equals("Ouran's Attorney's Badge")&&!flags[121]) { // checks for attorney's badge
 				
 				story.insertD("Nice! You have it", "Nekocchi"); // plays dialogue

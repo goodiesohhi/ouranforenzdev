@@ -218,8 +218,8 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 							   		
 							   if (evidenceOffset<Main.currentCase.evidence.size()) { // if the evidence is a piece of evidence
 									if (  Main.currentCase.evidence.get(evidenceOffset)!=null)  { // if the evidence exists
-										System.out.println("phase1"); // prints test phrase
-									if (menu!=2)	Main.currentCase.currentLocation.present(Main.currentCase.evidence.get(evidenceOffset)); // presents piece of evidence
+									Main.currentCase.currentLocation.present(Main.currentCase.evidence.get(evidenceOffset)); // presents piece of evidence
+									
 										 queue = new Drawable[40]; // resets drawing queue
 										  textQueue = new DrawableText[50]; // resets text queue
 										this.menu=-1; // moves out of menu
@@ -399,7 +399,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				if (!Main.currentCase.inCourt) { // if the case is not in court
 					
 					if (!Main.currentCase.inDialogue&&button==4)button=1; // if the case is not in dialogue and the button would be the fifth one, set it to the second
-					System.out.println("button: "+button); // prints out button
+					System.out.println("button: "+button+" menu: "+menu); // prints out button
 					queue[2]=null; // resets queue
 				      
 				       queue[4]= new Drawable(guiElements[3],0,768-100,1,0,0); // draws top-left element
@@ -793,7 +793,6 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				
 				
 			}
-			
 		   	  
 			
 			

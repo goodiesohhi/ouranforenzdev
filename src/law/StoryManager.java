@@ -60,6 +60,8 @@ public boolean beginExamine; // holds whether an examination has begun
 public int timer1=0; // holds the timer
 public boolean dataText; // holds whether the text is a data field
 public String currentWitness; // holds the witness
+public int caseID;
+public String caseName;
 
 
  public Character getCharacter(String x) { // finds character
@@ -72,12 +74,13 @@ public String currentWitness; // holds the witness
 	 }
 	 return null; // returns nothing
  }
- public StoryManager() throws IOException  { // construtctor
+ public StoryManager(int id, String n) throws IOException  { // construtctor
 	 // fills variables
 	 court= new Court();
 	 currentChar=court.defense;
 	 somewhere=false;
-    
+	 caseID=id;
+	 caseName=n;
   
   
  }

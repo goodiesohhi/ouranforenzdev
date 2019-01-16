@@ -7,11 +7,11 @@ class Case0 extends StoryManager  { // opens class
 
  int currentArea=0; // sets area
  Case0() throws IOException  { // opens constructor
-    super(); // constructs story manager
+    super(0,"The Perfect Turnabout"); // constructs story manager
 	Main.renderer.insert("nekocchiWitness",112); // inserts assets
 
 	Main.renderer.insert("bluthundWitness",113);
-    
+    this.currentProsecutor="Adrasteia Rhamnousia";
 	Main.renderer.insert("detention",201);
 	Main.renderer.insert("area00",202);
     Main.renderer.insert("cory", 110);
