@@ -17,7 +17,7 @@ class Case3 extends StoryManager  { // opens main class
         characters.add(new Character("Keto Saiba", 200, 0)); // adds Keto
         characters.add(new Character("Susan Ord", 250, 0)); // adds Susan
         characters.add(new Character("Ouran Forenz", 200, 0)); // adds Ouran
-    	if (flags[25] == false && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
+    	if (flags[25] == true && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
     	{
     		oneProc = true; // makes sure that only one segment gets added to the event queue
     		flags[24] = true; // sets the flag to true

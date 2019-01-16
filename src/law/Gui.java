@@ -490,7 +490,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 							 menu=2; // enters evidence menu
 						   
 					}
-						   else  if(Main.keyInt==KeyEvent.VK_X||Main.keyInt==90&&button==1) { // if the key is x or if the key is z and the button is exit
+						   else  if(Main.keyInt==90&&button==1) { // if the key is x or if the key is z and the button is exit
 								 
 							   queue = new Drawable[40]; // reset the queue
 								  textQueue = new DrawableText[50]; // reset the text queue
