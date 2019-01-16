@@ -14,6 +14,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		characters.add(new Character("Gilligan Tam",350,500)); // adds Gilligan
 		characters.add(new Character("Photo of Body", 150, 0)); // adds picture of body so it can be shown in court
 		characters.add(new Character("Nekocchi",250,200));
+		characters.add(new Character("Enrico Nocent",150,0));
 		if (!oneProc) // checks if the case is already running
 		{
 		oneProc=true; // sets the case to be running
@@ -87,7 +88,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I hate you so much...","Ouran Forenz");
 		 insertV(0, null);
 		 insertData("---Courtroom A  May 22nd, 2:34 PM.---");
-		 insertD("Court is now in session for the trial Gilligan Tam. Is the prosecution ready?","Judge Judge");
+		 insertD("Court is now in session for the trial of Gilligan Tam. Is the prosecution ready?","Judge Judge");
 		 insertV(2,null);
 		 insertR("Mel Practiss", "melProfile", "A nervous but decently proficient prosecutor... Maybe.",true,3);
 		 insertD("The prosecution is' r-r-ready... maybe.", "Mel Practiss");
@@ -159,6 +160,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Here's a photo of him when he was alive.", "Det. Pat. Bluthund");
 		 insertR("Photo of Al","photoalprotecc","Al holding a coffee cup in his left hand when he was alive.",false,7); //inserts photo of Al
 		 insertData("You got the Photo of Al.");
+		 insertD("He was murdered within Fat Stacks Bank in the back employee area.","Det. Pat Bluthund");
 		 insertD("A witness found the body the next morning. His dying message implicates your client a lot.", "Det. Pat. Bluthund");
 		 insertData("You got the Photo of the Body.");
 		 showAni("Photo of Body","albodypic",0,false); //plays animation of picture of body
@@ -247,7 +249,8 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Nani?! OwO","Nekocchi");
 		 insertV(2,null);
 		 insertD("Y-yes now I remember…","Mel Practiss");
-		 insertD("Security Cameras caught him entering the back of the bank at 9:50 PM.","Mel Practiss");
+		 insertD("Cameras within the bank monitor all routes to the employee area where the corpse was found.","Mel Practiss");
+		 insertD("Security Cameras caught Gilligan entering the back of the bank at 9:50 PM.","Mel Practiss");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Yes. They also caught him leaving at 10:00 PM.","Det. Pat. Bluthund");
@@ -274,6 +277,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("No problem. Now listen and listen well.","Det. Pat. Bluthund");
 		 runFirstExamine(1);
+		 insertD("That's it...","Ouran Forenz");
 		 runExamine(2);
 		 insertD("That's it...","Ouran Forenz");
 		 insertO(0);
@@ -394,7 +398,31 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I think we can do this. I believe in your innocence.","Ouran Forenz");
 		 insertD("Thanks.","Gilligan Tam");
 		 insertD("We never got a good chance to talk. What exactly happened when you went into the bank that night.","Ouran Forenz");
-		 
+		 insertD("Well I had left some papers in the back. But I didn’t know where.","Gilligan Tam");
+		 insertD("I saw Al alive when I went. He helped me find the papers.","Gilligan Tam");
+		 insertD("I left right away once I found them.","Gilligan Tam");
+		 insertD("So he was alive at the time.","Ouran Forenz");
+		 insertD("Court is reconvening gloriously.","Bailiff");
+		 insertD("Good, Nekocchi isn’t back yet.","Ouran Forenz");
+		 insertV(5,"Nekocchi");
+		 playAni("Nekocchi","nekocchiWitness",0,false);
+		 insertD("Did you summon me Ouran-kun nyan desu OwU","Nekocchi");
+		 insertD("(Why...)","Ouran Forenz");
+		 insertV(0,null);
+		 insertData("---Courtroom A May 22nd, 3:09---");
+		 insertD("Court is now in session.","Judge Judge");
+		 insertD("Prosecution, you had a witness to call I believe.","Judge Judge");
+		 insertV(2,null);
+		 insertD("The prosecution now calls Enrico Nocent to the stand.","Mel Practiss");
+		 insertV(3,"Enrico Nocent");
+		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 insertData("Enrico Nocent");
+		 insertD("Hellllllllooooo.","Enrico Nocent");
+		 insertD("Enrico Nocent is my name, but you can call me En.","Enrico Nocent");
+		 insertV(1,null);
+		 insertD("We will not.","Ouran Forenz");
+		 insertV(4,null);
+		 insertD("I will En-chan desu.","Nekocchi");
 		 
 		}
 		super.update(); // updates super
