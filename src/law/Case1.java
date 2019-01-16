@@ -66,7 +66,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
 		 // various changes of view and pieces of dialogue
-		 insertV(5,null);
+		 insertV(5,"Nekocchi");
 		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
 		 insertD("...","Ouran Forenz");
 		 insertD("Huh?", "Ouran Forenz");
@@ -359,7 +359,19 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Security guard on the day shift, Enrico Nocent.","Mel Practiss");
 		 insertV(0,null);
 		 insertD("I see. We will take a short 15 minute recess then reconvene. Court is dismissed.","Judge Judge");
-		 insertV(5,null);
+		 insertV(5,"Nekocchi");
+		 insertData("---Defendant’s Lobby C May 22nd, 3:01---");
+		 insertD("Lobby C huh? I thought there were only two lobbies...","Ouran Forenz");
+		 insertD("Me too desu. Guess not OwO.","Nekocchi");
+		 insertV(5, "Gilligan Tam");
+		 insertD("Thanks Forenz!", "Gilligan Tam");
+		 insertD("We aren’t out of the woods yet.","Ouran Forenz");
+		 insertV(5,"Nekocchi");
+		 insertD("Woods! I’m afraid of trees!","Nekocchi");
+		 insertData("Nekocchi flees.");
+		 insertV(5,"Gilligan Tam");
+		 insertD("I think we can do this. I believe in your innocence.","Ouran Forenz");
+		 insertD("Thanks.","Gilligan Tam");
 		 
 		}
 		super.update(); // updates super
