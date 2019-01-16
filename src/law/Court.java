@@ -74,7 +74,16 @@ Main.currentCase.clearSprites();	// removes sprites
 		Main.currentCase.getCharacter("Nekocchi").play("nekocchiWitness", 0, false); // plays animation
 		oneProc=true; // sets variable to true
 		}
-	}	
+	}
+	if(x==5) {
+		Main.renderer.queue[0]= new Drawable(15,0,0,1,0,0); // draws background
+		if (Main.currentCase.getCharacter("Nekocchi")==null) Main.currentCase.characters.add(new Character("Nekocchi", 100, 135)); // adds Nekocchi
+		if (!oneProc) //  checks if this is the only animation running
+		{
+		Main.currentCase.getCharacter("Nekocchi").play("nekocchiWitness", 0, false); // plays animation
+		oneProc=true; // sets variable to true
+		}
+	}
 	
 	if (x==69) { // checks if view is default
 		Main.renderer.queue[0]= new Drawable(black,0,0,1,0,0); // draws black screen

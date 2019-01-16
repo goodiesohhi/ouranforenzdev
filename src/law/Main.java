@@ -81,6 +81,7 @@ public class Main extends JFrame{ // opens main class
     	renderer.insert("prosbench",12);
     	renderer.insert("stand",13);
     	renderer.insert("defcounsel", 14);
+    	renderer.insert("defendantLobby", 15);
 
     	renderer.insert("objection",19);
     	currentCase = new StoryManager(); // sets the current case
@@ -198,7 +199,7 @@ public class Main extends JFrame{ // opens main class
     		renderer.clear(); // clear the renderer
     		renderer.camera.reset(); // reset the camera
     		currentCase= null; // removes current case
-    		currentCase = new Case3(); // sets current case to case needed
+    		currentCase = new Case1(); // sets current case to case needed
     		switchState(2); // switches state to case
     		
     	}
