@@ -64,8 +64,32 @@ class Statements { // opens class
 		
 	}
 	void press() { // presses statement
-		
-		Main.currentCase.pressed=true; // sets pressed to true
+		Main.dialogue.reset(); // resets dialogue
+		story.presented=true;
+		for(int u=0;u<presses.length;u++)//runs for the number of press statements
+		{
+			if(speakers[u].equals("Ouran Forenz"))//checks the speaker and switches view accordingly
+			{
+				System.out.println("OURAN");
+				story.insertV(1, null);
+			}
+			else if(speakers[u].equals("Nekocchi"))
+			{
+				story.insertV(4, null);
+			}
+			else if(speakers[u].equals("Det. Pat. Bluthund"))
+			{
+				story.insertV(3, "Det. Pat. Bluthund");
+				story.playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+			}
+			story.insertD(presses[u], speakers[u]);//Displays statements from press
+		}
+		story.insertV(3, speaker);//switches back to witness stand
+		if (speaker.equals("Det. Pat. Bluthund"))//checks witness and displays proper sprite
+		{
+		story.playAni(speaker, "bluthundWitness", 0, false);
+		}
+		story.switchBackToEventQueue();
 		
 		
 		
@@ -86,6 +110,7 @@ class Statements { // opens class
 			
 		if (this.objectName.equals(name))  // if the object's name is what it should be
 		{ 
+			story.switchBackToEventQueue();
 			if (name.equals("Ouran's Attorney's Badge")) { // if the object is the badge
 			story.insertO(0); // insert objection
 			story.insertD("RANDOM OBJECTION!", "Ouran Forenz"); // play dialogue
@@ -111,7 +136,8 @@ class Statements { // opens class
 			story.switchBackToEventQueue();
 
 			
-		}  } 
+		}
+		} 
 		else { // if evidence is not correct
 			
 			story.insertV(0, null); // switches view to judge

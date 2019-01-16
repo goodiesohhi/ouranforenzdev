@@ -23,7 +23,7 @@ public class Character { // opens class
 	Drawable drawn; // holds if the character has been drawn
 	boolean show; // holds whether the character should be shown
 	private int speed; // holds the character's speed
-	Character(String n,int x, int y) throws IOException { // opens constructor
+	Character(String n, int x, int y) throws IOException { // opens constructor
 		// sets all values
 		 this.x=x;
 		 this.y=y; 

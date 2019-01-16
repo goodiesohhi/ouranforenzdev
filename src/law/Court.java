@@ -83,12 +83,10 @@ Main.currentCase.clearSprites();	// removes sprites
 	}
 	if(x==5) {
 		Main.renderer.queue[0]= new Drawable(15,0,0,1,0,0); // draws background
-		if (Main.currentCase.getCharacter("Nekocchi")==null) Main.currentCase.characters.add(new Character("Nekocchi", 100, 135)); // adds Nekocchi
-		if (!oneProc) //  checks if this is the only animation running
-		{
-		Main.currentCase.getCharacter("Nekocchi").play("nekocchiWitness", 0, false); // plays animation
-		oneProc=true; // sets variable to true
+		if (Main.currentCase.getCharacter(y)==null) { // checks if there is no current witness
+			Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
 		}
+		Main.currentCase.currentWitness= y; // sets witness as character
 	}
 	
 	if (x==69) { // checks if view is default
