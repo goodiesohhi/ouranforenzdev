@@ -25,7 +25,6 @@ static 	boolean sentinel; // checks if a cross-examination is running
 	void add(String i, String speaker, String[] p, String[] s, int x,String o,String anim, int f) { //adds cross-examination
 		Character c =  Main.currentCase.getCharacter(speaker); // sets character for cross-examination
 		statements.add(new Statements(i, c, p, s, x,o,anim,f)); // adds statements
-	
 	}
 	boolean metConditions () { // checks if conditions have been met to continue
 	
@@ -43,7 +42,6 @@ static 	boolean sentinel; // checks if a cross-examination is running
 		
 		if (!started) { // checks if it hasn't started
 			started=true; // starts cross-examination
-			
 			for (Statements s: this.statements) { // runs through statements
 			if (s.behaviour!=0 )Main.currentCase.currentExamine.conditions.add(new Conditions(s.behaviour, s.objectName)); //adds conditions if they have not been added
 			}
@@ -54,6 +52,7 @@ static 	boolean sentinel; // checks if a cross-examination is running
 
 		if (!Main.currentCase.presented) { // checks if nothing has been presented
 		if(!procced) {  // checks that only this runs
+			
 			if (!Main.currentCase.pressed) statements.get(currentStatement).proc(); // if the case is not pressed the main statement  runs
 			
 			else Main.pressDialogue.insert(statements.get(currentStatement).presses[ statements.get(currentStatement).c],statements.get(currentStatement).speakers[ statements.get(currentStatement).c]); // otherwise the press runs
