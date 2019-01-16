@@ -13,7 +13,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		characters.add(new Character ("Det. Pat. Bluthund", 150, 0)); //adds Bluthund
 		characters.add(new Character("Gilligan Tam",350,500)); // adds Gilligan
 		characters.add(new Character("Photo of Body", 150, 0)); // adds picture of body so it can be shown in court
-		characters.add(new Character("Nekocchi",350,100));
+		characters.add(new Character("Nekocchi",250,200));
 		if (!oneProc) // checks if the case is already running
 		{
 		oneProc=true; // sets the case to be running
@@ -202,7 +202,11 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Sure can!","Det. Pat. Bluthund");
 		 runFirstExamine(0); // runs beginning of cross-examination
-		 insertD("(Aha... Now I've got him...)","Ouran Forenz");
+		 insertD("That's it...","Ouran Forenz");
+		 insertO(0);
+		 insertD("OBJECTION!!!","Ouran Forenz");
+		 removeO();
+		 insertV(1,null);
 		 insertD("Detective, you said Al must have died from 5:30-6:00 correct?","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
@@ -269,6 +273,10 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("No problem. Now listen and listen well.","Det. Pat. Bluthund");
 		 runFirstExamine(1);
 		 runExamine(2);
+		 insertD("That's it...","Ouran Forenz");
+		 insertO(0);
+		 insertD("OBJECTION!!!","Ouran Forenz");
+		 removeO();
 		 insertV(1,null);
 		 insertD("Detective it seems you’ve made an error.","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
@@ -320,6 +328,10 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(0,null);
 		 insertD("Detective Bluthund please resume your testimony.","Judge Judge");
 		 runExamine(3);
+		 insertD("That's it...","Ouran Forenz");
+		 insertO(0);
+		 insertD("OBJECTION!!!","Ouran Forenz");
+		 removeO();
 		 insertV(1,null);
 		 insertD("Tsk tsk Bluthund...","Ouran Forenz");
 		 insertD("Your initial logic may have been sound, but I shall gloriously point out this contradiction.","Ouran Forenz");
