@@ -28,7 +28,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 Main.cExamine[Main.examineSlot].add("That�s my reasoning and I�m sticking with it.", "Det. Pat. Bluthund",  new String[] {"That�s awful stubborn of you.","I�m never wrong! When I find a suspect, it�s always them!","Always?","Well, maybe not always�","Detective, please just stick to the facts of the case�","You got it!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 0, null,null,0);
 		 
 		 stopCExamine(); // ends first cross-examination
-		 
+		 runFirstExamine(0); // runs beginning of cross-examination
 		 //insertV(5, null);
 		 //For the defendant lobby.
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
