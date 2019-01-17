@@ -71,11 +71,11 @@ class Statements { // opens class
 			if(speakers[u].equals("Ouran Forenz"))//checks the speaker and switches view accordingly
 			{
 				System.out.println("OURAN");
-				story.insertV(1, null);
+				story.insertV(1, (String)null);
 			}
 			else if(speakers[u].equals("Nekocchi"))
 			{
-				story.insertV(4, null);
+				story.insertV(4, (String)null);
 			}
 			else if(speakers[u].equals("Det. Pat. Bluthund"))
 			{
@@ -84,7 +84,7 @@ class Statements { // opens class
 			}
 			else if (speakers[u].equals("Judge Judge"))
 			{
-				story.insertV(0, null);
+				story.insertV(0, (String)null);
 			}
 			else if (speakers[u].equals("Enrico Nocent"))
 			{
@@ -125,7 +125,7 @@ class Statements { // opens class
 			story.insertD("RANDOM OBJECTION!", "Ouran Forenz"); // play dialogue
 			story.removeO(); // remove objection
 			
-			story.insertV(0, null); // change view
+			story.insertV(0, (String)null); // change view
 			
 			story.insertD("Badge has been presented", "Judgebot 3000"); // play dialogue
 			story.insertD("This condition has been fulfilled", "Judgebot 3000");
@@ -138,10 +138,10 @@ class Statements { // opens class
 			story.insertD("RANDOM OBJECTION!", "Ouran Forenz");
 			story.removeO();
 			
-			story.insertV(0, null);
+			story.insertV(0, (String)null);
 			
 			story.insertD("My Little Pony", "Judgebot 3000");
-			story.insertV(1, null);
+			story.insertV(1, (String)null);
 			story.switchBackToEventQueue();
 
 			
@@ -149,13 +149,13 @@ class Statements { // opens class
 		} 
 		else { // if evidence is not correct
 			
-			story.insertV(0, null); // switches view to judge
+			story.insertV(0, (String)null); // switches view to judge
 			story.insertD("Ummm.. How is that of any relevance?", "Judge Judge"); //plays default dialogue
 		story.switchBackToEventQueue(); // switches to event queue
 			
 		}
 		}else { // if the requirement is not to present
-			story.insertV(0, null); // switches view to judge
+			story.insertV(0, (String)null); // switches view to judge
 			story.insertD("Ummm.. How is that of any relevance?", "Judge Judge"); // plays default dialogue
 		story.switchBackToEventQueue(); // switches to event queue
 			
