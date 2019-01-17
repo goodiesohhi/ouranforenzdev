@@ -52,7 +52,7 @@ class Statements { // opens class
 	void proc() throws IOException { // runs statement
 		
 		System.out.println(speaker); // writes test phrase
-		Main.currentCase.playAni(speaker, Main.currentCase.getCharacter(speaker).animList.get(0), 0, false); // plays animation of witness
+		 // plays animation of witness
 		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, false); // plays animation
 	
 		Main.dialogue.insert(initial,speaker); // runs dialogue
