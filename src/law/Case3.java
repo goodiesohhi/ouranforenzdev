@@ -71,7 +71,7 @@ class Case3 extends StoryManager  { // opens main class
 		 	Main.cExamine[Main.examineSlot].add("Therefore, I could not have committed the murder.", "Susan Ord", new String[] {"That’s a logical progression.", "Keto must have seen when you came in.", "As you can see, your client will reach justice soon.", "We can, but can you?", "... This is getting old fast."}, new String[] {"Ouran Forenz", "Ouran Forenz", "Adrasteia", "Susan", "Adrasteia"}, 1, null, null, 0);
 		 	stopCExamine(); // ends fifth cross-examination
 		 	//lists various lines of dialogue and view changes
-    		/*insertD("Court is in session for the murder trial of Keto Saiba.", "Judge Judge");
+    		insertD("Court is in session for the murder trial of Keto Saiba.", "Judge Judge");
     		insertD("Is the prosecution ready?", "Judge Judge");
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("The prosecution is prepared...", "Adrasteia");
@@ -107,7 +107,7 @@ class Case3 extends StoryManager  { // opens main class
     		insertD("Fair enough. Will the prosecution call their first witness?", "Judge Judge");
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("Your Honour, we call the Detective Patrick Bluthund to the stand.", "Adrasteia");
-   		 	insertV(3, "Det. Pat. Bluthund");*/
+   		 	insertV(3, "Det. Pat. Bluthund");
    		 	runFirstExamine(0); // starts first cross-examination
    		 	insertV(1, null);
    		 	insertD("You said it was in the same apartment?", "Ouran");
