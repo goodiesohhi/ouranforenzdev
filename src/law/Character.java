@@ -105,6 +105,8 @@ class Animation { // opens animation class
 		if (f>1) {
 		for (int i=0;i<f;i++) {
 			//System.out.println("/resources/anim/"+p+"_"+i+".png");
+			System.out.println("/resources/anim/"+p+"_"+i+".png");
+			System.out.println(sprites);
 		 sprites.add(ImageIO.read( Main.class.getResource("/resources/anim/"+p+"_"+i+".png")));
 		}
 		} else {
