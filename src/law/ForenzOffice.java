@@ -3,8 +3,8 @@ import java.io.IOException; // imports IOException
 public class ForenzOffice extends Location { // creates class
 	boolean block; // holds boolean value
 	StoryManager story = Main.currentCase; // holds current case
-	public ForenzOffice() { // opens constructor
-		 super("Forenz Law Office",55); // holds background
+	public ForenzOffice(int i) { // opens constructor
+		 super("Forenz Law Office",55,i); // holds background
 		 block=true; // sets block to true
 	}
 	@Override

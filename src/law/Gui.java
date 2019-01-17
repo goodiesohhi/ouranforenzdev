@@ -106,7 +106,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 						   if (markerLocation>=1) // if the location is greater than 1
 					markerLocation--; // move up
 					   } else if (Main.keyInt==40) { // if the key is down
-						   System.out.println("HELLO"); //prints test line
+						
 						   if (markerLocation<Main.currentCase.currentLocation.paths.size()-1) markerLocation++; // if the location is higher than the last one, move the marker down
 					   }else
 						   if(Main.keyInt==KeyEvent.VK_Z) { // if z is pressed
@@ -393,6 +393,69 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 					
 					Main.currentCase.court.ceObjects[0].x+=10; // increases x coordinate of cross-examination
 				}
+			} else if (menu==-17) {
+				//	System.out.println("SAVE ME");
+				  // Main.game.saveGame();
+				
+				//makes buttons
+				if (button==0)textQueue[0] = new DrawableText("Continue",Color.GREEN,30.0f,true,0,0,false); 
+				else textQueue[0] = new DrawableText("Continue",Color.GRAY,30.0f,true,0,0,false); 
+				if (button==1)textQueue[1] = new DrawableText("Save",Color.GREEN,30.0f,true,0,0,false); 
+				else textQueue[1] = new DrawableText("Save",Color.GRAY,30.0f,true,0,0,false); 
+				if (button==2)textQueue[2] = new DrawableText("Exit",Color.GREEN,30.0f,true,0,0,false); 
+				else textQueue[2] = new DrawableText("Exit",Color.GRAY,30.0f,true,0,0,false); 
+			
+				textQueue[0].x=300; // sets the x value
+				textQueue[0].y=300;
+				
+				textQueue[1].x=300; // sets the x value
+				textQueue[1].y=400;
+				
+				textQueue[2].x=300; // sets the x value
+				textQueue[2].y=500;
+				
+				if(Main.currentKey!=null) {
+					if(Main.keyInt==KeyEvent.VK_Z) {
+						if(button==0) {
+							
+							Main.gui.cls();
+							  queue = new Drawable[40]; // creates new queue of objects to draw
+							  textQueue = new DrawableText[50]; // creates new queue of text
+							
+							Main.gui.menu=-1;
+							  queue = new Drawable[40]; // creates new queue of objects to draw
+							  textQueue = new DrawableText[50]; // creates new queue of text
+							
+						} else if (button==1) {
+							Main.game.saveGame();
+							Main.gui.cls();
+							  queue = new Drawable[40]; // creates new queue of objects to draw
+							  textQueue = new DrawableText[50]; // creates new queue of text
+							
+							Main.gui.menu=-1;
+							  queue = new Drawable[40]; // creates new queue of objects to draw
+							  textQueue = new DrawableText[50]; // creates new queue of text
+							
+						} else if (button==2) {
+						System.exit(0);	
+						}
+						
+					}   else if(Main.keyInt==38) { // if the key is up
+						   if (button>0) button--;
+					   } else if (Main.keyInt==40) { // if the key is down
+						   if (button<2) button++;
+					   }
+					
+					else if(Main.keyInt==KeyEvent.VK_X) {
+						Main.gui.cls();
+						  queue = new Drawable[40]; // creates new queue of objects to draw
+						  textQueue = new DrawableText[50]; // creates new queue of text
+						
+						Main.gui.menu=-1;
+						  queue = new Drawable[40]; // creates new queue of objects to draw
+						  textQueue = new DrawableText[50]; // creates new queue of text
+					} 
+				}
 			}
 			else if (menu == 1) { // if the menu is the base menu
 				
@@ -484,6 +547,15 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 							   Main.currentCase.currentLocation.talk(shown[markerLocation].id); // asks question
 							   
 						}
+						   else 
+							   if(Main.keyInt==KeyEvent.VK_ESCAPE) {
+								   cls();
+								   queue = new Drawable[40]; // creates new queue of objects to draw
+									  textQueue = new DrawableText[50]; // creates new queue of text
+							menu=-17;
+							button=0;
+								   
+							}
 					   if(Main.keyInt==90&&button==2) { // if the key is z and the button is evidence
 						   queue = new Drawable[40]; // resets queue
 							  textQueue = new DrawableText[50]; // resets text queue
@@ -553,7 +625,14 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 			}
 	
 			else if(menu==-1) { // if the menu is the main menu
-			
+				if(Main.currentKey!=null) {
+					   if(Main.keyInt==KeyEvent.VK_ESCAPE) {
+						//System.out.println("SAVE ME");
+						 //  Main.game.saveGame();
+menu=-17;
+						   
+					}
+				}
 			if (Main.currentCase.inCourt) { // if the case is in court
 				if (button==0) { // if the button is the top left
 					textQueue[1] =  new DrawableText("Press",new Color(Main.randInt(200, 255),Main.randInt(200, 255),Main.randInt(200, 255)),35.0f,true,0,0,false); // draw press in a random colour
@@ -753,7 +832,14 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 									   cls(); // clear screen
 									   menu=1; // open menu
 								   }
-							   } else 
+							   } 
+							   
+							   else if (button==3) {
+								   menu=-17;
+								   cls();
+								   
+							   }
+							   else 
 						   if (button==0) { // if the button is top-left
 							
 		if (Main.currentCase.inCourt) { // if the case is in court
@@ -782,11 +868,16 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 		   	  if(button==1)  queue[3]= new Drawable(guiElements[6],1028-210,10,1,0,0); // draw selected top-right
 		   	  if(button==2)  queue[4]= new Drawable(guiElements[7],0,768-100,1,0,0); // draw selected bottom-left
 		   	  if(button==3)   queue[5]= new Drawable(guiElements[8],1028-200,768-100,1,0,0); // draw selected bottom-right
+
+			textQueue[48] =  new DrawableText("Press ESC for Menu",new Color(200, Main.randInt(0,255), Main.randInt(100,115)),45.0f,true,0,0,false); // prints instructions
+			textQueue[48].x=325; // sets x position of text
+			textQueue[48].y=750; // sets y position of text
+			
 		   //	 if(button==4)   queue[5]= new Drawable(guiElements[9],600-200,768-100,1,0,0);
 			}
 			
 			if ((menu!=-1)&&!(menu==1&&!Main.currentCase.inCourt)) { // if the menu is not the base menu and the menu is either not in court or talking
-				System.out.println("hellodur"); // print test phrase
+			
 				textQueue[48] =  new DrawableText("Press X to return",new Color(200, Main.randInt(0,255), Main.randInt(100,115)),35.0f,true,0,0,false); // prints instructions
 				textQueue[48].x=375; // sets x position of text
 				textQueue[48].y=750; // sets y position of text
