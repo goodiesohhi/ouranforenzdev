@@ -42,6 +42,15 @@ static 	boolean sentinel; // checks if a cross-examination is running
 		
 		if (!started) { // checks if it hasn't started
 			started=true; // starts cross-examination
+			for (Statements s: this.statements)
+			{
+				s.proc();
+			}
+			for (int i = 0; i < statements.get(currentStatement).presses.length; i++)
+			{
+				currentStatement++;
+			}
+			currentStatement = 0;
 			for (Statements s: this.statements) { // runs through statements
 			if (s.behaviour!=0 )Main.currentCase.currentExamine.conditions.add(new Conditions(s.behaviour, s.objectName)); //adds conditions if they have not been added
 			}
@@ -61,6 +70,7 @@ static 	boolean sentinel; // checks if a cross-examination is running
 		}
 		
 		if (Main.currentCase.pressed) { // checks if a statement is pressed
+			
 			
 			if(!Main.currentCase.inDialogue&&procced) { // checks if there is no dialogue currently happening
 				
