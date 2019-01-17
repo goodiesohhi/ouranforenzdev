@@ -214,6 +214,11 @@ public String caseName;
 		queueSize++; // increases size of queue
 		
 		 }
+  void insertV(int y,AnimData n) { // changes view
+	  Main.currentCase.addEvent( new Event("v", y,n)) ; // inserts view event  
+		queueSize++; // increases size of queue
+		
+		 }
   
   void enterArea(int y) { // enters area
 	  Main.currentCase.addEvent(new Event("e",y)); // inserts enter event  

@@ -101,26 +101,26 @@ class Case0 extends StoryManager  { // opens class
 		    insertD("Is the defense ready?","Judge Judge");
 		 
 		   
-				   insertV(1,null);
+				   insertV(1,(String)null);
 
 		    
 		    insertD("Yes, your honor!","Ouran Forenz");
 		  
 		  
-				   insertV(0,null);
+				   insertV(0,(String)null);
 				  
 			 
 			   insertD("Is the prosecution ready?","Judge Judge");
 			  
 
 		 
-		    insertV(2,null);
+		    insertV(2,(String)null);
 			
 		   
 		    insertD("Yes, your honor.","Prosecutor");
 		    
 
-		    insertV(0,null);
+		    insertV(0,(String)null);
 		    insertD("Who is the accused?" ,"Judge Judge");
 		    
 		    insertV(3,"Det. Pat. Bluthund");
@@ -138,18 +138,18 @@ class Case0 extends StoryManager  { // opens class
 		    runExamine(1); // runs cross-examination
 		 
 		    
-		    insertV(0,null);
+		    insertV(0,(String)null);
 		    insertD("My verdict is guilty.","Judge Judge");
 		    insertD("And that was the end","God");
 		    insertO(0);
-		    insertV(2,null);
+		    insertV(2,(String)null);
 		    insertD("???","Prosecutor");
-		    insertV(0,null);
+		    insertV(0,(String)null);
 		    insertD("???","Judge Judge");
-		    insertV(1,null);
+		    insertV(1,(String)null);
 		    removeO();
 		    insertD("The defense insists on a proper trial before a verdict an be determined","Ouran Forenz");
-		    insertV(0,null);
+		    insertV(0,(String)null);
 		    insertD("Okay","Judge Judge");
 		    runFirstExamine(2); // runs start of cross-examination
 		    runExamine(3); // runs cross-examination

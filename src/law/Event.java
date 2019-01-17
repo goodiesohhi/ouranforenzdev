@@ -99,7 +99,7 @@ class Event { // opens class
 				 Main.gui.queue = new Drawable[40]; // queue created
 				  Main.gui.textQueue = new DrawableText[50]; // text queue created
 				  Main.currentCase.clearSprites(); // removes sprites
-				Main.currentCase.insertV(0,null); // sets view to judge
+				Main.currentCase.insertV(0,(String)null); // sets view to judge
 				
 				
 			 
@@ -156,7 +156,8 @@ class Event { // opens class
 	if (command=="v") { // if the command is to change view
 		
 		Main.currentCase.court.oneProc=false; // sets nothing to running
-		   Main.currentCase.court.switchview(z,ani); // moves view
+		if(ani==null) Main.currentCase.court.switchview(z,x); // moves view
+		else Main.currentCase.court.switchview(z,ani);
 		
 	} else if (command=="e") { // if the command is to move to a location
 		 Main.currentCase.locales[z].enter(); // enters a location
