@@ -36,6 +36,7 @@ public class Court { // opens class
 
 	
 	void switchview (int x,	String y) throws IOException { // switches view of court
+		Main.currentCase.inCourt=true;
 Main.renderer.clear(); // clears view
 Main.currentCase.clearSprites();	// removes sprites
 	if(x==0) { // checks if the view is of the judge
@@ -63,6 +64,8 @@ Main.currentCase.clearSprites();	// removes sprites
 		{
 			if (Main.currentCase.caseID!=1) {
 				Main.currentCase.getCharacter(Main.currentCase.currentProsecutor).play("adrestiaIdle", 7, true); // plays animation
+			} else {
+				Main.currentCase.getCharacter(Main.currentCase.currentProsecutor).play("melTalk", 2, true); // plays animation
 			}
 			oneProc=true; // ensures that only one animation runs
 			}
