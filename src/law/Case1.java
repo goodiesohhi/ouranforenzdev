@@ -552,8 +552,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Hontou? Sounds sugoi suspicious...","Nekocchi");
 		 insertD("That’s not how you use sugoi... you know what, I don’t care.","Ouran Forenz");
 		 insertD("Let's get on with the testimony already.","Ouran Forenz");
-		 
-		 
+		 		 
 		}
 		super.update(); // updates super
 		 
