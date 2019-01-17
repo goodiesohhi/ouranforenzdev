@@ -14,6 +14,9 @@ public class Case1 extends StoryManager{ // opens class for first case
 		characters.add(new Character("Gilligan Tam",350,500)); // adds Gilligan
 		characters.add(new Character("Photo of Body", 150, 0)); // adds picture of body so it can be shown in court
 		characters.add(new Character("Nekocchi",250,200));
+		this.getCharacter("Gilligan Tam").animList.add("gilliganWitness"); // adds character animation
+		this.getCharacter("Det. Pat. Bluthund").animList.add("bluthundWitness"); // adds character animation
+		characters.add(new Character("Enrico Nocent",150,0));
 		if (!oneProc) // checks if the case is already running
 		{
 		oneProc=true; // sets the case to be running
@@ -33,40 +36,39 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 startCExamine(1);
 		 
-		 Main.cExamine[Main.examineSlot].add("When the body was found, a message was found next to him", "Det. Pat. Bluthund", new String[] {"Tell me more about the discovery.","Well another witness we have discovered the body when he went into work the next day.","Who is this witness?","AHAHAHAHA. I’m not telling you that. I have no reason to.","(If I want to know more about this mystery witness I need them on the stand…)","(I need to get through this mutt first.)"}, new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Ouran Forenz"}, 0, null, null, 0);
-		 Main.cExamine[Main.examineSlot].add("It very clearly says GILL T, that’s your client man.", "Det. Pat. Bluthund",  new String[] {"So your saying the message implicates my client?","Sure does. Look at it!","How do you know it was the victim who wrote it.","Anyone with eyes can tell. You see..."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz", "Det. Pat. Bluthund"} , 0, null , null,0);
-		 Main.cExamine[Main.examineSlot].add("There’s even blood on is finger showing he wrote it.", "Det. Pat. Bluthund",  new String[] {"So, the victim wrote the message?","Sure did. Look, his right finger has blood on it.","(Right hand..?)","He wrote the message with his right hand, can’t you see?","I’d like you to add that to your testimony please.","Really? Alrighty then."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 1, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("When the body was found, a message was found next to him", "Det. Pat. Bluthund", new String[] {"Tell me more about the discovery.","Well another witness we have discovered the body when he went into work the next day.","Who is this witness?","AHAHAHAHA. Iï¿½m not telling you that. I have no reason to.","(If I want to know more about this mystery witness I need them on the standï¿½)","(I need to get through this mutt first.)"}, new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Ouran Forenz"}, 0, null, null, 0);
+		 Main.cExamine[Main.examineSlot].add("It very clearly says GILL T, thatï¿½s your client man.", "Det. Pat. Bluthund",  new String[] {"So your saying the message implicates my client?","Sure does. Look at it!","How do you know it was the victim who wrote it.","Anyone with eyes can tell. You see..."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz", "Det. Pat. Bluthund"} , 0, null , null,0);
+		 Main.cExamine[Main.examineSlot].add("Thereï¿½s even blood on is finger showing he wrote it.", "Det. Pat. Bluthund",  new String[] {"So, the victim wrote the message?","Sure did. Look, his right finger has blood on it.","(Right hand..?)","He wrote the message with his right hand, canï¿½t you see?","Iï¿½d like you to add that to your testimony please.","Really? Alrighty then."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 1, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("He must have written the message after he got hit.", "Det. Pat. Bluthund",  new String[] {"So after he was hit with the stick he wrote the message right before his death?","Yeah pal. This is often the case.","Not everyone dies instantly. Usually they are alive for seconds or minutes after the initial trauma.","Interesting.", "Nyan?"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Nekocchi"} , 0, null,null,0);
-		 Main.cExamine[Main.examineSlot].add("Luckily he did, now we can catch the culprit.", "Det. Pat. Bluthund",  new String[] {"That's conjecture!","It’s a reasonable hypothesis based off of evidence and a professional’s expert opinion.","Nyan~~desu he has a point.","Well it’s my job to prove the evidence is unreliable.","And show that my client couldn’t have done it!!!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Nekocchi","Ouran Forenz","Ouran Forenz"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Luckily he did, now we can catch the culprit.", "Det. Pat. Bluthund",  new String[] {"That's conjecture!","Itï¿½s a reasonable hypothesis based off of evidence and a professionalï¿½s expert opinion.","Nyan~~desu he has a point.","Well itï¿½s my job to prove the evidence is unreliable.","And show that my client couldnï¿½t have done it!!!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Nekocchi","Ouran Forenz","Ouran Forenz"} , 0, null,null,0);
 		 
 		 stopCExamine();
 		 
          startCExamine(2);
 		 
-		 Main.cExamine[Main.examineSlot].add("When the body was found, a message was found next to him", "Det. Pat. Bluthund", new String[] {"Tell me more about the discovery.","Well another witness we have discovered the body when he went into work the next day.","Who is this witness?","AHAHAHAHA. I’m not telling you that. I have no reason to.","(If I want to know more about this mystery witness I need them on the stand…)","(I need to get through this mutt first.)"}, new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Ouran Forenz"}, 0, null, null, 0);
-		 Main.cExamine[Main.examineSlot].add("It very clearly says GILL T, that’s your client man.", "Det. Pat. Bluthund",  new String[] {"So your saying the message implicates my client?","Sure does. Look at it!","How do you know it was the victim who wrote it.","Anyone with eyes can tell. You see..."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz", "Det. Pat. Bluthund"} , 0, null , null,0);
-		 Main.cExamine[Main.examineSlot].add("There’s even blood on is finger showing he wrote it.", "Det. Pat. Bluthund",  new String[] {"So, the victim wrote the message?","Sure did. Look, his right finger has blood on it.","(Right hand..?)","He wrote the message with his right hand, can’t you see?","I’d like you to add that to your testimony please.","Really? Alrighty then."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 0, null,null,0);
-		 Main.cExamine[Main.examineSlot].add("He wrote the message using his right hand, can’t you see?", "Det. Pat. Bluthund",  new String[] {"Your claim is that the victim wrote his dying message using his right hand?","Yup!","Jeez you just asked this. Do you have anything new to ask?","Well I guess not…","Please don’t hound the witness Mr. Forenz.","You got it... (hound?)"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Judge Judge"} , 2, "Photo of Al",null,0);
+		 Main.cExamine[Main.examineSlot].add("When the body was found, a message was found next to him", "Det. Pat. Bluthund", new String[] {"Tell me more about the discovery.","Well another witness we have discovered the body when he went into work the next day.","Who is this witness?","AHAHAHAHA. Iï¿½m not telling you that. I have no reason to.","(If I want to know more about this mystery witness I need them on the standï¿½)","(I need to get through this mutt first.)"}, new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Ouran Forenz"}, 0, null, null, 0);
+		 Main.cExamine[Main.examineSlot].add("It very clearly says GILL T, thatï¿½s your client man.", "Det. Pat. Bluthund",  new String[] {"So your saying the message implicates my client?","Sure does. Look at it!","How do you know it was the victim who wrote it.","Anyone with eyes can tell. You see..."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz", "Det. Pat. Bluthund"} , 0, null , null,0);
+		 Main.cExamine[Main.examineSlot].add("Thereï¿½s even blood on is finger showing he wrote it.", "Det. Pat. Bluthund",  new String[] {"So, the victim wrote the message?","Sure did. Look, his right finger has blood on it.","(Right hand..?)","He wrote the message with his right hand, canï¿½t you see?","Iï¿½d like you to add that to your testimony please.","Really? Alrighty then."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("He wrote the message using his right hand, canï¿½t you see?", "Det. Pat. Bluthund",  new String[] {"Your claim is that the victim wrote his dying message using his right hand?","Yup!","Jeez you just asked this. Do you have anything new to ask?","Well I guess notï¿½","Please donï¿½t hound the witness Mr. Forenz.","You got it... (hound?)"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Judge Judge"} , 2, "Photo of Al",null,0);
 		 Main.cExamine[Main.examineSlot].add("He must have written the message after he got hit.", "Det. Pat. Bluthund",  new String[] {"So after he was hit with the stick he wrote the message right before his death?","Yeah pal. This is often the case.","Not everyone dies instantly. Usually they are alive for seconds or minutes after the initial trauma.","Interesting.", "Nyan?"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Nekocchi"} , 0, null,null,0);
-		 Main.cExamine[Main.examineSlot].add("Luckily he did, now we can catch the culprit.", "Det. Pat. Bluthund",  new String[] {"That's conjecture!","It’s a reasonable hypothesis based off of evidence and a professional’s expert opinion.","Nyan~~desu he has a point.","Well it’s my job to prove the evidence is unreliable.","And show that my client couldn’t have done it!!!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Nekocchi","Ouran Forenz","Ouran Forenz"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Luckily he did, now we can catch the culprit.", "Det. Pat. Bluthund",  new String[] {"That's conjecture!","Itï¿½s a reasonable hypothesis based off of evidence and a professionalï¿½s expert opinion.","Nyan~~desu he has a point.","Well itï¿½s my job to prove the evidence is unreliable.","And show that my client couldnï¿½t have done it!!!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Nekocchi","Ouran Forenz","Ouran Forenz"} , 0, null,null,0);
 		 
 		 stopCExamine();
 		 
 		 startCExamine(3);
 		 
-		 Main.cExamine[Main.examineSlot].add("When the body was found, a message was found next to him", "Det. Pat. Bluthund", new String[] {"Tell me more about the discovery.","Well another witness we have discovered the body when he went into work the next day.","Who is this witness?","AHAHAHAHA. I’m not telling you that. I have no reason to.","(If I want to know more about this mystery witness I need them on the stand…)","(I need to get through this mutt first.)"}, new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Ouran Forenz"}, 0, null, null, 0);
-		 Main.cExamine[Main.examineSlot].add("It very clearly says GILL T, that’s your client man.", "Det. Pat. Bluthund",  new String[] {"So your saying the message implicates my client?","Sure does. Look at it!","How do you know it was the victim who wrote it.","Anyone with eyes can tell. You see..."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz", "Det. Pat. Bluthund"} , 0, null , null,0);
-		 Main.cExamine[Main.examineSlot].add("There’s even blood on is finger showing he wrote it.", "Det. Pat. Bluthund",  new String[] {"So, the victim wrote the message?","Sure did. Look, his right finger has blood on it.","(Right hand..?)","He wrote the message with his right hand, can’t you see?","I’d like you to add that to your testimony please.","Really? Alrighty then."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 0, null,null,0);
-		 Main.cExamine[Main.examineSlot].add("He wrote the message using his right hand, can’t you see?", "Det. Pat. Bluthund",  new String[] {"Your claim is that the victim wrote his dying message using his right hand?","Yup!","Jeez you just asked this. Do you have anything new to ask?","Well I guess not…","Please don’t hound the witness Mr. Forenz.","You got it... (hound?)"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Judge Judge"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("When the body was found, a message was found next to him", "Det. Pat. Bluthund", new String[] {"Tell me more about the discovery.","Well another witness we have discovered the body when he went into work the next day.","Who is this witness?","AHAHAHAHA. Iï¿½m not telling you that. I have no reason to.","(If I want to know more about this mystery witness I need them on the standï¿½)","(I need to get through this mutt first.)"}, new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Ouran Forenz"}, 0, null, null, 0);
+		 Main.cExamine[Main.examineSlot].add("It very clearly says GILL T, thatï¿½s your client man.", "Det. Pat. Bluthund",  new String[] {"So your saying the message implicates my client?","Sure does. Look at it!","How do you know it was the victim who wrote it.","Anyone with eyes can tell. You see..."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz", "Det. Pat. Bluthund"} , 0, null , null,0);
+		 Main.cExamine[Main.examineSlot].add("Thereï¿½s even blood on is finger showing he wrote it.", "Det. Pat. Bluthund",  new String[] {"So, the victim wrote the message?","Sure did. Look, his right finger has blood on it.","(Right hand..?)","He wrote the message with his right hand, canï¿½t you see?","Iï¿½d like you to add that to your testimony please.","Really? Alrighty then."} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund","Ouran Forenz","Det. Pat. Bluthund"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("He wrote the message using his right hand, canï¿½t you see?", "Det. Pat. Bluthund",  new String[] {"Your claim is that the victim wrote his dying message using his right hand?","Yup!","Jeez you just asked this. Do you have anything new to ask?","Well I guess notï¿½","Please donï¿½t hound the witness Mr. Forenz.","You got it... (hound?)"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Judge Judge"} , 0, null,null,0);
 		 Main.cExamine[Main.examineSlot].add("He must have written the message after he got hit.", "Det. Pat. Bluthund",  new String[] {"So after he was hit with the stick he wrote the message right before his death?","Yeah pal. This is often the case.","Not everyone dies instantly. Usually they are alive for seconds or minutes after the initial trauma.","Interesting.", "Nyan?"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Det. Pat. Bluthund","Ouran Forenz","Nekocchi"} , 2, "Autopsy Report",null,0);
-		 Main.cExamine[Main.examineSlot].add("Luckily he did, now we can catch the culprit.", "Det. Pat. Bluthund",  new String[] {"That's conjecture!","It’s a reasonable hypothesis based off of evidence and a professional’s expert opinion.","Nyan~~desu he has a point.","Well it’s my job to prove the evidence is unreliable.","And show that my client couldn’t have done it!!!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Nekocchi","Ouran Forenz","Ouran Forenz"} , 0, null,null,0);
+		 Main.cExamine[Main.examineSlot].add("Luckily he did, now we can catch the culprit.", "Det. Pat. Bluthund",  new String[] {"That's conjecture!","Itï¿½s a reasonable hypothesis based off of evidence and a professionalï¿½s expert opinion.","Nyan~~desu he has a point.","Well itï¿½s my job to prove the evidence is unreliable.","And show that my client couldnï¿½t have done it!!!"} ,  new String[] {"Ouran Forenz","Det. Pat. Bluthund","Nekocchi","Ouran Forenz","Ouran Forenz"} , 0, null,null,0);
 		 
 		 stopCExamine();
 		 
 		 
 		 
-
-		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
+		/* insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
 		 // various changes of view and pieces of dialogue
 		 insertV(5,"Nekocchi");
@@ -87,7 +89,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I hate you so much...","Ouran Forenz");
 		 insertV(0, null);
 		 insertData("---Courtroom A  May 22nd, 2:34 PM.---");
-		 insertD("Court is now in session for the trial Gilligan Tam. Is the prosecution ready?","Judge Judge");
+		 insertD("Court is now in session for the trial of Gilligan Tam. Is the prosecution ready?","Judge Judge");
 		 insertV(2,null);
 		 insertR("Mel Practiss", "melProfile", "A nervous but decently proficient prosecutor... Maybe.",true,3);
 		 insertD("The prosecution is' r-r-ready... maybe.", "Mel Practiss");
@@ -159,6 +161,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Here's a photo of him when he was alive.", "Det. Pat. Bluthund");
 		 insertR("Photo of Al","photoalprotecc","Al holding a coffee cup in his left hand when he was alive.",false,7); //inserts photo of Al
 		 insertData("You got the Photo of Al.");
+		 insertD("He was murdered within Fat Stacks Bank in the back employee area.","Det. Pat Bluthund");
 		 insertD("A witness found the body the next morning. His dying message implicates your client a lot.", "Det. Pat. Bluthund");
 		 insertData("You got the Photo of the Body.");
 		 showAni("Photo of Body","albodypic",0,false); //plays animation of picture of body
@@ -202,7 +205,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Thank you Detective. Can you testify about some of your reasoning?","Mel Practiss");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
-		 insertD("Sure can!","Det. Pat. Bluthund");
+		 insertD("Sure can!","Det. Pat. Bluthund");*/
 		 runFirstExamine(0); // runs beginning of cross-examination
 		 insertD("That's it...","Ouran Forenz");
 		 insertO(0);
@@ -214,7 +217,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Yeah, so?", "Det. Pat. Bluthund");
 		 insertV(1,null);
-		 insertD("Well there’s where you’re wrong!", "Ouran Forenz");
+		 insertD("Well thereï¿½s where youï¿½re wrong!", "Ouran Forenz");
 		 insertD("According to this autopsy report the victim died sometime between 9:45-10:30 PM.","Ouran Forenz");
 		 insertV(4,null);
 		 insertD("Hontou?!?! Great job Ouran desu~~","Nekocchi");
@@ -227,16 +230,16 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Well I was just testing you Mr. Forenz.","Det. Pat. Bluthund");
 		 insertV(1,null);
-		 insertD("(Really? Just a test? Sure…)","Ouran Forenz");
+		 insertD("(Really? Just a test? Sureï¿½)","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
-		 insertD("You don’t think I know that?","Det. Pat. Bluthund");
+		 insertD("You donï¿½t think I know that?","Det. Pat. Bluthund");
 		 insertD("He did check out of work though. We have a record of that. Here.","Det. Pat. Bluthund");
 		 insertR("Work Record","workRecord","Gilligan ended work at 5:30 and Al started at 5:30.",false,11);
 		 insertData("You got the Work Record.");
 		 insertV(2,null);
 		 insertD("Well this is news to me!?!","Mel Practiss");
-		 insertD("Detective please don’t lie on the stand…","Mel Practiss");
+		 insertD("Detective please donï¿½t lie on the standï¿½","Mel Practiss");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("No problem. Besides we have evidence showing him entering the bank at 9:50 PM.","Det. Pat. Bluthund");
@@ -246,13 +249,14 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(4,null);
 		 insertD("Nani?! OwO","Nekocchi");
 		 insertV(2,null);
-		 insertD("Y-yes now I remember…","Mel Practiss");
-		 insertD("Security Cameras caught him entering the back of the bank at 9:50 PM.","Mel Practiss");
+		 insertD("Y-yes now I rememberï¿½","Mel Practiss");
+		 insertD("Cameras within the bank monitor all routes to the employee area where the corpse was found.","Mel Practiss");
+		 insertD("Security Cameras caught Gilligan entering the back of the bank at 9:50 PM.","Mel Practiss");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Yes. They also caught him leaving at 10:00 PM.","Det. Pat. Bluthund");
 		 insertD("Al Protecc was shown on the cameras at 5:30 when he started his shift.","Det. Pat. Bluthund");
-		 insertD("The cameras don’t show anyone else.","Det. Pat. Bluthund");
+		 insertD("The cameras donï¿½t show anyone else.","Det. Pat. Bluthund");
 		 insertV(4,null);
 		 insertD("Itai","Nekocchi");
 		 insertV(1,null);
@@ -264,30 +268,31 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertR("Security Footage","securityFootage","Shows only Gilligan and Al entering the back of the bank.",false,12);
 		 insertData("You got the Security Footage.");
 		 insertV(2,null);
-		 insertD("Well now Judge, between the dying message and this footage, I believe we are ready for a verdict…","Mel Practiss");
+		 insertD("Well now Judge, between the dying message and this footage, I believe we are ready for a verdictï¿½","Mel Practiss");
 		 insertV(0,null);
-		 insertD("Hmmm, I suppose you’re right…","Judge Judge");
+		 insertD("Hmmm, I suppose youï¿½re rightï¿½","Judge Judge");
 		 insertV(1,null);
-		 insertD("Wait, Detective. Why don’t you testify about the dying message.","Ouran Forenz");
+		 insertD("Wait, Detective. Why donï¿½t you testify about the dying message.","Ouran Forenz");
 		 insertD("I'd like to hear more about that.","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("No problem. Now listen and listen well.","Det. Pat. Bluthund");
 		 runFirstExamine(1);
+		 insertD("That's it...","Ouran Forenz");
 		 runExamine(2);
 		 insertD("That's it...","Ouran Forenz");
 		 insertO(0);
 		 insertD("OBJECTION!!!","Ouran Forenz");
 		 removeO();
 		 insertV(1,null);
-		 insertD("Detective it seems you’ve made an error.","Ouran Forenz");
+		 insertD("Detective it seems youï¿½ve made an error.","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Huh, in what way.","Det. Pat. Bluthund");
 		 insertV(2,null);
-		 insertD("I see. You claim the victim is left handed since he’s holding the mug in his left hand.","Mel Practiss");
+		 insertD("I see. You claim the victim is left handed since heï¿½s holding the mug in his left hand.","Mel Practiss");
 		 insertV(1,null);
-		 insertD("Yeah... (How did he know that’s what I was going to say?)","Ouran Forenz");
+		 insertD("Yeah... (How did he know thatï¿½s what I was going to say?)","Ouran Forenz");
 		 insertV(2,null);
 		 insertD("I noticed that as well, so I looked into it beforehand.","Mel Practiss");
 		 insertD("Testimony from family and friends state that he is ambidextrous.","Mel Practiss");
@@ -313,16 +318,16 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Even I know that you baka ~~nyan~~UwU","Nekocchi");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
-		 insertD("Yeah really man. That won’t work.","Det. Pat. Bluthund");
+		 insertD("Yeah really man. That wonï¿½t work.","Det. Pat. Bluthund");
 		 insertV(1,null);
 		 insertD("Ok fine, I concede that this word exists, and that the victim was...","Ouran Forenz");
 		 insertD("Ambeedextrus.","Ouran Forenz");
 		 insertV(4,null);
 		 insertD("Close enough.","Nekocchi");
 		 insertV(1,null);
-		 insertD("(Crap! What do I do now? I’m out of leads...)","Ouran Forenz");
+		 insertD("(Crap! What do I do now? Iï¿½m out of leads...)","Ouran Forenz");
 		 insertD("I have news! I bear this updated autopsy report and humbly present it to court.","Bailiff");
-		 insertD("So that it’s wonder and magnificence may shine upon all within this room.","Bailiff");
+		 insertD("So that itï¿½s wonder and magnificence may shine upon all within this room.","Bailiff");
 		 insertD("Thank you?","Ouran Forenz");
 		 insertR("Autopsy Report","autopsy","Cause of Death: Blunt Force Trauma, 9:45-10:30 PM. Died instantly.",false,5);
 		 insertData("The Autopsy Report was updated.");
@@ -353,16 +358,16 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
 		 insertD("Smart criminals try to do things a criminal would never do.","Det. Pat. Bluthund");
-		 insertD("I’ve had cases where the criminal is the one to call the cops.","Det. Pat. Bluthund");
-		 insertD("It’s an attempt to divert suspicion.","Det. Pat. Bluthund");
+		 insertD("Iï¿½ve had cases where the criminal is the one to call the cops.","Det. Pat. Bluthund");
+		 insertD("Itï¿½s an attempt to divert suspicion.","Det. Pat. Bluthund");
 		 insertV(1,null);
 		 insertD("Come on Detective!","Ouran Forenz");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
-		 insertD("But I will concede, this is a pretty big blow to the prosecution’s case...","Det. Pat. Bluthund");
+		 insertD("But I will concede, this is a pretty big blow to the prosecutionï¿½s case...","Det. Pat. Bluthund");
 		 insertV(3,"Det. Pat. Bluthund");
 		 playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
-		 insertD("But I will concede, this is a pretty big blow to the prosecution’s case...","Det. Pat. Bluthund");
+		 insertD("But I will concede, this is a pretty big blow to the prosecutionï¿½s case...","Det. Pat. Bluthund");
 		 insertV(2,null);
 		 insertD("Not so fast...","Mel Practiss");
 		 insertD("I have...","Mel Practiss");
@@ -370,7 +375,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,null);
 		 insertD("Like what?","Ouran Forenz");
 		 insertV(4,null);
-		 insertD("I haven’t had a line in a while desu~~","Nekocchi");
+		 insertD("I havenï¿½t had a line in a while desu~~","Nekocchi");
 		 insertV(2,null);
 		 insertD("I have a witness to call.","Mel Practiss");
 		 insertD("Security guard on the day shift, Enrico Nocent.","Mel Practiss");
@@ -378,23 +383,47 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I see. We will take a short 15 minute recess then reconvene. Court is dismissed.","Judge Judge");
 		 insertV(5,"Nekocchi");
 		 playAni("Nekocchi","nekocchiWitness",0,false);
-		 insertData("---Defendant’s Lobby C May 22nd, 3:01---");
+		 insertData("---Defendantï¿½s Lobby C May 22nd, 3:01---");
 		 insertD("Lobby C huh? I thought there were only two lobbies...","Ouran Forenz");
 		 insertD("Me too desu. Guess not OwO.","Nekocchi");
 		 insertV(5, "Gilligan Tam");
 		 playAni("Gilligan Tam","gilliganWitness",0,false);
 		 insertD("Thanks Forenz!", "Gilligan Tam");
-		 insertD("We aren’t out of the woods yet.","Ouran Forenz");
+		 insertD("We arenï¿½t out of the woods yet.","Ouran Forenz");
 		 insertV(5,"Nekocchi");
 		 playAni("Nekocchi","nekocchiWitness",0,false);
-		 insertD("Woods! I’m afraid of trees!","Nekocchi");
+		 insertD("Woods! Iï¿½m afraid of trees!","Nekocchi");
 		 insertData("Nekocchi flees.");
 		 insertV(5,"Gilligan Tam");
 		 playAni("Gilligan Tam","gilliganWitness",0,false);
 		 insertD("I think we can do this. I believe in your innocence.","Ouran Forenz");
 		 insertD("Thanks.","Gilligan Tam");
 		 insertD("We never got a good chance to talk. What exactly happened when you went into the bank that night.","Ouran Forenz");
-		 
+		 insertD("Well I had left some papers in the back. But I didnï¿½t know where.","Gilligan Tam");
+		 insertD("I saw Al alive when I went. He helped me find the papers.","Gilligan Tam");
+		 insertD("I left right away once I found them.","Gilligan Tam");
+		 insertD("So he was alive at the time.","Ouran Forenz");
+		 insertD("Court is reconvening gloriously.","Bailiff");
+		 insertD("Good, Nekocchi isnï¿½t back yet.","Ouran Forenz");
+		 insertV(5,"Nekocchi");
+		 playAni("Nekocchi","nekocchiWitness",0,false);
+		 insertD("Did you summon me Ouran-kun nyan desu OwU","Nekocchi");
+		 insertD("(Why...)","Ouran Forenz");
+		 insertV(0,null);
+		 insertData("---Courtroom A May 22nd, 3:09---");
+		 insertD("Court is now in session.","Judge Judge");
+		 insertD("Prosecution, you had a witness to call I believe.","Judge Judge");
+		 insertV(2,null);
+		 insertD("The prosecution now calls Enrico Nocent to the stand.","Mel Practiss");
+		 insertV(3,"Enrico Nocent");
+		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 insertData("Enrico Nocent");
+		 insertD("Hellllllllooooo.","Enrico Nocent");
+		 insertD("Enrico Nocent is my name, but you can call me En.","Enrico Nocent");
+		 insertV(1,null);
+		 insertD("We will not.","Ouran Forenz");
+		 insertV(4,null);
+		 insertD("I will En-chan desu.","Nekocchi");
 		 
 		}
 		super.update(); // updates super

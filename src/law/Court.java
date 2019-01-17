@@ -40,8 +40,12 @@ Main.renderer.clear(); // clears view
 Main.currentCase.clearSprites();	// removes sprites
 	if(x==0) { // checks if the view is of the judge
 		Main.renderer.queue[0]= new Drawable(10,0,0,1,0,0); // draws background
-		if (Main.currentCase.getCharacter("Judge Judge")==null) Main.currentCase.characters.add(new Character("Judge Judge", 350, 96)); // draws judge
-		Main.renderer.queue[1]= new Drawable(1,350,96,1,0,1); // draws bench
+		if (Main.currentCase.getCharacter("Judge Judge")==null) Main.currentCase.characters.add(new Character("Judge Judge", 250, 60)); // draws judge
+		if (!oneProc)
+		{
+		Main.currentCase.getCharacter("Judge Judge").play("judgeBot", 0, false); // plays animation
+		oneProc=true; // ensures that only one animation runs
+		}
 	}	
 	
 	if(x==1) { // checks if view is of the defence

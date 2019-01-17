@@ -18,7 +18,7 @@ public class Character { // opens class
 	int dy; // holds change in y
 	int originX; // holds original x position
 	int originY; // holds original y position
-	
+	ArrayList<String> animList;
 	int height; // holds character height
 	Drawable drawn; // holds if the character has been drawn
 	boolean show; // holds whether the character should be shown
@@ -32,7 +32,7 @@ public class Character { // opens class
 	     originY=this.y;
 	     originX=this.x;
 		 name=n;
-		
+		animList = new ArrayList<String>();
 	}
 	
 	void setVisible(boolean b) { // sets whether the character is visible

@@ -19,7 +19,9 @@ class Case3 extends StoryManager  { // opens main class
         characters.add(new Character("Keto Saiba", 200, 0)); // adds Keto
         characters.add(new Character("Susan Ord", 250, 0)); // adds Susan
         characters.add(new Character("Ouran Forenz", 200, 0)); // adds Ouran
-    	if (flags[25] == true && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
+        this.getCharacter("Det. Pat. Bluthund").animList.add("bluthundWitness"); // adds animation
+        this.getCharacter("Susan Ord").animList.add("susanWitness"); // adds animation
+    	if (flags[25] == false && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
     	{
     		oneProc = true; // makes sure that only one segment gets added to the event queue
     		flags[24] = true; // sets the flag to true
@@ -74,6 +76,7 @@ class Case3 extends StoryManager  { // opens main class
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("The prosecution is prepared...", "Adrasteia");
     		insertD("to bring the defendant to justice, your Honour!", "Adrasteia");
+    		insertV(4, null);
     		insertD("She seems intense, nya~~", "Nekocchi");
     		insertV(0, "Judge Judge");
     		insertD("Very well... is the defence team ready?", "Judge Judge");
@@ -153,6 +156,7 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("I had the pleasure of visiting the Saiba Corp. offices yesterday evening.", "Ouran");
 		 	insertD("I noticed something about your building.", "Ouran");
 		 	insertD("Specifically: you have an elevator!", "Ouran");
+		 	insertV(4, null);
 		 	insertD("Nani?", "Nekocchi");
 		 	insertV(3, "Susan Ord");
 		 	insertD("Ghk!", "Susan");
@@ -165,6 +169,7 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertV(3, "Susan Ord");
 		 	insertD("No, it’s all automated security.", "Susan");
 		 	insertD("What sort of place doesn’t have a security dog?", "Det. Pat. Bluthund");
+		 	insertV(4, null);
 		 	insertD("So someone else could have been there, desu ka?", "Nekocchi");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Yes, it appears so.", "Judge Judge");
@@ -222,7 +227,9 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("Do you have an alibi?", "Ouran");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Stop pestering the witness, Mr. Forenz!", "Judge Judge");
+		 	insertV(4, null);
 		 	insertD("Stop pestering watakushi, nya~~!", "Nekocchi");
+		 	insertV(0, "Judge Judge");
 		 	insertD("You do have a point, though.", "Judge Judge");
 		 	insertD("Do you wish to speak to an alibi, Ms. Ord?", "Judge Judge");
 		 	insertV(3, "Susan Ord");
@@ -239,9 +246,11 @@ class Case3 extends StoryManager  { // opens main class
 		 	insertD("Objection!", "Adrasteia");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Sustained.", "Judge Judge");
+		 	insertV(4, null);
 		 	insertD("We need more evidence, Ouran-san!", "Nekocchi");
+		 	insertV(0, "Judge Judge");
 		 	insertD("Are both sides good if we stop for the day?", "Judge Judge");
-		 	insertV(2, "Adrasteia");
+		 	insertV(2, "Adrasteia Rhamnousia");
 		 	insertD("I think we could render a verdict today.", "Adrasteia");
 		 	insertV(0, "Judge Judge");
 		 	insertD("Perhaps, but there is still reasonable doubt in the case.", "Judge Judge");
