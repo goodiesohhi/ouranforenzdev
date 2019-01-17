@@ -384,7 +384,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 			else if (menu==69) { // if the menu is the base menu
 				if(Main.currentCase.timer1<5)cls(); // if the timer is less than 1 clear the screen
 				else if (Main.currentCase.timer1>5&&Main.currentCase.timer1<7)  { // if the timer is between 5 and 7 switch the view to the test view
-					Main.currentCase.court.switchview(69, null);
+					Main.currentCase.court.switchview(69, (String)null);
 				} else if(Main.currentCase.timer1>7&&Main.currentCase.timer1<30) { // if the timer is between 7 and 30
 					if (!this.sentinelValues[0]) { // if the sentinel value is false
 						//Main.currentCase.court.ceObjects[0].play("ouranCE", 5, true);

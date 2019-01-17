@@ -35,7 +35,7 @@ public class Court { // opens class
 	}
 
 	
-	void switchview (int x,	String y) throws IOException { // switches view of court
+	void switchview (int x,	AnimData y) throws IOException { // switches view of court
 		Main.currentCase.inCourt=true;
 Main.renderer.clear(); // clears view
 Main.currentCase.clearSprites();	// removes sprites
@@ -73,10 +73,17 @@ Main.currentCase.clearSprites();	// removes sprites
 	}	
 	if(x==3) { // checks if view is of witness
 		Main.renderer.queue[0]= new Drawable(13,0,0,1,0,0); // draws background
-		if (Main.currentCase.getCharacter(y)==null) { // checks if there is no current witness
-			Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
+		if (Main.currentCase.getCharacter(y.charName)==null) { // checks if there is no current witness
+			Main.currentCase.characters.add(new Character(y.charName, 100, 135)); // adds new character for witness
+			
 		}
-		Main.currentCase.currentWitness= y; // sets witness as character
+		
+		if (!oneProc)
+		{
+			Main.currentCase.getCharacter(y.charName).play(y.animName, y.frames, y.loop);
+		oneProc=true; // ensures that only one animation runs
+		}
+		Main.currentCase.currentWitness= y.charName; // sets witness as character
 		
 	}
 	if(x==4) {
@@ -90,10 +97,10 @@ Main.currentCase.clearSprites();	// removes sprites
 	}
 	if(x==5) {
 		Main.renderer.queue[0]= new Drawable(15,0,0,1,0,0); // draws background
-		if (Main.currentCase.getCharacter(y)==null) { // checks if there is no current witness
-			Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
+		if (Main.currentCase.getCharacter(y.charName)==null) { // checks if there is no current witness
+			Main.currentCase.characters.add(new Character(y.charName, 100, 135)); // adds new character for witness
 		}
-		Main.currentCase.currentWitness= y; // sets witness as character
+		Main.currentCase.currentWitness= y.charName; // sets witness as character
 	}
 	
 	if (x==69) { // checks if view is default
@@ -117,6 +124,81 @@ Main.currentCase.clearSprites();	// removes sprites
 			if (defObject!=null )	defObject.update();
 			if (prosObject!=null )	prosObject.update();
 		}
+	}
+
+
+	public void switchview(int x, String y) throws IOException {
+		Main.currentCase.inCourt=true;
+		Main.renderer.clear(); // clears view
+		Main.currentCase.clearSprites();	// removes sprites
+			if(x==0) { // checks if the view is of the judge
+				Main.renderer.queue[0]= new Drawable(10,0,0,1,0,0); // draws background
+				if (Main.currentCase.getCharacter("Judge Judge")==null) Main.currentCase.characters.add(new Character("Judge Judge", 250, 60)); // draws judge
+				if (!oneProc)
+				{
+				Main.currentCase.getCharacter("Judge Judge").play("judgeBot", 0, false); // plays animation
+				oneProc=true; // ensures that only one animation runs
+				}
+			}	
+			
+			if(x==1) { // checks if view is of the defence
+				Main.renderer.queue[0]= new Drawable(11,0,0,1,0,0); // draws background
+				if (Main.currentCase.getCharacter("Ouran Forenz")==null) Main.currentCase.characters.add(new Character("Ouran Forenz", 100, 135)); // draws Ouran
+				if (!oneProc)
+				{
+				Main.currentCase.getCharacter("Ouran Forenz").play("ouranobject", 0, false); // plays animation
+				oneProc=true; // ensures that only one animation runs
+				}
+			}	
+			if(x==2) { // checks if view is of the prosecutor
+				Main.renderer.queue[0]= new Drawable(12,0,0,1,0,0); // draws background
+				if (Main.currentCase.getCharacter(Main.currentCase.currentProsecutor)==null) Main.currentCase.characters.add(new Character(Main.currentCase.currentProsecutor, 220, 195)); // adds character
+				{
+					if (Main.currentCase.caseID!=1) {
+						Main.currentCase.getCharacter(Main.currentCase.currentProsecutor).play("adrestiaIdle", 7, true); // plays animation
+					} else {
+						Main.currentCase.getCharacter(Main.currentCase.currentProsecutor).play("melTalk", 2, true); // plays animation
+					}
+					oneProc=true; // ensures that only one animation runs
+					}
+				
+			}	
+			if(x==3) { // checks if view is of witness
+				Main.renderer.queue[0]= new Drawable(13,0,0,1,0,0); // draws background
+				if (Main.currentCase.getCharacter(y)==null) { // checks if there is no current witness
+					Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
+					
+				}
+				
+				if (!oneProc)
+				{
+					
+				oneProc=true; // ensures that only one animation runs
+				}
+				Main.currentCase.currentWitness= y; // sets witness as character
+				
+			}
+			if(x==4) {
+				Main.renderer.queue[0]= new Drawable(14,0,0,1,0,0); // draws background
+				if (Main.currentCase.getCharacter("Nekocchi")==null) Main.currentCase.characters.add(new Character("Nekocchi", 100, 135)); // adds Nekocchi
+				if (!oneProc) //  checks if this is the only animation running
+				{
+				Main.currentCase.getCharacter("Nekocchi").play("nekocchiWitness", 0, false); // plays animation
+				oneProc=true; // sets variable to true
+				}
+			}
+			if(x==5) {
+				Main.renderer.queue[0]= new Drawable(15,0,0,1,0,0); // draws background
+				if (Main.currentCase.getCharacter(y)==null) { // checks if there is no current witness
+					Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
+				}
+				Main.currentCase.currentWitness= y; // sets witness as character
+			}
+			
+			if (x==69) { // checks if view is default
+				Main.renderer.queue[0]= new Drawable(black,0,0,1,0,0); // draws black screen
+			}
+		
 	}
 	
 	

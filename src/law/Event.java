@@ -16,6 +16,8 @@ class Event { // opens class
 	int i; // holds fourth integer parameter
 	String d; // holds second string parameter
 	Boolean u; // holds first boolean parameter
+
+	private AnimData ani;
 	
 	public Event(String event, int zz ) { // constructs an event with the command and an integer
 	
@@ -71,7 +73,12 @@ class Event { // opens class
 		x=n2;
 		
 	}
-
+	public Event(String string, int y2, AnimData n2) { // constructs an event with a command, a string, and an integer
+		command=string;
+		z=y2;
+		ani=n2;
+		
+	}
 	//&&Main.currentCase.objected==false
 	void execute() throws IOException { // executes event
 		
@@ -149,7 +156,7 @@ class Event { // opens class
 	if (command=="v") { // if the command is to change view
 		
 		Main.currentCase.court.oneProc=false; // sets nothing to running
-		   Main.currentCase.court.switchview(z,x); // moves view
+		   Main.currentCase.court.switchview(z,ani); // moves view
 		
 	} else if (command=="e") { // if the command is to move to a location
 		 Main.currentCase.locales[z].enter(); // enters a location
