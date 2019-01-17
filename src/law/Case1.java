@@ -606,7 +606,14 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Enrico Nocent","enricoWitness",0,false);
 		 insertD("uwwaAAAAAAHHHH","Enrico Nocent");
 		 insertV(2,(String)null);
-		 
+		 insertD("Wait wait… Mr. Forenz… That’s going a b-b-b-b-bit far?","Mel Practiss");
+		 insertV(1,(String)null);
+		 insertD("NO! IT’S THE ONLY EXPLANATION!!!","Ouran Forenz");
+		 insertV(3,"Enrico Nocent");
+		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 insertD("B-but I'm not on the security tapes...","Enrico Nocent");
+		 insertV(2,(String)null);
+		 insertD("Y-y-yes! Testify abiut that.","Mel Practiss");
 		 
 		}
 		super.update(); // updates super
