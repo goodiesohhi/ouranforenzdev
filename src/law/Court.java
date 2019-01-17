@@ -63,6 +63,8 @@ Main.currentCase.clearSprites();	// removes sprites
 		{
 			if (Main.currentCase.caseID!=1) {
 				Main.currentCase.getCharacter(Main.currentCase.currentProsecutor).play("adrestiaIdle", 7, true); // plays animation
+			} else {
+				Main.currentCase.getCharacter(Main.currentCase.currentProsecutor).play("melIdle", 7, true); // plays animation
 			}
 			oneProc=true; // ensures that only one animation runs
 			}
