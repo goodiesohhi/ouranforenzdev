@@ -1,10 +1,13 @@
+/*
+ * SFX Source: http://profiles.google.com/jun66le
+ */
+
 package law; // selects package
 import javax.swing.SwingUtilities; // imports swing
 import java.awt.event.KeyEvent; // imports using keys
 import java.awt.event.KeyListener; // imports listening for keys
 import java.awt.event.MouseEvent; // imports using mouse
 import java.awt.event.MouseListener; // imports listening for mouse
-
 import javax.swing.JFrame; // imports frame for game
 import javax.swing.JPanel; // imports panel for game
 import javax.swing.BorderFactory; // imports border around game
@@ -455,6 +458,7 @@ System.out.println(Boolean.valueOf(data[3]));
     	}
 	}
   
+    
      void draw() throws IOException { // draws game
     
     	 Graphics g = getGraphics();  // creates graphics
