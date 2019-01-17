@@ -9,7 +9,7 @@ class Case3 extends StoryManager  { // opens main class
     Case3() throws IOException // opens constructor
     {
     	
-        super(3,"NAME UR CASE"); // calls constructor of Location
+        super(3,"Turnabout Deception"); // calls constructor of Location
         this.currentProsecutor="Adrasteia Rhamnousia";
     }
     void update() throws IOException // runs update loop
@@ -21,7 +21,7 @@ class Case3 extends StoryManager  { // opens main class
         characters.add(new Character("Ouran Forenz", 200, 0)); // adds Ouran
         this.getCharacter("Det. Pat. Bluthund").animList.add("bluthundWitness"); // adds animation
         this.getCharacter("Susan Ord").animList.add("susanWitness"); // adds animation
-    	if (flags[25] == false && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
+    	if (flags[25] == true && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
     	{
     		oneProc = true; // makes sure that only one segment gets added to the event queue
     		flags[24] = true; // sets the flag to true
