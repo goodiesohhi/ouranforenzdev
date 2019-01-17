@@ -868,10 +868,11 @@ menu=-17;
 		   	  if(button==1)  queue[3]= new Drawable(guiElements[6],1028-210,10,1,0,0); // draw selected top-right
 		   	  if(button==2)  queue[4]= new Drawable(guiElements[7],0,768-100,1,0,0); // draw selected bottom-left
 		   	  if(button==3)   queue[5]= new Drawable(guiElements[8],1028-200,768-100,1,0,0); // draw selected bottom-right
-
+if (!Main.currentCase.inCourt) {
 			textQueue[48] =  new DrawableText("Press ESC for Menu",new Color(200, Main.randInt(0,255), Main.randInt(100,115)),45.0f,true,0,0,false); // prints instructions
 			textQueue[48].x=325; // sets x position of text
 			textQueue[48].y=750; // sets y position of text
+}
 			
 		   //	 if(button==4)   queue[5]= new Drawable(guiElements[9],600-200,768-100,1,0,0);
 			}
