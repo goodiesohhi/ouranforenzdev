@@ -53,7 +53,7 @@ class Statements { // opens class
 		
 		System.out.println(speaker); // writes test phrase
 		 // plays animation of witness
-		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, false); // plays animation
+		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, true); // plays animation
 	
 		Main.dialogue.insert(initial,speaker); // runs dialogue
 		
