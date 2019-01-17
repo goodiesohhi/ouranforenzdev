@@ -81,7 +81,7 @@ public class Main extends JFrame{ // opens main class
     }
 }
 	
-    public static void main(String[] args) throws IOException { // runs main method
+    public static void main(String[] args) throws Exception { // runs main method
     	renderer = new Renderer(); // creates renderer
     	renderer.insert("defbench", 0); // inserts title screen objects
     	renderer.insert("ouranobject", 1);
@@ -95,7 +95,7 @@ public class Main extends JFrame{ // opens main class
     	renderer.insert("defendantLobby", 15);
 
     	renderer.insert("objection",19);
-    	currentCase = new StoryManager(0,"No Case"); // sets the current case
+    	currentCase = new Case0(); // sets the current case
     	  game = new Main();  // sets the game
          game.run();  // runs the game
          System.exit(0); // exits the console
@@ -111,24 +111,83 @@ public class Main extends JFrame{ // opens main class
 		  outputWriter = new BufferedWriter(new FileWriter("save.osd"));
 		  
 	    outputWriter.write("case: "+Main.currentCase.caseID);
-	   
-	   
 	    outputWriter.newLine();
-    		
+	    outputWriter.write("inCourt: "+Main.currentCase.inCourt);
+	    outputWriter.newLine();
+	    outputWriter.write("somewhere: "+Main.currentCase.somewhere);
+	    outputWriter.newLine();
+	    outputWriter.write("currentLocation: "+Main.currentCase.currentLocation.id);
+	    outputWriter.newLine();
+	   
+	   
+	    outputWriter.write("evidence: ");
+		  for (RecordEntry re :Main.currentCase.evidence) {
+			  
+			  String save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile+",";
+		    outputWriter.write(save);
+		   
+
+		   
+		  }
+		  outputWriter.newLine();
+		   outputWriter.write("profiles: ");
+			  for (RecordEntry re :Main.currentCase.profiles) {
+				  
+				  String save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile+",";
+			    outputWriter.write(save);
+			   
+			  
+			   
+			  }
+			  outputWriter.newLine();
+		  
+	    outputWriter.write("mainFlags: ");
     		  for (int i = 0; i < Main.currentCase.flags.length; i++) {
     		   
-    		    outputWriter.write(Main.currentCase.flags[i]+"");
+    		    outputWriter.write(Main.currentCase.flags[i]+",");
     		   
     		   
-    		    outputWriter.newLine();
+    		   
     		  }
+    		  outputWriter.newLine();
+    		  
+    		  for (int x =0; x< Main.currentCase.locales.length;x++) {
+    			  if(Main.currentCase.locales[x]!=null) {
+    		    outputWriter.write("localeFlags"+x+": ");
+    		    
+      		  for (int i = 0; i < Main.currentCase.locales[x].flags.length; i++) {
+      		   
+      		    outputWriter.write(Main.currentCase.locales[x].flags[i]+",");
+      		   
+      		   
+      		   
+      		  }	  outputWriter.newLine();
+    			  }
+    		  }
+      		  outputWriter.newLine();
+       		  for (int x =0; x< Main.currentCase.locales.length;x++) {
+    			  if(Main.currentCase.locales[x]!=null) {
+    		    outputWriter.write("localeQuestions"+x+": ");
+    		    
+    		    for (Question re :Main.currentCase.locales[x].questions) {
+    				  
+    				  String save=re.id+";"+re.question+";"+re.unlocked+";"+re.asked+",";
+    			    outputWriter.write(save);
+    			   
+
+    			   
+    			  } outputWriter.newLine();
+    			  }
+    		  }
+      		 
     		  outputWriter.flush();  
     		  outputWriter.close();  
     		
     	
     }
-    public void loadGame () throws IOException {
+    public void loadGame () throws Exception {
     	String line =null;
+    	 int area = -1;
     	  FileReader fileReader = 
                   new FileReader("save.osd");
 
@@ -137,17 +196,117 @@ public class Main extends JFrame{ // opens main class
                   new BufferedReader(fileReader);
 
               while((line = bufferedReader.readLine()) != null) {
+            	  if (line.length()>1) {System.out.println("line: "+line);
             	  int i = line.indexOf(' ');
+            	 
             	  String word = line.substring(0, i);
-            	  String rest = line.substring(i);
+            	  String rest = line.substring(i+1);
             	  
             	  if (word.equals("case:")) {
             		  currentCase = findCase (Integer.valueOf(rest));
+            		  currentCase.setUP();
+            	  }
+            	  if (word.equals("inCourt:")) {
+            		  currentCase.inCourt = Boolean.valueOf(rest);
+            				  
+            	  }
+            	  if (word.equals("somewhere:")) {
+            		  currentCase.inCourt = Boolean.valueOf(rest);
+            				  
+            	  }
+            	  if (word.equals("currentLocation:")) {
+            		 area = Integer.valueOf(rest);
+            				  
+            	  }
+            	  
+            	  if (word.equals("evidence:")) {
+            		
+            		String[] entries =rest.split(",");
+            		
+            		for (i=0;i<entries.length;i++) {
+            			String[] data =entries[i].split(";");
+            			for (int z=0;z<data.length;z++) {
+            				System.out.println(data[z]);
+            				
+            			}
+            			
+            			if(data.length>1)Main.currentCase.evidence.add(new RecordEntry(data[0], data[1], Boolean.valueOf(data[3]),data[2], 0));
+            		}
+            				  
+            	  }
+            	  
+            	  if (word.equals("mainFlags:")) {
+              		
+              		String[] entries =rest.split(",");
+              		
+              		for (i=0;i<entries.length;i++) {
+              			
+              			
+              			if(entries.length>1) Main.currentCase.flags[i]=Boolean.valueOf(entries[i]);
+              		}
+              				  
+              	  }
+            	  for (int g=0;g<100;g++) {
+            	  if (word.equals("localeFlags"+g+":")) {
+                		
+                		String[] entries =rest.split(",");
+                		
+                		for (i=0;i<entries.length;i++) {
+                			
+                			
+                			if(entries.length>1) {
+                				Main.currentCase.locales[g].flags[i]=Boolean.valueOf(entries[i]);
+                				System.out.println(entries[i]);
+                			}
+                		}
+                				  
+                	  }
+            	  if (word.equals("localeQuestions"+g+":")) {
+              		
+              		String[] entries =rest.split(",");
+              		
+              		for (i=0;i<entries.length;i++) {
+              			
+              			
+              			if(entries.length>1) {
+              				String[] data = entries[i].split(";");
+              				Main.currentCase.locales[g].addQuestion(new Question(Integer.valueOf(data[0]), data[1], Boolean.valueOf(data[2])));
+              				Main.currentCase.locales[g].questions.get(Integer.valueOf(data[0])).asked=Boolean.valueOf(data[3]);
+              			}
+              		}
+              				  
+              	  }
+            	  }
+              	  
+            	  
+            	  if (word.equals("profiles:")) {
+              		
+              		String[] entries =rest.split(",");
+              		
+              		for (i=0;i<entries.length;i++) {
+              			String[] data =entries[i].split(";");
+              			
+              			if(data.length>1)Main.currentCase.profiles.add(new RecordEntry(data[0], data[1], Boolean.valueOf(data[2]),data[3], 0));
+              		}
+              				  
+              	  }
             	  }
             	  
               }   
               
-              bufferedReader.close(); 
+              bufferedReader.close();
+              System.out.println("LOADED");
+              System.out.println("LOADED");
+              System.out.println("LOADED");
+              System.out.println("LOADED");
+              Main.switchState(2);
+             Main.currentCase.eventQueue= new ArrayList<Event>();
+              if (area==-1) {
+            	  throw new Exception("Save file Corrupt??");
+              }
+              else {
+            	  Main.currentCase.locales[area].enter(); // enters a location
+              }
     }
     private StoryManager findCase(Integer valueOf) {
 		for (StoryManager c : caseList) {
@@ -156,7 +315,7 @@ public class Main extends JFrame{ // opens main class
 		}
 		return null;
 	}
-	public void run() throws IOException { // runs the game
+	public void run() throws Exception { // runs the game
         initPanel();  // creates new panel
         
         
@@ -224,7 +383,7 @@ public class Main extends JFrame{ // opens main class
     }
 
 
-    protected static void update() throws IOException { // updates game
+    protected static void update() throws Exception { // updates game
 	
     	if(gameState==0) { // if the state is 0
     	while(!start) { // if the game has not started

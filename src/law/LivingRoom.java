@@ -2,9 +2,9 @@ package law; // selects package
 import java.io.IOException; // imports IOException
 public class LivingRoom extends Location{ // opens class
 	StoryManager story = Main.currentCase; // sets current case
-	public LivingRoom() // opens constructor
+	public LivingRoom(int i) // opens constructor
 	{
-		super("Living Room", 66); // constructs background
+		super("Living Room", 66, i); // constructs background
 	}
 	@Override
 	void enter() throws IOException // enters location

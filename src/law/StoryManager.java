@@ -11,7 +11,7 @@ import java.util.Arrays; // imports arrays
 
 
 
-class StoryManager { // opens class
+abstract class StoryManager { // opens class
 	boolean presented; // holds if something has been presented
 	ArrayList<Character> characters = new ArrayList<Character>(); // holds list of characters
 	Location currentLocation; // holds the current location
@@ -84,6 +84,8 @@ public String caseName;
   
   
  }
+ 
+ abstract void setUP() throws IOException;
  
   void update() throws IOException { // updates sotry manager
 //System.out.println(eventQueue.toString());

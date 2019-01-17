@@ -6,8 +6,8 @@ public class NekochiiBedroom extends Location { // opens class
 		boolean block; // holds if block has been entered
 		StoryManager story = Main.currentCase; // sets current case
 		
-		public NekochiiBedroom() { // constructs location
-			 super("Jesus Palace",202); // chooses name and background
+		public NekochiiBedroom(int i) { // constructs location
+			 super("Jesus Palace",202, i); // chooses name and background
 			 block=true; // sets block to true
 		}
 		
@@ -34,6 +34,7 @@ public class NekochiiBedroom extends Location { // opens class
 				 
 				 
 			 } else {
+				
 				 story.playAni("Nekocchi","nekocchiWitness",1,true); // plays animation
 			 }
 			 

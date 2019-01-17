@@ -9,4 +9,10 @@ public class Case69 extends StoryManager{ //opens class for case
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	void setUP() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -123,13 +123,12 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 		 
 	 }
 	 } else if (Main.gameState==3&&Main.menu.entered) {
-		 System.out.println("HELLO"+Main.gameState);
+	
 	     for (int i=0; i< textQueue.length;i++) { // runs through text queue
 	    	 
 	    	 if(textQueue[i]!=null) {  // if the text exists
 	    		// //System.out.println(textQueue[i].drawText());
-	    		 System.out.println(i);
-		    	 System.out.println(textQueue[i].text);
+	    		
 			 g.setColor(textQueue[i].color); // sets colour to text colour
 			 g.setFont(g.getFont().deriveFont(textQueue[i].size)); // sets font to text font
 		

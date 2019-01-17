@@ -13,20 +13,22 @@ public abstract class Location { // opens abstract class
 	ArrayList<ClickEvent> clickEvents = new ArrayList<ClickEvent>(); // holds all click events
 	String name; // holds name of location
 	public ArrayList<Question> questions= new ArrayList<Question> (); // holds list of questions for location
+	public int id;
 	
-	public Location (String n, int g) { // constructs location
+	public Location (String n, int g, int i) { // constructs location
 		paths = new ArrayList<Location>(); // sets values
 		graphic=g;
 		name=n;
 		flags = new boolean[500];
+		id=i;
 	}
 	
 	void linkPath(Location l) { // links paths
-		
+
 		paths.add(l); // adds path from location to other location
 		l.paths.add(this); // adds path from other location to this location
 
-		
+		System.out.println(this.paths.get(0).name);
 	
 	}
 	void enter() throws IOException { // enters location

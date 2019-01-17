@@ -162,18 +162,7 @@ class Case0 extends StoryManager  { // opens class
 	 }
 
 	 if (flags[0]==false&&!oneProc){ // checks if investigation has already happened and if this is the only segment being updated
-		 characters.add(new Character("Nekocchi", 280, 0)); // adds character to game
-
-	
-
-
-		
-		 
-		 locales[0] = new AreaZeroZero(); // adds locations
-		 locales[1] = new NekochiiBedroom();
-		locales[2] = new DetentionThree();
-		 locales[0].linkPath(locales[1]); // links locations
-		 locales[0].linkPath(locales[2]);
+this.setUP();
    //flags[25]=true;
 		// this.toCourt();
 		 enterArea(0); // enters starting area
@@ -195,6 +184,24 @@ oneProc=true; // sets variable to true to stop repetition each click
    
   
  }
+
+@Override
+void setUP() throws IOException {
+	 characters.add(new Character("Nekocchi", 280, 0)); // adds character to game
+
+		
+
+
+		
+	 
+	 locales[0] = new AreaZeroZero(0); // adds locations
+	 locales[1] = new NekochiiBedroom(1);
+	locales[2] = new DetentionThree(2);
+	System.out.println(locales[1].name);
+	 locales[0].linkPath(locales[1]); // links locations
+	 locales[0].linkPath(locales[2]);
+	
+}
 
     
 }

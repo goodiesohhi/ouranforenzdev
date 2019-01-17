@@ -4,9 +4,9 @@ import java.io.IOException; // imports IOException
 
 public class DetentionThree extends Location {// opens class
 	StoryManager story = Main.currentCase; // holds current case
-	public DetentionThree() // opens constructor
+	public DetentionThree(int i) // opens constructor
 	{
-		super("Detention center",201); // creates detention centre
+		super("Detention center",201,i); // creates detention centre
 	}
 	void enter () throws IOException { // enters location
 		super.enter(); // enters super

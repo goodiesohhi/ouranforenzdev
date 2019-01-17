@@ -6,8 +6,8 @@ public class AreaZeroZero extends Location { // opens class
 	boolean block; // holds if the location should play opening
 	StoryManager story = Main.currentCase; // holds the current case for the location
 	
-	public AreaZeroZero() { // constructor
-		 super("Detention center",201); // sets id of location
+	public AreaZeroZero(int i) { // constructor
+		 super("Detention center",201,i); // sets id of location
 		 block=true; // sets block to true
 	}
 	

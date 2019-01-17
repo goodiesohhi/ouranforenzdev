@@ -278,12 +278,12 @@ class Case3 extends StoryManager  { // opens main class
             insertD("That was a good fight, Keto-chan! Your dragons were sugoi cool!", "Nekocchi");
             insertD("Of course they are!", "Keto");
             flags[25] = true; // sets that the investigation has already run
-      		 locales[0] = new DetentionThree(); // adds detention centre
-       		 locales[1] = new ForenzOffice(); // adds office
-       		 locales[2] = new SaibaEntrance(); // adds entrance to Saiba Corp.
-       		 locales[3] = new SaibaApartment(); // adds Saiba Corp. apartment
-       		 locales[4] = new LivingRoom(); // adds apartment living room
-       		 locales[5] = new SaibaStorage(); // adds storage room
+      		 locales[0] = new DetentionThree(0); // adds detention centre
+       		 locales[1] = new ForenzOffice(1); // adds office
+       		 locales[2] = new SaibaEntrance(2); // adds entrance to Saiba Corp.
+       		 locales[3] = new SaibaApartment(3); // adds Saiba Corp. apartment
+       		 locales[4] = new LivingRoom(4); // adds apartment living room
+       		 locales[5] = new SaibaStorage(5); // adds storage room
        		 locales[0].linkPath(locales[1]); // links path
        		 locales[3].linkPath(locales[4]); // links path
           //flags[25]=true;
@@ -297,5 +297,10 @@ class Case3 extends StoryManager  { // opens main class
     super.update(); // updates super
     
     }
+	@Override
+	void setUP() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
    
 }

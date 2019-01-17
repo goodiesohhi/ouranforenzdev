@@ -2,9 +2,9 @@ package law; // selects package
 import java.io.IOException; // imports IOException
 public class SaibaStorage extends Location { // opens class
 	StoryManager story = Main.currentCase; // holds current case
-	public SaibaStorage() // constructor for location
+	public SaibaStorage(int i) // constructor for location
 	{
-		super("Saiba Storage", 68); // chooses background for location
+		super("Saiba Storage", 68, i); // chooses background for location
 	}
 	@Override
 	void enter() throws IOException // enters location

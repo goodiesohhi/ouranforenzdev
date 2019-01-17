@@ -7,9 +7,9 @@ import java.io.IOException; // imports IOException
 public class SaibaEntrance extends Location { // opens class
 	
 	StoryManager story = Main.currentCase; // holds current case
-	public SaibaEntrance() // constructs entrance
+	public SaibaEntrance(int i) // constructs entrance
 	{
-		super("Saiba Entrance", 62); // chooses location
+		super("Saiba Entrance", 62, i); // chooses location
 		
 	}
 	@Override

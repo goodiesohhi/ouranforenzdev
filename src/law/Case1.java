@@ -400,5 +400,11 @@ public class Case1 extends StoryManager{ // opens class for first case
 		super.update(); // updates super
 		 
 	}
+
+	@Override
+	void setUP() throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
 	}
 
