@@ -20,7 +20,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		if (!oneProc) // checks if the case is already running
 		{
 		oneProc=true; // sets the case to be running
-		inCourt=true; // places case in court
+		
 		
 		startCExamine(0); // starts first cross-examination
 		 

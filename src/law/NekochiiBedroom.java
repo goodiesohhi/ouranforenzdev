@@ -80,10 +80,11 @@ public class NekochiiBedroom extends Location { // opens class
 			}
 			if (i==99) { // finds question
 				Main.currentCase.flags[25]=true; // sets flag to true
+				story.setFlag(25,true);
 				story.insertD("Let's upgrade your badge", "Nekocchi"); // plays dialogue
 				story.insertR( "Ouran's Attorney's Badge","badge","My badge (Upgraded)", false,0); // updates record
 				story.insertD("Off to court!", "Nekocchi"); // plays dialgoue
-				   story.toCourt(); // moves to court
+				story.toCourt(); // moves to court
 			}
 		}
 

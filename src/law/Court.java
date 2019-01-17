@@ -77,10 +77,13 @@ Main.currentCase.clearSprites();	// removes sprites
 			Main.currentCase.characters.add(new Character(y.charName, 100, 135)); // adds new character for witness
 			
 		}
-		
+		System.out.println(y.charName);
+		System.out.println(y.animName);
 		if (!oneProc)
-		{
+		{ System.out.println("FRAMEZ:");
+			System.out.println(y.frames);
 			Main.currentCase.getCharacter(y.charName).play(y.animName, y.frames, y.loop);
+			Main.currentCase.getCharacter(y.charName).animation.playing=true;
 		oneProc=true; // ensures that only one animation runs
 		}
 		Main.currentCase.currentWitness= y.charName; // sets witness as character

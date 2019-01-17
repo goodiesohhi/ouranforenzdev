@@ -61,7 +61,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 		 textQueue = new DrawableText[50]; // refreshes queue of text
 	}
 	void update() throws IOException { // updates gui
-	
+
 		if (show) { // if the gui is being shown
 			 queue[6]=null; // set the queue to null
 			

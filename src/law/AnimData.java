@@ -7,7 +7,7 @@
 	
 	AnimData(String cn,String n, int f, boolean b){
 		animName=n;
-		f=frames;
+		frames=f;
 		loop=b;
 		charName=cn;
 		
