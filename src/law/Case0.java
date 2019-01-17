@@ -26,12 +26,16 @@ class Case0 extends StoryManager  { // opens class
 		 oneProc=true; // ensures that nothing else will run in update
 		
 		 
-		 inCourt=true; // sets the scene to court
+		
 
 
 	
 		 startCExamine(0); // starts first cross-examination
-		 
+		System.out.println(Main.cExamine);
+		System.out.println(Main.examineSlot);
+		Main.examineSlot=0;
+		System.out.println(Main.cExamine[Main.examineSlot]);
+
 		 // sets various statements of cross-examine
 		 Main.cExamine[Main.examineSlot].add("Hello", "Nekocchi",  new String[] {"hello 1","hello 2","hello 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 0, null , null,0);
 		 Main.cExamine[Main.examineSlot].add("Press this", "Nekocchi",  new String[] {"yellow 1","red  2","yikes 3"} ,  new String[] {"Nekocchi","Nekocchi","Nekocchi"} , 1, null,null,0);
@@ -123,9 +127,9 @@ class Case0 extends StoryManager  { // opens class
 		    insertV(0,(String)null);
 		    insertD("Who is the accused?" ,"Judge Judge");
 		    
-		    insertV(3,"Det. Pat. Bluthund");
-		    playAni("Det. Pat. Bluthund","bluthundWitness",0,false); // plays animation for Bluthund
-
+		    insertV(3,new AnimData("Det. Pat. Bluthund","bluthundTalk",2,true));
+		    //playAni("Det. Pat. Bluthund","bluthundWitness",0,false); // plays animation for Bluthund
+		  // playAni( new AnimData("Det. Pat. Bluthund","bluthundTalk",4,true));
 		    insertD("I smell a cat....","Det. Pat. Bluthund");
 		    insertV(3,"Nekocchi");
 		    playAni("Nekocchi","nekocchiWitness",0,false); // plays animation for Nekocchi
@@ -185,10 +189,11 @@ oneProc=true; // sets variable to true to stop repetition each click
   
  }
 
+
 @Override
 void setUP() throws IOException {
 	 characters.add(new Character("Nekocchi", 280, 0)); // adds character to game
-
+System.out.println("Do the setup");
 		
 
 

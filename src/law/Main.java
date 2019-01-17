@@ -229,8 +229,17 @@ public class Main extends JFrame{ // opens main class
             				System.out.println(data[z]);
             				
             			}
+           System.out.println("EVI"); 			
+System.out.println(Boolean.valueOf(data[3]));
             			
-            			if(data.length>1)Main.currentCase.evidence.add(new RecordEntry(data[0], data[1], Boolean.valueOf(data[3]),data[2], 0));
+            			if(data.length>1) {
+            				if (!Boolean.valueOf(data[3])) {
+            					Main.currentCase.evidence.add(new RecordEntry(data[0], data[1], Boolean.valueOf(data[3]),data[2], 0));
+            				    
+            				} else {
+            					Main.currentCase.profiles.add(new RecordEntry(data[0], data[1], Boolean.valueOf(data[3]),data[2], 0));
+            				}
+            			}
             		}
             				  
             	  }
@@ -246,7 +255,8 @@ public class Main extends JFrame{ // opens main class
               		}
               				  
               	  }
-            	  for (int g=0;g<100;g++) {
+            	  for (int g=0;g<currentCase.locales.length;g++) {
+            		  if(Main.currentCase.locales[g]!=null) {
             	  if (word.equals("localeFlags"+g+":")) {
                 		
                 		String[] entries =rest.split(",");
@@ -271,11 +281,13 @@ public class Main extends JFrame{ // opens main class
               			if(entries.length>1) {
               				String[] data = entries[i].split(";");
               				Main.currentCase.locales[g].addQuestion(new Question(Integer.valueOf(data[0]), data[1], Boolean.valueOf(data[2])));
-              				Main.currentCase.locales[g].questions.get(Integer.valueOf(data[0])).asked=Boolean.valueOf(data[3]);
+              				
+              				Main.currentCase.locales[g].questions.get(Integer.valueOf(i)).asked=Boolean.valueOf(data[3]);
               			}
               		}
               				  
               	  }
+            		  }
             	  }
               	  
             	  
@@ -295,18 +307,15 @@ public class Main extends JFrame{ // opens main class
               }   
               
               bufferedReader.close();
-              System.out.println("LOADED");
-              System.out.println("LOADED");
-              System.out.println("LOADED");
-              System.out.println("LOADED");
-              Main.switchState(2);
-             Main.currentCase.eventQueue= new ArrayList<Event>();
               if (area==-1) {
             	  throw new Exception("Save file Corrupt??");
               }
               else {
             	  Main.currentCase.locales[area].enter(); // enters a location
               }
+              Main.switchState(2);
+             
+         
     }
     private StoryManager findCase(Integer valueOf) {
 		for (StoryManager c : caseList) {
