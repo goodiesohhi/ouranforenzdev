@@ -90,7 +90,7 @@ class Event { // opens class
 				System.out.println(this.command+" command in eventQueue has been executed"); // uses event item
 			Main.currentCase.working=true; // sets the case to working
 			if (command=="court") { // if the command is moving to court
-				
+				System.out.println("INCOURT");
 				Main.currentCase.currentLocation=null; // the location is set to null
 				Main.inCourt=true; // the game is set to court
 				Main.currentCase.inCourt=true; // the case is set to court
@@ -99,7 +99,7 @@ class Event { // opens class
 				 Main.gui.queue = new Drawable[40]; // queue created
 				  Main.gui.textQueue = new DrawableText[50]; // text queue created
 				  Main.currentCase.clearSprites(); // removes sprites
-				Main.currentCase.insertV(0,(String)null); // sets view to judge
+				Main.currentCase.court.switchview(0, (String)null);
 				
 				
 			 
@@ -154,10 +154,17 @@ class Event { // opens class
 	else 
 		
 	if (command=="v") { // if the command is to change view
-		
+		System.out.println(x);
+		System.out.println("ani"+ani);
 		Main.currentCase.court.oneProc=false; // sets nothing to running
-		if(ani==null) Main.currentCase.court.switchview(z,x); // moves view
-		else Main.currentCase.court.switchview(z,ani);
+		if(ani==null) {
+			Main.currentCase.court.switchview(z,x); // moves view
+		System.out.println("nope");
+		}
+		else {
+			System.out.println("yep");
+			Main.currentCase.court.switchview(z,ani);
+		}
 		
 	} else if (command=="e") { // if the command is to move to a location
 		 Main.currentCase.locales[z].enter(); // enters a location

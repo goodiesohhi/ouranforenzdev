@@ -183,7 +183,7 @@ public String caseName;
   void toCourt() { // moves to court
 		 
 	  Main.currentCase.addEvent(new Event("court",0,0));  // adds event to go to court
-	queueSize++; // increases queue
+System.out.println("court event add");
 	
 	 }
   
@@ -264,6 +264,10 @@ public void playAni(String string, String string2, int i, boolean b) { // plays 
 	queueSize++; // increases size of queue
 	
 	 }
+public void playAni(AnimData animData) {
+	 Main.currentCase.addEvent( new Event("playAni", animData.charName,animData.animName,animData.frames,animData.loop))  ;
+	
+}
 
 public void showAni(String string, String string2, int i, boolean b) { // shows animation
 	 Main.currentCase.addEvent( new Event("showAni", string,string2,i,b))  ;   // adds animation event
@@ -295,6 +299,14 @@ public void switchBackToEventQueue() { // switches to event queue
 }
 public void removeO() { // removes objection
 	 Main.currentCase.addEvent(new Event("ro")) ; // adds remove event to queue  
+	
+}
+public void setFlag(int i, boolean b) {
+	// TODO Auto-generated method stub
+	
+}
+public void setAreaFlag(int i, int g, boolean b) {
+	// TODO Auto-generated method stub
 	
 }
 
