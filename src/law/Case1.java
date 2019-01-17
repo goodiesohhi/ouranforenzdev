@@ -599,6 +599,14 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(4,(String)null);
 		 insertD("This sounds like a bluff Ouran.","Nekocchi");
 		 insertD("Absolutely not (.... well yeah pretty much.)","Ouran Forenz");
+		 insertD("Enrico Nocent… There is only one way you could have known about Gilligan’s papers...","Ouran Forenz");
+		 insertD("You were at Fat Stacks Bank that night, weren’t you!","Ouran Forenz");
+		 insertD("You saw him going back for the papers in person!","Ouran Forenz");
+		 insertV(3,"Enrico Nocent");
+		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 insertD("uwwaAAAAAAHHHH","Enrico Nocent");
+		 insertV(2,(String)null);
+		 
 		 
 		}
 		super.update(); // updates super
