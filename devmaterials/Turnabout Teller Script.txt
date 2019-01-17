@@ -307,6 +307,7 @@ Enrico: Hellllllllooooo
 Enrico: Enrico Nocent is my name, but you can call me En.
 Ouran: We will not.
 Nekocchi: I will En-chan desu.
+
 Enrico: Niiicee.
 Mel: Please maybe state your profession?
 Enrico: I’m a guard on the day shift at Fat Stacks Banking.
@@ -344,7 +345,7 @@ Nekocchi: I don’t think that camera matters too much nyan.
 S3 Press:
 Ouran: Only for employees?
 Enrico: Yeeeaahhh. Patrons are not allowed back there. Biiiggg no no.
-Ouran: But since they money is there too…
+Ouran: But since the money is there too…
 Ouran: It needs to be monitored.
 Enrico: Exaclttttly. That’s why Al was there. As well it’s why…
 S4 Press:
