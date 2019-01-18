@@ -335,6 +335,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("No problem. Now listen and listen well.","Det. Pat. Bluthund");
 		 runFirstExamine(1);
 		 insertD("That's it...","Ouran Forenz");
+		 insertD("What's his new testimony going to be?", "Ouran Forenz");
 		 runExamine(2);
 		 insertD("That's it...","Ouran Forenz");
 		 insertD("I got it...","Ouran Forenz");
@@ -386,7 +387,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I have news! I bear this updated autopsy report and humbly present it to court.","Bailiff");
 		 insertD("So that it's wonder and magnificence may shine upon all within this room.","Bailiff");
 		 insertD("Thank you?","Ouran Forenz");
-		 insertR("Autopsy Report","autopsy","Blunt Force Trauma to back of head, 9:45-10:30 PM. Died instantly.",false,5);
+		 insertR("Autopsy Report","autopsy","Blunt Force Trauma to top of head, 9:45-10:30 PM. Died instantly.",false,5);
 		 insertData("The Autopsy Report was updated.");
 		 insertD("Maybe this contains some new information. I should read it over.","Ouran Forenz");
 		 insertV(0,(String)null);
@@ -829,7 +830,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I�m Ouran Forenz, expert attorney at law and forensic investigator.","Ouran Forenz");
 		 insertD("I will continue to pursue the truth.","Ouran Forenz");
 		 insertD("That's my job.","Ouran Forenz");
-		 
+		 Main.close();
 		}
 		super.update(); // updates super
 		 
