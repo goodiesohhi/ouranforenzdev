@@ -128,7 +128,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
 		 // various changes of view and pieces of dialogue
-		 /*insertV(5,"Nekocchi");
+		 insertV(5,"Nekocchi");
 		 playAni("Nekocchi","nekocchiWitness",0,false);
 		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
 		 insertD("...","Ouran Forenz");
@@ -261,7 +261,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Thank you Detective. Can you testify about some of your reasoning?","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
 		 
-		 insertD("Sure can!","Det. Pat. Bluthund");*/
+		 insertD("Sure can!","Det. Pat. Bluthund");
 		 runFirstExamine(0); // runs beginning of cross-examination
 		 insertD("That's it...","Ouran Forenz");
 		 insertO(0);
