@@ -630,7 +630,7 @@ Enrico: Well Gill had that big stick and he used it to kill Al.
 Ouran: That’s it?
 Enrico: Yes. I’ll say it again for you if you want.
 S5 Press:
-Ouran: So he Gilligan hit Al?
+Ouran: So Gilligan hit Al?
 Enrico: Yes he did.
 Ouran: With the stick?
 Enrico: Yes.
@@ -646,7 +646,8 @@ Enrico: A cold moonlit night. A shocking scene. I crept into the bank slowly and
 Enrico: Suddenly, I hear a sound. An awful sound. I hear men arguing. A stick is drawn.
 Nekocchi: I don’t think that’s what Ouran-kun meant desu…
 Ouran: No it is, keep going…
-Enrico: A threat! A terrified man. Al stands up and defends himself through the fear. It isn’t enough. Gill runs behind him and WHAM…
+Enrico: A threat! A terrified man. Al stands up and defends himself through the fear.
+Enrico: It isn’t enough. Gill runs behind him and WHAM…
 Enrico: It’s all over…
 Enrico: I stand paralyzed in fear…
 Ouran: More details…
@@ -665,6 +666,7 @@ Ouran: This is it, the final confrontation. We have to push through this guy.
 Nekocchi: Yeah he’s getting sloppy nyan~~
 Ouran: There’s a lie in there somewhere, now to find it.
 Cross Examination Complete:
+
 Ouran: The more lies you tell the deeper you dig yourself.
 Enrico: What lie? I didn’t t-t-tell a lie…
 Ouran: You say you are confident you saw Gilligan hit Al in the back of the head?
@@ -699,29 +701,19 @@ Nekocchi: It’s called emotional support Ouran-kun… You baka…
 Gilligan: Thanks pal… You’re a lifesaver.
 Ouran: Don’t mention it. Just doing my job. Defending those who are wrongly accused.
 Gilligan: Really though. Who knew my height would save me in the end.
-Ouran: Well it’s simple forensic analysis. I knew you were innocent as soon as I got the autopsy.
+Ouran: Well it’s simple forensic analysis. I knew you couldn't have done it as soon as I got the updated autopsy.
 Gilligan: You were thinking that far ahead?
 Ouran: Yes. forensic analysis can cover a wide range of topics, all help us get much closer to the truth.
 Ouran: I just love forensics, I use them for everything. Just spread the word, that forensics saved you.
 Gilligan: Nah man, you saved me. Forensics helped, but you were the one who…
 Ouran: NO!!! Forensics saved you. I am a vessel for forensics to use within the criminal justice system.
-Ouran: I am the medium through which forensic science utilizes to assist in solving crimes.
+Ouran: I am merely the medium through which forensic science utilizes to assist in solving crimes.
 Gilligan: Alright man if you say so. They don’t call you Forenz for nothing.
 Ouran: Well yeah, that’s my family name. Why is that relevant.
 Gilligan: I was just… Never mind…
 Nekocchi: Yeah he’s weird, you can ignore him and praise me.
-Gilligan: Well sorry little monstrocity, I have to leave now… I just…
-Gilligan: I wish I could see Al’s face, one last time…
-Ouran: Maybe I can help… (Present Photo of Al Protecc)
-Fail:
-Gilligan: How does this help?
-Ouran: I’m not sure… Sorry to waste your time.
-Succeed:
-Gilligan: Aww… thanks pal. I’ll keep this. That helps, thanks man.
-Ouran: Well I have no use for it anymore, but you might.
-Gilligan: Thank you.
-Two Paths Join:
-Gilligan: Really, thank you for everything.
+Gilligan: Well sorry little monstrocity, I have to leave now.
+Gilligan: Really Forenz, thank you for everything.
 Ouran: I hope to meet you again in the future.
 Ouran: Maybe I’ll open an account at Fat Stacks?
 Gilligan: No don’t do that. Corporate uses the bank as a front for money laundering and drug trades. Whole thing is a scam…
