@@ -476,7 +476,12 @@ System.out.println(Boolean.valueOf(data[3]));
         
          
      }
-
+     static void close() // closes window
+     {
+    	 System.exit(0); // stops running
+    	 game.dispose(); // gets rid of window
+    	 game.setVisible(false); // makes window invisible
+     }
 	protected static void getInput() { // receives input
 		
 		if(currentKey!=null) keyInt=currentKey.getKeyCode(); // if a key is being pushed, set the key integer to the key's code

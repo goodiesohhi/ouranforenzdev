@@ -765,7 +765,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 							   
 						}
 						   else 
-							   if(Main.keyInt==KeyEvent.VK_ESCAPE) {
+							   if(Main.keyInt==KeyEvent.VK_ESCAPE&&!Main.currentCase.inCourt) {
 								   cls();
 								   queue = new Drawable[40]; // creates new queue of objects to draw
 									  textQueue = new DrawableText[50]; // creates new queue of text
@@ -872,7 +872,7 @@ menu=-17;
 					}
 				textQueue[3].y=768-40; // sets x value for button
 				textQueue[3].x=20;				 // sets y value for button
-				textQueue[4] =  new DrawableText("Menu",Color.BLACK,35.0f,true,0,0,false); // draws in menu
+				textQueue[4] =  new DrawableText("Close",Color.BLACK,35.0f,true,0,0,false); // draws in menu
 				textQueue[4].x=1028-120; // sets x value for button
 				textQueue[4].y=768-40; // sets y value for button
 				
@@ -1012,10 +1012,15 @@ menu=-17;
 						   if(button==3)button=1; // moves from bottom-right to top-right
 					   } else 
 						   if(Main.keyInt==90) { // if the key is z
-							   if (button==3||button==2) { // if the button is bottom-left or bottom-right
+							   if (button==2||button==3&&!Main.currentCase.inCourt) { // if the button is bottom-left or move
 							   menu=button; // opens menu
 							   cls(); // clears screen
-							   } else if (button ==1) { // if the button is top-right
+							   } 
+							   else if (button == 3) // if button is close
+							   {
+								   Main.close(); //closes game
+							   }
+							   else if (button ==1) { // if the button is top-right
 								   System.out.println("yolo"); // prints test phrase
 								   if (!Main.currentCase.inCourt) { // if the case is not in court
 									 
@@ -1147,9 +1152,10 @@ menu=-17;
 								   }
 							   } 
 							   
-							   else if (button==3) {
-								   menu=-17;
-								   cls();
+							   else if (button==3) { // if the button was close
+								   System.out.println("Closing!");
+								   Main.close();
+								   
 								   
 							   }
 							   else 

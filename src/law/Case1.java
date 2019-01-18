@@ -70,10 +70,10 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 Main.cExamine[Main.examineSlot].add("The bank is locked down tiiiiight. The only ways to get in are locked.", "Enrico Nocent", new String[] {"What ways are there to enter the back?","Welllllll. You can enter through the frooont door.","Or the seccurrrity door.","But only security can go through there.", "I surmised as much."}, new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Enrico Nocent","Ouran Forenz"}, 0, null, null, 0);
 		 Main.cExamine[Main.examineSlot].add("Employees have a key to unlock these doors in case of an e-mer-gen-cy.", "Enrico Nocent",  new String[] {"So any employee could have entered?","There is a camera at the front door tooooo.","It just shows Gill T entering and leaving, not any other employeeeessss.","Yeah, I guess...","I don't think any other employee went through there nyan."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Ouran Forenz", "Nekocchi"} , 0, null , "enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("The back of the bank is only for employeeees. Yeah. It’s also where the money is stored.", "Enrico Nocent",  new String[] {"Only for employees?","Yeeeaahhh. Patrons are not allowed back there. Biiiggg no no.","But since the money is there too...","It needs to be monitored.","Exaclttttly. That’s why Al was there. As well it’s why..."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("Cameras are positioned to watch both hallways leading to the back. Oh yeah.", "Enrico Nocent",  new String[] {"So they would see anyone heading to the back?","Yes indeed!!! They watch the two main hallllls.","Oooh exciting! Are there any blind spots En-chan?~~(&o&)?","The cameras don’t actually watch the back, only the main hallways.","But what’s really important is..."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Nekocchi","Enrico Nocent","Enrico Nocent"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("Gill T here is seen going to the back.", "Enrico Nocent",  new String[] {"Going to the back isn’t enough to convince this court of his guilt!","It is for me.","And me.","And me~~","And me if you don’t get back on track with this cross-examination."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Det. Pat. Bluthund","Nekocchi","Judge Judge"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("Clearly he is going back there to off our good friend Al.", "Enrico Nocent",  new String[] {"So, according to you, Gilligan at this point has an intent to kill?","ou are making the claim that this murder is of the first degree!","Well yes, isn’t that what this trial is for?","Yeah I know, I’m just trying to sound dramatic.","Please stay focused Forenz..."} ,  new String[] {"Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz","Judge Judge"} , 2, "Big Stick","enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("The back of the bank is only for employeeees. Yeah. Itï¿½s also where the money is stored.", "Enrico Nocent",  new String[] {"Only for employees?","Yeeeaahhh. Patrons are not allowed back there. Biiiggg no no.","But since the money is there too...","It needs to be monitored.","Exaclttttly. Thatï¿½s why Al was there. As well itï¿½s why..."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("Cameras are positioned to watch both hallways leading to the back. Oh yeah.", "Enrico Nocent",  new String[] {"So they would see anyone heading to the back?","Yes indeed!!! They watch the two main hallllls.","Oooh exciting! Are there any blind spots En-chan?~~(&o&)?","The cameras donï¿½t actually watch the back, only the main hallways.","But whatï¿½s really important is..."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Nekocchi","Enrico Nocent","Enrico Nocent"} , 0, null,"enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("Gill T here is seen going to the back.", "Enrico Nocent",  new String[] {"Going to the back isnï¿½t enough to convince this court of his guilt!","It is for me.","And me.","And me~~","And me if you donï¿½t get back on track with this cross-examination."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Det. Pat. Bluthund","Nekocchi","Judge Judge"} , 0, null,"enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("Clearly he is going back there to off our good friend Al.", "Enrico Nocent",  new String[] {"So, according to you, Gilligan at this point has an intent to kill?","ou are making the claim that this murder is of the first degree!","Well yes, isnï¿½t that what this trial is for?","Yeah I know, Iï¿½m just trying to sound dramatic.","Please stay focused Forenz..."} ,  new String[] {"Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz","Judge Judge"} , 2, "Big Stick","enricoWitness",0);
 
 		 
 		 
@@ -102,11 +102,11 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 startCExamine(7);
 		 
-		 Main.cExamine[Main.examineSlot].add("Ok, yes I was at the bank that night...", "Enrico Nocent", new String[] {"Why were you at the bank?","Well I also forgot some papers...","Really? That’s awfully convenient.","Especially since you specifically entered in a way that the cameras couldn’t see you.","It’s all a big coincidence I tell you! Please...","Let’s move on Ouran-kun...desu"}, new String[] {"Ouran Forenz","Enrico Nocent","Ouran Enrico","Enrico Nocent","Nekocchi"}, 0, null, "enricoWitness", 0);
-		 Main.cExamine[Main.examineSlot].add("But I didn’t murder anybody!", "Enrico Nocent",  new String[] {"You did murder someone. You murdered Al Protecc!!!","Aren’t you trying to prove that?","Yes, and I will.","...","Just... Give me a minute."} ,  new String[] {"Ouran Forenz","Judge Judge","Ouran Forenz","Ouran Forenz", "Ouran Forenz"} , 0, null , "enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("Ok, yes I was at the bank that night...", "Enrico Nocent", new String[] {"Why were you at the bank?","Well I also forgot some papers...","Really? Thatï¿½s awfully convenient.","Especially since you specifically entered in a way that the cameras couldnï¿½t see you.","Itï¿½s all a big coincidence I tell you! Please...","Letï¿½s move on Ouran-kun...desu"}, new String[] {"Ouran Forenz","Enrico Nocent","Ouran Enrico","Enrico Nocent","Nekocchi"}, 0, null, "enricoWitness", 0);
+		 Main.cExamine[Main.examineSlot].add("But I didnï¿½t murder anybody!", "Enrico Nocent",  new String[] {"You did murder someone. You murdered Al Protecc!!!","Arenï¿½t you trying to prove that?","Yes, and I will.","...","Just... Give me a minute."} ,  new String[] {"Ouran Forenz","Judge Judge","Ouran Forenz","Ouran Forenz", "Ouran Forenz"} , 0, null , "enricoWitness",0);
 		 Main.cExamine[Main.examineSlot].add("I know because I saw the murder!", "Enrico Nocent",  new String[] {"You realize withholding information like this...","It doesn't look good.","I realize...","...","And it seems like a desperate lie...","But it isn't...","...","(I'm getting nowhere."} ,  new String[] {"Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("It was Gilligan, I saw it!", "Enrico Nocent",  new String[] {"Please explain further. What exactly did you see?","Well Gill had that big stick and he used it to hit and kill Al.","That's it?","Yes. I’ll say it again for you if you want."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("He hit Al in the head hard with a stick.", "Enrico Nocent",  new String[] {"So Gilligan hit Al?","Yes.","With the stick?","Yes.","Describe it. How did Al get hit? Give details. We need to know details.","I do remember the scene clearly. Gilligan smacked Al hard right in the back of the head.","Please add that to your testimony.","Can diddly do.","Man he’s an annoying baka.","He is indeed desu... (whoops slipped out.)"} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent","Nekocchi","Ouran Forenz"} , 1, null,"enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("It was Gilligan, I saw it!", "Enrico Nocent",  new String[] {"Please explain further. What exactly did you see?","Well Gill had that big stick and he used it to hit and kill Al.","That's it?","Yes. Iï¿½ll say it again for you if you want."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("He hit Al in the head hard with a stick.", "Enrico Nocent",  new String[] {"So Gilligan hit Al?","Yes.","With the stick?","Yes.","Describe it. How did Al get hit? Give details. We need to know details.","I do remember the scene clearly. Gilligan smacked Al hard right in the back of the head.","Please add that to your testimony.","Can diddly do.","Man heï¿½s an annoying baka.","He is indeed desu... (whoops slipped out.)"} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent","Nekocchi","Ouran Forenz"} , 1, null,"enricoWitness",0);
 		 Main.cExamine[Main.examineSlot].add("That's the whole truth.", "Enrico Nocent",  new String[] {"Enrico Nocent...","Yes?","I don't have much more to say...","But I know you are lying!","Then prove it!"," I will then."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz"} , 0, null,"enricoWitness",0);
 		 
 		 
@@ -114,11 +114,11 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 startCExamine(8);
 		 
-		 Main.cExamine[Main.examineSlot].add("Ok, yes I was at the bank that night...", "Enrico Nocent", new String[] {"Why were you at the bank?","Well I also forgot some papers...","Really? That’s awfully convenient.","Especially since you specifically entered in a way that the cameras couldn’t see you.","It’s all a big coincidence I tell you! Please...","Let’s move on Ouran-kun...desu"}, new String[] {"Ouran Forenz","Enrico Nocent","Ouran Enrico","Enrico Nocent","Nekocchi"}, 0, null, "enricoWitness", 0);
-		 Main.cExamine[Main.examineSlot].add("But I didn’t murder anybody!", "Enrico Nocent",  new String[] {"You did murder someone. You murdered Al Protecc!!!","Aren’t you trying to prove that?","Yes, and I will.","...","Just... Give me a minute."} ,  new String[] {"Ouran Forenz","Judge Judge","Ouran Forenz","Ouran Forenz", "Ouran Forenz"} , 0, null , "enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("Ok, yes I was at the bank that night...", "Enrico Nocent", new String[] {"Why were you at the bank?","Well I also forgot some papers...","Really? Thatï¿½s awfully convenient.","Especially since you specifically entered in a way that the cameras couldnï¿½t see you.","Itï¿½s all a big coincidence I tell you! Please...","Letï¿½s move on Ouran-kun...desu"}, new String[] {"Ouran Forenz","Enrico Nocent","Ouran Enrico","Enrico Nocent","Nekocchi"}, 0, null, "enricoWitness", 0);
+		 Main.cExamine[Main.examineSlot].add("But I didnï¿½t murder anybody!", "Enrico Nocent",  new String[] {"You did murder someone. You murdered Al Protecc!!!","Arenï¿½t you trying to prove that?","Yes, and I will.","...","Just... Give me a minute."} ,  new String[] {"Ouran Forenz","Judge Judge","Ouran Forenz","Ouran Forenz", "Ouran Forenz"} , 0, null , "enricoWitness",0);
 		 Main.cExamine[Main.examineSlot].add("I know because I saw the murder!", "Enrico Nocent",  new String[] {"You realize withholding information like this...","It doesn't look good.","I realize...","...","And it seems like a desperate lie...","But it isn't...","...","(I'm getting nowhere."} ,  new String[] {"Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("It was Gilligan, I saw it!", "Enrico Nocent",  new String[] {"Please explain further. What exactly did you see?","Well Gill had that big stick and he used it to hit and kill Al.","That's it?","Yes. I’ll say it again for you if you want."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
-		 Main.cExamine[Main.examineSlot].add("I vividly remember! Gilligan hit Al in the back of the head.", "Enrico Nocent",  new String[] {"I need more details. Set the scene for me.","A cold moonlit night. A shocking scene. I crept into the bank slowly and softly...","Suddenly, I hear a sound. An awful sound. I hear men arguing. A stick is drawn.","I don’t think that’s what Ouran-kun meant desu...","No it is. Keep going...","A threat! A terrified man. Al stands up and defends himself through the fear.","It isn’t enough. Gill runs behind him and WHAM...","It’s all over...","I stand paralyzed in fear...","More details!","A fly buzzes by. The only sound around. The thud of the stick resonates as it drops to the ground.","Beads of sweat roll down my face. The body is lifeless... Sitting there...","What an interesting tale.... Why didn’t you call the police?","Well... Look just believe me, it’s all true."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Nekocchi","Ouran Forenz","Enrico Nocent","Enrico Nocent","Enrico Nocent","Enrico Nocent","Ouran Forenz","Enrico Nocent","Enrico Nocent","Ouran Forenz","Enrico Nocent"} , 2, "Autopsy Report","enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("It was Gilligan, I saw it!", "Enrico Nocent",  new String[] {"Please explain further. What exactly did you see?","Well Gill had that big stick and he used it to hit and kill Al.","That's it?","Yes. Iï¿½ll say it again for you if you want."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
+		 Main.cExamine[Main.examineSlot].add("I vividly remember! Gilligan hit Al in the back of the head.", "Enrico Nocent",  new String[] {"I need more details. Set the scene for me.","A cold moonlit night. A shocking scene. I crept into the bank slowly and softly...","Suddenly, I hear a sound. An awful sound. I hear men arguing. A stick is drawn.","I donï¿½t think thatï¿½s what Ouran-kun meant desu...","No it is. Keep going...","A threat! A terrified man. Al stands up and defends himself through the fear.","It isnï¿½t enough. Gill runs behind him and WHAM...","Itï¿½s all over...","I stand paralyzed in fear...","More details!","A fly buzzes by. The only sound around. The thud of the stick resonates as it drops to the ground.","Beads of sweat roll down my face. The body is lifeless... Sitting there...","What an interesting tale.... Why didnï¿½t you call the police?","Well... Look just believe me, itï¿½s all true."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Nekocchi","Ouran Forenz","Enrico Nocent","Enrico Nocent","Enrico Nocent","Enrico Nocent","Ouran Forenz","Enrico Nocent","Enrico Nocent","Ouran Forenz","Enrico Nocent"} , 2, "Autopsy Report","enricoWitness",0);
 		 Main.cExamine[Main.examineSlot].add("That's the whole truth.", "Enrico Nocent",  new String[] {"Enrico Nocent...","Yes?","I don't have much more to say...","But I know you are lying!","Then prove it!"," I will then."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent","Ouran Forenz"} , 0, null,"enricoWitness",0);
 		 
 		 
@@ -128,7 +128,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
 		 // various changes of view and pieces of dialogue
-		 insertV(5,"Nekocchi");
+		 /*insertV(5,"Nekocchi");
 		 playAni("Nekocchi","nekocchiWitness",0,false);
 		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
 		 insertD("...","Ouran Forenz");
@@ -261,7 +261,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Thank you Detective. Can you testify about some of your reasoning?","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
 		 
-		 insertD("Sure can!","Det. Pat. Bluthund");
+		 insertD("Sure can!","Det. Pat. Bluthund");*/
 		 runFirstExamine(0); // runs beginning of cross-examination
 		 insertD("That's it...","Ouran Forenz");
 		 insertO(0);
@@ -708,9 +708,9 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(0,(String)null);
 		 insertD("Please testify as to what you saw.","Judge Judge");
 		 insertV(1,(String)null);
-		 insertD("Wait really judge? He’s lied on the stand frequently already. You are going to let him testify more.?","Ouran Forenz");
+		 insertD("Wait really judge? Heï¿½s lied on the stand frequently already. You are going to let him testify more.?","Ouran Forenz");
 		 insertV(0,(String)null);
-		 insertD("Well since you’ve accused him of murder, we must hear his response.","Judge Judge");
+		 insertD("Well since youï¿½ve accused him of murder, we must hear his response.","Judge Judge");
 		 insertV(4,(String)null);
 		 insertD("Yeah Ouran-kun, gotta let that baka speak.","Nekocchi");
 		 insertV(1,(String)null);
@@ -727,7 +727,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I've caught you in your lies Nocent.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
-		 insertD("What lie? I didn’t t-t-tell a lie...","Enrico Nocent");
+		 insertD("What lie? I didnï¿½t t-t-tell a lie...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("I'd like to direct the court's attention to the autopsy.","Ouran Forenz");
 		 insertV(2,(String)null);
@@ -745,26 +745,26 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Enrico Nocent","enricoWitness",0,false);
 		 insertD("uuuWWAAAGGHH","Enrico Nocent");
 		 insertV(1,(String)null);
-		 insertD("It’s funny really. Someone as short as Gilligan...","Ouran Forenz");
+		 insertD("Itï¿½s funny really. Someone as short as Gilligan...","Ouran Forenz");
 		 insertD("He would have a hard time hitting someone on the top of the head huh?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
 		 insertD("W-w-well it c-could happen...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("No not likely. Especially against a trained security guard.","Ouran Forenz");
-		 insertD("It’s far more likely an injury like that was caused by someone of an appropriate height.","Ouran Forenz");
+		 insertD("Itï¿½s far more likely an injury like that was caused by someone of an appropriate height.","Ouran Forenz");
 		 insertD("Mr. Nocent, you are of the appropriate height.","Ouran Forenz");
 		 insertD("Mr. Nocent, you were at the bank at the night of the murder","Ouran Forenz");
 		 insertD("Mr. Nocent, you intentionally avoided security cameras.","Ouran Forenz");
 		 insertD("Mr. Nocent, you killed Al Protecc, didn't you!","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
-		 insertD("No no... I wasn’t robbing the bank...","Enrico Nocent");
+		 insertD("No no... I wasnï¿½t robbing the bank...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Wait, were you trying to rob the bank?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
-		 insertD("No I didn’t... I just.... Please........","Enrico Nocent");
+		 insertD("No I didnï¿½t... I just.... Please........","Enrico Nocent");
 		 insertD("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!","Enrico Nocent");
 		 //Insert breakdown animation if that ever happens
 		 //More comment to make this stand out more when scrolling
@@ -780,25 +780,25 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 playAni("Enrico Nocent","enricoWitness",0,false);
 		 insertD("I don't need to tell you anything.","Enrico Nocent");
 		 insertV(1,(String)null);
-		 insertD("Well “En”, I guess En Nocent was guilty after all.","Ouran Forenz");
+		 insertD("Well ï¿½Enï¿½, I guess En Nocent was guilty after all.","Ouran Forenz");
 		 insertV(4,(String)null);
-		 insertD("Yeah Ouran, we all get the puns you don’t need to point them out you baka ~~nyandesu.","Nekocchi");
+		 insertD("Yeah Ouran, we all get the puns you donï¿½t need to point them out you baka ~~nyandesu.","Nekocchi");
 		 insertV(0,(String)null);
-		 insertD("Well Mr. Forenz great work. You’ve sufficiently proved your client Gilligan Tam could not have committed the crime.","Judge Judge");
+		 insertD("Well Mr. Forenz great work. Youï¿½ve sufficiently proved your client Gilligan Tam could not have committed the crime.","Judge Judge");
 		 insertD("I shall hand down my verdict.","Judge Judge");
 		 insertData("NOT GUILTY");
 		 //Add Not guilty maybe?
 		 insertD("Court is now adjourned.","Judge Judge");
 		 insertV(5,"Gilligan Tam");
 		 playAni("Gilligan Tam","gilliganWitness",0,false);
-		 insertData("--Defendant’s Lobby C May 22nd, 3:57---");
+		 insertData("--Defendantï¿½s Lobby C May 22nd, 3:57---");
 		 insertD("We did it!!! Sugoi!!! Hooray!!!","Nekocchi");
 		 insertD("Yes yes, I did it. You were standing next to me.","Ouran Forenz");
-		 insertD("It’s called emotional support Ouran-kun... You baka...","Nekocchi");
-		 insertD("Thanks pal... You’re a lifesaver.","Gilligan Tam");
-		 insertD("Don’t mention it. Just doing my job. Defending those who are wrongly accused.","Ouran Forenz");
+		 insertD("Itï¿½s called emotional support Ouran-kun... You baka...","Nekocchi");
+		 insertD("Thanks pal... Youï¿½re a lifesaver.","Gilligan Tam");
+		 insertD("Donï¿½t mention it. Just doing my job. Defending those who are wrongly accused.","Ouran Forenz");
 		 insertD("Really though. Who knew my height would save me in the end.","Gilligan Tam");
-		 insertD("Well it’s simple forensic analysis. I knew you couldn't have done it as soon as I got the updated autopsy.","Ouran Forenz");
+		 insertD("Well itï¿½s simple forensic analysis. I knew you couldn't have done it as soon as I got the updated autopsy.","Ouran Forenz");
 		 insertD("You were thinking that far ahead?","Gilligan Tam");
 		 insertD("Yes. forensic analysis can cover a wide range of topics, all help us get much closer to the truth.","Ouran Forenz");
 		 insertD("I just love forensics, I use them for everything. Just spread the word, that forensics saved you.","Ouran Forenz");
@@ -806,15 +806,15 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("NO!!!","Ouran Forenz");
 		 insertD("Forensics saved you. I am a vessel for forensics to use within the criminal justice system.","Ouran Forenz");
 		 insertD("I am merely the medium through which forensic science utilizes to assist in solving crimes.","Ouran Forenz");
-		 insertD("Alright man if you say so. They don’t call you Forenz for nothing.","Gilligan Tam");
-		 insertD("Well yeah, that’s my family name. Why is that relevant?","Ouran Forenz");
+		 insertD("Alright man if you say so. They donï¿½t call you Forenz for nothing.","Gilligan Tam");
+		 insertD("Well yeah, thatï¿½s my family name. Why is that relevant?","Ouran Forenz");
 		 insertD("I was just... Never mind...","Gilligan Tam");
-		 insertD("Yeah he’s weird, you can ignore him and praise me.","Nekocchi");
+		 insertD("Yeah heï¿½s weird, you can ignore him and praise me.","Nekocchi");
 		 insertD("Well sorry little monstrocity, I have to leave now.","Gilligan Tam");
 		 insertD("Really Forenz, thank you for everything.","Gilligan Tam");
 		 insertD("I hope to meet you again in the future.","Ouran Forenz");
-		 insertD("Maybe I’ll open an account at Fat Stacks?","Ouran Forenz");
-		 insertD("No don’t do that.","Gilligan Tam");
+		 insertD("Maybe Iï¿½ll open an account at Fat Stacks?","Ouran Forenz");
+		 insertD("No donï¿½t do that.","Gilligan Tam");
 		 insertD("Corporate uses the bank as a front for money laundering and drug trades. Whole thing is a scam...","Gilligan Tam");
 		 insertD("Wait really?","Ouran Forenz");
 		 insertD("Why did you think there was so little security?","Gilligan Tam");
@@ -824,9 +824,9 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("The police later launched a full scale investigation.","Ouran Forenz");
 		 insertD("Billions of dollars worth of drugs were seized and a large criminal empire was taken down.","Ouran Forenz");
 		 insertD("Gilligan Tam was put into witness protection and now lives a happy life across the country.","Ouran Forenz");
-		 insertD("One moment can change someone’s life. This case could have ruined Gilligan’s.","Ouran Forenz");
-		 insertD("It’s my job as an attorney to make sure the truth comes out and these innocent lives remain as they are, innocent.","Ouran Forenz");
-		 insertD("I’m Ouran Forenz, expert attorney at law and forensic investigator.","Ouran Forenz");
+		 insertD("One moment can change someoneï¿½s life. This case could have ruined Gilliganï¿½s.","Ouran Forenz");
+		 insertD("Itï¿½s my job as an attorney to make sure the truth comes out and these innocent lives remain as they are, innocent.","Ouran Forenz");
+		 insertD("Iï¿½m Ouran Forenz, expert attorney at law and forensic investigator.","Ouran Forenz");
 		 insertD("I will continue to pursue the truth.","Ouran Forenz");
 		 insertD("That's my job.","Ouran Forenz");
 		 
