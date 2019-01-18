@@ -1,0 +1,25 @@
+package law;
+public class AreaZeroZero extends Location {
+	boolean block;
+	public AreaZeroZero() {
+		 super("Detention center",50);
+		 block=true;
+	}
+	
+	void enter () {
+		block = true;
+		 if (block){
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 
+			 block = false;
+		 }
+	}
+}
