@@ -337,6 +337,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("That's it...","Ouran Forenz");
 		 runExamine(2);
 		 insertD("That's it...","Ouran Forenz");
+		 insertD("I got it...","Ouran Forenz");
 		 insertO(0);
 		 insertD("OBJECTION!!!","Ouran Forenz");
 		 removeO();
@@ -390,8 +391,10 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Maybe this contains some new information. I should read it over.","Ouran Forenz");
 		 insertV(0,(String)null);
 		 insertD("Detective Bluthund please resume your testimony.","Judge Judge");
+		 insertV(3,"Det. Pat. Bluthund");
 		 runExamine(3);
 		 insertD("That's it...","Ouran Forenz");
+		 insertD("(I figured it out.","Ouran Forenz");
 		 insertO(0);
 		 insertD("OBJECTION!!!","Ouran Forenz");
 		 removeO();
@@ -418,11 +421,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("It's an attempt to divert suspicion.","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Come on Detective!","Ouran Forenz");
-		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
-		 insertD("But I will concede, this is a pretty big blow to the prosecution's case...","Det. Pat. Bluthund");
-		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));		 
 		 insertD("But I will concede, this is a pretty big blow to the prosecution's case...","Det. Pat. Bluthund");
 		 insertV(2,(String)null);
 		 insertD("Not so fast...","Mel Practiss");
