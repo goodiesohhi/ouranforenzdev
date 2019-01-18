@@ -21,7 +21,6 @@ public class Case1 extends StoryManager{ // opens class for first case
 		{
 		oneProc=true; // sets the case to be running
 		
-		
 		startCExamine(0); // starts first cross-examination
 		 
 		 // lists statements for cross-examination
@@ -123,7 +122,6 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 
 		 stopCExamine();
-		 
 		 
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
@@ -830,7 +828,6 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I�m Ouran Forenz, expert attorney at law and forensic investigator.","Ouran Forenz");
 		 insertD("I will continue to pursue the truth.","Ouran Forenz");
 		 insertD("That's my job.","Ouran Forenz");
-		 Main.close();
 		}
 		super.update(); // updates super
 		 
