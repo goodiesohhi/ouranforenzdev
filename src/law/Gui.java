@@ -3,10 +3,15 @@ package law; // selects package
 import java.awt.Color; // imports color
 import java.awt.event.KeyEvent; // imports usage of keys
 import java.awt.image.BufferedImage; // imports images
+import java.io.File;
 import java.io.IOException; // imports IOException
 import java.net.URL; //imports URL usage
-
 import javax.imageio.ImageIO; //imports image input and output
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 class Gui  { // opens class
 static boolean inChat; // holds if the gui is currently talking
@@ -104,10 +109,48 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				
 					   if(Main.keyInt==38) { // if the key is up
 						   if (markerLocation>=1) // if the location is greater than 1
-					markerLocation--; // move up
+						   {
+							   markerLocation--; // move up
+							   try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+								   
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+						   }
 					   } else if (Main.keyInt==40) { // if the key is down
 						
-						   if (markerLocation<Main.currentCase.currentLocation.paths.size()-1) markerLocation++; // if the location is higher than the last one, move the marker down
+						   if (markerLocation<Main.currentCase.currentLocation.paths.size()-1)
+						   {
+							   markerLocation++; // if the location is higher than the last one, move the marker down
+							   try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+						   }
 					   }else
 						   if(Main.keyInt==KeyEvent.VK_Z) { // if z is pressed
 							   
@@ -210,9 +253,46 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				
 					   if(Main.keyInt==38) { // if the key is up
 						   if (evidenceOffset!=0) // if the first piece of evidence is not selected
-					evidenceOffset--; // move up
+						   {
+							   evidenceOffset--; // move up
+							   try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+						   }
 					   } else if (Main.keyInt==40) { // if the key is down
-						   if (evidenceOffset!=Main.currentCase.evidence.size()+5) evidenceOffset++; // if the selection isn't out of bounds, move down
+						   if (evidenceOffset!=Main.currentCase.evidence.size()+5)
+						   {
+							   evidenceOffset++; // if the selection isn't out of bounds, move down
+							   try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+						   }
 					   }else
 						   if(Main.keyInt==90) { // if the key is z
 							   		
@@ -239,6 +319,22 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 			   this.cls(); // clears screen
 			   if (inProfile) inProfile = false; // switches profile
 			   else inProfile=true;
+			   try
+			   {
+				   playSound("/resources/audio/menuMove.mp3"); //plays sound
+			   }
+			   catch(LineUnavailableException ex) // looks for exception
+			   {
+				   System.out.println("Wrong line");
+			   }
+			   catch(UnsupportedAudioFileException ex) // looks for exception
+			   {
+				   System.out.println("Wrong file");
+			   }
+			   catch(IOException ex) // looks for exception
+			   {
+				   System.out.println("Input problem");
+			   }
 			   
 		   }
 					   
@@ -329,9 +425,46 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				
 					   if(Main.keyInt==38) { // if the key is up
 						   if (evidenceOffset!=0) // if the first piece isn't selected
-					evidenceOffset--; // moves up
+						   {
+							   evidenceOffset--; // moves up
+							   try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+						   }
 					   } else if (Main.keyInt==40) { // if the key is down
-						   if (evidenceOffset!=Main.currentCase.evidence.size()+5) evidenceOffset++; // if the selected piece of evidence is not the last one, moves down
+						   if (evidenceOffset!=Main.currentCase.evidence.size()+5)
+						   {
+							   evidenceOffset++; // if the selected piece of evidence is not the last one, moves down
+							   try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+						   }
 					   }else
 						   if(Main.keyInt==90) { // if the key is z
 							   if (inProfile) { // if the menu is in a profilie
@@ -371,6 +504,22 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 			   this.cls(); // clear screen
 			   if (inProfile) inProfile = false; // switches profile
 			   else inProfile=true;
+			   try
+			   {
+				   playSound("/resources/audio/menuMove.mp3"); //plays sound
+			   }
+			   catch(LineUnavailableException ex) // looks for exception
+			   {
+				   System.out.println("Wrong line");
+			   }
+			   catch(UnsupportedAudioFileException ex) // looks for exception
+			   {
+				   System.out.println("Wrong file");
+			   }
+			   catch(IOException ex) // looks for exception
+			   {
+				   System.out.println("Input problem");
+			   }
 			   
 		   }
 					   }
@@ -524,17 +673,85 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 					 
 					
 					   if(Main.keyInt==40) { // if the key is down
-						if (markerLocation<story.currentLocation.getVisible()-1)markerLocation++; // if there is a location below, move down
+						if (markerLocation<story.currentLocation.getVisible()-1)
+							{
+								markerLocation++; // if there is a location below, move down
+								try
+								   {
+									   playSound("/resources/audio/menuMove.mp3"); //plays sound
+								   }
+								   catch(LineUnavailableException ex) // looks for exception
+								   {
+									   System.out.println("Wrong line");
+								   }
+								   catch(UnsupportedAudioFileException ex) // looks for exception
+								   {
+									   System.out.println("Wrong file");
+								   }
+								   catch(IOException ex) // looks for exception
+								   {
+									   System.out.println("Input problem");
+								   }
+							}
 					   } else if  (Main.keyInt==38) { // if the key is up
-						if (markerLocation>0) markerLocation--;   // if there are locations above, move up
+						if (markerLocation>0)
+							{
+								markerLocation--;   // if there are locations above, move up
+								try
+								   {
+									   playSound("/resources/audio/menuMove.mp3"); //plays sound
+								   }
+								   catch(LineUnavailableException ex) // looks for exception
+								   {
+									   System.out.println("Wrong line");
+								   }
+								   catch(UnsupportedAudioFileException ex) // looks for exception
+								   {
+									   System.out.println("Wrong file");
+								   }
+								   catch(IOException ex) // looks for exception
+								   {
+									   System.out.println("Input problem");
+								   }
+							}
 					   } else if (Main.keyInt==KeyEvent.VK_LEFT) { // if the key is left, switch the buttons around
-						   
+						   try
+						   {
+							   playSound("/resources/audio/menuMove.mp3"); //plays sound
+						   }
+						   catch(LineUnavailableException ex) // looks for exception
+						   {
+							   System.out.println("Wrong line");
+						   }
+						   catch(UnsupportedAudioFileException ex) // looks for exception
+						   {
+							   System.out.println("Wrong file");
+						   }
+						   catch(IOException ex) // looks for exception
+						   {
+							   System.out.println("Input problem");
+						   }
 						   if(button==1) button=-2;
 						   else if(button==-2) button=2;
 						   else if (button==2) button=1;
 						   
 					   } else if (Main.keyInt==KeyEvent.VK_RIGHT) { // if the key is right, switch the buttons around
-						   
+						   try
+						   {
+							   playSound("/resources/audio/menuMove.mp3"); //plays sound
+						   }
+						   catch(LineUnavailableException ex) // looks for exception
+						   {
+							   System.out.println("Wrong line");
+						   }
+						   catch(UnsupportedAudioFileException ex) // looks for exception
+						   {
+							   System.out.println("Wrong file");
+						   }
+						   catch(IOException ex) // looks for exception
+						   {
+							   System.out.println("Input problem");
+						   }
 						   if(button==1) button=2;
 						   else if(button==2) button=-2;
 						   else if (button==-2) button=1;
@@ -548,7 +765,7 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 							   
 						}
 						   else 
-							   if(Main.keyInt==KeyEvent.VK_ESCAPE) {
+							   if(Main.keyInt==KeyEvent.VK_ESCAPE&&!Main.currentCase.inCourt) {
 								   cls();
 								   queue = new Drawable[40]; // creates new queue of objects to draw
 									  textQueue = new DrawableText[50]; // creates new queue of text
@@ -655,7 +872,7 @@ menu=-17;
 					}
 				textQueue[3].y=768-40; // sets x value for button
 				textQueue[3].x=20;				 // sets y value for button
-				textQueue[4] =  new DrawableText("Menu",Color.BLACK,35.0f,true,0,0,false); // draws in menu
+				textQueue[4] =  new DrawableText("Close",Color.BLACK,35.0f,true,0,0,false); // draws in menu
 				textQueue[4].x=1028-120; // sets x value for button
 				textQueue[4].y=768-40; // sets y value for button
 				
@@ -716,6 +933,22 @@ menu=-17;
 					
 					
 							  if  (Main.keyInt==37) { // if the key is left
+								  try
+								   {
+									   playSound("/resources/audio/menuMove.mp3"); //plays sound
+								   }
+								   catch(LineUnavailableException ex) // looks for exception
+								   {
+									   System.out.println("Wrong line");
+								   }
+								   catch(UnsupportedAudioFileException ex) // looks for exception
+								   {
+									   System.out.println("Wrong file");
+								   }
+								   catch(IOException ex) // looks for exception
+								   {
+									   System.out.println("Input problem");
+								   }
 								   if(button==0)button=1; // moves from top-left to top-right
 								   else
 								
@@ -727,6 +960,22 @@ menu=-17;
 								   else if (button == 3) button=4; // moves from bottom-right to middle
 							   } else
 					   if(Main.keyInt==39) { // if the key is right
+						   try
+						   {
+							   playSound("/resources/audio/menuMove.mp3"); //plays sound
+						   }
+						   catch(LineUnavailableException ex) // looks for exception
+						   {
+							   System.out.println("Wrong line");
+						   }
+						   catch(UnsupportedAudioFileException ex) // looks for exception
+						   {
+							   System.out.println("Wrong file");
+						   }
+						   catch(IOException ex) // looks for exception
+						   {
+							   System.out.println("Input problem");
+						   }
 						   if(button==0)button=1; // moves from top-left to top-right
 						   else
 						
@@ -738,6 +987,22 @@ menu=-17;
 						   else if (button ==4) button=3; // moves from middle to bottom-left
 					   } else
 					   if(Main.keyInt==38||Main.keyInt==40) { // if the key is up or down
+						   try
+						   {
+							   playSound("/resources/audio/menuMove.mp3"); //plays sound
+						   }
+						   catch(LineUnavailableException ex) // looks for exception
+						   {
+							   System.out.println("Wrong line");
+						   }
+						   catch(UnsupportedAudioFileException ex) // looks for exception
+						   {
+							   System.out.println("Wrong file");
+						   }
+						   catch(IOException ex) // looks for exception
+						   {
+							   System.out.println("Input problem");
+						   }
 						   if(button==0)button=2; // moves from top-left to bottom-left
 						   else
 						   if(button==2)button=0; // moves from bottom-left to top-left
@@ -747,10 +1012,15 @@ menu=-17;
 						   if(button==3)button=1; // moves from bottom-right to top-right
 					   } else 
 						   if(Main.keyInt==90) { // if the key is z
-							   if (button==3||button==2) { // if the button is bottom-left or bottom-right
+							   if (button==2||button==3&&!Main.currentCase.inCourt) { // if the button is bottom-left or move
 							   menu=button; // opens menu
 							   cls(); // clears screen
-							   } else if (button ==1) { // if the button is top-right
+							   } 
+							   else if (button == 3) // if button is close
+							   {
+								   Main.close(); //closes game
+							   }
+							   else if (button ==1) { // if the button is top-right
 								   System.out.println("yolo"); // prints test phrase
 								   if (!Main.currentCase.inCourt) { // if the case is not in court
 									 
@@ -786,6 +1056,22 @@ menu=-17;
 				  markerLocation=0; // set the default location to 0
 				if (button==4&&Main.keyInt!=90) button=0; // if the button is the middle and z is not pressed set the button to the top-left
 						  if  (Main.keyInt==37) { // if the button is left
+							  try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
 							   if(button==0)button=1; // moves from top-left to top-right
 							   else
 							
@@ -796,6 +1082,22 @@ menu=-17;
 							   else if (button ==3) button=2; // moves from bottom-right to bottom-left
 						   } else
 				   if(Main.keyInt==39) { // if the button is right
+					   try
+					   {
+						   playSound("/resources/audio/menuMove.mp3"); //plays sound
+					   }
+					   catch(LineUnavailableException ex) // looks for exception
+					   {
+						   System.out.println("Wrong line");
+					   }
+					   catch(UnsupportedAudioFileException ex) // looks for exception
+					   {
+						   System.out.println("Wrong file");
+					   }
+					   catch(IOException ex) // looks for exception
+					   {
+						   System.out.println("Input problem");
+					   }
 					   if(button==0)button=1; // moves from top-left to top-right
 					   else
 					
@@ -806,6 +1108,22 @@ menu=-17;
 					   else if (button ==3) button=2; // moves from bottom-right to bottom left
 				   } else
 				   if(Main.keyInt==38||Main.keyInt==40) { // if the key is up or down
+					   try
+					   {
+						   playSound("/resources/audio/menuMove.mp3"); //plays sound
+					   }
+					   catch(LineUnavailableException ex) // looks for exception
+					   {
+						   System.out.println("Wrong line");
+					   }
+					   catch(UnsupportedAudioFileException ex) // looks for exception
+					   {
+						   System.out.println("Wrong file");
+					   }
+					   catch(IOException ex) // looks for exception
+					   {
+						   System.out.println("Input problem" +ex.getMessage());
+					   }
 					   if(button==0)button=2; // moves from top-left to bottom-left
 					   else
 					   if(button==2)button=0; // moves from bottom-left to top-left
@@ -834,9 +1152,10 @@ menu=-17;
 								   }
 							   } 
 							   
-							   else if (button==3) {
-								   menu=-17;
-								   cls();
+							   else if (button==3) { // if the button was close
+								   System.out.println("Closing!");
+								   Main.close();
+								   
 								   
 							   }
 							   else 
@@ -903,5 +1222,13 @@ if (!Main.currentCase.inCourt) {
 		}
 		}
 	}
-	
+	void playSound(String file) throws IOException, LineUnavailableException, UnsupportedAudioFileException
+    {
+    	File url = new File(file);
+    	Clip clip = AudioSystem.getClip();
+    	AudioInputStream ais = AudioSystem.
+    	getAudioInputStream( url );
+    	clip.open(ais);
+    	clip.start();
+    }
 }

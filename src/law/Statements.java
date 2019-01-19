@@ -53,7 +53,7 @@ class Statements { // opens class
 		
 		System.out.println(speaker); // writes test phrase
 		 // plays animation of witness
-		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, false); // plays animation
+		if (animation!=null) Main.currentCase.getCharacter(speaker).play(animation, frames, true); // plays animation
 	
 		Main.dialogue.insert(initial,speaker); // runs dialogue
 		
@@ -150,13 +150,15 @@ class Statements { // opens class
 		else { // if evidence is not correct
 			
 			story.insertV(0, (String)null); // switches view to judge
-			story.insertD("Ummm.. How is that of any relevance?", "Judge Judge"); //plays default dialogue
+			story.insertD("Ummm.. How is that of any relevance?", "Judge Judge"); //plays default dialogue\
+			story.insertV(3, speaker); // switches view back to bench
 		story.switchBackToEventQueue(); // switches to event queue
 			
 		}
 		}else { // if the requirement is not to present
 			story.insertV(0, (String)null); // switches view to judge
 			story.insertD("Ummm.. How is that of any relevance?", "Judge Judge"); // plays default dialogue
+			story.insertV(3, speaker); // switches view back to bench
 		story.switchBackToEventQueue(); // switches to event queue
 			
 		}

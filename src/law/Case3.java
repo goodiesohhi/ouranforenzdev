@@ -21,7 +21,7 @@ class Case3 extends StoryManager  { // opens main class
         characters.add(new Character("Ouran Forenz", 200, 0)); // adds Ouran
         this.getCharacter("Det. Pat. Bluthund").animList.add(new AnimData("Det. Pat. Bluthund", "bluthundWitness",0,false)); // adds animation
         this.getCharacter("Susan Ord").animList.add(new AnimData("Susan Ord", "susanWitness", 0, false)); // adds animation
-    	if (flags[25] == false && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
+    	if (flags[25] == true && !oneProc) // checks if investigation has run and that one segment gets added to the event queue
     	{
     		oneProc = true; // makes sure that only one segment gets added to the event queue
     		flags[24] = true; // sets the flag to true
@@ -76,11 +76,11 @@ class Case3 extends StoryManager  { // opens main class
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("The prosecution is prepared...", "Adrasteia");
     		insertD("to bring the defendant to justice, your Honour!", "Adrasteia");
-    		insertV(4, (String)null);
+    		insertV(4, (String)(null));
     		insertD("She seems intense, nya~~", "Nekocchi");
     		insertV(0, "Judge Judge");
     		insertD("Very well... is the defence team ready?", "Judge Judge");
-    		insertV(1, (String)null);
+    		insertV(1, (String)(null));
     		insertD("We are as prepared as we can get, your honour.", "Ouran");
     		insertV(0, "Judge Judge");
     		insertD("As it should be... proceed with your opening statements.", "Judge Judge");
@@ -90,15 +90,15 @@ class Case3 extends StoryManager  { // opens main class
     		insertD("The prosecution will show that Keto wilfully killed his brother.", "Adrasteia");
     		insertD("We will also show that he had motive to commit this crime.", "Adrasteia");
     		insertD("What is the defendant's plea?", "Adrasteia");
-    		insertV(1, (String)null);
+    		insertV(1, (String)(null));
     		insertD("We plead not guilty.", "Ouran");
     		insertV(2, "Adrasteia Rhamnousia");
     		insertD("As you plea, so your fate is sealed.", "Adrasteia");
-    		insertV(1, (String)null);
+    		insertV(1, (String)(null));
     		insertD("(She’s sticking to her formalities, I see...)", "Ouran");
     		insertV(0, "Judge Judge");
     		insertD("Defence, please give your opening statement.", "Judge Judge");
-    		insertV(1, (String)null);
+    		insertV(1, (String)(null));
     		insertD("Keto Saiba did not murder his younger brother and business associate.", "Ouran");
     		insertD("There is no evidence to prove that he did commit the crime.", "Ouran");
     		insertD("There is nothing pinning him at the scene.", "Ouran");
