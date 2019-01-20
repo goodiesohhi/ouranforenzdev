@@ -2,16 +2,20 @@ package law;
 
 import java.awt.Color;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+import javax.imageio.ImageIO;
+
 class Menu {
 	Drawable[] queue; // creates queue to draw
 	DrawableText[] textQueue; // creates queue of text
-	
+	BufferedImage backing = ImageIO.read( Main.class.getResource("/resources/backing.png")); // holds image for menu backing
+
 	int button =0;
 	int menu=0;
 	public boolean entered;
@@ -33,6 +37,7 @@ class Menu {
 		}
 	public void update() throws Exception {
 entered=true;
+Main.renderer.queue[1]= new Drawable(backing,200-165,120	-35,1,0,0); // creates the backing for the gui
 		if (menu==0) {
 			if (saveExists()) {
 			Main.renderer.queue[0] = new  Drawable(0,0,0,1,0,1);
@@ -44,13 +49,13 @@ entered=true;
 			if (button==2)Main.renderer.textQueue[2] = new DrawableText("Case Select",Color.GREEN,30.0f,true,0,0,false); 
 			else Main.renderer.textQueue[2] = new DrawableText("Case Select",Color.GRAY,30.0f,true,0,0,false); 
 		
-			Main.renderer.textQueue[1].x=300; // sets the x value
+			Main.renderer.textQueue[1].x=400; // sets the x value
 			Main.renderer.textQueue[1].y=300;
 			
-			Main.renderer.textQueue[0].x=300; // sets the x value
+			Main.renderer.textQueue[0].x=400; // sets the x value
 			Main.renderer.textQueue[0].y=400;
 			
-			Main.renderer.textQueue[2].x=300; // sets the x value
+			Main.renderer.textQueue[2].x=400; // sets the x value
 			Main.renderer.textQueue[2].y=500;
 			
 		      
@@ -94,10 +99,10 @@ entered=true;
 								if (button==1)Main.renderer.textQueue[1] = new DrawableText("Case Select",Color.GREEN,30.0f,true,0,0,false); 
 								else Main.renderer.textQueue[1] = new DrawableText("Case Select",Color.GRAY,30.0f,true,0,0,false); 
 							
-								Main.renderer.textQueue[0].x=300; // sets the x value
+								Main.renderer.textQueue[0].x=400; // sets the x value
 								Main.renderer.textQueue[0].y=300;
 								
-								Main.renderer.textQueue[1].x=300; // sets the x value
+								Main.renderer.textQueue[1].x=400; // sets the x value
 								Main.renderer.textQueue[1].y=400;
 							
 								
@@ -137,7 +142,7 @@ entered=true;
 			for (StoryManager c: Main.caseList) {
 			if (button==i)Main.renderer.textQueue[i] = new DrawableText(c.caseName,Color.GREEN,30.0f,true,0,0,false); 
 			else Main.renderer.textQueue[i] = new DrawableText(c.caseName,Color.GRAY,30.0f,true,0,0,false); 
-			Main.renderer.textQueue[i].x=300; // sets the x value
+			Main.renderer.textQueue[i].x=400; // sets the x value
 			Main.renderer.textQueue[i].y=300+100*i;
 			i++;
 			}

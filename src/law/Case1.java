@@ -127,7 +127,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
 		 // various changes of view and pieces of dialogue
 		 insertV(5,"Nekocchi");
-		 playAni("Nekocchi","nekocchiWitness",0,false);
+		 playAni("Nekocchi","nekoArson",0,false);
 		 insertD("Mr. Forenz, court is about to begin.", "Bailiff");
 		 insertD("...","Ouran Forenz");
 		 insertD("Huh?", "Ouran Forenz");
