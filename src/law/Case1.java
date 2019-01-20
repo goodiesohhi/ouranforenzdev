@@ -5,18 +5,18 @@ import java.io.IOException; // imports IOException
 
 public class Case1 extends StoryManager{ // opens class for first case
 	Case1() throws IOException{ // constructor for first case
-		super(1,"NAME UR CASE"); // invokes super
+		super(1,"Turnabout Teller"); // invokes super
 		this.currentProsecutor="Mel Practiss"; // sets current prosecutor
 	}
 	
 	void update() throws IOException{ // runs update loop
 		characters.add(new Character ("Det. Pat. Bluthund", 150, 0)); //adds Bluthund
-		characters.add(new Character("Gilligan Tam",350,500)); // adds Gilligan
-		characters.add(new Character("Photo of Body", 150, 0)); // adds picture of body so it can be shown in court
+		characters.add(new Character("Gilligan Tam",250,220)); // adds Gilligan
+		characters.add(new Character("Photo of Body", 150, 20)); // adds picture of body so it can be shown in court
 		characters.add(new Character("Nekocchi",250,200));
 		this.getCharacter("Gilligan Tam").animList.add(new AnimData("Gilligan Tam", "gilliganWitness",0, true)); // adds character animation
 		this.getCharacter("Det. Pat. Bluthund").animList.add(new AnimData("Det. Pat. Bluthund", "bluthundWitness", 0, true)); // adds character animation
-		characters.add(new Character("Enrico Nocent",150,0));
+		characters.add(new Character("Enrico Nocent",150,90));
 		if (!oneProc) // checks if the case is already running
 		{
 		oneProc=true; // sets the case to be running
@@ -67,7 +67,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 startCExamine(4);
 		 
-		 Main.cExamine[Main.examineSlot].add("The bank is locked down tiiiiight. The only ways to get in are locked.", "Enrico Nocent", new String[] {"What ways are there to enter the back?","Welllllll. You can enter through the frooont door.","Or the seccurrrity door.","But only security can go through there.", "I surmised as much."}, new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Enrico Nocent","Ouran Forenz"}, 0, null, null, 0);
+		 Main.cExamine[Main.examineSlot].add("The bank is locked down tiiiiight. The only ways to get in are locked.", "Enrico Nocent", new String[] {"What ways are there to enter the back?","Welllllll. You can enter through the frooont door.","Or the seccurrrity door.","But only security can go through there.", "I surmised as much."}, new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Enrico Nocent","Ouran Forenz"}, 0, null, "enricoWitness", 0);
 		 Main.cExamine[Main.examineSlot].add("Employees have a key to unlock these doors in case of an e-mer-gen-cy.", "Enrico Nocent",  new String[] {"So any employee could have entered?","There is a camera at the front door tooooo.","It just shows Gill T entering and leaving, not any other employeeeessss.","Yeah, I guess...","I don't think any other employee went through there nyan."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Enrico Nocent","Ouran Forenz", "Nekocchi"} , 0, null , "enricoWitness",0);
 		 Main.cExamine[Main.examineSlot].add("The back of the bank is only for employeeees. Yeah. It's also where the money is stored.", "Enrico Nocent",  new String[] {"Only for employees?","Yeeeaahhh. Patrons are not allowed back there. Biiiggg no no.","But since the money is there too...","It needs to be monitored.","Exaclttttly. That's why Al was there. As well it's why..."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Ouran Forenz","Ouran Forenz","Enrico Nocent"} , 0, null,"enricoWitness",0);
 		 Main.cExamine[Main.examineSlot].add("Cameras are positioned to watch both hallways leading to the back. Oh yeah.", "Enrico Nocent",  new String[] {"So they would see anyone heading to the back?","Yes indeed!!! They watch the two main hallllls.","Oooh exciting! Are there any blind spots En-chan?~~(&o&)?","The cameras don't actually watch the back, only the main hallways.","But what's really important is..."} ,  new String[] {"Ouran Forenz","Enrico Nocent","Nekocchi","Enrico Nocent","Enrico Nocent"} , 0, null,"enricoWitness",0);
@@ -223,14 +223,14 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,(String)null);
 		 insertD("I'm a little confused. My client's name is Gilligan Tam not 'Gill T'....","Ouran Forenz");
 		 insertD("Oh...","Ouran Forenz");
-		 insertV(3,"Gilligan Tam");
-		 playAni("Gilligan Tam","gilliganWitness",0,false);
-		 insertR("Gilligan Tam", "gilliganProfile", "A teller at Fat Stacks Bank.",true,8);
+		 insertV(3,new AnimData("Gilligan Tam", "gilliganTalk", 16, true));
+		 
+		 insertR("Gilligan Tam", "gilliganProfile", "A short teller at Fat Stacks Bank.",true,8);
 		 insertD("THATS ME!!!","Gilligan Tam");
 		 insertV(1,(String)null);
 		 insertD("Gilligan, you shouldn't be speaking. I'm your attorney, you need to leave it to me.","Ouran Forenz");
-		 insertV(3,"Gilligan Tam");
-		 playAni("Gilligan Tam","gilliganWitness",0,false);
+		 insertV(3,new AnimData("Gilligan Tam", "gilliganTalk", 16, true));
+		 
 		 insertD("Well I just wanted to let you know that Gill is my nickname. I'm Gill T!","Gilligan Tam");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
 		 
@@ -441,7 +441,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Lobby C huh? I thought there were only two lobbies...","Ouran Forenz");
 		 insertD("Me too desu. Guess not OwO.","Nekocchi");
 		 insertV(5, "Gilligan Tam");
-		 playAni("Gilligan Tam","gilliganWitness",0,false);
+		 
 		 insertD("Thanks Forenz!", "Gilligan Tam");
 		 insertD("We aren't out of the woods yet.","Ouran Forenz");
 		 insertV(5,"Nekocchi");
@@ -449,7 +449,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Woods! I'm afraid of trees!","Nekocchi");
 		 insertData("Nekocchi flees.");
 		 insertV(5,"Gilligan Tam");
-		 playAni("Gilligan Tam","gilliganWitness",0,false);
+		 
 		 insertD("I think we can do this. I believe in your innocence.","Ouran Forenz");
 		 insertD("Thanks.","Gilligan Tam");
 		 insertD("We never got a good chance to talk. What exactly happened when you went into the bank that night.","Ouran Forenz");
@@ -789,7 +789,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 //Add Not guilty maybe?
 		 insertD("Court is now adjourned.","Judge Judge");
 		 insertV(5,"Gilligan Tam");
-		 playAni("Gilligan Tam","gilliganWitness",0,false);
+		 
 		 insertData("--Defendant's Lobby C May 22nd, 3:57---");
 		 insertD("We did it!!! Sugoi!!! Hooray!!!","Nekocchi");
 		 insertD("Yes yes, I did it. You were standing next to me.","Ouran Forenz");
