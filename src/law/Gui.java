@@ -610,8 +610,8 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				} else {
 					if (button==0)textQueue[0] = new DrawableText("Continue",Color.GREEN,30.0f,true,0,0,false); 
 					else textQueue[0] = new DrawableText("Continue",Color.GRAY,30.0f,true,0,0,false); 
-					if (button==1)textQueue[1] = new DrawableText("Save",Color.GREEN,30.0f,true,0,0,false); 
-					else textQueue[1] = new DrawableText("Can't save while in Court",Color.GRAY,30.0f,true,0,0,false); 
+					if (button==1)textQueue[1] = new DrawableText("Can't save while in Court",Color.GREEN,30.0f,true,0,0,false); 
+					else textQueue[1] = new DrawableText("Save",Color.GRAY,30.0f,true,0,0,false); 
 					if (button==2)textQueue[2] = new DrawableText("Exit",Color.GREEN,30.0f,true,0,0,false); 
 					else textQueue[2] = new DrawableText("Exit",Color.GRAY,30.0f,true,0,0,false); 
 				
@@ -638,13 +638,6 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 								
 							} else if (button==1) {
 								
-								Main.gui.cls();
-								  queue = new Drawable[40]; // creates new queue of objects to draw
-								  textQueue = new DrawableText[50]; // creates new queue of text
-								
-								Main.gui.menu=-1;
-								  queue = new Drawable[40]; // creates new queue of objects to draw
-								  textQueue = new DrawableText[50]; // creates new queue of text
 								
 							} else if (button==2) {
 							System.exit(0);	

@@ -51,7 +51,7 @@ Main.currentCase.clearSprites();	// removes sprites
 	
 	if(x==1) { // checks if view is of the defence
 		Main.renderer.queue[0]= new Drawable(11,0,0,1,0,0); // draws background
-		if (Main.currentCase.getCharacter("Ouran Forenz")==null) Main.currentCase.characters.add(new Character("Ouran Forenz", 100, 135)); // draws Ouran
+		if (Main.currentCase.getCharacter("Ouran Forenz")==null) Main.currentCase.characters.add(new Character("Ouran Forenz", 100, 185)); // draws Ouran
 		if (!oneProc)
 		{
 		Main.currentCase.getCharacter("Ouran Forenz").play("ouranobject", 0, false); // plays animation
@@ -87,7 +87,7 @@ Main.currentCase.clearSprites();	// removes sprites
 		oneProc=true; // ensures that only one animation runs
 		}
 		Main.currentCase.currentWitness= y.charName; // sets witness as character
-		
+		Main.renderer.queue[5]= new Drawable(28,0,0,1,0,0);
 	}
 	if(x==4) {
 		Main.renderer.queue[0]= new Drawable(14,0,0,1,0,0); // draws background

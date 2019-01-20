@@ -11,9 +11,9 @@ public class Case1 extends StoryManager{ // opens class for first case
 	
 	void update() throws IOException{ // runs update loop
 		characters.add(new Character ("Det. Pat. Bluthund", 150, 0)); //adds Bluthund
-		characters.add(new Character("Gilligan Tam",350,500)); // adds Gilligan
+		characters.add(new Character("Gilligan Tam",350,200)); // adds Gilligan
 		characters.add(new Character("Photo of Body", 150, 0)); // adds picture of body so it can be shown in court
-		characters.add(new Character("Nekocchi",250,200));
+		characters.add(new Character("Nekocchi",250,100));
 		this.getCharacter("Gilligan Tam").animList.add(new AnimData("Gilligan Tam", "gilliganWitness",0, true)); // adds character animation
 		this.getCharacter("Det. Pat. Bluthund").animList.add(new AnimData("Det. Pat. Bluthund", "bluthundWitness", 0, true)); // adds character animation
 		characters.add(new Character("Enrico Nocent",150,0));

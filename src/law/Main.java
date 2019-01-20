@@ -90,6 +90,7 @@ public class Main extends JFrame{ // opens main class
     	renderer.insert("ouranobject", 1);
     	renderer.insert("title", 2);
 
+    	renderer.insert("witnessBench", 29);
     	renderer.insert("judgebench", 10);
     	renderer.insert("defbench", 11);
     	renderer.insert("prosbench",12);
