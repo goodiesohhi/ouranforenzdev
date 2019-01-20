@@ -80,7 +80,8 @@ class Statements { // opens class
 			else if(speakers[u].equals("Det. Pat. Bluthund"))
 			{
 				story.insertV(3, "Det. Pat. Bluthund");
-				story.playAni("Det. Pat. Bluthund","bluthundWitness",0,false);
+				story.playAni("Det. Pat. Bluthund","bluthundTalk",2,true);
+				story.showAni("Witness Stand","witnessBench",0,false);
 			}
 			else if (speakers[u].equals("Judge Judge"))
 			{
@@ -90,6 +91,7 @@ class Statements { // opens class
 			{
 				story.insertV(3, "Enrico Nocent");
 				story.playAni("Enrico Nocent","enricoWitness",0,false);
+				story.showAni("Witness Stand","witnessBench",0,false);
 			}
 			story.insertD(presses[u], speakers[u]);//Displays statements from press
 		}
