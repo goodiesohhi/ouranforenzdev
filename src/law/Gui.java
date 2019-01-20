@@ -547,6 +547,8 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 				  // Main.game.saveGame();
 				
 				//makes buttons
+				
+				if(!Main.currentCase.inCourt) {
 				if (button==0)textQueue[0] = new DrawableText("Continue",Color.GREEN,30.0f,true,0,0,false); 
 				else textQueue[0] = new DrawableText("Continue",Color.GRAY,30.0f,true,0,0,false); 
 				if (button==1)textQueue[1] = new DrawableText("Save",Color.GREEN,30.0f,true,0,0,false); 
@@ -604,6 +606,66 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 						  queue = new Drawable[40]; // creates new queue of objects to draw
 						  textQueue = new DrawableText[50]; // creates new queue of text
 					} 
+				}
+				} else {
+					if (button==0)textQueue[0] = new DrawableText("Continue",Color.GREEN,30.0f,true,0,0,false); 
+					else textQueue[0] = new DrawableText("Continue",Color.GRAY,30.0f,true,0,0,false); 
+					if (button==1)textQueue[1] = new DrawableText("Save",Color.GREEN,30.0f,true,0,0,false); 
+					else textQueue[1] = new DrawableText("Can't save while in Court",Color.GRAY,30.0f,true,0,0,false); 
+					if (button==2)textQueue[2] = new DrawableText("Exit",Color.GREEN,30.0f,true,0,0,false); 
+					else textQueue[2] = new DrawableText("Exit",Color.GRAY,30.0f,true,0,0,false); 
+				
+					textQueue[0].x=300; // sets the x value
+					textQueue[0].y=300;
+					
+					textQueue[1].x=300; // sets the x value
+					textQueue[1].y=400;
+					
+					textQueue[2].x=300; // sets the x value
+					textQueue[2].y=500;
+					
+					if(Main.currentKey!=null) {
+						if(Main.keyInt==KeyEvent.VK_Z) {
+							if(button==0) {
+								
+								Main.gui.cls();
+								  queue = new Drawable[40]; // creates new queue of objects to draw
+								  textQueue = new DrawableText[50]; // creates new queue of text
+								
+								Main.gui.menu=-1;
+								  queue = new Drawable[40]; // creates new queue of objects to draw
+								  textQueue = new DrawableText[50]; // creates new queue of text
+								
+							} else if (button==1) {
+								
+								Main.gui.cls();
+								  queue = new Drawable[40]; // creates new queue of objects to draw
+								  textQueue = new DrawableText[50]; // creates new queue of text
+								
+								Main.gui.menu=-1;
+								  queue = new Drawable[40]; // creates new queue of objects to draw
+								  textQueue = new DrawableText[50]; // creates new queue of text
+								
+							} else if (button==2) {
+							System.exit(0);	
+							}
+							
+						}   else if(Main.keyInt==38) { // if the key is up
+							   if (button>0) button--;
+						   } else if (Main.keyInt==40) { // if the key is down
+							   if (button<2) button++;
+						   }
+						
+						else if(Main.keyInt==KeyEvent.VK_X) {
+							Main.gui.cls();
+							  queue = new Drawable[40]; // creates new queue of objects to draw
+							  textQueue = new DrawableText[50]; // creates new queue of text
+							
+							Main.gui.menu=-1;
+							  queue = new Drawable[40]; // creates new queue of objects to draw
+							  textQueue = new DrawableText[50]; // creates new queue of text
+						} 
+					}
 				}
 			}
 			else if (menu == 1) { // if the menu is the base menu
@@ -872,7 +934,7 @@ menu=-17;
 					}
 				textQueue[3].y=768-40; // sets x value for button
 				textQueue[3].x=20;				 // sets y value for button
-				textQueue[4] =  new DrawableText("Close",Color.BLACK,35.0f,true,0,0,false); // draws in menu
+				textQueue[4] =  new DrawableText("Menu",Color.BLACK,35.0f,true,0,0,false); // draws in menu
 				textQueue[4].x=1028-120; // sets x value for button
 				textQueue[4].y=768-40; // sets y value for button
 				
@@ -1016,9 +1078,11 @@ menu=-17;
 							   menu=button; // opens menu
 							   cls(); // clears screen
 							   } 
-							   else if (button == 3) // if button is close
+							   else if (button == 3) // if button is Menu
 							   {
-								   Main.close(); //closes game
+								   button=0;
+								  menu=-17; //closes game
+								  cls(); 
 							   }
 							   else if (button ==1) { // if the button is top-right
 								   System.out.println("yolo"); // prints test phrase
