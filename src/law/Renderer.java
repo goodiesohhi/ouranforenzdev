@@ -16,6 +16,7 @@ public class Renderer { // opens class
 	DrawableText[] textQueue; // creates queue of text
 	DrawableText[] pressQueue; // creates queue of presses
 	BufferedImage dataField = null; // creates image for data field
+	BufferedImage benchWitness=null;//creates witness bench image
 	BufferedImage[] index = new BufferedImage[300] ; // holds index of images
 	
 	Color textBoxColor=new Color(0.1f,0.1f,0.1f,.85f ); // holds the colour of the text box
@@ -27,7 +28,7 @@ public class Renderer { // opens class
 		 
 			textQueue = new DrawableText[30]; // creates new text queue
 			dataField = ImageIO.read( Main.class.getResource("/resources/datafield.png")); // finds image for data field
-		
+			benchWitness=ImageIO.read(Main.class.getResource("/resources/witnessBench.png")); //finds image for data field
 			 pressQueue = new DrawableText[30]; // creates new press queue
 				
 		
@@ -73,10 +74,14 @@ for (Character c: Main.currentCase.court.characters) { // runs through court cha
 
 	 if(c.drawn!=null) { // if the character exists
 		 g.drawImage(c.drawn.imagez,c.drawn.x+camera.x,c.drawn.y+camera.y,null); // draws the character
-		
+	 }
+	 if (c.name.equals(Main.currentCase.currentWitness))
+	 {
+		 g.drawImage(benchWitness,-20,0,null);
 	 }
 }
-	
+
+
 
 
 	

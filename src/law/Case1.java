@@ -10,18 +10,20 @@ public class Case1 extends StoryManager{ // opens class for first case
 	}
 	
 	void update() throws IOException{ // runs update loop
-		characters.add(new Character ("Det. Pat. Bluthund", 150, 0)); //adds Bluthund
-
-		characters.add(new Character("Gilligan Tam",250,220)); // adds Gilligan
+		inCourt=true;
+		
+		if (!oneProc) // checks if the case is already running
+		{
+		oneProc=true; // sets the case to be running
+		characters.add(new Character ("Det. Pat. Bluthund", 200, 0)); //adds Bluthund
+		characters.add(new Character("Gilligan Tam",250,150)); // adds Gilligan
 		characters.add(new Character("Photo of Body", 150, 20)); // adds picture of body so it can be shown in court
 		characters.add(new Character("Nekocchi",250,200));
 
 		this.getCharacter("Gilligan Tam").animList.add(new AnimData("Gilligan Tam", "gilliganWitness",0, true)); // adds character animation
 		this.getCharacter("Det. Pat. Bluthund").animList.add(new AnimData("Det. Pat. Bluthund", "bluthundWitness", 0, true)); // adds character animation
 		characters.add(new Character("Enrico Nocent",150,90));
-		if (!oneProc) // checks if the case is already running
-		{
-		oneProc=true; // sets the case to be running
+		characters.add(new Character("Witness Bench",-20,0));
 		
 		startCExamine(0); // starts first cross-examination
 		 
@@ -161,13 +163,14 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Nyan? This is going super super super fast!!! ^o^","Nekocchi");
 		 insertD("Please stop...","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
+		 showAni("Witness Bench","witnessBench",0,false);
 		  // plays animation for Bluthund
 		 insertR("Detective Bluthund", "bluthundProfile", "A detective who may or may not be just a dog.",true,4); // inserts Bluthund into the record
 		 insertData("---Detective Patrick Bluthund---");
 		 insertV(2,(String)null);
 		 insertD("Please state your name and profession.","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("My name is Patrick Bluthund, homicide division. I sniff out criminals and this dude is one of them!", "Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Ummm, that's a dog...", "Ouran Forenz");
@@ -186,7 +189,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,(String)null);
 		 insertD("Ahhh... Ok whatever. As long as he does his job.","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Don't worry man, I get it a lot for some reason. I'm used to it.","Det. Pat. Bluthund");
 		 insertD("By the way...","Det. Pat. Bluthund");
 		 insertD("I got the preliminary autopsy report right here in case you want to review it.","Det. Pat. Bluthund");
@@ -194,7 +197,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,(String)null);
 		 insertD("You say preliminary, right?","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yes, but it should be pretty accurate. We are just investigating finer details.","Det. Pat. Bluthund");
 		 insertD("We will be informed right away once it gets updated.","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
@@ -212,7 +215,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,(String)null);
 		 insertD("(I should check the court record frequently. All the information I could ever need is in there.)","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertR("Al Protecc","alProfile","Night guard at Fat Stacks Bank",true,6);
 		 insertD("I got more for you. The victim was Al Protecc, a security guard at Fat Stacks Bank.","Det. Pat. Bluthund");
 		 insertD("Here's a photo of him when he was alive.", "Det. Pat. Bluthund");
@@ -226,41 +229,41 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I'm a little confused. My client's name is Gilligan Tam not 'Gill T'....","Ouran Forenz");
 		 insertD("Oh...","Ouran Forenz");
 		 insertV(3,new AnimData("Gilligan Tam", "gilliganTalk", 16, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertR("Gilligan Tam", "gilliganProfile", "A short teller at Fat Stacks Bank.",true,8);
 		 insertD("THATS ME!!!","Gilligan Tam");
 		 insertV(1,(String)null);
 		 insertD("Gilligan, you shouldn't be speaking. I'm your attorney, you need to leave it to me.","Ouran Forenz");
 		 insertV(3,new AnimData("Gilligan Tam", "gilliganTalk", 16, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Well I just wanted to let you know that Gill is my nickname. I'm Gill T!","Gilligan Tam");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("THAT'S A CONFESSION!!!","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("(This isn't going well...)","Ouran Forenz");
 		 insertR("Photo of Body","albodypic","Dying message by right hand that reads 'Gill T'.",false,9);
 		 insertData("You got the Photo of the Body.");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("The murder weapon was a stick found at the scene. It was covered in Mr. Protecc's blood.","Det. Pat. Bluthund");
 		 insertV(4,(String)null);
 		 insertD("OwO B-blood???","Nekocchi");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yes blood. This was a murder after all.","Det. Pat. Bluthund");
 		 insertV(4,(String)null);
 		 insertD("Nani-desu? No one told me someone got murdered desu~~ <~_~>","Nekocchi");
 		 insertD("I told you multiple times. You reacted like this every time, how can you not remember?","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Anyway the stick was nothing special. Just something from outside on the ground.","Det. Pat. Bluthund");
 		 insertR("Big Stick","bigStick","Just a big stick. Murder weapon.",false,10);
 		 insertData("You got the Big Stick.");
 		 insertV(2,(String)null);
 		 insertD("Thank you Detective. Can you testify about some of your reasoning?","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Sure can!","Det. Pat. Bluthund");
 		 runFirstExamine(0); // runs beginning of cross-examination
 		 insertD("That's it...","Ouran Forenz");
@@ -270,7 +273,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,(String)null);
 		 insertD("Detective, you said Al must have died from 5:30-6:00 correct?","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yeah, so?", "Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Well there's where you're wrong!", "Ouran Forenz");
@@ -278,17 +281,17 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(4,(String)null);
 		 insertD("Hontou?!?! Great job Ouran desu~~","Nekocchi");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("AHAHAHAHAHAHAHA","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("What's so funny?","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Well I was just testing you Mr. Forenz.","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("(Really? Just a test? Sure...)","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("You don't think I know that?","Det. Pat. Bluthund");
 		 insertD("He did check out of work though. We have a record of that. Here.","Det. Pat. Bluthund");
 		 insertR("Work Record","workRecord","Gilligan ended work at 5:30 and Al started at 5:30.",false,11);
@@ -297,7 +300,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Well this is news to me!?!","Mel Practiss");
 		 insertD("Detective please don't lie on the stand...","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("No problem. Besides we have evidence showing him entering the bank at 9:50 PM.","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Hmmm...?","Ouran Forenz");
@@ -309,7 +312,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Cameras within the bank monitor all routes to the employee area where the corpse was found.","Mel Practiss");
 		 insertD("Security Cameras caught Gilligan entering the back of the bank at 9:50 PM.","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yes. They also caught him leaving at 10:00 PM.","Det. Pat. Bluthund");
 		 insertD("Al Protecc was shown on the cameras at 5:30 when he started his shift.","Det. Pat. Bluthund");
 		 insertD("The cameras don't show anyone else.","Det. Pat. Bluthund");
@@ -331,7 +334,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Wait, Detective. Why don't you testify about the dying message.","Ouran Forenz");
 		 insertD("I'd like to hear more about that.","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("No problem. Now listen and listen well.","Det. Pat. Bluthund");
 		 runFirstExamine(1);
 		 insertD("That's it...","Ouran Forenz");
@@ -345,7 +348,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(1,(String)null);
 		 insertD("Detective it seems you've made an error.","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Huh, in what way.","Det. Pat. Bluthund");
 		 insertV(2,(String)null);
 		 insertD("I see. You claim the victim is left handed since he's holding the mug in his left hand.","Mel Practiss");
@@ -375,7 +378,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(4,(String)null);
 		 insertD("Even I know that you baka ~~nyan~~UwU","Nekocchi");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yeah really man. That won't work.","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Ok fine, I concede that this word exists, and that the victim was...","Ouran Forenz");
@@ -404,19 +407,19 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Your initial logic may have been sound, but I shall gloriously point out this contradiction.","Ouran Forenz");
 		 insertD("GLORIOUS","Bailiff");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Geez, just get on with it.","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("It is your claim that after being hit, the victim wrote a dying message.","Ouran Forenz");
 		 insertD("However according to this new autopsy, the victim died instantly!","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("WOOF!!!","Det. Pat. Bluthund");
 		 insertD("I guess you're right!","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("So are you saying my client would implicate himself?","Ouran Forenz");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Smart criminals try to do things a criminal would never do.","Det. Pat. Bluthund");
 		 insertD("I've had cases where the criminal is the one to call the cops.","Det. Pat. Bluthund");
 		 insertD("It's an attempt to divert suspicion.","Det. Pat. Bluthund");
@@ -443,7 +446,6 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Lobby C huh? I thought there were only two lobbies...","Ouran Forenz");
 		 insertD("Me too desu. Guess not OwO.","Nekocchi");
 		 insertV(5, "Gilligan Tam");
-		 
 		 insertD("Thanks Forenz!", "Gilligan Tam");
 		 insertD("We aren't out of the woods yet.","Ouran Forenz");
 		 insertV(5,"Nekocchi");
@@ -473,6 +475,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("The prosecution now calls Enrico Nocent to the stand.","Mel Practiss");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertR("Enrico Nocent","enricoProfile","Day guard at Fat Stacks Bank",true,13);
 		 insertData("Enrico Nocent");
 		 insertD("Hellllllllooooo.","Enrico Nocent");
@@ -483,16 +486,19 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I will En-chan desu.","Nekocchi");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Niiice.","Enrico Nocent");
 		 insertV(2,(String)null);
 		 insertD("Please maybe state your profession?","Mel Practiss");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("I'm a guard on the day shift at Fat Stacks Banking.","Enrico Nocent");
 		 insertV(2,(String)null);
 		 insertD("Please testify about the security at Fat Stacks.","Mel Practiss");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Will do. I know that Gill T is guilty.","Enrico Nocent");
 		 insertD("Besides I need to finish up here quickity quick.","Enrico Nocent");
 		 insertD("I think I left some coookiesssss in my ovveeennn.","Enrico Nocent");
@@ -502,6 +508,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Please Mr. Forenz, save it for the cross-examination.","Judge Judge");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("By the way have this diagram of the bank's floor plan.","Enrico Nocent");
 		 insertD("It should help you simpletons follow along.","Enrico Nocent");
 		 insertV(4,(String)null);
@@ -519,6 +526,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Witness, I believe you've made a strong assumption...","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Huh? In what way?","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("If Gilligan truly was planning on murdering Al...","Ouran Forenz");
@@ -544,28 +552,33 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("What, in the briefcase?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("No way. He'd left his papers in the back of the bank that night. His briefcase was totally free.","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("(What did he just say?)","Ouran Forenz");
 		 insertD("Mr. Nocent, how do you know that?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Know what?","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("I don't believe you were informed of that fact.","Ouran Forenz");
 		 insertD("The fact that Gilligan Tam left papers at the bank that night.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Oh I uh...","Enrico Nocent");
 		 insertD("I probably overheard it from somewhere...","Enrico Nocent");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Hang on. Don't go saying that. I properly sequestered ya I while ago, you heard nothing of the sort!","Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Thank you Detective.","Ouran Forenz");
 		 insertD("(He really is man's best friend.)","Ouran Forenz");
-		 insertD("Mr. Nocent, how did you find out?","Ouran Forenz");insertV(3,"Enrico Nocent");
+		 insertD("Mr. Nocent, how did you find out?","Ouran Forenz");
+		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Ummm....","Enrico Nocent");
 		 insertD("Oh!","Enrico Nocent");
 		 insertD("I remember now. I remember clearly.","Enrico Nocent");
@@ -607,27 +620,31 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("What was your objection again?","Judge Judge");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("I think he was saying I work at a mint?","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("No I'm saying your story is flawed.","Ouran Forenz");
 		 insertD("You claim you got off work at the same time as my client. 5:00 you said.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yeaaah, what is the issueeee.","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Well according to this work log, Mr. Tam didn't get off of work until 5:30.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("aawwWWAAAAAA","Enrico Nocent");
 		 insertV(4,(String)null);
 		 insertD("Sugoi contradiction Ouran-kun! ~~nyan-desu","Nekocchi");
 		 insertV(0,(String)null);
 		 insertD("Mr. Nocent, how did you know Gilligan Tam was there that night to gather papers.","Judge Judge");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Yeah. You gotta explain yourself.","Det. Pat. Bluthund");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Ahhhhh... Ummmmmm...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("I think I might have an answer...","Ouran Forenz");
@@ -639,6 +656,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("You saw him going back for the papers in person!","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("uwwaAAAAAAHHHH","Enrico Nocent");
 		 insertV(2,(String)null);
 		 insertD("Wait wait... Mr. Forenz... That's going a b-b-b-b-bit far?","Mel Practiss");
@@ -646,11 +664,13 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("NO! IT'S THE ONLY EXPLANATION!!!","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("B-but I'm not on the security tapes...","Enrico Nocent");
 		 insertV(2,(String)null);
 		 insertD("Y-y-yes! Testify about that.","Mel Practiss");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("I shall.","Enrico Nocent");
 		 runFirstExamine(6);
 		 insertD("(Aha...)","Ouran Forenz");
@@ -661,6 +681,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I know you were there that night Nocent.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Didn't you hear me? The security...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Has no blind spots? Think again.","Ouran Forenz");
@@ -669,6 +690,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("This floorplan proves it.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("AAAHHHHHHH!!!","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Only security personel such as yourself could enter.","Ouran Forenz");
@@ -678,11 +700,13 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("And you could have murdered Al Protecc!!!","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("N-N-N-N-N-NOOOOOOOOOO!!!","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Just admit it already.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("F-f-fine I admit...","Enrico Nocent");
 		 insertD("I was there that night. I saw Gilligan.","Enrico Nocent");
 		 insertD("I saw him murder Al!","Enrico Nocent");
@@ -692,11 +716,13 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("You are just lying now. Just give up.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("I'm telling the truth. I'll tell the truth now. The whole truth.","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Why didn't you say this earlier? What reason did you have to hide it.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("Well, it made me sound suspicious.","Enrico Nocent");
 		 insertD("Plus, since I don't show up on the security footage, I was worried the police would suspect me.","Enrico Nocent");
 		 insertV(1,(String)null);
@@ -704,6 +730,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("You should have a perfectly good reason to be going there at 10 at night.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("T-that isn't relevant","Enrico Nocent");
 		 insertD("Now I will tell you exactly what I saw.","Enrico Nocent");
 		 insertV(0,(String)null);
@@ -728,6 +755,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I've caught you in your lies Nocent.","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("What lie? I didn't t-t-tell a lie...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("I'd like to direct the court's attention to the autopsy.","Ouran Forenz");
@@ -744,12 +772,14 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("But according to the autopsy the wound was to the top of the head!","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("uuuWWAAAGGHH","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("It's funny really. Someone as short as Gilligan...","Ouran Forenz");
 		 insertD("He would have a hard time hitting someone on the top of the head huh?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("W-w-well it c-could happen...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("No not likely. Especially against a trained security guard.","Ouran Forenz");
@@ -760,11 +790,13 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("Mr. Nocent, you killed Al Protecc, didn't you!","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("No no... I wasn't robbing the bank...","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Wait, were you trying to rob the bank?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("No I didn't... I just.... Please........","Enrico Nocent");
 		 insertD("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!!!!!!","Enrico Nocent");
 		 //Insert breakdown animation if that ever happens
@@ -779,6 +811,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("But why?","Ouran Forenz");
 		 insertV(3,"Enrico Nocent");
 		 playAni("Enrico Nocent","enricoWitness",0,false);
+		 showAni("Witness Bench","witnessBench",0,false);
 		 insertD("I don't need to tell you anything.","Enrico Nocent");
 		 insertV(1,(String)null);
 		 insertD("Well 'En', I guess En Nocent was guilty after all.","Ouran Forenz");

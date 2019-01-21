@@ -298,8 +298,10 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 							   		
 							   if (evidenceOffset<Main.currentCase.evidence.size()) { // if the evidence is a piece of evidence
 									if (  Main.currentCase.evidence.get(evidenceOffset)!=null)  { // if the evidence exists
-									Main.currentCase.currentLocation.present(Main.currentCase.evidence.get(evidenceOffset)); // presents piece of evidence
-									
+									if(!Main.currentCase.inCourt)
+									{
+										Main.currentCase.currentLocation.present(Main.currentCase.evidence.get(evidenceOffset)); // presents piece of evidence
+									}
 										 queue = new Drawable[40]; // resets drawing queue
 										  textQueue = new DrawableText[50]; // resets text queue
 										this.menu=-1; // moves out of menu

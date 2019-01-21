@@ -17,6 +17,7 @@ public class Court { // opens class
 	Character prosObject; // holds the prosecutor's objection
 	Character[] ceObjects; // holds all event objects
 	boolean oneProc=false; // checks that only one segment is run
+	boolean bench=false;
 	ArrayList <Character>characters = new ArrayList<Character>(); // holds all characters
 	public BufferedImage black; // holds background image
 	public Court() throws IOException { // opens constructor
@@ -72,6 +73,7 @@ Main.currentCase.clearSprites();	// removes sprites
 		
 	}	
 	if(x==3) { // checks if view is of witness
+		
 		Main.renderer.queue[0]= new Drawable(13,0,0,1,0,0); // draws background
 		if (Main.currentCase.getCharacter(y.charName)==null) { // checks if there is no current witness
 			Main.currentCase.characters.add(new Character(y.charName, 100, 135)); // adds new character for witness
@@ -87,7 +89,7 @@ Main.currentCase.clearSprites();	// removes sprites
 		oneProc=true; // ensures that only one animation runs
 		}
 		Main.currentCase.currentWitness= y.charName; // sets witness as character
-		Main.renderer.queue[5]= new Drawable(28,0,0,1,0,0);
+		Main.renderer.queue[5]= new Drawable(29,-20,0,1,0,0);
 	}
 	if(x==4) {
 		Main.renderer.queue[0]= new Drawable(14,0,0,1,0,0); // draws background
@@ -109,6 +111,7 @@ Main.currentCase.clearSprites();	// removes sprites
 	if (x==69) { // checks if view is default
 		Main.renderer.queue[0]= new Drawable(black,0,0,1,0,0); // draws black screen
 	}
+	
 	}
 	
 	void showcourt () { // shows court
@@ -201,6 +204,7 @@ Main.currentCase.clearSprites();	// removes sprites
 			if (x==69) { // checks if view is default
 				Main.renderer.queue[0]= new Drawable(black,0,0,1,0,0); // draws black screen
 			}
+			
 		
 	}
 	

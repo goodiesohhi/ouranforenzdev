@@ -225,7 +225,7 @@ else if (command=="r") { // if the command is to add to the record
 				else
 				Main.currentCase.eventQueue.remove(0); // remove an event item
 		
-	  if((!command.equals("playAni")&&!command.equals("firstCE"))||(command.equals("playAni")&&!u))Main.currentCase.working=false; // if nothing is playing, the case is not working
+	  if((!command.equals("playAni")&&!command.equals("firstCE"))||(command.equals("playAni")&&u))Main.currentCase.working=false; // if nothing is playing, the case is not working
 	  if(command.equals("o")) { //checks if an objection is being played
 		  System.out.println("O COMMAND"); //prints line
 		  Main.currentCase.working=true; // sets the case to working

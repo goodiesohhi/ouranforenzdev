@@ -89,6 +89,7 @@ public String caseName;
  
   void update() throws IOException { // updates sotry manager
 //System.out.println(eventQueue.toString());
+	  System.out.println(Main.currentCase.court.bench);
 	  court.update(); // updates court
 	  if (this.beginExamine&&Main.currentCase.working) { // if the case is working and has begun an examination
 		  timer1++; // increase timer
