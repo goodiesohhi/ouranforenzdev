@@ -167,9 +167,10 @@ private boolean inProfile; // holds if the gui is in profiles or evidence
 			   				   
 		   }
 				  }
-			} else
+			} 
 				  
 			if (menu==2) { // if the menu is the record
+				System.out.println("HONGKONG");
 				 queue[35]= new Drawable(scroller,800,100+evidenceOffset*30*(Main.currentCase.evidence.size()+3/3)-15,1,0,0); // draws the scroller
 				queue[0]= new Drawable(guiElements[0],10,10,1,0,0); // draws the background
 				queue[31]= new Drawable(marker,200-5,125	-5,1,0,0); // draws the marker of evidence
@@ -975,12 +976,12 @@ menu=-17;
 				
 				if (inAction) {  // if an action is running
 					
-					for (int i=0;i<6;i++) { // runs through all buttons
-						 queue[i]=null; // removes all buttons
+					//for (int i=0;i<6;i++) { // runs through all buttons
+					//	 queue[i]=null; // removes all buttons
 						
-					}
+					//}
 					
-					button=4; // sets default button to next
+					//button=4; // sets default button to next
 					queue[10]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0); // draws next
 					
 				} else { // if no action is running
@@ -1255,7 +1256,7 @@ if (!Main.currentCase.inCourt) {
 		   //	 if(button==4)   queue[5]= new Drawable(guiElements[9],600-200,768-100,1,0,0);
 			}
 			
-			if ((menu!=-1)&&!(menu==1&&!Main.currentCase.inCourt)) { // if the menu is not the base menu and the menu is either not in court or talking
+			if ((menu!=-1)&&(menu==1&&!Main.currentCase.inCourt)) { // if the menu is not the base menu and the menu is either not in court or talking
 			
 				textQueue[48] =  new DrawableText("Press X to return",new Color(200, Main.randInt(0,255), Main.randInt(100,115)),35.0f,true,0,0,false); // prints instructions
 				textQueue[48].x=375; // sets x position of text
@@ -1267,17 +1268,100 @@ if (!Main.currentCase.inCourt) {
 			
 			
 			
+			
 		} else { // if dialogue is running
-			for (int i=0;i<6;i++) { // runs through buttons
-				 queue[i]=null; // sets buttons to not exist
+			//for (int i=0;i<6;i++) { // runs through buttons
+				// queue[i]=null; // sets buttons to not exist
 				
-			}
-			for (int i=1;i<5;i++) { // runs through text
-				 textQueue[i]=null; // sets text to not exist
+		//	}
+			//for (int i=1;i<5;i++) { // runs through text
+				// textQueue[i]=null; // sets text to not exist
 				
-			}
-			 button=4; // sets button to next
-			 queue[6]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0); // draws button
+			//}
+			 //button=4; // sets button to next
+			if (button==0)button=4;
+			System.out.println(button+"  LION  "+menu);
+			queue[2]=null;
+			queue[3]=null;
+			textQueue[2]=null;
+			textQueue[1]=null;
+			 queue[6]= new Drawable(guiElements[9],(1028-200)/2,768-100,1,0,0); // draws button
+			 
+		     
+		       queue[4]= new Drawable(guiElements[3],0,768-100,1,0,0); // draw bottom-left button
+		       queue[5]= new Drawable(guiElements[4],1028-200,768-100,1,0,0); // draw bottom-right button
+		       
+		   	  if(button==2)  queue[4]= new Drawable(guiElements[7],0,768-100,1,0,0); // draw selected bottom-left
+		   	  if(button==3)   queue[5]= new Drawable(guiElements[8],1028-200,768-100,1,0,0);
+		   	  if(button==4) queue[6]= new Drawable(guiElements[10],(1028-200)/2,768-100,1,0,0); // draws button
+			
+			 if(Main.currentKey!=null) { // if a key is being pressed
+				 System.out.println("TURTLE");
+				  markerLocation=0; // set the default location to 0
+						  if  (Main.keyInt==37) { // if the button is left
+							  try
+							   {
+								   playSound("/resources/audio/menuMove.mp3"); //plays sound
+							   }
+							   catch(LineUnavailableException ex) // looks for exception
+							   {
+								   System.out.println("Wrong line");
+							   }
+							   catch(UnsupportedAudioFileException ex) // looks for exception
+							   {
+								   System.out.println("Wrong file");
+							   }
+							   catch(IOException ex) // looks for exception
+							   {
+								   System.out.println("Input problem");
+							   }
+							   
+							   if(button==2) button=3; // moves from bottom-left to bottom-right
+								  
+							   else if (button ==3) button=4; // moves from bottom-right to middle
+							   
+							   else if (button==4)button=2; //moves from middle to bottom left
+						   } else
+				   if(Main.keyInt==39) { // if the button is right
+					   try
+					   {
+						   playSound("/resources/audio/menuMove.mp3"); //plays sound
+					   }
+					   catch(LineUnavailableException ex) // looks for exception
+					   {
+						   System.out.println("Wrong line");
+					   }
+					   catch(UnsupportedAudioFileException ex) // looks for exception
+					   {
+						   System.out.println("Wrong file");
+					   }
+					   catch(IOException ex) // looks for exception
+					   {
+						   System.out.println("Input problem");
+					   }
+					   
+					   
+					   if(button==2)button=4; // moves from bottom-left to middle
+					   else if (button==4)button=3;//moves from middle to bottom right
+					   else if (button ==3) button=2; // moves from bottom-right to bottom left
+				   } else
+					   if(Main.keyInt==90) { // if the key is z
+						   if (button==3||button==2) { // if the button is bottom-left or bottom-right
+							   
+							   menu=button; // opens correct menu
+							   cls(); // clears screen
+							   } 
+							   
+							   else if (button==3) { // if the button was close
+								   
+								   menu=-17;
+								   cls();
+								   
+								   
+							   }
+							   }
+						   
+					   }
 		}
 		}
 	}

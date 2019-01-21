@@ -20,11 +20,10 @@ class Case0 extends StoryManager  { // opens class
  }
 
  void update () throws IOException { // update loop
-	   inCourt=true;
 	    //System.out.println ("flags[25]: " + flags[25]);
 	 if (flags[25]==true&&!oneProc){ // checks if the investigation has been run and if it is the only thing running
 		 oneProc=true; // ensures that nothing else will run in update
-		
+		inCourt=true;
 		 
 		
 

@@ -56,7 +56,7 @@ class Statements { // opens class
 		if (animation!=null)
 			{
 			Main.currentCase.getCharacter(speaker).play(animation, frames, true); // plays animation
-			story.showAni("Witness Bench","witnessBench",0,false);
+			Main.currentCase.getCharacter("Witness Bench").play("witnessBench", 0, false);
 			}
 	
 		Main.dialogue.insert(initial,speaker); // runs dialogue
