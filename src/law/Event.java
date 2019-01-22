@@ -7,7 +7,7 @@ class Event { // opens class
 	
 	String command; // holds event
 	
-	Object[] list; // holds list of objects to be acted on
+
 	String x; // holds first string parameter
 	String y; // holds second string parameter
 	int z; // holds first integer parameter
@@ -79,9 +79,29 @@ class Event { // opens class
 		ani=n2;
 		
 	}
+	public Event(String string, String string2, String string3, String string4, String string5, String string6,
+			String string7, String string8, String string9) {
+		
+		command=string;
+		d=string2;
+		System.out.println(string3);
+		System.out.println(Integer.parseInt(string3));
+		i=Integer.parseInt(string3);
+		
+		n=Integer.parseInt(string4);
+		v=Integer.parseInt(string5);
+		x=string6;
+		y=string7;
+		z=Integer.parseInt(string8);
+		u=Boolean.parseBoolean(string9);
+		
+		
+		// TODO Auto-generated constructor stub
+	}
+
 	//&&Main.currentCase.objected==false
 	void execute() throws IOException { // executes event
-		
+		System.out.println(this.command);
 		
 
 		if( (!Main.currentCase.working&& !Main.currentCase.inDialogue&& !Main.currentCase.inExamine&& !Main.currentCase.beginExamine)||(!Main.currentCase.working&& !Main.currentCase.inDialogue&& Main.currentCase.inExamine&&Main.currentCase.presented)) { // if the case is examining something and something is presented
@@ -89,7 +109,7 @@ class Event { // opens class
 			if (Main.currentCase.presented)System.out.println(this.command+" command in PresenQueue has been executed"); else  //presents item
 				System.out.println(this.command+" command in eventQueue has been executed"); // uses event item
 			Main.currentCase.working=true; // sets the case to working
-			if (command=="court") { // if the command is moving to court
+			if (command.equals("court")) { // if the command is moving to court
 				System.out.println("INCOURT");
 				Main.currentCase.currentLocation=null; // the location is set to null
 				Main.inCourt=true; // the game is set to court
@@ -103,27 +123,27 @@ class Event { // opens class
 				
 				
 			 
-			} else if (command=="cls") { // if the command is to clear the screen
+			} else if (command.equals("cls")){ // if the command is to clear the screen
 				 Main.currentCase.clearSprites(); // clears sprites
 			}
 			
-			else if (command=="playAni") { // if the command is to play an animation
+			else if (command.equals("playAni")) { // if the command is to play an animation
 				Main.currentCase.clearSprites(); // clear sprites
 				Main.currentCase.getCharacter(d).play(x, i, u); // play animation
 			
 			} 
-			else if (command=="showAni") { // if the command is to show an animation
+			else if (command.equals("showAni")) { // if the command is to show an animation
 			
 				Main.currentCase.getCharacter(d).play(x, i, u); // plays animation
 			
-			}else if (command=="switchBack") { // if the command is to switch back to statements
+			}else if (command.equals("switchBack")) { // if the command is to switch back to statements
 				Main.currentCase.presentQueue= new ArrayList<Event>(); // creates new presenting queue
 			 Main.currentCase.presented=false; // sets nothing as presented
 				
 			}
 			
 			else	 // if the command is to be start a cross-examination
-	if (command=="firstCE") {
+	if (command.equals("firstCE")) {
 	
 		Main.currentCase.currentExamineQueue=Main.cExamine[z]; // sets the examined statement
 		Main.currentCase.beginExamine=true; // starts examining
@@ -132,7 +152,7 @@ class Event { // opens class
 		//System.out.println("Yes");
 	 
 	}	else	 
-		if (command=="ce") { // if the command is to cross-examine
+		if (command.equals("ce")) { // if the command is to cross-examine
 			
 			Main.currentCase.currentExamine=Main.cExamine[z]; // sets the examined statement
 			Main.currentCase.inExamine=true; // sets the case to be in an examination
@@ -141,19 +161,20 @@ class Event { // opens class
 		 
 		}	
 		else
-	if (command=="d") { // if the command is to say something
+	if (command.equals("d") ){ // if the command is to say something
 		Main.dialogue.insert(x, y); // inserts dialogue
+		System.out.print("insert shit");
 		
 	}	
 	
 	else
-	if (command=="data") { // if the command is to create a data field
+	if (command.equals("data")) { // if the command is to create a data field
 		Main.dialogue.insert(x, y,true); // inserts data field
 		
 	}	
 	else 
 		
-	if (command=="v") { // if the command is to change view
+	if (command.equals("v")) { // if the command is to change view
 		System.out.println(x);
 		System.out.println("ani"+ani);
 		Main.currentCase.court.oneProc=false; // sets nothing to running
@@ -166,15 +187,15 @@ class Event { // opens class
 			Main.currentCase.court.switchview(z,ani);
 		}
 		
-	} else if (command=="e") { // if the command is to move to a location
+	} else if (command.equals("e")) { // if the command is to move to a location
 		 Main.currentCase.locales[z].enter(); // enters a location
 	}
 	
 	
-else if (command=="s") { // if the command is to draw a sprite
+else if (command.equals("s")) { // if the command is to draw a sprite
 	Main.renderer.queue[1]= new Drawable(z, v,n,1,0,1); // draws sprite
 }
-else if (command=="r") { // if the command is to add to the record
+else if (command.equals("r")) { // if the command is to add to the record
 	if(u) { // checks for profile
 		
 	Main.currentCase.profiles.add(new RecordEntry(d,x, u,y,i)); // adds profile
@@ -191,7 +212,7 @@ else if (command=="r") { // if the command is to add to the record
 			System.out.println("r is: "+r);
 		}
 	}
-} else if (command=="ro") { // if the command is to use an objection
+} else if (command.equals("ro")) { // if the command is to use an objection
 		
 	Main.currentCase.court.defObject= new Character("Defense Objection",-200,135); // creates defence objection
 	Main.currentCase.court.prosObject=new Character("Prosecution Objection",0,200); // creates prosecution objection
@@ -204,7 +225,7 @@ else if (command=="r") { // if the command is to add to the record
 	
 }
 	
-	else if (command=="o") { // checks if command is to play objection
+	else if (command.equals("o")) { // checks if command is to play objection
 		if( z==0) {  // if the defence objects
 			Main.gui.menu=69; // sets menu
 			Main.currentCase.motionTrack = 	Main.currentCase.court.defObject; //sets objection

@@ -64,7 +64,7 @@ public class Character { // opens class
 	}
 	
 	void play(String path, int f, boolean loop) throws IOException { // plays character animation
-		
+		System.out.println(path);
 		animation=new Animation(path,f, this);
 		this.animation.play(loop); 
 		

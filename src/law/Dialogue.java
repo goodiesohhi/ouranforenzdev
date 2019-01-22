@@ -19,22 +19,28 @@ class Dialogue { // opens class
   text = texting;
   speaker = s;
   dataField=false;
+  System.out.println("DIA");
   
  }
  void insert(String texting, String s, boolean spec) { // inserts dialogue by passing strings for text and speaker, and whether there is a data field
 	  text = texting;
 	  speaker = s;
 	  dataField=spec;
+	  System.out.println("DIA");
+	  
 	  
 	 }
  
  void play() { // plays dialogue
 	if (Main.currentCase.inExamine&&!Main.currentCase.pressed) { // if it is in an examination and nothing is pressed, the gui removes itself from drawing
 		Main.gui.inAction=false;
+		  System.out.println("DIA1");
+		  
 	}
 
    if(text!=null) { // checks if the text exists
 	   Main.currentCase.inDialogue=true; // puts case in dialogue
+	   System.out.println("DIA2");
 	   
 	   if (dataField) { // checks if the text is a field
 		   Main.currentCase.dataText=true; // sets data to true

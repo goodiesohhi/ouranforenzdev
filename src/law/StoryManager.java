@@ -62,6 +62,7 @@ public boolean dataText; // holds whether the text is a data field
 public String currentWitness; // holds the witness
 public int caseID;
 public String caseName;
+private Object presentSave;
 
 
  public Character getCharacter(String x) { // finds character
@@ -89,7 +90,7 @@ public String caseName;
  
   void update() throws IOException { // updates sotry manager
 //System.out.println(eventQueue.toString());
-	  System.out.println(Main.currentCase.court.bench);
+	  if (!eventQueue.isEmpty())System.out.println("Queue0" + eventQueue.get(0).command);
 	  court.update(); // updates court
 	  if (this.beginExamine&&Main.currentCase.working) { // if the case is working and has begun an examination
 		  timer1++; // increase timer
@@ -275,11 +276,13 @@ public void showAni(String string, String string2, int i, boolean b) { // shows 
 	queueSize++; // increases size of queue
 	
 	 }
-public void addEvent(Event event) { // adds event
+public void addEvent(Event event) { // adds event 
 	if (presented) { // if the case is presenting something
 	Main.currentCase.presentQueue.add(event); // add event to present queue
+	
 	} else {
 		Main.currentCase.eventQueue.add(event); // if there is nothing being presented, add event to event queue
+	    
 	}
 }
 public void checkInteract() { // checks interaction with object

@@ -25,6 +25,7 @@ import java.io.IOException; // imports exception for input and output
 import java.util.ArrayList; // imports usage of array lists
 import java.util.Random; // imports randomness
 public class Main extends JFrame{ // opens main class
+	public static ViewData lastView =null;
 	static int count; // holds count of running through game
 	static int gameState = 0; // holds current game state
 	final int fps =40; // holds number of frames per second
@@ -54,6 +55,7 @@ public class Main extends JFrame{ // opens main class
 	public static Dialogue pressDialogue = new Dialogue(1); // holds all dialogue for pressing
 	public static boolean entered; // holds whether a location has been entered
 	public static KeyEvent pressingKey; // holds whether a key is being pressed
+	public static boolean loaded;
 	public Main() throws IOException { // opens constructor
 		 menu = new Menu();
 		KeyListener listener = new KeyListen(); // creates new key listener
@@ -116,19 +118,34 @@ public class Main extends JFrame{ // opens main class
 		  
 	    outputWriter.write("case: "+Main.currentCase.caseID);
 	    outputWriter.newLine();
+	    
+	    outputWriter.write("lastView: "+Main.lastView.view+";"+Main.lastView.peep);
+	    outputWriter.newLine();
 	    outputWriter.write("inCourt: "+Main.currentCase.inCourt);
 	    outputWriter.newLine();
 	    outputWriter.write("somewhere: "+Main.currentCase.somewhere);
 	    outputWriter.newLine();
+	    if (Main.currentCase.currentLocation!=null) {
 	    outputWriter.write("currentLocation: "+Main.currentCase.currentLocation.id);
+	    } else {
+	    	 outputWriter.write("currentLocation: c");
+
+	    }
 	    outputWriter.newLine();
 	   
 	   
 	    outputWriter.write("evidence: ");
 		  for (RecordEntry re :Main.currentCase.evidence) {
 			  
-			  String save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile+",";
-		    outputWriter.write(save);
+			  String save=null;
+			  if (Main.currentCase.evidence.size()>1) {
+				  save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile+"$";
+			  }
+			  else {  save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile;
+				
+				  
+			  }
+			  outputWriter.write(save);
 		   
 
 		   
@@ -137,8 +154,15 @@ public class Main extends JFrame{ // opens main class
 		   outputWriter.write("profiles: ");
 			  for (RecordEntry re :Main.currentCase.profiles) {
 				  
-				  String save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile+",";
-			    outputWriter.write(save);
+				  String save=null;
+				  if (Main.currentCase.evidence.size()>1) {
+					  save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile+"$";
+				  }
+				  else {  save=re.name+";"+re.path+";"+re.desc+";"+re.isProfile;
+					
+					  
+				  }
+				  outputWriter.write(save);
 			   
 			  
 			   
@@ -175,7 +199,7 @@ public class Main extends JFrame{ // opens main class
     		    
     		    for (Question re :Main.currentCase.locales[x].questions) {
     				  
-    				  String save=re.id+";"+re.question+";"+re.unlocked+";"+re.asked+",";
+    				  String save=re.id+";"+re.question+";"+re.unlocked+";"+re.asked+"$";
     			    outputWriter.write(save);
     			   
 
@@ -183,6 +207,16 @@ public class Main extends JFrame{ // opens main class
     			  } outputWriter.newLine();
     			  }
     		  }
+       		 outputWriter.newLine();
+       		 outputWriter.write("eventQueue: ");
+       		 for (Event e:Main.currentCase.eventQueue) {
+       			 outputWriter.write(e.command+";"+e.d+";"+e.i+";"+e.n+";"+e.v+";"+e.x+";"+e.y+";"+e.z+";"+e.u+"$");
+       		 }
+       		 outputWriter.newLine();
+       		 outputWriter.write("presentQueue: ");
+       		 for (Event e:Main.currentCase.eventQueue) {
+       			 outputWriter.write(e.command+";"+e.d+";"+e.i+";"+e.n+";"+e.v+";"+e.x+";"+e.y+";"+e.z+";"+e.u+"$");
+       		 }
       		 
     		  outputWriter.flush();  
     		  outputWriter.close();  
@@ -205,6 +239,10 @@ public class Main extends JFrame{ // opens main class
             	 
             	  String word = line.substring(0, i);
             	  String rest = line.substring(i+1);
+            	  if (word.equals("lastView:")) {
+            		  String[] entries =rest.split(";");
+            		  Main.lastView= new ViewData(Integer.parseInt(entries[0]),entries[1]);
+            	  }
             	  
             	  if (word.equals("case:")) {
             		  currentCase = findCase (Integer.valueOf(rest));
@@ -219,13 +257,14 @@ public class Main extends JFrame{ // opens main class
             				  
             	  }
             	  if (word.equals("currentLocation:")) {
-            		 area = Integer.valueOf(rest);
-            				  
+            		 
+            		  if (!rest.equals("c")) area = Integer.valueOf(rest);
+            		  else area=-2;
             	  }
             	  
             	  if (word.equals("evidence:")) {
             		
-            		String[] entries =rest.split(",");
+            		String[] entries =rest.split("\\$");
             		
             		for (i=0;i<entries.length;i++) {
             			String[] data =entries[i].split(";");
@@ -233,8 +272,7 @@ public class Main extends JFrame{ // opens main class
             				System.out.println(data[z]);
             				
             			}
-           System.out.println("EVI"); 			
-System.out.println(Boolean.valueOf(data[3]));
+
             			
             			if(data.length>1) {
             				if (!Boolean.valueOf(data[3])) {
@@ -263,7 +301,7 @@ System.out.println(Boolean.valueOf(data[3]));
             		  if(Main.currentCase.locales[g]!=null) {
             	  if (word.equals("localeFlags"+g+":")) {
                 		
-                		String[] entries =rest.split(",");
+                		String[] entries =rest.split("\\$");
                 		
                 		for (i=0;i<entries.length;i++) {
                 			
@@ -277,7 +315,7 @@ System.out.println(Boolean.valueOf(data[3]));
                 	  }
             	  if (word.equals("localeQuestions"+g+":")) {
               		
-              		String[] entries =rest.split(",");
+              		String[] entries =rest.split("\\$");
               		
               		for (i=0;i<entries.length;i++) {
               			
@@ -297,7 +335,7 @@ System.out.println(Boolean.valueOf(data[3]));
             	  
             	  if (word.equals("profiles:")) {
               		
-              		String[] entries =rest.split(",");
+              		String[] entries =rest.split("\\$");
               		
               		for (i=0;i<entries.length;i++) {
               			String[] data =entries[i].split(";");
@@ -306,13 +344,63 @@ System.out.println(Boolean.valueOf(data[3]));
               		}
               				  
               	  }
+            	  
+               	  
+            	  if (word.equals("eventQueue:")) {
+              		System.out.println(rest);
+              		
+              		String[] entries =rest.split("\\$");
+              		System.out.println("split?"+entries[0]);
+              		System.out.println(entries[1]);
+              		System.out.println(entries);
+              		System.out.println(entries.length+" entries");
+              		for (i=0;i<entries.length;i++) {
+              			String[] data =entries[i].split(";");
+              			
+              			
+              				
+              				Main.currentCase.eventQueue.add(new Event(data[0], data[1], data[2] ,data[3], data[4], data[5],data[6],data[7],data[8]));
+              			System.out.println(Main.currentCase.eventQueue.get(i).command+"hey");
+              			
+              		
+              		}
+              				  
+              	  }
+            	  
+            	  if (word.equals("presentQueue:")) {
+                		
+                		
+                		String[] entries =rest.split("\\$");
+                
+                		for (i=0;i<entries.length;i++) {
+                			String[] data =entries[i].split(";");
+                			
+                			
+                				
+                				Main.currentCase.presentQueue.add(new Event(data[0], data[1], data[2] ,data[3], data[4], data[5],data[6],data[7],data[8]));
+                			System.out.println(Main.currentCase.presentQueue.get(i).command+"hey");
+                			
+                		
+                		}
+                				  
+                	  }
             	  }
             	  
               }   
-              
+              Main.loaded=true;
               bufferedReader.close();
               if (area==-1) {
             	  throw new Exception("Save file Corrupt??");
+              } else if (area==-2) {
+            	  System.out.println("INCOURT");
+  				Main.currentCase.currentLocation=null; // the location is set to null
+  				Main.inCourt=true; // the game is set to court
+  				Main.currentCase.inCourt=true; // the case is set to court
+  				Main.currentCase.oneProc=false; // sets nothing to running
+  				if(Main.lastView.aData==null)Main.currentCase.court.switchview(Main.lastView.view, Main.lastView.peep);
+  				else Main.currentCase.court.switchview(Main.lastView.view, Main.lastView.aData);
+  
+  				
               }
               else {
             	  Main.currentCase.locales[area].enter(); // enters a location
@@ -569,6 +657,23 @@ System.out.println(Boolean.valueOf(data[3]));
 	public void mouseReleased(MouseEvent arg0) { // if the mouse was released
 		// TODO Auto-generated method stub
 		
+	}
+	 
+ }
+ 
+ class ViewData {
+	 int view;
+	 String peep;
+	 AnimData aData;
+	 ViewData(int i, String z){
+		 view=i;
+		 peep=z;
+		 
+		 
+	 }
+	public ViewData(int x, AnimData y) {
+		 view=x;
+		 aData=y;
 	}
 	 
  }

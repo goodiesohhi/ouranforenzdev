@@ -37,6 +37,7 @@ public class Court { // opens class
 
 	
 	void switchview (int x,	AnimData y) throws IOException { // switches view of court
+		Main.lastView= new ViewData(x,y.charName);
 		Main.currentCase.inCourt=true;
 Main.renderer.clear(); // clears view
 Main.currentCase.clearSprites();	// removes sprites
@@ -134,6 +135,8 @@ Main.currentCase.clearSprites();	// removes sprites
 
 
 	public void switchview(int x, String y) throws IOException {
+		Main.lastView= new ViewData(x,y);
+		System.out.println("switchView");
 		Main.currentCase.inCourt=true;
 		Main.renderer.clear(); // clears view
 		Main.currentCase.clearSprites();	// removes sprites
@@ -169,7 +172,9 @@ Main.currentCase.clearSprites();	// removes sprites
 					}
 				
 			}	
-			if(x==3) { // checks if view is of witness
+			if(x==3) {
+				// checks if view is of witness
+				
 				Main.renderer.queue[0]= new Drawable(13,0,0,1,0,0); // draws background
 				if (Main.currentCase.getCharacter(y)==null) { // checks if there is no current witness
 					Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
@@ -180,6 +185,30 @@ Main.currentCase.clearSprites();	// removes sprites
 				{
 					
 				oneProc=true; // ensures that only one animation runs
+				System.out.println(y+ " zed");
+				if(y.equals("Nekocchi")) {
+					
+					System.out.println("retarded parents");
+					Main.currentCase.getCharacter("Nekocchi").play("nekocchiWitness", 0, false); 
+					
+				}
+				
+				if(y.equals("Det. Pat. Bluthund")) {
+					Main.currentCase.getCharacter("Det. Pat. Bluthund").play("bluthundTalk", 2, true); 
+					
+				}
+				
+				if(y.equals("Gilligan Tam")) {
+					Main.currentCase.getCharacter("Gilligan Tam").play("gilliganTalk", 16, true); 
+					
+				}
+				if(y.equals("Enrico Nocent")) {
+					Main.currentCase.getCharacter("Enrico Nocent").play("enricoWitness", 0, false); 
+					
+				}
+			
+				
+				
 				}
 				Main.currentCase.currentWitness= y; // sets witness as character
 				
@@ -199,6 +228,27 @@ Main.currentCase.clearSprites();	// removes sprites
 					Main.currentCase.characters.add(new Character(y, 100, 135)); // adds new character for witness
 				}
 				Main.currentCase.currentWitness= y; // sets witness as character
+				
+if(y.equals("Nekocchi")) {
+					
+					System.out.println("retarded parents");
+					Main.currentCase.getCharacter("Nekocchi").play("nekoArson", 0, false); 
+					
+				}
+				
+				if(y.equals("Det. Pat. Bluthund")) {
+					Main.currentCase.getCharacter("Det. Pat. Bluthund").play("bluthundTalk", 2, true); 
+					
+				}
+				
+				if(y.equals("Gilligan Tam")) {
+					Main.currentCase.getCharacter("Gilligan Tam").play("gilliganTalk", 16, true); 
+					
+				}
+				if(y.equals("Enrico Nocent")) {
+					Main.currentCase.getCharacter("Enrico Nocent").play("enricoWitness", 0, false); 
+					
+				}
 			}
 			
 			if (x==69) { // checks if view is default

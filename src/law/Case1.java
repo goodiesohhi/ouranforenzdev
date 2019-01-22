@@ -11,9 +11,10 @@ public class Case1 extends StoryManager{ // opens class for first case
 	
 	void update() throws IOException{ // runs update loop
 		inCourt=true;
-		
+		 
 		if (!oneProc) // checks if the case is already running
 		{
+			
 		oneProc=true; // sets the case to be running
 		characters.add(new Character ("Det. Pat. Bluthund", 200, 0)); //adds Bluthund
 		characters.add(new Character("Gilligan Tam",250,150)); // adds Gilligan
@@ -127,6 +128,8 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 
 		 stopCExamine();
 		 
+		 if (!Main.loaded) {
+		 
 		 insertR("Ouran Forenz", "ouranProfile", "You thought it was Wright, but it was me, Forenz.",true,0); // adds Ouran to record
 		 insertR("Attorney's Badge","badge","The proof of my profession, my badge.",false,1); // adds attorney's badge to record
 		 // various changes of view and pieces of dialogue
@@ -170,7 +173,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertV(2,(String)null);
 		 insertD("Please state your name and profession.","Mel Practiss");
 		 insertV(3,new AnimData("Det. Pat. Bluthund", "bluthundTalk", 2, true));
-		 showAni("Witness Bench","witnessBench",0,false);
+		 //showAni("Witness Bench","witnessBench",0,false);
 		 insertD("My name is Patrick Bluthund, homicide division. I sniff out criminals and this dude is one of them!", "Det. Pat. Bluthund");
 		 insertV(1,(String)null);
 		 insertD("Ummm, that's a dog...", "Ouran Forenz");
@@ -863,6 +866,7 @@ public class Case1 extends StoryManager{ // opens class for first case
 		 insertD("I'm Ouran Forenz, expert attorney at law and forensic investigator.","Ouran Forenz");
 		 insertD("I will continue to pursue the truth.","Ouran Forenz");
 		 insertD("That's my job.","Ouran Forenz");
+		}
 		}
 		super.update(); // updates super
 		 

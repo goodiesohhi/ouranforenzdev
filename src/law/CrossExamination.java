@@ -28,7 +28,7 @@ static 	boolean sentinel; // checks if a cross-examination is running
 		statements.add(new Statements(i, c, p, s, x,o,anim,f)); // adds statements
 	}
 	boolean metConditions () { // checks if conditions have been met to continue
-	
+	 
 		
 		for (Conditions c: conditions ) { // runs through conditions
 		
